@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<corpus source="AIMed">
+
+<document id="AIMed.d28">
+    <sentence id="AIMed.d28.s232" text="Identification of a new member of the tumor necrosis factor family and its receptor, a human ortholog of mouse GITR." seqId="s232">
+    </sentence>
+    <sentence id="AIMed.d28.s233" text="The tumor necrosis factor (TNF) and TNF receptor (TNFR) gene superfamilies regulate diverse biological functions, including cell proliferation, differentiation, and survival [1] [2] [3]." seqId="s233">
+    </sentence>
+    <sentence id="AIMed.d28.s234" text="We have identified a new TNF-related ligand, designated human GITR ligand (hGITRL), and its human receptor (hGITR), an ortholog of the recently discovered murine glucocorticoid-induced TNFR-related (mGITR) protein [4]." seqId="s234">
+      <entity id="AIMed.d28.s234.e0" charOffset="62-65" type="protein" text="GITR" seqId="e329"/>
+      <entity id="AIMed.d28.s234.e1" charOffset="62-72" type="protein" text="GITR ligand" seqId="e330"/>
+      <entity id="AIMed.d28.s234.e2" charOffset="75-80" type="protein" text="hGITRL" seqId="e332"/>
+      <entity id="AIMed.d28.s234.e3" charOffset="108-112" type="protein" text="hGITR" seqId="e335"/>
+      <entity id="AIMed.d28.s234.e4" charOffset="199-203" type="protein" text="mGITR" seqId="e338"/>
+      <entity id="AIMed.d28.s234.e5" charOffset="162-212" type="protein" text="glucocorticoid-induced TNFR-related (mGITR) protein" seqId="e339"/>
+      <interaction id="AIMed.d28.s234.i0" e1="AIMed.d28.s234.e0" e2="AIMed.d28.s234.e2" type="None" directed="false" seqId="i0"/>
+      <interaction id="AIMed.d28.s234.i1" e1="AIMed.d28.s234.e1" e2="AIMed.d28.s234.e3" type="None" directed="false" seqId="i1"/>
+      <interaction id="AIMed.d28.s234.i2" e1="AIMed.d28.s234.e2" e2="AIMed.d28.s234.e3" type="None" directed="false" seqId="i2"/>
+    </sentence>
+    <sentence id="AIMed.d28.s235" text="The hGITRL gene mapped to chromosome 1q23, near the gene for the TNF homolog Fas/CD95 ligand [5]." seqId="s235">
+      <entity id="AIMed.d28.s235.e0" charOffset="4-9" type="protein" text="hGITRL" seqId="e340"/>
+      <entity id="AIMed.d28.s235.e1" charOffset="77-79" type="protein" text="Fas" seqId="e341"/>
+      <entity id="AIMed.d28.s235.e2" charOffset="81-91" type="protein" text="CD95 ligand" seqId="e342"/>
+    </sentence>
+    <sentence id="AIMed.d28.s236" text="The hGITR gene mapped to chromosome 1p36, near a cluster of five genes encoding TNFR homologs [1] [6]." seqId="s236">
+      <entity id="AIMed.d28.s236.e0" charOffset="4-8" type="protein" text="hGITR" seqId="e343"/>
+    </sentence>
+    <sentence id="AIMed.d28.s237" text="We found hGITRL mRNA in several peripheral tissues, and detected hGITRL protein on cultured vascular endothelial cells." seqId="s237">
+      <entity id="AIMed.d28.s237.e0" charOffset="9-14" type="protein" text="hGITRL" seqId="e344"/>
+      <entity id="AIMed.d28.s237.e1" charOffset="65-70" type="protein" text="hGITRL" seqId="e345"/>
+    </sentence>
+    <sentence id="AIMed.d28.s238" text="The levels of hGITR mRNA in tissues were generally low; in peripheral blood T cells, however, antigen-receptor stimulation led to a substantial induction of hGITR transcripts." seqId="s238">
+      <entity id="AIMed.d28.s238.e0" charOffset="14-18" type="protein" text="hGITR" seqId="e346"/>
+      <entity id="AIMed.d28.s238.e1" charOffset="157-161" type="protein" text="hGITR" seqId="e347"/>
+    </sentence>
+    <sentence id="AIMed.d28.s239" text="Cotransfection of hGITRL and hGITR in embryonic kidney 293 cells activated the anti-apoptotic transcription factor NF-kappaB, via a pathway that appeared to involve TNFR-associated factor 2 (TRAF2) [7] and NF-kappaB-inducing kinase (NIK) [8]." seqId="s239">
+      <entity id="AIMed.d28.s239.e0" charOffset="18-23" type="protein" text="hGITRL" seqId="e348"/>
+      <entity id="AIMed.d28.s239.e1" charOffset="29-33" type="protein" text="hGITR" seqId="e349"/>
+      <entity id="AIMed.d28.s239.e2" charOffset="115-123" type="protein" text="NF-kappaB" seqId="e350"/>
+      <entity id="AIMed.d28.s239.e3" charOffset="165-188" type="protein" text="TNFR-associated factor 2" seqId="e351"/>
+      <entity id="AIMed.d28.s239.e4" charOffset="191-195" type="protein" text="TRAF2" seqId="e352"/>
+      <entity id="AIMed.d28.s239.e5" charOffset="206-214" type="protein" text="NF-kappaB" seqId="e353"/>
+      <entity id="AIMed.d28.s239.e6" charOffset="206-230" type="protein" text="NF-kappaB-inducing kinase" seqId="e354"/>
+      <entity id="AIMed.d28.s239.e7" charOffset="233-235" type="protein" text="NIK" seqId="e355"/>
+    </sentence>
+    <sentence id="AIMed.d28.s240" text="Cotransfection of hGITRL and hGITR in Jurkat T leukemia cells inhibited antigen-receptor-induced cell death." seqId="s240">
+      <entity id="AIMed.d28.s240.e0" charOffset="18-23" type="protein" text="hGITRL" seqId="e356"/>
+      <entity id="AIMed.d28.s240.e1" charOffset="29-33" type="protein" text="hGITR" seqId="e357"/>
+    </sentence>
+    <sentence id="AIMed.d28.s241" text="Thus, hGITRL and hGITR may modulate T lymphocyte survival in peripheral tissues." seqId="s241">
+      <entity id="AIMed.d28.s241.e0" charOffset="6-11" type="protein" text="hGITRL" seqId="e358"/>
+      <entity id="AIMed.d28.s241.e1" charOffset="17-21" type="protein" text="hGITR" seqId="e359"/>
+    </sentence>
+  </document>
+  <document id="AIMed.d29">
+    <sentence id="AIMed.d29.s242" text="Differential mechanisms of recognition and activation of interleukin-8 receptor subtypes." seqId="s242">
+      <entity id="AIMed.d29.s242.e0" charOffset="57-69" type="protein" text="interleukin-8" seqId="e360"/>
+    </sentence>
+    <sentence id="AIMed.d29.s243" text="We have probed an epitope sequence (His18-Pro19-Lys20-Phe21) in interleukin-8 (IL-8) by site-directed mutagenesis." seqId="s243">
+      <entity id="AIMed.d29.s243.e0" charOffset="64-76" type="protein" text="interleukin-8" seqId="e361"/>
+      <entity id="AIMed.d29.s243.e1" charOffset="79-82" type="protein" text="IL-8" seqId="e362"/>
+    </sentence>
+    <sentence id="AIMed.d29.s244" text="This work shows that single and double Ala substitutions of His18 and Phe21 in IL-8 reduced up to 77-fold the binding affinity to IL-8 receptor subtypes A (CXCR1) and B (CXCR2) and to the Duffy antigen." seqId="s244">
+      <entity id="AIMed.d29.s244.e0" charOffset="79-82" type="protein" text="IL-8" seqId="e363"/>
+      <entity id="AIMed.d29.s244.e1" charOffset="130-133" type="protein" text="IL-8" seqId="e364"/>
+      <entity id="AIMed.d29.s244.e2" charOffset="130-153" type="protein" text="IL-8 receptor subtypes A" seqId="e368"/>
+      <entity id="AIMed.d29.s244.e3" charOffset="156-160" type="protein" text="CXCR1" seqId="e369"/>
+      <entity id="AIMed.d29.s244.e4" charOffset="170-174" type="protein" text="CXCR2" seqId="e371"/>
+      <entity id="AIMed.d29.s244.e5" charOffset="188-200" type="protein" text="Duffy antigen" seqId="e373"/>
+      <interaction id="AIMed.d29.s244.i0" e1="AIMed.d29.s244.e1" e2="AIMed.d29.s244.e5" type="None" directed="false" seqId="i3"/>
+      <interaction id="AIMed.d29.s244.i1" e1="AIMed.d29.s244.e1" e2="AIMed.d29.s244.e4" type="None" directed="false" seqId="i4"/>
+      <interaction id="AIMed.d29.s244.i2" e1="AIMed.d29.s244.e1" e2="AIMed.d29.s244.e3" type="None" directed="false" seqId="i5"/>
+    </sentence>
+    <sentence id="AIMed.d29.s245" text="These Ala mutants triggered neutrophil degranulation and induced calcium responses mediated by CXCR1 and CXCR2." seqId="s245">
+      <entity id="AIMed.d29.s245.e0" charOffset="95-99" type="protein" text="CXCR1" seqId="e375"/>
+      <entity id="AIMed.d29.s245.e1" charOffset="105-109" type="protein" text="CXCR2" seqId="e376"/>
+    </sentence>
+    <sentence id="AIMed.d29.s246" text="Single Asp or Ser substitutions, H18D, F21D, F21S, and double substitutions, H18A/F21D, H18A/F21S, and H18D/F21D, reduced up to 431-fold the binding affinity to CXCR1, CXCR2, and the Duffy antigen." seqId="s246">
+      <entity id="AIMed.d29.s246.e0" charOffset="161-165" type="protein" text="CXCR1" seqId="e377"/>
+      <entity id="AIMed.d29.s246.e1" charOffset="168-172" type="protein" text="CXCR2" seqId="e378"/>
+      <entity id="AIMed.d29.s246.e2" charOffset="183-195" type="protein" text="Duffy antigen" seqId="e379"/>
+    </sentence>
+    <sentence id="AIMed.d29.s247" text="Interestingly, double mutants with charged residue substitutions failed to trigger degranulation or to induce wild-type calcium responses mediated by CXCR1." seqId="s247">
+      <entity id="AIMed.d29.s247.e0" charOffset="150-154" type="protein" text="CXCR1" seqId="e380"/>
+    </sentence>
+    <sentence id="AIMed.d29.s248" text="Except for the H18A and F21A mutants, all other IL-8 mutants failed to induce superoxide production in neutrophils." seqId="s248">
+      <entity id="AIMed.d29.s248.e0" charOffset="48-51" type="protein" text="IL-8" seqId="e381"/>
+    </sentence>
+    <sentence id="AIMed.d29.s249" text="This study demonstrates that IL-8 recognizes and activates CXCR1, CXCR2, and the Duffy antigen by distinct mechanisms." seqId="s249">
+      <entity id="AIMed.d29.s249.e0" charOffset="29-32" type="protein" text="IL-8" seqId="e382"/>
+      <entity id="AIMed.d29.s249.e1" charOffset="59-63" type="protein" text="CXCR1" seqId="e386"/>
+      <entity id="AIMed.d29.s249.e2" charOffset="66-70" type="protein" text="CXCR2" seqId="e388"/>
+      <entity id="AIMed.d29.s249.e3" charOffset="81-93" type="protein" text="Duffy antigen" seqId="e390"/>
+      <interaction id="AIMed.d29.s249.i0" e1="AIMed.d29.s249.e0" e2="AIMed.d29.s249.e3" type="None" directed="false" seqId="i6"/>
+      <interaction id="AIMed.d29.s249.i1" e1="AIMed.d29.s249.e0" e2="AIMed.d29.s249.e2" type="None" directed="false" seqId="i7"/>
+      <interaction id="AIMed.d29.s249.i2" e1="AIMed.d29.s249.e0" e2="AIMed.d29.s249.e1" type="None" directed="false" seqId="i8"/>
+    </sentence>
+  </document>
+</corpus>

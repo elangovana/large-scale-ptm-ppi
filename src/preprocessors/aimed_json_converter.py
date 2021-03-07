@@ -1,4 +1,8 @@
+import argparse
 import itertools
+import json
+import logging
+import sys
 import xml.etree.ElementTree as ET
 
 
@@ -34,6 +38,18 @@ class AIMedJsonConverter:
         root = ET.fromstring(xml_string)
 
         return self._parse_xml(root)
+
+    def convert_fromfile(self, src_xml_file, dest_json_file):
+        """
+Converts from source file
+        :param src_xml_file: Source input xml file
+        :param dest_json_file: Destination output json file
+        """
+        tree = ET.parse(src_xml_file)
+        results = self._parse_xml(tree.getroot())
+
+        with open(dest_json_file, "w") as f:
+            f.write(json.dumps(results))
 
     def _parse_xml(self, root):
         result = []
@@ -111,3 +127,28 @@ class AIMedJsonConverter:
                            })
 
         return result
+
+
+def run_main():
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument("--inputfile",
+                        help="The input XML Aimed file", required=True)
+
+    parser.add_argument("--outputfile",
+                        help="The output json file", required=True)
+
+    parser.add_argument("--log-level", help="Log level", default="INFO", choices={"INFO", "WARN", "DEBUG", "ERROR"})
+
+    args = parser.parse_args()
+    # Set up logging
+    logging.basicConfig(level=logging.getLevelName(args.log_level), handlers=[logging.StreamHandler(sys.stdout)],
+                        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+
+    print(args.__dict__)
+
+    AIMedJsonConverter().convert_fromfile(args.inputfile, args.outputfile)
+
+
+if __name__ == "__main__":
+    run_main()

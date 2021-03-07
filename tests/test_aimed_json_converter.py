@@ -1,3 +1,5 @@
+import os
+import tempfile
 from unittest import TestCase
 
 from preprocessors.aimed_json_converter import AIMedJsonConverter
@@ -5,7 +7,7 @@ from preprocessors.aimed_json_converter import AIMedJsonConverter
 
 class TestAIMedJsonConverter(TestCase):
 
-    def test_convert_single_document_no_entities(self):
+    def test_convert_fromstring_single_document_no_entities(self):
         """
         Test case document with no entities
         :return:
@@ -29,7 +31,7 @@ class TestAIMedJsonConverter(TestCase):
         # Assert
         self.assertEqual(expected_json, actual)
 
-    def test_convert_single_document_with_entities_and_interactions(self):
+    def test_convert_fromstring_single_document_with_entities_and_interactions(self):
         """
         Test case document with  entities and interactions
         :return:
@@ -71,7 +73,7 @@ class TestAIMedJsonConverter(TestCase):
         # Assert
         self.assertEqual(expected_json, actual)
 
-    def test_convert_single_document_with_entities_and_interactions_with_non_participants(self):
+    def test_convert_fromstring_single_document_with_entities_and_interactions_with_non_participants(self):
         """
         Test case document with  entities and interactions with non_participating entities
         :return:
@@ -153,7 +155,7 @@ class TestAIMedJsonConverter(TestCase):
         # Assert
         self.assertEqual(expected_json, actual)
 
-    def test_multiple_sentences(self):
+    def test_convert_fromstring_multiple_sentences(self):
         """
         Test case with multiple sentences
         :return:
@@ -212,3 +214,15 @@ class TestAIMedJsonConverter(TestCase):
 
         # Assert
         self.assertEqual(expected_json, actual)
+
+    def test_convert_fromfile(self):
+        # Arrange
+        input_xml_file = os.path.join(os.path.dirname(__file__), "sample_data", "aimed.xml")
+        sut = AIMedJsonConverter()
+        dest_json_file = os.path.join( tempfile.mkdtemp(), "sample.json")
+
+        # Act
+        sut.convert_fromfile(input_xml_file,  dest_json_file)
+
+        self.assertTrue(os.path.isfile(dest_json_file ))
+
