@@ -8,7 +8,7 @@ import xml.etree.ElementTree as ET
 
 class AIMedJsonConverter:
     """
-    Converts the Pyysalo formatted XML to dataframe ( genereted by convert_aimed.xml here http://mars.cs.utu.fi/PPICorpora/)
+    Converts the Pyysalo formatted XML to flattened json ( genereted by convert_aimed.xml here http://mars.cs.utu.fi/PPICorpora/)
     """
 
     def convert_fromstring(self, xml_string):
