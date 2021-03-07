@@ -11,3 +11,11 @@ AIMed protein protein relation extraction
       convert_aimed.py -i  aimed_interactions_input_dir -o aimed.xml
 
       ```
+
+## Run
+
+### Step 1: Convert xml AIMed to flattened json
+
+```bash
+python src/preprocessors/aimed_json_converter.py --inputfile tests/sample_data/aimed.xml --outputfile aimed.json
+```
