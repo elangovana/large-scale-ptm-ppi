@@ -68,6 +68,7 @@ Converts from source file
 
     def _parse_sentence(self, sentence, doc_id):
         sentence_id = sentence.attrib["id"]
+        sentence_text= sentence.attrib["text"]
         all_entities = []
         all_interactions = []
         # get entities
@@ -91,9 +92,9 @@ Converts from source file
             })
 
         # generate interactions
-        return self._generate_records(all_entities, all_interactions, sentence_id, doc_id)
+        return self._generate_records(all_entities, all_interactions,sentence_text, sentence_id, doc_id)
 
-    def _generate_records(self, entities, interactions, sentence_id, doc_id):
+    def _generate_records(self, entities, interactions,sentence, sentence_id, doc_id):
         result = []
         # Get interactions as set
         interactions_set = []
@@ -113,6 +114,7 @@ Converts from source file
             other_entities = [e for e in entities if e["id"] not in entities_pair_set]
 
             result.append({"interacts": is_positive
+                              , "text":sentence
                               , "participant1Id": e1["id"]
                               , "participant1Offset": e1["charOffset"]
                               , "participant1Len": e1["len"]
