@@ -297,7 +297,7 @@ class TestAIMedJsonConverter(TestCase):
 
     def test_convert_fromfile(self):
         # Arrange
-        input_xml_file = os.path.join(os.path.dirname(__file__), "sample_data", "aimed.xml")
+        input_xml_file = os.path.join(os.path.dirname(__file__), "..", "sample_data", "aimed.xml")
         sut = AIMedJsonConverter()
         dest_json_file = os.path.join( tempfile.mkdtemp(), "sample.json")
 
