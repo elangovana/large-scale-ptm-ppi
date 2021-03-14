@@ -1,10 +1,9 @@
 import logging
 from typing import List, Dict
 
-from datasets.base_transformer import BaseTransformer
 
 
-class TransformerNameReplacer(BaseTransformer):
+class TransformerNameReplacer:
     """
     Replaces named entity mentions in text with custom names
     """
@@ -12,7 +11,7 @@ class TransformerNameReplacer(BaseTransformer):
     def _logger(self):
         return  logging.getLogger(__name__)
 
-    def transform(self, *, text:str, entities:List[Dict]) -> str:
+    def __call__(self, text:str, entities:List[Dict]) -> str:
         """
         Replaces named entity mentions in text with custom names
         :param text: The text to replace

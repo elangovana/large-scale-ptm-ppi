@@ -1,10 +1,9 @@
 from random import Random
 
-from datasets.base_transformer import BaseTransformer
 from datasets.transformer_name_replacer import TransformerNameReplacer
 
 
-class TransformerNameNormaliser(BaseTransformer):
+class TransformerNameNormaliser:
 
     def __init__(self, text_key: str, participant1_offset_key: str, participant1_len_key: str,
                  participant2_offset_key: str, participant2_len_key: str, other_entities_dict_key: str,
@@ -40,7 +39,7 @@ class TransformerNameNormaliser(BaseTransformer):
 
         self._random = Random(random_seed)
 
-    def transform(self, *, payload: dict):
+    def __call__(self, payload):
         other_entities = payload[self.other_entities_dict_key]
         raw_text = payload[self.text_key]
 

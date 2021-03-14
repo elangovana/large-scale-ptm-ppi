@@ -41,7 +41,7 @@ class TestTransformerNameNormaliser(TestCase):
                                         )
 
         # Act
-        sut.transform(payload=payload)
+        sut(payload)
 
         # Assert
         mock_name_replacer.transform.assert_called_with(

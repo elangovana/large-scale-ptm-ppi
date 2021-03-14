@@ -17,7 +17,7 @@ class TestTransformerNameReplacer(TestCase):
         sut = TransformerNameReplacer()
 
         # Act
-        actual = sut.transform(text=raw_text, entities=entities)
+        actual = sut(text=raw_text, entities=entities)
 
         # Assert
         self.assertEqual(expected_text, actual)
@@ -39,7 +39,7 @@ class TestTransformerNameReplacer(TestCase):
         sut = TransformerNameReplacer()
 
         # Act
-        actual = sut.transform(text=raw_text, entities=entities)
+        actual = sut(text=raw_text, entities=entities)
 
         # Assert
         self.assertEqual(expected_text, actual)
@@ -67,7 +67,7 @@ class TestTransformerNameReplacer(TestCase):
         sut = TransformerNameReplacer()
 
         # Act
-        actual = sut.transform(text=raw_text, entities=entities)
+        actual = sut(text=raw_text, entities=entities)
 
         # Assert
         self.assertEqual(expected_text, actual)
