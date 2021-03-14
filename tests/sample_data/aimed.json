@@ -1,0 +1,3048 @@
+[
+  {
+    "interacts": false,
+    "text": "We have identified a new TNF-related ligand, designated human GITR ligand (hGITRL), and its human receptor (hGITR), an ortholog of the recently discovered murine glucocorticoid-induced TNFR-related (mGITR) protein [4].",
+    "participant1Id": "AIMed.d28.s234.e0",
+    "participant1Offset": 62,
+    "participant1Len": 4,
+    "participant1Text": "GITR",
+    "participant2Id": "AIMed.d28.s234.e1",
+    "participant2Offset": 62,
+    "participant2Len": 11,
+    "participant2Text": "GITR ligand",
+    "documentId": "AIMed.d28",
+    "sentenceId": "AIMed.d28.s234",
+    "otherEntities": [
+      {
+        "id": "AIMed.d28.s234.e2",
+        "charOffset": 75,
+        "len": 6,
+        "text": "hGITRL"
+      },
+      {
+        "id": "AIMed.d28.s234.e3",
+        "charOffset": 108,
+        "len": 5,
+        "text": "hGITR"
+      },
+      {
+        "id": "AIMed.d28.s234.e4",
+        "charOffset": 199,
+        "len": 5,
+        "text": "mGITR"
+      },
+      {
+        "id": "AIMed.d28.s234.e5",
+        "charOffset": 162,
+        "len": 51,
+        "text": "glucocorticoid-induced TNFR-related (mGITR) protein"
+      }
+    ]
+  },
+  {
+    "interacts": true,
+    "text": "We have identified a new TNF-related ligand, designated human GITR ligand (hGITRL), and its human receptor (hGITR), an ortholog of the recently discovered murine glucocorticoid-induced TNFR-related (mGITR) protein [4].",
+    "participant1Id": "AIMed.d28.s234.e0",
+    "participant1Offset": 62,
+    "participant1Len": 4,
+    "participant1Text": "GITR",
+    "participant2Id": "AIMed.d28.s234.e2",
+    "participant2Offset": 75,
+    "participant2Len": 6,
+    "participant2Text": "hGITRL",
+    "documentId": "AIMed.d28",
+    "sentenceId": "AIMed.d28.s234",
+    "otherEntities": [
+      {
+        "id": "AIMed.d28.s234.e1",
+        "charOffset": 62,
+        "len": 11,
+        "text": "GITR ligand"
+      },
+      {
+        "id": "AIMed.d28.s234.e3",
+        "charOffset": 108,
+        "len": 5,
+        "text": "hGITR"
+      },
+      {
+        "id": "AIMed.d28.s234.e4",
+        "charOffset": 199,
+        "len": 5,
+        "text": "mGITR"
+      },
+      {
+        "id": "AIMed.d28.s234.e5",
+        "charOffset": 162,
+        "len": 51,
+        "text": "glucocorticoid-induced TNFR-related (mGITR) protein"
+      }
+    ]
+  },
+  {
+    "interacts": false,
+    "text": "We have identified a new TNF-related ligand, designated human GITR ligand (hGITRL), and its human receptor (hGITR), an ortholog of the recently discovered murine glucocorticoid-induced TNFR-related (mGITR) protein [4].",
+    "participant1Id": "AIMed.d28.s234.e0",
+    "participant1Offset": 62,
+    "participant1Len": 4,
+    "participant1Text": "GITR",
+    "participant2Id": "AIMed.d28.s234.e3",
+    "participant2Offset": 108,
+    "participant2Len": 5,
+    "participant2Text": "hGITR",
+    "documentId": "AIMed.d28",
+    "sentenceId": "AIMed.d28.s234",
+    "otherEntities": [
+      {
+        "id": "AIMed.d28.s234.e1",
+        "charOffset": 62,
+        "len": 11,
+        "text": "GITR ligand"
+      },
+      {
+        "id": "AIMed.d28.s234.e2",
+        "charOffset": 75,
+        "len": 6,
+        "text": "hGITRL"
+      },
+      {
+        "id": "AIMed.d28.s234.e4",
+        "charOffset": 199,
+        "len": 5,
+        "text": "mGITR"
+      },
+      {
+        "id": "AIMed.d28.s234.e5",
+        "charOffset": 162,
+        "len": 51,
+        "text": "glucocorticoid-induced TNFR-related (mGITR) protein"
+      }
+    ]
+  },
+  {
+    "interacts": false,
+    "text": "We have identified a new TNF-related ligand, designated human GITR ligand (hGITRL), and its human receptor (hGITR), an ortholog of the recently discovered murine glucocorticoid-induced TNFR-related (mGITR) protein [4].",
+    "participant1Id": "AIMed.d28.s234.e0",
+    "participant1Offset": 62,
+    "participant1Len": 4,
+    "participant1Text": "GITR",
+    "participant2Id": "AIMed.d28.s234.e4",
+    "participant2Offset": 199,
+    "participant2Len": 5,
+    "participant2Text": "mGITR",
+    "documentId": "AIMed.d28",
+    "sentenceId": "AIMed.d28.s234",
+    "otherEntities": [
+      {
+        "id": "AIMed.d28.s234.e1",
+        "charOffset": 62,
+        "len": 11,
+        "text": "GITR ligand"
+      },
+      {
+        "id": "AIMed.d28.s234.e2",
+        "charOffset": 75,
+        "len": 6,
+        "text": "hGITRL"
+      },
+      {
+        "id": "AIMed.d28.s234.e3",
+        "charOffset": 108,
+        "len": 5,
+        "text": "hGITR"
+      },
+      {
+        "id": "AIMed.d28.s234.e5",
+        "charOffset": 162,
+        "len": 51,
+        "text": "glucocorticoid-induced TNFR-related (mGITR) protein"
+      }
+    ]
+  },
+  {
+    "interacts": false,
+    "text": "We have identified a new TNF-related ligand, designated human GITR ligand (hGITRL), and its human receptor (hGITR), an ortholog of the recently discovered murine glucocorticoid-induced TNFR-related (mGITR) protein [4].",
+    "participant1Id": "AIMed.d28.s234.e0",
+    "participant1Offset": 62,
+    "participant1Len": 4,
+    "participant1Text": "GITR",
+    "participant2Id": "AIMed.d28.s234.e5",
+    "participant2Offset": 162,
+    "participant2Len": 51,
+    "participant2Text": "glucocorticoid-induced TNFR-related (mGITR) protein",
+    "documentId": "AIMed.d28",
+    "sentenceId": "AIMed.d28.s234",
+    "otherEntities": [
+      {
+        "id": "AIMed.d28.s234.e1",
+        "charOffset": 62,
+        "len": 11,
+        "text": "GITR ligand"
+      },
+      {
+        "id": "AIMed.d28.s234.e2",
+        "charOffset": 75,
+        "len": 6,
+        "text": "hGITRL"
+      },
+      {
+        "id": "AIMed.d28.s234.e3",
+        "charOffset": 108,
+        "len": 5,
+        "text": "hGITR"
+      },
+      {
+        "id": "AIMed.d28.s234.e4",
+        "charOffset": 199,
+        "len": 5,
+        "text": "mGITR"
+      }
+    ]
+  },
+  {
+    "interacts": false,
+    "text": "We have identified a new TNF-related ligand, designated human GITR ligand (hGITRL), and its human receptor (hGITR), an ortholog of the recently discovered murine glucocorticoid-induced TNFR-related (mGITR) protein [4].",
+    "participant1Id": "AIMed.d28.s234.e1",
+    "participant1Offset": 62,
+    "participant1Len": 11,
+    "participant1Text": "GITR ligand",
+    "participant2Id": "AIMed.d28.s234.e2",
+    "participant2Offset": 75,
+    "participant2Len": 6,
+    "participant2Text": "hGITRL",
+    "documentId": "AIMed.d28",
+    "sentenceId": "AIMed.d28.s234",
+    "otherEntities": [
+      {
+        "id": "AIMed.d28.s234.e0",
+        "charOffset": 62,
+        "len": 4,
+        "text": "GITR"
+      },
+      {
+        "id": "AIMed.d28.s234.e3",
+        "charOffset": 108,
+        "len": 5,
+        "text": "hGITR"
+      },
+      {
+        "id": "AIMed.d28.s234.e4",
+        "charOffset": 199,
+        "len": 5,
+        "text": "mGITR"
+      },
+      {
+        "id": "AIMed.d28.s234.e5",
+        "charOffset": 162,
+        "len": 51,
+        "text": "glucocorticoid-induced TNFR-related (mGITR) protein"
+      }
+    ]
+  },
+  {
+    "interacts": true,
+    "text": "We have identified a new TNF-related ligand, designated human GITR ligand (hGITRL), and its human receptor (hGITR), an ortholog of the recently discovered murine glucocorticoid-induced TNFR-related (mGITR) protein [4].",
+    "participant1Id": "AIMed.d28.s234.e1",
+    "participant1Offset": 62,
+    "participant1Len": 11,
+    "participant1Text": "GITR ligand",
+    "participant2Id": "AIMed.d28.s234.e3",
+    "participant2Offset": 108,
+    "participant2Len": 5,
+    "participant2Text": "hGITR",
+    "documentId": "AIMed.d28",
+    "sentenceId": "AIMed.d28.s234",
+    "otherEntities": [
+      {
+        "id": "AIMed.d28.s234.e0",
+        "charOffset": 62,
+        "len": 4,
+        "text": "GITR"
+      },
+      {
+        "id": "AIMed.d28.s234.e2",
+        "charOffset": 75,
+        "len": 6,
+        "text": "hGITRL"
+      },
+      {
+        "id": "AIMed.d28.s234.e4",
+        "charOffset": 199,
+        "len": 5,
+        "text": "mGITR"
+      },
+      {
+        "id": "AIMed.d28.s234.e5",
+        "charOffset": 162,
+        "len": 51,
+        "text": "glucocorticoid-induced TNFR-related (mGITR) protein"
+      }
+    ]
+  },
+  {
+    "interacts": false,
+    "text": "We have identified a new TNF-related ligand, designated human GITR ligand (hGITRL), and its human receptor (hGITR), an ortholog of the recently discovered murine glucocorticoid-induced TNFR-related (mGITR) protein [4].",
+    "participant1Id": "AIMed.d28.s234.e1",
+    "participant1Offset": 62,
+    "participant1Len": 11,
+    "participant1Text": "GITR ligand",
+    "participant2Id": "AIMed.d28.s234.e4",
+    "participant2Offset": 199,
+    "participant2Len": 5,
+    "participant2Text": "mGITR",
+    "documentId": "AIMed.d28",
+    "sentenceId": "AIMed.d28.s234",
+    "otherEntities": [
+      {
+        "id": "AIMed.d28.s234.e0",
+        "charOffset": 62,
+        "len": 4,
+        "text": "GITR"
+      },
+      {
+        "id": "AIMed.d28.s234.e2",
+        "charOffset": 75,
+        "len": 6,
+        "text": "hGITRL"
+      },
+      {
+        "id": "AIMed.d28.s234.e3",
+        "charOffset": 108,
+        "len": 5,
+        "text": "hGITR"
+      },
+      {
+        "id": "AIMed.d28.s234.e5",
+        "charOffset": 162,
+        "len": 51,
+        "text": "glucocorticoid-induced TNFR-related (mGITR) protein"
+      }
+    ]
+  },
+  {
+    "interacts": false,
+    "text": "We have identified a new TNF-related ligand, designated human GITR ligand (hGITRL), and its human receptor (hGITR), an ortholog of the recently discovered murine glucocorticoid-induced TNFR-related (mGITR) protein [4].",
+    "participant1Id": "AIMed.d28.s234.e1",
+    "participant1Offset": 62,
+    "participant1Len": 11,
+    "participant1Text": "GITR ligand",
+    "participant2Id": "AIMed.d28.s234.e5",
+    "participant2Offset": 162,
+    "participant2Len": 51,
+    "participant2Text": "glucocorticoid-induced TNFR-related (mGITR) protein",
+    "documentId": "AIMed.d28",
+    "sentenceId": "AIMed.d28.s234",
+    "otherEntities": [
+      {
+        "id": "AIMed.d28.s234.e0",
+        "charOffset": 62,
+        "len": 4,
+        "text": "GITR"
+      },
+      {
+        "id": "AIMed.d28.s234.e2",
+        "charOffset": 75,
+        "len": 6,
+        "text": "hGITRL"
+      },
+      {
+        "id": "AIMed.d28.s234.e3",
+        "charOffset": 108,
+        "len": 5,
+        "text": "hGITR"
+      },
+      {
+        "id": "AIMed.d28.s234.e4",
+        "charOffset": 199,
+        "len": 5,
+        "text": "mGITR"
+      }
+    ]
+  },
+  {
+    "interacts": true,
+    "text": "We have identified a new TNF-related ligand, designated human GITR ligand (hGITRL), and its human receptor (hGITR), an ortholog of the recently discovered murine glucocorticoid-induced TNFR-related (mGITR) protein [4].",
+    "participant1Id": "AIMed.d28.s234.e2",
+    "participant1Offset": 75,
+    "participant1Len": 6,
+    "participant1Text": "hGITRL",
+    "participant2Id": "AIMed.d28.s234.e3",
+    "participant2Offset": 108,
+    "participant2Len": 5,
+    "participant2Text": "hGITR",
+    "documentId": "AIMed.d28",
+    "sentenceId": "AIMed.d28.s234",
+    "otherEntities": [
+      {
+        "id": "AIMed.d28.s234.e0",
+        "charOffset": 62,
+        "len": 4,
+        "text": "GITR"
+      },
+      {
+        "id": "AIMed.d28.s234.e1",
+        "charOffset": 62,
+        "len": 11,
+        "text": "GITR ligand"
+      },
+      {
+        "id": "AIMed.d28.s234.e4",
+        "charOffset": 199,
+        "len": 5,
+        "text": "mGITR"
+      },
+      {
+        "id": "AIMed.d28.s234.e5",
+        "charOffset": 162,
+        "len": 51,
+        "text": "glucocorticoid-induced TNFR-related (mGITR) protein"
+      }
+    ]
+  },
+  {
+    "interacts": false,
+    "text": "We have identified a new TNF-related ligand, designated human GITR ligand (hGITRL), and its human receptor (hGITR), an ortholog of the recently discovered murine glucocorticoid-induced TNFR-related (mGITR) protein [4].",
+    "participant1Id": "AIMed.d28.s234.e2",
+    "participant1Offset": 75,
+    "participant1Len": 6,
+    "participant1Text": "hGITRL",
+    "participant2Id": "AIMed.d28.s234.e4",
+    "participant2Offset": 199,
+    "participant2Len": 5,
+    "participant2Text": "mGITR",
+    "documentId": "AIMed.d28",
+    "sentenceId": "AIMed.d28.s234",
+    "otherEntities": [
+      {
+        "id": "AIMed.d28.s234.e0",
+        "charOffset": 62,
+        "len": 4,
+        "text": "GITR"
+      },
+      {
+        "id": "AIMed.d28.s234.e1",
+        "charOffset": 62,
+        "len": 11,
+        "text": "GITR ligand"
+      },
+      {
+        "id": "AIMed.d28.s234.e3",
+        "charOffset": 108,
+        "len": 5,
+        "text": "hGITR"
+      },
+      {
+        "id": "AIMed.d28.s234.e5",
+        "charOffset": 162,
+        "len": 51,
+        "text": "glucocorticoid-induced TNFR-related (mGITR) protein"
+      }
+    ]
+  },
+  {
+    "interacts": false,
+    "text": "We have identified a new TNF-related ligand, designated human GITR ligand (hGITRL), and its human receptor (hGITR), an ortholog of the recently discovered murine glucocorticoid-induced TNFR-related (mGITR) protein [4].",
+    "participant1Id": "AIMed.d28.s234.e2",
+    "participant1Offset": 75,
+    "participant1Len": 6,
+    "participant1Text": "hGITRL",
+    "participant2Id": "AIMed.d28.s234.e5",
+    "participant2Offset": 162,
+    "participant2Len": 51,
+    "participant2Text": "glucocorticoid-induced TNFR-related (mGITR) protein",
+    "documentId": "AIMed.d28",
+    "sentenceId": "AIMed.d28.s234",
+    "otherEntities": [
+      {
+        "id": "AIMed.d28.s234.e0",
+        "charOffset": 62,
+        "len": 4,
+        "text": "GITR"
+      },
+      {
+        "id": "AIMed.d28.s234.e1",
+        "charOffset": 62,
+        "len": 11,
+        "text": "GITR ligand"
+      },
+      {
+        "id": "AIMed.d28.s234.e3",
+        "charOffset": 108,
+        "len": 5,
+        "text": "hGITR"
+      },
+      {
+        "id": "AIMed.d28.s234.e4",
+        "charOffset": 199,
+        "len": 5,
+        "text": "mGITR"
+      }
+    ]
+  },
+  {
+    "interacts": false,
+    "text": "We have identified a new TNF-related ligand, designated human GITR ligand (hGITRL), and its human receptor (hGITR), an ortholog of the recently discovered murine glucocorticoid-induced TNFR-related (mGITR) protein [4].",
+    "participant1Id": "AIMed.d28.s234.e3",
+    "participant1Offset": 108,
+    "participant1Len": 5,
+    "participant1Text": "hGITR",
+    "participant2Id": "AIMed.d28.s234.e4",
+    "participant2Offset": 199,
+    "participant2Len": 5,
+    "participant2Text": "mGITR",
+    "documentId": "AIMed.d28",
+    "sentenceId": "AIMed.d28.s234",
+    "otherEntities": [
+      {
+        "id": "AIMed.d28.s234.e0",
+        "charOffset": 62,
+        "len": 4,
+        "text": "GITR"
+      },
+      {
+        "id": "AIMed.d28.s234.e1",
+        "charOffset": 62,
+        "len": 11,
+        "text": "GITR ligand"
+      },
+      {
+        "id": "AIMed.d28.s234.e2",
+        "charOffset": 75,
+        "len": 6,
+        "text": "hGITRL"
+      },
+      {
+        "id": "AIMed.d28.s234.e5",
+        "charOffset": 162,
+        "len": 51,
+        "text": "glucocorticoid-induced TNFR-related (mGITR) protein"
+      }
+    ]
+  },
+  {
+    "interacts": false,
+    "text": "We have identified a new TNF-related ligand, designated human GITR ligand (hGITRL), and its human receptor (hGITR), an ortholog of the recently discovered murine glucocorticoid-induced TNFR-related (mGITR) protein [4].",
+    "participant1Id": "AIMed.d28.s234.e3",
+    "participant1Offset": 108,
+    "participant1Len": 5,
+    "participant1Text": "hGITR",
+    "participant2Id": "AIMed.d28.s234.e5",
+    "participant2Offset": 162,
+    "participant2Len": 51,
+    "participant2Text": "glucocorticoid-induced TNFR-related (mGITR) protein",
+    "documentId": "AIMed.d28",
+    "sentenceId": "AIMed.d28.s234",
+    "otherEntities": [
+      {
+        "id": "AIMed.d28.s234.e0",
+        "charOffset": 62,
+        "len": 4,
+        "text": "GITR"
+      },
+      {
+        "id": "AIMed.d28.s234.e1",
+        "charOffset": 62,
+        "len": 11,
+        "text": "GITR ligand"
+      },
+      {
+        "id": "AIMed.d28.s234.e2",
+        "charOffset": 75,
+        "len": 6,
+        "text": "hGITRL"
+      },
+      {
+        "id": "AIMed.d28.s234.e4",
+        "charOffset": 199,
+        "len": 5,
+        "text": "mGITR"
+      }
+    ]
+  },
+  {
+    "interacts": false,
+    "text": "We have identified a new TNF-related ligand, designated human GITR ligand (hGITRL), and its human receptor (hGITR), an ortholog of the recently discovered murine glucocorticoid-induced TNFR-related (mGITR) protein [4].",
+    "participant1Id": "AIMed.d28.s234.e4",
+    "participant1Offset": 199,
+    "participant1Len": 5,
+    "participant1Text": "mGITR",
+    "participant2Id": "AIMed.d28.s234.e5",
+    "participant2Offset": 162,
+    "participant2Len": 51,
+    "participant2Text": "glucocorticoid-induced TNFR-related (mGITR) protein",
+    "documentId": "AIMed.d28",
+    "sentenceId": "AIMed.d28.s234",
+    "otherEntities": [
+      {
+        "id": "AIMed.d28.s234.e0",
+        "charOffset": 62,
+        "len": 4,
+        "text": "GITR"
+      },
+      {
+        "id": "AIMed.d28.s234.e1",
+        "charOffset": 62,
+        "len": 11,
+        "text": "GITR ligand"
+      },
+      {
+        "id": "AIMed.d28.s234.e2",
+        "charOffset": 75,
+        "len": 6,
+        "text": "hGITRL"
+      },
+      {
+        "id": "AIMed.d28.s234.e3",
+        "charOffset": 108,
+        "len": 5,
+        "text": "hGITR"
+      }
+    ]
+  },
+  {
+    "interacts": false,
+    "text": "The hGITRL gene mapped to chromosome 1q23, near the gene for the TNF homolog Fas/CD95 ligand [5].",
+    "participant1Id": "AIMed.d28.s235.e0",
+    "participant1Offset": 4,
+    "participant1Len": 6,
+    "participant1Text": "hGITRL",
+    "participant2Id": "AIMed.d28.s235.e1",
+    "participant2Offset": 77,
+    "participant2Len": 3,
+    "participant2Text": "Fas",
+    "documentId": "AIMed.d28",
+    "sentenceId": "AIMed.d28.s235",
+    "otherEntities": [
+      {
+        "id": "AIMed.d28.s235.e2",
+        "charOffset": 81,
+        "len": 11,
+        "text": "CD95 ligand"
+      }
+    ]
+  },
+  {
+    "interacts": false,
+    "text": "The hGITRL gene mapped to chromosome 1q23, near the gene for the TNF homolog Fas/CD95 ligand [5].",
+    "participant1Id": "AIMed.d28.s235.e0",
+    "participant1Offset": 4,
+    "participant1Len": 6,
+    "participant1Text": "hGITRL",
+    "participant2Id": "AIMed.d28.s235.e2",
+    "participant2Offset": 81,
+    "participant2Len": 11,
+    "participant2Text": "CD95 ligand",
+    "documentId": "AIMed.d28",
+    "sentenceId": "AIMed.d28.s235",
+    "otherEntities": [
+      {
+        "id": "AIMed.d28.s235.e1",
+        "charOffset": 77,
+        "len": 3,
+        "text": "Fas"
+      }
+    ]
+  },
+  {
+    "interacts": false,
+    "text": "The hGITRL gene mapped to chromosome 1q23, near the gene for the TNF homolog Fas/CD95 ligand [5].",
+    "participant1Id": "AIMed.d28.s235.e1",
+    "participant1Offset": 77,
+    "participant1Len": 3,
+    "participant1Text": "Fas",
+    "participant2Id": "AIMed.d28.s235.e2",
+    "participant2Offset": 81,
+    "participant2Len": 11,
+    "participant2Text": "CD95 ligand",
+    "documentId": "AIMed.d28",
+    "sentenceId": "AIMed.d28.s235",
+    "otherEntities": [
+      {
+        "id": "AIMed.d28.s235.e0",
+        "charOffset": 4,
+        "len": 6,
+        "text": "hGITRL"
+      }
+    ]
+  },
+  {
+    "interacts": false,
+    "text": "We found hGITRL mRNA in several peripheral tissues, and detected hGITRL protein on cultured vascular endothelial cells.",
+    "participant1Id": "AIMed.d28.s237.e0",
+    "participant1Offset": 9,
+    "participant1Len": 6,
+    "participant1Text": "hGITRL",
+    "participant2Id": "AIMed.d28.s237.e1",
+    "participant2Offset": 65,
+    "participant2Len": 6,
+    "participant2Text": "hGITRL",
+    "documentId": "AIMed.d28",
+    "sentenceId": "AIMed.d28.s237",
+    "otherEntities": []
+  },
+  {
+    "interacts": false,
+    "text": "The levels of hGITR mRNA in tissues were generally low; in peripheral blood T cells, however, antigen-receptor stimulation led to a substantial induction of hGITR transcripts.",
+    "participant1Id": "AIMed.d28.s238.e0",
+    "participant1Offset": 14,
+    "participant1Len": 5,
+    "participant1Text": "hGITR",
+    "participant2Id": "AIMed.d28.s238.e1",
+    "participant2Offset": 157,
+    "participant2Len": 5,
+    "participant2Text": "hGITR",
+    "documentId": "AIMed.d28",
+    "sentenceId": "AIMed.d28.s238",
+    "otherEntities": []
+  },
+  {
+    "interacts": false,
+    "text": "Cotransfection of hGITRL and hGITR in embryonic kidney 293 cells activated the anti-apoptotic transcription factor NF-kappaB, via a pathway that appeared to involve TNFR-associated factor 2 (TRAF2) [7] and NF-kappaB-inducing kinase (NIK) [8].",
+    "participant1Id": "AIMed.d28.s239.e0",
+    "participant1Offset": 18,
+    "participant1Len": 6,
+    "participant1Text": "hGITRL",
+    "participant2Id": "AIMed.d28.s239.e1",
+    "participant2Offset": 29,
+    "participant2Len": 5,
+    "participant2Text": "hGITR",
+    "documentId": "AIMed.d28",
+    "sentenceId": "AIMed.d28.s239",
+    "otherEntities": [
+      {
+        "id": "AIMed.d28.s239.e2",
+        "charOffset": 115,
+        "len": 9,
+        "text": "NF-kappaB"
+      },
+      {
+        "id": "AIMed.d28.s239.e3",
+        "charOffset": 165,
+        "len": 24,
+        "text": "TNFR-associated factor 2"
+      },
+      {
+        "id": "AIMed.d28.s239.e4",
+        "charOffset": 191,
+        "len": 5,
+        "text": "TRAF2"
+      },
+      {
+        "id": "AIMed.d28.s239.e5",
+        "charOffset": 206,
+        "len": 9,
+        "text": "NF-kappaB"
+      },
+      {
+        "id": "AIMed.d28.s239.e6",
+        "charOffset": 206,
+        "len": 25,
+        "text": "NF-kappaB-inducing kinase"
+      },
+      {
+        "id": "AIMed.d28.s239.e7",
+        "charOffset": 233,
+        "len": 3,
+        "text": "NIK"
+      }
+    ]
+  },
+  {
+    "interacts": false,
+    "text": "Cotransfection of hGITRL and hGITR in embryonic kidney 293 cells activated the anti-apoptotic transcription factor NF-kappaB, via a pathway that appeared to involve TNFR-associated factor 2 (TRAF2) [7] and NF-kappaB-inducing kinase (NIK) [8].",
+    "participant1Id": "AIMed.d28.s239.e0",
+    "participant1Offset": 18,
+    "participant1Len": 6,
+    "participant1Text": "hGITRL",
+    "participant2Id": "AIMed.d28.s239.e2",
+    "participant2Offset": 115,
+    "participant2Len": 9,
+    "participant2Text": "NF-kappaB",
+    "documentId": "AIMed.d28",
+    "sentenceId": "AIMed.d28.s239",
+    "otherEntities": [
+      {
+        "id": "AIMed.d28.s239.e1",
+        "charOffset": 29,
+        "len": 5,
+        "text": "hGITR"
+      },
+      {
+        "id": "AIMed.d28.s239.e3",
+        "charOffset": 165,
+        "len": 24,
+        "text": "TNFR-associated factor 2"
+      },
+      {
+        "id": "AIMed.d28.s239.e4",
+        "charOffset": 191,
+        "len": 5,
+        "text": "TRAF2"
+      },
+      {
+        "id": "AIMed.d28.s239.e5",
+        "charOffset": 206,
+        "len": 9,
+        "text": "NF-kappaB"
+      },
+      {
+        "id": "AIMed.d28.s239.e6",
+        "charOffset": 206,
+        "len": 25,
+        "text": "NF-kappaB-inducing kinase"
+      },
+      {
+        "id": "AIMed.d28.s239.e7",
+        "charOffset": 233,
+        "len": 3,
+        "text": "NIK"
+      }
+    ]
+  },
+  {
+    "interacts": false,
+    "text": "Cotransfection of hGITRL and hGITR in embryonic kidney 293 cells activated the anti-apoptotic transcription factor NF-kappaB, via a pathway that appeared to involve TNFR-associated factor 2 (TRAF2) [7] and NF-kappaB-inducing kinase (NIK) [8].",
+    "participant1Id": "AIMed.d28.s239.e0",
+    "participant1Offset": 18,
+    "participant1Len": 6,
+    "participant1Text": "hGITRL",
+    "participant2Id": "AIMed.d28.s239.e3",
+    "participant2Offset": 165,
+    "participant2Len": 24,
+    "participant2Text": "TNFR-associated factor 2",
+    "documentId": "AIMed.d28",
+    "sentenceId": "AIMed.d28.s239",
+    "otherEntities": [
+      {
+        "id": "AIMed.d28.s239.e1",
+        "charOffset": 29,
+        "len": 5,
+        "text": "hGITR"
+      },
+      {
+        "id": "AIMed.d28.s239.e2",
+        "charOffset": 115,
+        "len": 9,
+        "text": "NF-kappaB"
+      },
+      {
+        "id": "AIMed.d28.s239.e4",
+        "charOffset": 191,
+        "len": 5,
+        "text": "TRAF2"
+      },
+      {
+        "id": "AIMed.d28.s239.e5",
+        "charOffset": 206,
+        "len": 9,
+        "text": "NF-kappaB"
+      },
+      {
+        "id": "AIMed.d28.s239.e6",
+        "charOffset": 206,
+        "len": 25,
+        "text": "NF-kappaB-inducing kinase"
+      },
+      {
+        "id": "AIMed.d28.s239.e7",
+        "charOffset": 233,
+        "len": 3,
+        "text": "NIK"
+      }
+    ]
+  },
+  {
+    "interacts": false,
+    "text": "Cotransfection of hGITRL and hGITR in embryonic kidney 293 cells activated the anti-apoptotic transcription factor NF-kappaB, via a pathway that appeared to involve TNFR-associated factor 2 (TRAF2) [7] and NF-kappaB-inducing kinase (NIK) [8].",
+    "participant1Id": "AIMed.d28.s239.e0",
+    "participant1Offset": 18,
+    "participant1Len": 6,
+    "participant1Text": "hGITRL",
+    "participant2Id": "AIMed.d28.s239.e4",
+    "participant2Offset": 191,
+    "participant2Len": 5,
+    "participant2Text": "TRAF2",
+    "documentId": "AIMed.d28",
+    "sentenceId": "AIMed.d28.s239",
+    "otherEntities": [
+      {
+        "id": "AIMed.d28.s239.e1",
+        "charOffset": 29,
+        "len": 5,
+        "text": "hGITR"
+      },
+      {
+        "id": "AIMed.d28.s239.e2",
+        "charOffset": 115,
+        "len": 9,
+        "text": "NF-kappaB"
+      },
+      {
+        "id": "AIMed.d28.s239.e3",
+        "charOffset": 165,
+        "len": 24,
+        "text": "TNFR-associated factor 2"
+      },
+      {
+        "id": "AIMed.d28.s239.e5",
+        "charOffset": 206,
+        "len": 9,
+        "text": "NF-kappaB"
+      },
+      {
+        "id": "AIMed.d28.s239.e6",
+        "charOffset": 206,
+        "len": 25,
+        "text": "NF-kappaB-inducing kinase"
+      },
+      {
+        "id": "AIMed.d28.s239.e7",
+        "charOffset": 233,
+        "len": 3,
+        "text": "NIK"
+      }
+    ]
+  },
+  {
+    "interacts": false,
+    "text": "Cotransfection of hGITRL and hGITR in embryonic kidney 293 cells activated the anti-apoptotic transcription factor NF-kappaB, via a pathway that appeared to involve TNFR-associated factor 2 (TRAF2) [7] and NF-kappaB-inducing kinase (NIK) [8].",
+    "participant1Id": "AIMed.d28.s239.e0",
+    "participant1Offset": 18,
+    "participant1Len": 6,
+    "participant1Text": "hGITRL",
+    "participant2Id": "AIMed.d28.s239.e5",
+    "participant2Offset": 206,
+    "participant2Len": 9,
+    "participant2Text": "NF-kappaB",
+    "documentId": "AIMed.d28",
+    "sentenceId": "AIMed.d28.s239",
+    "otherEntities": [
+      {
+        "id": "AIMed.d28.s239.e1",
+        "charOffset": 29,
+        "len": 5,
+        "text": "hGITR"
+      },
+      {
+        "id": "AIMed.d28.s239.e2",
+        "charOffset": 115,
+        "len": 9,
+        "text": "NF-kappaB"
+      },
+      {
+        "id": "AIMed.d28.s239.e3",
+        "charOffset": 165,
+        "len": 24,
+        "text": "TNFR-associated factor 2"
+      },
+      {
+        "id": "AIMed.d28.s239.e4",
+        "charOffset": 191,
+        "len": 5,
+        "text": "TRAF2"
+      },
+      {
+        "id": "AIMed.d28.s239.e6",
+        "charOffset": 206,
+        "len": 25,
+        "text": "NF-kappaB-inducing kinase"
+      },
+      {
+        "id": "AIMed.d28.s239.e7",
+        "charOffset": 233,
+        "len": 3,
+        "text": "NIK"
+      }
+    ]
+  },
+  {
+    "interacts": false,
+    "text": "Cotransfection of hGITRL and hGITR in embryonic kidney 293 cells activated the anti-apoptotic transcription factor NF-kappaB, via a pathway that appeared to involve TNFR-associated factor 2 (TRAF2) [7] and NF-kappaB-inducing kinase (NIK) [8].",
+    "participant1Id": "AIMed.d28.s239.e0",
+    "participant1Offset": 18,
+    "participant1Len": 6,
+    "participant1Text": "hGITRL",
+    "participant2Id": "AIMed.d28.s239.e6",
+    "participant2Offset": 206,
+    "participant2Len": 25,
+    "participant2Text": "NF-kappaB-inducing kinase",
+    "documentId": "AIMed.d28",
+    "sentenceId": "AIMed.d28.s239",
+    "otherEntities": [
+      {
+        "id": "AIMed.d28.s239.e1",
+        "charOffset": 29,
+        "len": 5,
+        "text": "hGITR"
+      },
+      {
+        "id": "AIMed.d28.s239.e2",
+        "charOffset": 115,
+        "len": 9,
+        "text": "NF-kappaB"
+      },
+      {
+        "id": "AIMed.d28.s239.e3",
+        "charOffset": 165,
+        "len": 24,
+        "text": "TNFR-associated factor 2"
+      },
+      {
+        "id": "AIMed.d28.s239.e4",
+        "charOffset": 191,
+        "len": 5,
+        "text": "TRAF2"
+      },
+      {
+        "id": "AIMed.d28.s239.e5",
+        "charOffset": 206,
+        "len": 9,
+        "text": "NF-kappaB"
+      },
+      {
+        "id": "AIMed.d28.s239.e7",
+        "charOffset": 233,
+        "len": 3,
+        "text": "NIK"
+      }
+    ]
+  },
+  {
+    "interacts": false,
+    "text": "Cotransfection of hGITRL and hGITR in embryonic kidney 293 cells activated the anti-apoptotic transcription factor NF-kappaB, via a pathway that appeared to involve TNFR-associated factor 2 (TRAF2) [7] and NF-kappaB-inducing kinase (NIK) [8].",
+    "participant1Id": "AIMed.d28.s239.e0",
+    "participant1Offset": 18,
+    "participant1Len": 6,
+    "participant1Text": "hGITRL",
+    "participant2Id": "AIMed.d28.s239.e7",
+    "participant2Offset": 233,
+    "participant2Len": 3,
+    "participant2Text": "NIK",
+    "documentId": "AIMed.d28",
+    "sentenceId": "AIMed.d28.s239",
+    "otherEntities": [
+      {
+        "id": "AIMed.d28.s239.e1",
+        "charOffset": 29,
+        "len": 5,
+        "text": "hGITR"
+      },
+      {
+        "id": "AIMed.d28.s239.e2",
+        "charOffset": 115,
+        "len": 9,
+        "text": "NF-kappaB"
+      },
+      {
+        "id": "AIMed.d28.s239.e3",
+        "charOffset": 165,
+        "len": 24,
+        "text": "TNFR-associated factor 2"
+      },
+      {
+        "id": "AIMed.d28.s239.e4",
+        "charOffset": 191,
+        "len": 5,
+        "text": "TRAF2"
+      },
+      {
+        "id": "AIMed.d28.s239.e5",
+        "charOffset": 206,
+        "len": 9,
+        "text": "NF-kappaB"
+      },
+      {
+        "id": "AIMed.d28.s239.e6",
+        "charOffset": 206,
+        "len": 25,
+        "text": "NF-kappaB-inducing kinase"
+      }
+    ]
+  },
+  {
+    "interacts": false,
+    "text": "Cotransfection of hGITRL and hGITR in embryonic kidney 293 cells activated the anti-apoptotic transcription factor NF-kappaB, via a pathway that appeared to involve TNFR-associated factor 2 (TRAF2) [7] and NF-kappaB-inducing kinase (NIK) [8].",
+    "participant1Id": "AIMed.d28.s239.e1",
+    "participant1Offset": 29,
+    "participant1Len": 5,
+    "participant1Text": "hGITR",
+    "participant2Id": "AIMed.d28.s239.e2",
+    "participant2Offset": 115,
+    "participant2Len": 9,
+    "participant2Text": "NF-kappaB",
+    "documentId": "AIMed.d28",
+    "sentenceId": "AIMed.d28.s239",
+    "otherEntities": [
+      {
+        "id": "AIMed.d28.s239.e0",
+        "charOffset": 18,
+        "len": 6,
+        "text": "hGITRL"
+      },
+      {
+        "id": "AIMed.d28.s239.e3",
+        "charOffset": 165,
+        "len": 24,
+        "text": "TNFR-associated factor 2"
+      },
+      {
+        "id": "AIMed.d28.s239.e4",
+        "charOffset": 191,
+        "len": 5,
+        "text": "TRAF2"
+      },
+      {
+        "id": "AIMed.d28.s239.e5",
+        "charOffset": 206,
+        "len": 9,
+        "text": "NF-kappaB"
+      },
+      {
+        "id": "AIMed.d28.s239.e6",
+        "charOffset": 206,
+        "len": 25,
+        "text": "NF-kappaB-inducing kinase"
+      },
+      {
+        "id": "AIMed.d28.s239.e7",
+        "charOffset": 233,
+        "len": 3,
+        "text": "NIK"
+      }
+    ]
+  },
+  {
+    "interacts": false,
+    "text": "Cotransfection of hGITRL and hGITR in embryonic kidney 293 cells activated the anti-apoptotic transcription factor NF-kappaB, via a pathway that appeared to involve TNFR-associated factor 2 (TRAF2) [7] and NF-kappaB-inducing kinase (NIK) [8].",
+    "participant1Id": "AIMed.d28.s239.e1",
+    "participant1Offset": 29,
+    "participant1Len": 5,
+    "participant1Text": "hGITR",
+    "participant2Id": "AIMed.d28.s239.e3",
+    "participant2Offset": 165,
+    "participant2Len": 24,
+    "participant2Text": "TNFR-associated factor 2",
+    "documentId": "AIMed.d28",
+    "sentenceId": "AIMed.d28.s239",
+    "otherEntities": [
+      {
+        "id": "AIMed.d28.s239.e0",
+        "charOffset": 18,
+        "len": 6,
+        "text": "hGITRL"
+      },
+      {
+        "id": "AIMed.d28.s239.e2",
+        "charOffset": 115,
+        "len": 9,
+        "text": "NF-kappaB"
+      },
+      {
+        "id": "AIMed.d28.s239.e4",
+        "charOffset": 191,
+        "len": 5,
+        "text": "TRAF2"
+      },
+      {
+        "id": "AIMed.d28.s239.e5",
+        "charOffset": 206,
+        "len": 9,
+        "text": "NF-kappaB"
+      },
+      {
+        "id": "AIMed.d28.s239.e6",
+        "charOffset": 206,
+        "len": 25,
+        "text": "NF-kappaB-inducing kinase"
+      },
+      {
+        "id": "AIMed.d28.s239.e7",
+        "charOffset": 233,
+        "len": 3,
+        "text": "NIK"
+      }
+    ]
+  },
+  {
+    "interacts": false,
+    "text": "Cotransfection of hGITRL and hGITR in embryonic kidney 293 cells activated the anti-apoptotic transcription factor NF-kappaB, via a pathway that appeared to involve TNFR-associated factor 2 (TRAF2) [7] and NF-kappaB-inducing kinase (NIK) [8].",
+    "participant1Id": "AIMed.d28.s239.e1",
+    "participant1Offset": 29,
+    "participant1Len": 5,
+    "participant1Text": "hGITR",
+    "participant2Id": "AIMed.d28.s239.e4",
+    "participant2Offset": 191,
+    "participant2Len": 5,
+    "participant2Text": "TRAF2",
+    "documentId": "AIMed.d28",
+    "sentenceId": "AIMed.d28.s239",
+    "otherEntities": [
+      {
+        "id": "AIMed.d28.s239.e0",
+        "charOffset": 18,
+        "len": 6,
+        "text": "hGITRL"
+      },
+      {
+        "id": "AIMed.d28.s239.e2",
+        "charOffset": 115,
+        "len": 9,
+        "text": "NF-kappaB"
+      },
+      {
+        "id": "AIMed.d28.s239.e3",
+        "charOffset": 165,
+        "len": 24,
+        "text": "TNFR-associated factor 2"
+      },
+      {
+        "id": "AIMed.d28.s239.e5",
+        "charOffset": 206,
+        "len": 9,
+        "text": "NF-kappaB"
+      },
+      {
+        "id": "AIMed.d28.s239.e6",
+        "charOffset": 206,
+        "len": 25,
+        "text": "NF-kappaB-inducing kinase"
+      },
+      {
+        "id": "AIMed.d28.s239.e7",
+        "charOffset": 233,
+        "len": 3,
+        "text": "NIK"
+      }
+    ]
+  },
+  {
+    "interacts": false,
+    "text": "Cotransfection of hGITRL and hGITR in embryonic kidney 293 cells activated the anti-apoptotic transcription factor NF-kappaB, via a pathway that appeared to involve TNFR-associated factor 2 (TRAF2) [7] and NF-kappaB-inducing kinase (NIK) [8].",
+    "participant1Id": "AIMed.d28.s239.e1",
+    "participant1Offset": 29,
+    "participant1Len": 5,
+    "participant1Text": "hGITR",
+    "participant2Id": "AIMed.d28.s239.e5",
+    "participant2Offset": 206,
+    "participant2Len": 9,
+    "participant2Text": "NF-kappaB",
+    "documentId": "AIMed.d28",
+    "sentenceId": "AIMed.d28.s239",
+    "otherEntities": [
+      {
+        "id": "AIMed.d28.s239.e0",
+        "charOffset": 18,
+        "len": 6,
+        "text": "hGITRL"
+      },
+      {
+        "id": "AIMed.d28.s239.e2",
+        "charOffset": 115,
+        "len": 9,
+        "text": "NF-kappaB"
+      },
+      {
+        "id": "AIMed.d28.s239.e3",
+        "charOffset": 165,
+        "len": 24,
+        "text": "TNFR-associated factor 2"
+      },
+      {
+        "id": "AIMed.d28.s239.e4",
+        "charOffset": 191,
+        "len": 5,
+        "text": "TRAF2"
+      },
+      {
+        "id": "AIMed.d28.s239.e6",
+        "charOffset": 206,
+        "len": 25,
+        "text": "NF-kappaB-inducing kinase"
+      },
+      {
+        "id": "AIMed.d28.s239.e7",
+        "charOffset": 233,
+        "len": 3,
+        "text": "NIK"
+      }
+    ]
+  },
+  {
+    "interacts": false,
+    "text": "Cotransfection of hGITRL and hGITR in embryonic kidney 293 cells activated the anti-apoptotic transcription factor NF-kappaB, via a pathway that appeared to involve TNFR-associated factor 2 (TRAF2) [7] and NF-kappaB-inducing kinase (NIK) [8].",
+    "participant1Id": "AIMed.d28.s239.e1",
+    "participant1Offset": 29,
+    "participant1Len": 5,
+    "participant1Text": "hGITR",
+    "participant2Id": "AIMed.d28.s239.e6",
+    "participant2Offset": 206,
+    "participant2Len": 25,
+    "participant2Text": "NF-kappaB-inducing kinase",
+    "documentId": "AIMed.d28",
+    "sentenceId": "AIMed.d28.s239",
+    "otherEntities": [
+      {
+        "id": "AIMed.d28.s239.e0",
+        "charOffset": 18,
+        "len": 6,
+        "text": "hGITRL"
+      },
+      {
+        "id": "AIMed.d28.s239.e2",
+        "charOffset": 115,
+        "len": 9,
+        "text": "NF-kappaB"
+      },
+      {
+        "id": "AIMed.d28.s239.e3",
+        "charOffset": 165,
+        "len": 24,
+        "text": "TNFR-associated factor 2"
+      },
+      {
+        "id": "AIMed.d28.s239.e4",
+        "charOffset": 191,
+        "len": 5,
+        "text": "TRAF2"
+      },
+      {
+        "id": "AIMed.d28.s239.e5",
+        "charOffset": 206,
+        "len": 9,
+        "text": "NF-kappaB"
+      },
+      {
+        "id": "AIMed.d28.s239.e7",
+        "charOffset": 233,
+        "len": 3,
+        "text": "NIK"
+      }
+    ]
+  },
+  {
+    "interacts": false,
+    "text": "Cotransfection of hGITRL and hGITR in embryonic kidney 293 cells activated the anti-apoptotic transcription factor NF-kappaB, via a pathway that appeared to involve TNFR-associated factor 2 (TRAF2) [7] and NF-kappaB-inducing kinase (NIK) [8].",
+    "participant1Id": "AIMed.d28.s239.e1",
+    "participant1Offset": 29,
+    "participant1Len": 5,
+    "participant1Text": "hGITR",
+    "participant2Id": "AIMed.d28.s239.e7",
+    "participant2Offset": 233,
+    "participant2Len": 3,
+    "participant2Text": "NIK",
+    "documentId": "AIMed.d28",
+    "sentenceId": "AIMed.d28.s239",
+    "otherEntities": [
+      {
+        "id": "AIMed.d28.s239.e0",
+        "charOffset": 18,
+        "len": 6,
+        "text": "hGITRL"
+      },
+      {
+        "id": "AIMed.d28.s239.e2",
+        "charOffset": 115,
+        "len": 9,
+        "text": "NF-kappaB"
+      },
+      {
+        "id": "AIMed.d28.s239.e3",
+        "charOffset": 165,
+        "len": 24,
+        "text": "TNFR-associated factor 2"
+      },
+      {
+        "id": "AIMed.d28.s239.e4",
+        "charOffset": 191,
+        "len": 5,
+        "text": "TRAF2"
+      },
+      {
+        "id": "AIMed.d28.s239.e5",
+        "charOffset": 206,
+        "len": 9,
+        "text": "NF-kappaB"
+      },
+      {
+        "id": "AIMed.d28.s239.e6",
+        "charOffset": 206,
+        "len": 25,
+        "text": "NF-kappaB-inducing kinase"
+      }
+    ]
+  },
+  {
+    "interacts": false,
+    "text": "Cotransfection of hGITRL and hGITR in embryonic kidney 293 cells activated the anti-apoptotic transcription factor NF-kappaB, via a pathway that appeared to involve TNFR-associated factor 2 (TRAF2) [7] and NF-kappaB-inducing kinase (NIK) [8].",
+    "participant1Id": "AIMed.d28.s239.e2",
+    "participant1Offset": 115,
+    "participant1Len": 9,
+    "participant1Text": "NF-kappaB",
+    "participant2Id": "AIMed.d28.s239.e3",
+    "participant2Offset": 165,
+    "participant2Len": 24,
+    "participant2Text": "TNFR-associated factor 2",
+    "documentId": "AIMed.d28",
+    "sentenceId": "AIMed.d28.s239",
+    "otherEntities": [
+      {
+        "id": "AIMed.d28.s239.e0",
+        "charOffset": 18,
+        "len": 6,
+        "text": "hGITRL"
+      },
+      {
+        "id": "AIMed.d28.s239.e1",
+        "charOffset": 29,
+        "len": 5,
+        "text": "hGITR"
+      },
+      {
+        "id": "AIMed.d28.s239.e4",
+        "charOffset": 191,
+        "len": 5,
+        "text": "TRAF2"
+      },
+      {
+        "id": "AIMed.d28.s239.e5",
+        "charOffset": 206,
+        "len": 9,
+        "text": "NF-kappaB"
+      },
+      {
+        "id": "AIMed.d28.s239.e6",
+        "charOffset": 206,
+        "len": 25,
+        "text": "NF-kappaB-inducing kinase"
+      },
+      {
+        "id": "AIMed.d28.s239.e7",
+        "charOffset": 233,
+        "len": 3,
+        "text": "NIK"
+      }
+    ]
+  },
+  {
+    "interacts": false,
+    "text": "Cotransfection of hGITRL and hGITR in embryonic kidney 293 cells activated the anti-apoptotic transcription factor NF-kappaB, via a pathway that appeared to involve TNFR-associated factor 2 (TRAF2) [7] and NF-kappaB-inducing kinase (NIK) [8].",
+    "participant1Id": "AIMed.d28.s239.e2",
+    "participant1Offset": 115,
+    "participant1Len": 9,
+    "participant1Text": "NF-kappaB",
+    "participant2Id": "AIMed.d28.s239.e4",
+    "participant2Offset": 191,
+    "participant2Len": 5,
+    "participant2Text": "TRAF2",
+    "documentId": "AIMed.d28",
+    "sentenceId": "AIMed.d28.s239",
+    "otherEntities": [
+      {
+        "id": "AIMed.d28.s239.e0",
+        "charOffset": 18,
+        "len": 6,
+        "text": "hGITRL"
+      },
+      {
+        "id": "AIMed.d28.s239.e1",
+        "charOffset": 29,
+        "len": 5,
+        "text": "hGITR"
+      },
+      {
+        "id": "AIMed.d28.s239.e3",
+        "charOffset": 165,
+        "len": 24,
+        "text": "TNFR-associated factor 2"
+      },
+      {
+        "id": "AIMed.d28.s239.e5",
+        "charOffset": 206,
+        "len": 9,
+        "text": "NF-kappaB"
+      },
+      {
+        "id": "AIMed.d28.s239.e6",
+        "charOffset": 206,
+        "len": 25,
+        "text": "NF-kappaB-inducing kinase"
+      },
+      {
+        "id": "AIMed.d28.s239.e7",
+        "charOffset": 233,
+        "len": 3,
+        "text": "NIK"
+      }
+    ]
+  },
+  {
+    "interacts": false,
+    "text": "Cotransfection of hGITRL and hGITR in embryonic kidney 293 cells activated the anti-apoptotic transcription factor NF-kappaB, via a pathway that appeared to involve TNFR-associated factor 2 (TRAF2) [7] and NF-kappaB-inducing kinase (NIK) [8].",
+    "participant1Id": "AIMed.d28.s239.e2",
+    "participant1Offset": 115,
+    "participant1Len": 9,
+    "participant1Text": "NF-kappaB",
+    "participant2Id": "AIMed.d28.s239.e5",
+    "participant2Offset": 206,
+    "participant2Len": 9,
+    "participant2Text": "NF-kappaB",
+    "documentId": "AIMed.d28",
+    "sentenceId": "AIMed.d28.s239",
+    "otherEntities": [
+      {
+        "id": "AIMed.d28.s239.e0",
+        "charOffset": 18,
+        "len": 6,
+        "text": "hGITRL"
+      },
+      {
+        "id": "AIMed.d28.s239.e1",
+        "charOffset": 29,
+        "len": 5,
+        "text": "hGITR"
+      },
+      {
+        "id": "AIMed.d28.s239.e3",
+        "charOffset": 165,
+        "len": 24,
+        "text": "TNFR-associated factor 2"
+      },
+      {
+        "id": "AIMed.d28.s239.e4",
+        "charOffset": 191,
+        "len": 5,
+        "text": "TRAF2"
+      },
+      {
+        "id": "AIMed.d28.s239.e6",
+        "charOffset": 206,
+        "len": 25,
+        "text": "NF-kappaB-inducing kinase"
+      },
+      {
+        "id": "AIMed.d28.s239.e7",
+        "charOffset": 233,
+        "len": 3,
+        "text": "NIK"
+      }
+    ]
+  },
+  {
+    "interacts": false,
+    "text": "Cotransfection of hGITRL and hGITR in embryonic kidney 293 cells activated the anti-apoptotic transcription factor NF-kappaB, via a pathway that appeared to involve TNFR-associated factor 2 (TRAF2) [7] and NF-kappaB-inducing kinase (NIK) [8].",
+    "participant1Id": "AIMed.d28.s239.e2",
+    "participant1Offset": 115,
+    "participant1Len": 9,
+    "participant1Text": "NF-kappaB",
+    "participant2Id": "AIMed.d28.s239.e6",
+    "participant2Offset": 206,
+    "participant2Len": 25,
+    "participant2Text": "NF-kappaB-inducing kinase",
+    "documentId": "AIMed.d28",
+    "sentenceId": "AIMed.d28.s239",
+    "otherEntities": [
+      {
+        "id": "AIMed.d28.s239.e0",
+        "charOffset": 18,
+        "len": 6,
+        "text": "hGITRL"
+      },
+      {
+        "id": "AIMed.d28.s239.e1",
+        "charOffset": 29,
+        "len": 5,
+        "text": "hGITR"
+      },
+      {
+        "id": "AIMed.d28.s239.e3",
+        "charOffset": 165,
+        "len": 24,
+        "text": "TNFR-associated factor 2"
+      },
+      {
+        "id": "AIMed.d28.s239.e4",
+        "charOffset": 191,
+        "len": 5,
+        "text": "TRAF2"
+      },
+      {
+        "id": "AIMed.d28.s239.e5",
+        "charOffset": 206,
+        "len": 9,
+        "text": "NF-kappaB"
+      },
+      {
+        "id": "AIMed.d28.s239.e7",
+        "charOffset": 233,
+        "len": 3,
+        "text": "NIK"
+      }
+    ]
+  },
+  {
+    "interacts": false,
+    "text": "Cotransfection of hGITRL and hGITR in embryonic kidney 293 cells activated the anti-apoptotic transcription factor NF-kappaB, via a pathway that appeared to involve TNFR-associated factor 2 (TRAF2) [7] and NF-kappaB-inducing kinase (NIK) [8].",
+    "participant1Id": "AIMed.d28.s239.e2",
+    "participant1Offset": 115,
+    "participant1Len": 9,
+    "participant1Text": "NF-kappaB",
+    "participant2Id": "AIMed.d28.s239.e7",
+    "participant2Offset": 233,
+    "participant2Len": 3,
+    "participant2Text": "NIK",
+    "documentId": "AIMed.d28",
+    "sentenceId": "AIMed.d28.s239",
+    "otherEntities": [
+      {
+        "id": "AIMed.d28.s239.e0",
+        "charOffset": 18,
+        "len": 6,
+        "text": "hGITRL"
+      },
+      {
+        "id": "AIMed.d28.s239.e1",
+        "charOffset": 29,
+        "len": 5,
+        "text": "hGITR"
+      },
+      {
+        "id": "AIMed.d28.s239.e3",
+        "charOffset": 165,
+        "len": 24,
+        "text": "TNFR-associated factor 2"
+      },
+      {
+        "id": "AIMed.d28.s239.e4",
+        "charOffset": 191,
+        "len": 5,
+        "text": "TRAF2"
+      },
+      {
+        "id": "AIMed.d28.s239.e5",
+        "charOffset": 206,
+        "len": 9,
+        "text": "NF-kappaB"
+      },
+      {
+        "id": "AIMed.d28.s239.e6",
+        "charOffset": 206,
+        "len": 25,
+        "text": "NF-kappaB-inducing kinase"
+      }
+    ]
+  },
+  {
+    "interacts": false,
+    "text": "Cotransfection of hGITRL and hGITR in embryonic kidney 293 cells activated the anti-apoptotic transcription factor NF-kappaB, via a pathway that appeared to involve TNFR-associated factor 2 (TRAF2) [7] and NF-kappaB-inducing kinase (NIK) [8].",
+    "participant1Id": "AIMed.d28.s239.e3",
+    "participant1Offset": 165,
+    "participant1Len": 24,
+    "participant1Text": "TNFR-associated factor 2",
+    "participant2Id": "AIMed.d28.s239.e4",
+    "participant2Offset": 191,
+    "participant2Len": 5,
+    "participant2Text": "TRAF2",
+    "documentId": "AIMed.d28",
+    "sentenceId": "AIMed.d28.s239",
+    "otherEntities": [
+      {
+        "id": "AIMed.d28.s239.e0",
+        "charOffset": 18,
+        "len": 6,
+        "text": "hGITRL"
+      },
+      {
+        "id": "AIMed.d28.s239.e1",
+        "charOffset": 29,
+        "len": 5,
+        "text": "hGITR"
+      },
+      {
+        "id": "AIMed.d28.s239.e2",
+        "charOffset": 115,
+        "len": 9,
+        "text": "NF-kappaB"
+      },
+      {
+        "id": "AIMed.d28.s239.e5",
+        "charOffset": 206,
+        "len": 9,
+        "text": "NF-kappaB"
+      },
+      {
+        "id": "AIMed.d28.s239.e6",
+        "charOffset": 206,
+        "len": 25,
+        "text": "NF-kappaB-inducing kinase"
+      },
+      {
+        "id": "AIMed.d28.s239.e7",
+        "charOffset": 233,
+        "len": 3,
+        "text": "NIK"
+      }
+    ]
+  },
+  {
+    "interacts": false,
+    "text": "Cotransfection of hGITRL and hGITR in embryonic kidney 293 cells activated the anti-apoptotic transcription factor NF-kappaB, via a pathway that appeared to involve TNFR-associated factor 2 (TRAF2) [7] and NF-kappaB-inducing kinase (NIK) [8].",
+    "participant1Id": "AIMed.d28.s239.e3",
+    "participant1Offset": 165,
+    "participant1Len": 24,
+    "participant1Text": "TNFR-associated factor 2",
+    "participant2Id": "AIMed.d28.s239.e5",
+    "participant2Offset": 206,
+    "participant2Len": 9,
+    "participant2Text": "NF-kappaB",
+    "documentId": "AIMed.d28",
+    "sentenceId": "AIMed.d28.s239",
+    "otherEntities": [
+      {
+        "id": "AIMed.d28.s239.e0",
+        "charOffset": 18,
+        "len": 6,
+        "text": "hGITRL"
+      },
+      {
+        "id": "AIMed.d28.s239.e1",
+        "charOffset": 29,
+        "len": 5,
+        "text": "hGITR"
+      },
+      {
+        "id": "AIMed.d28.s239.e2",
+        "charOffset": 115,
+        "len": 9,
+        "text": "NF-kappaB"
+      },
+      {
+        "id": "AIMed.d28.s239.e4",
+        "charOffset": 191,
+        "len": 5,
+        "text": "TRAF2"
+      },
+      {
+        "id": "AIMed.d28.s239.e6",
+        "charOffset": 206,
+        "len": 25,
+        "text": "NF-kappaB-inducing kinase"
+      },
+      {
+        "id": "AIMed.d28.s239.e7",
+        "charOffset": 233,
+        "len": 3,
+        "text": "NIK"
+      }
+    ]
+  },
+  {
+    "interacts": false,
+    "text": "Cotransfection of hGITRL and hGITR in embryonic kidney 293 cells activated the anti-apoptotic transcription factor NF-kappaB, via a pathway that appeared to involve TNFR-associated factor 2 (TRAF2) [7] and NF-kappaB-inducing kinase (NIK) [8].",
+    "participant1Id": "AIMed.d28.s239.e3",
+    "participant1Offset": 165,
+    "participant1Len": 24,
+    "participant1Text": "TNFR-associated factor 2",
+    "participant2Id": "AIMed.d28.s239.e6",
+    "participant2Offset": 206,
+    "participant2Len": 25,
+    "participant2Text": "NF-kappaB-inducing kinase",
+    "documentId": "AIMed.d28",
+    "sentenceId": "AIMed.d28.s239",
+    "otherEntities": [
+      {
+        "id": "AIMed.d28.s239.e0",
+        "charOffset": 18,
+        "len": 6,
+        "text": "hGITRL"
+      },
+      {
+        "id": "AIMed.d28.s239.e1",
+        "charOffset": 29,
+        "len": 5,
+        "text": "hGITR"
+      },
+      {
+        "id": "AIMed.d28.s239.e2",
+        "charOffset": 115,
+        "len": 9,
+        "text": "NF-kappaB"
+      },
+      {
+        "id": "AIMed.d28.s239.e4",
+        "charOffset": 191,
+        "len": 5,
+        "text": "TRAF2"
+      },
+      {
+        "id": "AIMed.d28.s239.e5",
+        "charOffset": 206,
+        "len": 9,
+        "text": "NF-kappaB"
+      },
+      {
+        "id": "AIMed.d28.s239.e7",
+        "charOffset": 233,
+        "len": 3,
+        "text": "NIK"
+      }
+    ]
+  },
+  {
+    "interacts": false,
+    "text": "Cotransfection of hGITRL and hGITR in embryonic kidney 293 cells activated the anti-apoptotic transcription factor NF-kappaB, via a pathway that appeared to involve TNFR-associated factor 2 (TRAF2) [7] and NF-kappaB-inducing kinase (NIK) [8].",
+    "participant1Id": "AIMed.d28.s239.e3",
+    "participant1Offset": 165,
+    "participant1Len": 24,
+    "participant1Text": "TNFR-associated factor 2",
+    "participant2Id": "AIMed.d28.s239.e7",
+    "participant2Offset": 233,
+    "participant2Len": 3,
+    "participant2Text": "NIK",
+    "documentId": "AIMed.d28",
+    "sentenceId": "AIMed.d28.s239",
+    "otherEntities": [
+      {
+        "id": "AIMed.d28.s239.e0",
+        "charOffset": 18,
+        "len": 6,
+        "text": "hGITRL"
+      },
+      {
+        "id": "AIMed.d28.s239.e1",
+        "charOffset": 29,
+        "len": 5,
+        "text": "hGITR"
+      },
+      {
+        "id": "AIMed.d28.s239.e2",
+        "charOffset": 115,
+        "len": 9,
+        "text": "NF-kappaB"
+      },
+      {
+        "id": "AIMed.d28.s239.e4",
+        "charOffset": 191,
+        "len": 5,
+        "text": "TRAF2"
+      },
+      {
+        "id": "AIMed.d28.s239.e5",
+        "charOffset": 206,
+        "len": 9,
+        "text": "NF-kappaB"
+      },
+      {
+        "id": "AIMed.d28.s239.e6",
+        "charOffset": 206,
+        "len": 25,
+        "text": "NF-kappaB-inducing kinase"
+      }
+    ]
+  },
+  {
+    "interacts": false,
+    "text": "Cotransfection of hGITRL and hGITR in embryonic kidney 293 cells activated the anti-apoptotic transcription factor NF-kappaB, via a pathway that appeared to involve TNFR-associated factor 2 (TRAF2) [7] and NF-kappaB-inducing kinase (NIK) [8].",
+    "participant1Id": "AIMed.d28.s239.e4",
+    "participant1Offset": 191,
+    "participant1Len": 5,
+    "participant1Text": "TRAF2",
+    "participant2Id": "AIMed.d28.s239.e5",
+    "participant2Offset": 206,
+    "participant2Len": 9,
+    "participant2Text": "NF-kappaB",
+    "documentId": "AIMed.d28",
+    "sentenceId": "AIMed.d28.s239",
+    "otherEntities": [
+      {
+        "id": "AIMed.d28.s239.e0",
+        "charOffset": 18,
+        "len": 6,
+        "text": "hGITRL"
+      },
+      {
+        "id": "AIMed.d28.s239.e1",
+        "charOffset": 29,
+        "len": 5,
+        "text": "hGITR"
+      },
+      {
+        "id": "AIMed.d28.s239.e2",
+        "charOffset": 115,
+        "len": 9,
+        "text": "NF-kappaB"
+      },
+      {
+        "id": "AIMed.d28.s239.e3",
+        "charOffset": 165,
+        "len": 24,
+        "text": "TNFR-associated factor 2"
+      },
+      {
+        "id": "AIMed.d28.s239.e6",
+        "charOffset": 206,
+        "len": 25,
+        "text": "NF-kappaB-inducing kinase"
+      },
+      {
+        "id": "AIMed.d28.s239.e7",
+        "charOffset": 233,
+        "len": 3,
+        "text": "NIK"
+      }
+    ]
+  },
+  {
+    "interacts": false,
+    "text": "Cotransfection of hGITRL and hGITR in embryonic kidney 293 cells activated the anti-apoptotic transcription factor NF-kappaB, via a pathway that appeared to involve TNFR-associated factor 2 (TRAF2) [7] and NF-kappaB-inducing kinase (NIK) [8].",
+    "participant1Id": "AIMed.d28.s239.e4",
+    "participant1Offset": 191,
+    "participant1Len": 5,
+    "participant1Text": "TRAF2",
+    "participant2Id": "AIMed.d28.s239.e6",
+    "participant2Offset": 206,
+    "participant2Len": 25,
+    "participant2Text": "NF-kappaB-inducing kinase",
+    "documentId": "AIMed.d28",
+    "sentenceId": "AIMed.d28.s239",
+    "otherEntities": [
+      {
+        "id": "AIMed.d28.s239.e0",
+        "charOffset": 18,
+        "len": 6,
+        "text": "hGITRL"
+      },
+      {
+        "id": "AIMed.d28.s239.e1",
+        "charOffset": 29,
+        "len": 5,
+        "text": "hGITR"
+      },
+      {
+        "id": "AIMed.d28.s239.e2",
+        "charOffset": 115,
+        "len": 9,
+        "text": "NF-kappaB"
+      },
+      {
+        "id": "AIMed.d28.s239.e3",
+        "charOffset": 165,
+        "len": 24,
+        "text": "TNFR-associated factor 2"
+      },
+      {
+        "id": "AIMed.d28.s239.e5",
+        "charOffset": 206,
+        "len": 9,
+        "text": "NF-kappaB"
+      },
+      {
+        "id": "AIMed.d28.s239.e7",
+        "charOffset": 233,
+        "len": 3,
+        "text": "NIK"
+      }
+    ]
+  },
+  {
+    "interacts": false,
+    "text": "Cotransfection of hGITRL and hGITR in embryonic kidney 293 cells activated the anti-apoptotic transcription factor NF-kappaB, via a pathway that appeared to involve TNFR-associated factor 2 (TRAF2) [7] and NF-kappaB-inducing kinase (NIK) [8].",
+    "participant1Id": "AIMed.d28.s239.e4",
+    "participant1Offset": 191,
+    "participant1Len": 5,
+    "participant1Text": "TRAF2",
+    "participant2Id": "AIMed.d28.s239.e7",
+    "participant2Offset": 233,
+    "participant2Len": 3,
+    "participant2Text": "NIK",
+    "documentId": "AIMed.d28",
+    "sentenceId": "AIMed.d28.s239",
+    "otherEntities": [
+      {
+        "id": "AIMed.d28.s239.e0",
+        "charOffset": 18,
+        "len": 6,
+        "text": "hGITRL"
+      },
+      {
+        "id": "AIMed.d28.s239.e1",
+        "charOffset": 29,
+        "len": 5,
+        "text": "hGITR"
+      },
+      {
+        "id": "AIMed.d28.s239.e2",
+        "charOffset": 115,
+        "len": 9,
+        "text": "NF-kappaB"
+      },
+      {
+        "id": "AIMed.d28.s239.e3",
+        "charOffset": 165,
+        "len": 24,
+        "text": "TNFR-associated factor 2"
+      },
+      {
+        "id": "AIMed.d28.s239.e5",
+        "charOffset": 206,
+        "len": 9,
+        "text": "NF-kappaB"
+      },
+      {
+        "id": "AIMed.d28.s239.e6",
+        "charOffset": 206,
+        "len": 25,
+        "text": "NF-kappaB-inducing kinase"
+      }
+    ]
+  },
+  {
+    "interacts": false,
+    "text": "Cotransfection of hGITRL and hGITR in embryonic kidney 293 cells activated the anti-apoptotic transcription factor NF-kappaB, via a pathway that appeared to involve TNFR-associated factor 2 (TRAF2) [7] and NF-kappaB-inducing kinase (NIK) [8].",
+    "participant1Id": "AIMed.d28.s239.e5",
+    "participant1Offset": 206,
+    "participant1Len": 9,
+    "participant1Text": "NF-kappaB",
+    "participant2Id": "AIMed.d28.s239.e6",
+    "participant2Offset": 206,
+    "participant2Len": 25,
+    "participant2Text": "NF-kappaB-inducing kinase",
+    "documentId": "AIMed.d28",
+    "sentenceId": "AIMed.d28.s239",
+    "otherEntities": [
+      {
+        "id": "AIMed.d28.s239.e0",
+        "charOffset": 18,
+        "len": 6,
+        "text": "hGITRL"
+      },
+      {
+        "id": "AIMed.d28.s239.e1",
+        "charOffset": 29,
+        "len": 5,
+        "text": "hGITR"
+      },
+      {
+        "id": "AIMed.d28.s239.e2",
+        "charOffset": 115,
+        "len": 9,
+        "text": "NF-kappaB"
+      },
+      {
+        "id": "AIMed.d28.s239.e3",
+        "charOffset": 165,
+        "len": 24,
+        "text": "TNFR-associated factor 2"
+      },
+      {
+        "id": "AIMed.d28.s239.e4",
+        "charOffset": 191,
+        "len": 5,
+        "text": "TRAF2"
+      },
+      {
+        "id": "AIMed.d28.s239.e7",
+        "charOffset": 233,
+        "len": 3,
+        "text": "NIK"
+      }
+    ]
+  },
+  {
+    "interacts": false,
+    "text": "Cotransfection of hGITRL and hGITR in embryonic kidney 293 cells activated the anti-apoptotic transcription factor NF-kappaB, via a pathway that appeared to involve TNFR-associated factor 2 (TRAF2) [7] and NF-kappaB-inducing kinase (NIK) [8].",
+    "participant1Id": "AIMed.d28.s239.e5",
+    "participant1Offset": 206,
+    "participant1Len": 9,
+    "participant1Text": "NF-kappaB",
+    "participant2Id": "AIMed.d28.s239.e7",
+    "participant2Offset": 233,
+    "participant2Len": 3,
+    "participant2Text": "NIK",
+    "documentId": "AIMed.d28",
+    "sentenceId": "AIMed.d28.s239",
+    "otherEntities": [
+      {
+        "id": "AIMed.d28.s239.e0",
+        "charOffset": 18,
+        "len": 6,
+        "text": "hGITRL"
+      },
+      {
+        "id": "AIMed.d28.s239.e1",
+        "charOffset": 29,
+        "len": 5,
+        "text": "hGITR"
+      },
+      {
+        "id": "AIMed.d28.s239.e2",
+        "charOffset": 115,
+        "len": 9,
+        "text": "NF-kappaB"
+      },
+      {
+        "id": "AIMed.d28.s239.e3",
+        "charOffset": 165,
+        "len": 24,
+        "text": "TNFR-associated factor 2"
+      },
+      {
+        "id": "AIMed.d28.s239.e4",
+        "charOffset": 191,
+        "len": 5,
+        "text": "TRAF2"
+      },
+      {
+        "id": "AIMed.d28.s239.e6",
+        "charOffset": 206,
+        "len": 25,
+        "text": "NF-kappaB-inducing kinase"
+      }
+    ]
+  },
+  {
+    "interacts": false,
+    "text": "Cotransfection of hGITRL and hGITR in embryonic kidney 293 cells activated the anti-apoptotic transcription factor NF-kappaB, via a pathway that appeared to involve TNFR-associated factor 2 (TRAF2) [7] and NF-kappaB-inducing kinase (NIK) [8].",
+    "participant1Id": "AIMed.d28.s239.e6",
+    "participant1Offset": 206,
+    "participant1Len": 25,
+    "participant1Text": "NF-kappaB-inducing kinase",
+    "participant2Id": "AIMed.d28.s239.e7",
+    "participant2Offset": 233,
+    "participant2Len": 3,
+    "participant2Text": "NIK",
+    "documentId": "AIMed.d28",
+    "sentenceId": "AIMed.d28.s239",
+    "otherEntities": [
+      {
+        "id": "AIMed.d28.s239.e0",
+        "charOffset": 18,
+        "len": 6,
+        "text": "hGITRL"
+      },
+      {
+        "id": "AIMed.d28.s239.e1",
+        "charOffset": 29,
+        "len": 5,
+        "text": "hGITR"
+      },
+      {
+        "id": "AIMed.d28.s239.e2",
+        "charOffset": 115,
+        "len": 9,
+        "text": "NF-kappaB"
+      },
+      {
+        "id": "AIMed.d28.s239.e3",
+        "charOffset": 165,
+        "len": 24,
+        "text": "TNFR-associated factor 2"
+      },
+      {
+        "id": "AIMed.d28.s239.e4",
+        "charOffset": 191,
+        "len": 5,
+        "text": "TRAF2"
+      },
+      {
+        "id": "AIMed.d28.s239.e5",
+        "charOffset": 206,
+        "len": 9,
+        "text": "NF-kappaB"
+      }
+    ]
+  },
+  {
+    "interacts": false,
+    "text": "Cotransfection of hGITRL and hGITR in Jurkat T leukemia cells inhibited antigen-receptor-induced cell death.",
+    "participant1Id": "AIMed.d28.s240.e0",
+    "participant1Offset": 18,
+    "participant1Len": 6,
+    "participant1Text": "hGITRL",
+    "participant2Id": "AIMed.d28.s240.e1",
+    "participant2Offset": 29,
+    "participant2Len": 5,
+    "participant2Text": "hGITR",
+    "documentId": "AIMed.d28",
+    "sentenceId": "AIMed.d28.s240",
+    "otherEntities": []
+  },
+  {
+    "interacts": false,
+    "text": "Thus, hGITRL and hGITR may modulate T lymphocyte survival in peripheral tissues.",
+    "participant1Id": "AIMed.d28.s241.e0",
+    "participant1Offset": 6,
+    "participant1Len": 6,
+    "participant1Text": "hGITRL",
+    "participant2Id": "AIMed.d28.s241.e1",
+    "participant2Offset": 17,
+    "participant2Len": 5,
+    "participant2Text": "hGITR",
+    "documentId": "AIMed.d28",
+    "sentenceId": "AIMed.d28.s241",
+    "otherEntities": []
+  },
+  {
+    "interacts": false,
+    "text": "We have probed an epitope sequence (His18-Pro19-Lys20-Phe21) in interleukin-8 (IL-8) by site-directed mutagenesis.",
+    "participant1Id": "AIMed.d29.s243.e0",
+    "participant1Offset": 64,
+    "participant1Len": 13,
+    "participant1Text": "interleukin-8",
+    "participant2Id": "AIMed.d29.s243.e1",
+    "participant2Offset": 79,
+    "participant2Len": 4,
+    "participant2Text": "IL-8",
+    "documentId": "AIMed.d29",
+    "sentenceId": "AIMed.d29.s243",
+    "otherEntities": []
+  },
+  {
+    "interacts": false,
+    "text": "This work shows that single and double Ala substitutions of His18 and Phe21 in IL-8 reduced up to 77-fold the binding affinity to IL-8 receptor subtypes A (CXCR1) and B (CXCR2) and to the Duffy antigen.",
+    "participant1Id": "AIMed.d29.s244.e0",
+    "participant1Offset": 79,
+    "participant1Len": 4,
+    "participant1Text": "IL-8",
+    "participant2Id": "AIMed.d29.s244.e1",
+    "participant2Offset": 130,
+    "participant2Len": 4,
+    "participant2Text": "IL-8",
+    "documentId": "AIMed.d29",
+    "sentenceId": "AIMed.d29.s244",
+    "otherEntities": [
+      {
+        "id": "AIMed.d29.s244.e2",
+        "charOffset": 130,
+        "len": 24,
+        "text": "IL-8 receptor subtypes A"
+      },
+      {
+        "id": "AIMed.d29.s244.e3",
+        "charOffset": 156,
+        "len": 5,
+        "text": "CXCR1"
+      },
+      {
+        "id": "AIMed.d29.s244.e4",
+        "charOffset": 170,
+        "len": 5,
+        "text": "CXCR2"
+      },
+      {
+        "id": "AIMed.d29.s244.e5",
+        "charOffset": 188,
+        "len": 13,
+        "text": "Duffy antigen"
+      }
+    ]
+  },
+  {
+    "interacts": false,
+    "text": "This work shows that single and double Ala substitutions of His18 and Phe21 in IL-8 reduced up to 77-fold the binding affinity to IL-8 receptor subtypes A (CXCR1) and B (CXCR2) and to the Duffy antigen.",
+    "participant1Id": "AIMed.d29.s244.e0",
+    "participant1Offset": 79,
+    "participant1Len": 4,
+    "participant1Text": "IL-8",
+    "participant2Id": "AIMed.d29.s244.e2",
+    "participant2Offset": 130,
+    "participant2Len": 24,
+    "participant2Text": "IL-8 receptor subtypes A",
+    "documentId": "AIMed.d29",
+    "sentenceId": "AIMed.d29.s244",
+    "otherEntities": [
+      {
+        "id": "AIMed.d29.s244.e1",
+        "charOffset": 130,
+        "len": 4,
+        "text": "IL-8"
+      },
+      {
+        "id": "AIMed.d29.s244.e3",
+        "charOffset": 156,
+        "len": 5,
+        "text": "CXCR1"
+      },
+      {
+        "id": "AIMed.d29.s244.e4",
+        "charOffset": 170,
+        "len": 5,
+        "text": "CXCR2"
+      },
+      {
+        "id": "AIMed.d29.s244.e5",
+        "charOffset": 188,
+        "len": 13,
+        "text": "Duffy antigen"
+      }
+    ]
+  },
+  {
+    "interacts": false,
+    "text": "This work shows that single and double Ala substitutions of His18 and Phe21 in IL-8 reduced up to 77-fold the binding affinity to IL-8 receptor subtypes A (CXCR1) and B (CXCR2) and to the Duffy antigen.",
+    "participant1Id": "AIMed.d29.s244.e0",
+    "participant1Offset": 79,
+    "participant1Len": 4,
+    "participant1Text": "IL-8",
+    "participant2Id": "AIMed.d29.s244.e3",
+    "participant2Offset": 156,
+    "participant2Len": 5,
+    "participant2Text": "CXCR1",
+    "documentId": "AIMed.d29",
+    "sentenceId": "AIMed.d29.s244",
+    "otherEntities": [
+      {
+        "id": "AIMed.d29.s244.e1",
+        "charOffset": 130,
+        "len": 4,
+        "text": "IL-8"
+      },
+      {
+        "id": "AIMed.d29.s244.e2",
+        "charOffset": 130,
+        "len": 24,
+        "text": "IL-8 receptor subtypes A"
+      },
+      {
+        "id": "AIMed.d29.s244.e4",
+        "charOffset": 170,
+        "len": 5,
+        "text": "CXCR2"
+      },
+      {
+        "id": "AIMed.d29.s244.e5",
+        "charOffset": 188,
+        "len": 13,
+        "text": "Duffy antigen"
+      }
+    ]
+  },
+  {
+    "interacts": false,
+    "text": "This work shows that single and double Ala substitutions of His18 and Phe21 in IL-8 reduced up to 77-fold the binding affinity to IL-8 receptor subtypes A (CXCR1) and B (CXCR2) and to the Duffy antigen.",
+    "participant1Id": "AIMed.d29.s244.e0",
+    "participant1Offset": 79,
+    "participant1Len": 4,
+    "participant1Text": "IL-8",
+    "participant2Id": "AIMed.d29.s244.e4",
+    "participant2Offset": 170,
+    "participant2Len": 5,
+    "participant2Text": "CXCR2",
+    "documentId": "AIMed.d29",
+    "sentenceId": "AIMed.d29.s244",
+    "otherEntities": [
+      {
+        "id": "AIMed.d29.s244.e1",
+        "charOffset": 130,
+        "len": 4,
+        "text": "IL-8"
+      },
+      {
+        "id": "AIMed.d29.s244.e2",
+        "charOffset": 130,
+        "len": 24,
+        "text": "IL-8 receptor subtypes A"
+      },
+      {
+        "id": "AIMed.d29.s244.e3",
+        "charOffset": 156,
+        "len": 5,
+        "text": "CXCR1"
+      },
+      {
+        "id": "AIMed.d29.s244.e5",
+        "charOffset": 188,
+        "len": 13,
+        "text": "Duffy antigen"
+      }
+    ]
+  },
+  {
+    "interacts": false,
+    "text": "This work shows that single and double Ala substitutions of His18 and Phe21 in IL-8 reduced up to 77-fold the binding affinity to IL-8 receptor subtypes A (CXCR1) and B (CXCR2) and to the Duffy antigen.",
+    "participant1Id": "AIMed.d29.s244.e0",
+    "participant1Offset": 79,
+    "participant1Len": 4,
+    "participant1Text": "IL-8",
+    "participant2Id": "AIMed.d29.s244.e5",
+    "participant2Offset": 188,
+    "participant2Len": 13,
+    "participant2Text": "Duffy antigen",
+    "documentId": "AIMed.d29",
+    "sentenceId": "AIMed.d29.s244",
+    "otherEntities": [
+      {
+        "id": "AIMed.d29.s244.e1",
+        "charOffset": 130,
+        "len": 4,
+        "text": "IL-8"
+      },
+      {
+        "id": "AIMed.d29.s244.e2",
+        "charOffset": 130,
+        "len": 24,
+        "text": "IL-8 receptor subtypes A"
+      },
+      {
+        "id": "AIMed.d29.s244.e3",
+        "charOffset": 156,
+        "len": 5,
+        "text": "CXCR1"
+      },
+      {
+        "id": "AIMed.d29.s244.e4",
+        "charOffset": 170,
+        "len": 5,
+        "text": "CXCR2"
+      }
+    ]
+  },
+  {
+    "interacts": false,
+    "text": "This work shows that single and double Ala substitutions of His18 and Phe21 in IL-8 reduced up to 77-fold the binding affinity to IL-8 receptor subtypes A (CXCR1) and B (CXCR2) and to the Duffy antigen.",
+    "participant1Id": "AIMed.d29.s244.e1",
+    "participant1Offset": 130,
+    "participant1Len": 4,
+    "participant1Text": "IL-8",
+    "participant2Id": "AIMed.d29.s244.e2",
+    "participant2Offset": 130,
+    "participant2Len": 24,
+    "participant2Text": "IL-8 receptor subtypes A",
+    "documentId": "AIMed.d29",
+    "sentenceId": "AIMed.d29.s244",
+    "otherEntities": [
+      {
+        "id": "AIMed.d29.s244.e0",
+        "charOffset": 79,
+        "len": 4,
+        "text": "IL-8"
+      },
+      {
+        "id": "AIMed.d29.s244.e3",
+        "charOffset": 156,
+        "len": 5,
+        "text": "CXCR1"
+      },
+      {
+        "id": "AIMed.d29.s244.e4",
+        "charOffset": 170,
+        "len": 5,
+        "text": "CXCR2"
+      },
+      {
+        "id": "AIMed.d29.s244.e5",
+        "charOffset": 188,
+        "len": 13,
+        "text": "Duffy antigen"
+      }
+    ]
+  },
+  {
+    "interacts": true,
+    "text": "This work shows that single and double Ala substitutions of His18 and Phe21 in IL-8 reduced up to 77-fold the binding affinity to IL-8 receptor subtypes A (CXCR1) and B (CXCR2) and to the Duffy antigen.",
+    "participant1Id": "AIMed.d29.s244.e1",
+    "participant1Offset": 130,
+    "participant1Len": 4,
+    "participant1Text": "IL-8",
+    "participant2Id": "AIMed.d29.s244.e3",
+    "participant2Offset": 156,
+    "participant2Len": 5,
+    "participant2Text": "CXCR1",
+    "documentId": "AIMed.d29",
+    "sentenceId": "AIMed.d29.s244",
+    "otherEntities": [
+      {
+        "id": "AIMed.d29.s244.e0",
+        "charOffset": 79,
+        "len": 4,
+        "text": "IL-8"
+      },
+      {
+        "id": "AIMed.d29.s244.e2",
+        "charOffset": 130,
+        "len": 24,
+        "text": "IL-8 receptor subtypes A"
+      },
+      {
+        "id": "AIMed.d29.s244.e4",
+        "charOffset": 170,
+        "len": 5,
+        "text": "CXCR2"
+      },
+      {
+        "id": "AIMed.d29.s244.e5",
+        "charOffset": 188,
+        "len": 13,
+        "text": "Duffy antigen"
+      }
+    ]
+  },
+  {
+    "interacts": true,
+    "text": "This work shows that single and double Ala substitutions of His18 and Phe21 in IL-8 reduced up to 77-fold the binding affinity to IL-8 receptor subtypes A (CXCR1) and B (CXCR2) and to the Duffy antigen.",
+    "participant1Id": "AIMed.d29.s244.e1",
+    "participant1Offset": 130,
+    "participant1Len": 4,
+    "participant1Text": "IL-8",
+    "participant2Id": "AIMed.d29.s244.e4",
+    "participant2Offset": 170,
+    "participant2Len": 5,
+    "participant2Text": "CXCR2",
+    "documentId": "AIMed.d29",
+    "sentenceId": "AIMed.d29.s244",
+    "otherEntities": [
+      {
+        "id": "AIMed.d29.s244.e0",
+        "charOffset": 79,
+        "len": 4,
+        "text": "IL-8"
+      },
+      {
+        "id": "AIMed.d29.s244.e2",
+        "charOffset": 130,
+        "len": 24,
+        "text": "IL-8 receptor subtypes A"
+      },
+      {
+        "id": "AIMed.d29.s244.e3",
+        "charOffset": 156,
+        "len": 5,
+        "text": "CXCR1"
+      },
+      {
+        "id": "AIMed.d29.s244.e5",
+        "charOffset": 188,
+        "len": 13,
+        "text": "Duffy antigen"
+      }
+    ]
+  },
+  {
+    "interacts": true,
+    "text": "This work shows that single and double Ala substitutions of His18 and Phe21 in IL-8 reduced up to 77-fold the binding affinity to IL-8 receptor subtypes A (CXCR1) and B (CXCR2) and to the Duffy antigen.",
+    "participant1Id": "AIMed.d29.s244.e1",
+    "participant1Offset": 130,
+    "participant1Len": 4,
+    "participant1Text": "IL-8",
+    "participant2Id": "AIMed.d29.s244.e5",
+    "participant2Offset": 188,
+    "participant2Len": 13,
+    "participant2Text": "Duffy antigen",
+    "documentId": "AIMed.d29",
+    "sentenceId": "AIMed.d29.s244",
+    "otherEntities": [
+      {
+        "id": "AIMed.d29.s244.e0",
+        "charOffset": 79,
+        "len": 4,
+        "text": "IL-8"
+      },
+      {
+        "id": "AIMed.d29.s244.e2",
+        "charOffset": 130,
+        "len": 24,
+        "text": "IL-8 receptor subtypes A"
+      },
+      {
+        "id": "AIMed.d29.s244.e3",
+        "charOffset": 156,
+        "len": 5,
+        "text": "CXCR1"
+      },
+      {
+        "id": "AIMed.d29.s244.e4",
+        "charOffset": 170,
+        "len": 5,
+        "text": "CXCR2"
+      }
+    ]
+  },
+  {
+    "interacts": false,
+    "text": "This work shows that single and double Ala substitutions of His18 and Phe21 in IL-8 reduced up to 77-fold the binding affinity to IL-8 receptor subtypes A (CXCR1) and B (CXCR2) and to the Duffy antigen.",
+    "participant1Id": "AIMed.d29.s244.e2",
+    "participant1Offset": 130,
+    "participant1Len": 24,
+    "participant1Text": "IL-8 receptor subtypes A",
+    "participant2Id": "AIMed.d29.s244.e3",
+    "participant2Offset": 156,
+    "participant2Len": 5,
+    "participant2Text": "CXCR1",
+    "documentId": "AIMed.d29",
+    "sentenceId": "AIMed.d29.s244",
+    "otherEntities": [
+      {
+        "id": "AIMed.d29.s244.e0",
+        "charOffset": 79,
+        "len": 4,
+        "text": "IL-8"
+      },
+      {
+        "id": "AIMed.d29.s244.e1",
+        "charOffset": 130,
+        "len": 4,
+        "text": "IL-8"
+      },
+      {
+        "id": "AIMed.d29.s244.e4",
+        "charOffset": 170,
+        "len": 5,
+        "text": "CXCR2"
+      },
+      {
+        "id": "AIMed.d29.s244.e5",
+        "charOffset": 188,
+        "len": 13,
+        "text": "Duffy antigen"
+      }
+    ]
+  },
+  {
+    "interacts": false,
+    "text": "This work shows that single and double Ala substitutions of His18 and Phe21 in IL-8 reduced up to 77-fold the binding affinity to IL-8 receptor subtypes A (CXCR1) and B (CXCR2) and to the Duffy antigen.",
+    "participant1Id": "AIMed.d29.s244.e2",
+    "participant1Offset": 130,
+    "participant1Len": 24,
+    "participant1Text": "IL-8 receptor subtypes A",
+    "participant2Id": "AIMed.d29.s244.e4",
+    "participant2Offset": 170,
+    "participant2Len": 5,
+    "participant2Text": "CXCR2",
+    "documentId": "AIMed.d29",
+    "sentenceId": "AIMed.d29.s244",
+    "otherEntities": [
+      {
+        "id": "AIMed.d29.s244.e0",
+        "charOffset": 79,
+        "len": 4,
+        "text": "IL-8"
+      },
+      {
+        "id": "AIMed.d29.s244.e1",
+        "charOffset": 130,
+        "len": 4,
+        "text": "IL-8"
+      },
+      {
+        "id": "AIMed.d29.s244.e3",
+        "charOffset": 156,
+        "len": 5,
+        "text": "CXCR1"
+      },
+      {
+        "id": "AIMed.d29.s244.e5",
+        "charOffset": 188,
+        "len": 13,
+        "text": "Duffy antigen"
+      }
+    ]
+  },
+  {
+    "interacts": false,
+    "text": "This work shows that single and double Ala substitutions of His18 and Phe21 in IL-8 reduced up to 77-fold the binding affinity to IL-8 receptor subtypes A (CXCR1) and B (CXCR2) and to the Duffy antigen.",
+    "participant1Id": "AIMed.d29.s244.e2",
+    "participant1Offset": 130,
+    "participant1Len": 24,
+    "participant1Text": "IL-8 receptor subtypes A",
+    "participant2Id": "AIMed.d29.s244.e5",
+    "participant2Offset": 188,
+    "participant2Len": 13,
+    "participant2Text": "Duffy antigen",
+    "documentId": "AIMed.d29",
+    "sentenceId": "AIMed.d29.s244",
+    "otherEntities": [
+      {
+        "id": "AIMed.d29.s244.e0",
+        "charOffset": 79,
+        "len": 4,
+        "text": "IL-8"
+      },
+      {
+        "id": "AIMed.d29.s244.e1",
+        "charOffset": 130,
+        "len": 4,
+        "text": "IL-8"
+      },
+      {
+        "id": "AIMed.d29.s244.e3",
+        "charOffset": 156,
+        "len": 5,
+        "text": "CXCR1"
+      },
+      {
+        "id": "AIMed.d29.s244.e4",
+        "charOffset": 170,
+        "len": 5,
+        "text": "CXCR2"
+      }
+    ]
+  },
+  {
+    "interacts": false,
+    "text": "This work shows that single and double Ala substitutions of His18 and Phe21 in IL-8 reduced up to 77-fold the binding affinity to IL-8 receptor subtypes A (CXCR1) and B (CXCR2) and to the Duffy antigen.",
+    "participant1Id": "AIMed.d29.s244.e3",
+    "participant1Offset": 156,
+    "participant1Len": 5,
+    "participant1Text": "CXCR1",
+    "participant2Id": "AIMed.d29.s244.e4",
+    "participant2Offset": 170,
+    "participant2Len": 5,
+    "participant2Text": "CXCR2",
+    "documentId": "AIMed.d29",
+    "sentenceId": "AIMed.d29.s244",
+    "otherEntities": [
+      {
+        "id": "AIMed.d29.s244.e0",
+        "charOffset": 79,
+        "len": 4,
+        "text": "IL-8"
+      },
+      {
+        "id": "AIMed.d29.s244.e1",
+        "charOffset": 130,
+        "len": 4,
+        "text": "IL-8"
+      },
+      {
+        "id": "AIMed.d29.s244.e2",
+        "charOffset": 130,
+        "len": 24,
+        "text": "IL-8 receptor subtypes A"
+      },
+      {
+        "id": "AIMed.d29.s244.e5",
+        "charOffset": 188,
+        "len": 13,
+        "text": "Duffy antigen"
+      }
+    ]
+  },
+  {
+    "interacts": false,
+    "text": "This work shows that single and double Ala substitutions of His18 and Phe21 in IL-8 reduced up to 77-fold the binding affinity to IL-8 receptor subtypes A (CXCR1) and B (CXCR2) and to the Duffy antigen.",
+    "participant1Id": "AIMed.d29.s244.e3",
+    "participant1Offset": 156,
+    "participant1Len": 5,
+    "participant1Text": "CXCR1",
+    "participant2Id": "AIMed.d29.s244.e5",
+    "participant2Offset": 188,
+    "participant2Len": 13,
+    "participant2Text": "Duffy antigen",
+    "documentId": "AIMed.d29",
+    "sentenceId": "AIMed.d29.s244",
+    "otherEntities": [
+      {
+        "id": "AIMed.d29.s244.e0",
+        "charOffset": 79,
+        "len": 4,
+        "text": "IL-8"
+      },
+      {
+        "id": "AIMed.d29.s244.e1",
+        "charOffset": 130,
+        "len": 4,
+        "text": "IL-8"
+      },
+      {
+        "id": "AIMed.d29.s244.e2",
+        "charOffset": 130,
+        "len": 24,
+        "text": "IL-8 receptor subtypes A"
+      },
+      {
+        "id": "AIMed.d29.s244.e4",
+        "charOffset": 170,
+        "len": 5,
+        "text": "CXCR2"
+      }
+    ]
+  },
+  {
+    "interacts": false,
+    "text": "This work shows that single and double Ala substitutions of His18 and Phe21 in IL-8 reduced up to 77-fold the binding affinity to IL-8 receptor subtypes A (CXCR1) and B (CXCR2) and to the Duffy antigen.",
+    "participant1Id": "AIMed.d29.s244.e4",
+    "participant1Offset": 170,
+    "participant1Len": 5,
+    "participant1Text": "CXCR2",
+    "participant2Id": "AIMed.d29.s244.e5",
+    "participant2Offset": 188,
+    "participant2Len": 13,
+    "participant2Text": "Duffy antigen",
+    "documentId": "AIMed.d29",
+    "sentenceId": "AIMed.d29.s244",
+    "otherEntities": [
+      {
+        "id": "AIMed.d29.s244.e0",
+        "charOffset": 79,
+        "len": 4,
+        "text": "IL-8"
+      },
+      {
+        "id": "AIMed.d29.s244.e1",
+        "charOffset": 130,
+        "len": 4,
+        "text": "IL-8"
+      },
+      {
+        "id": "AIMed.d29.s244.e2",
+        "charOffset": 130,
+        "len": 24,
+        "text": "IL-8 receptor subtypes A"
+      },
+      {
+        "id": "AIMed.d29.s244.e3",
+        "charOffset": 156,
+        "len": 5,
+        "text": "CXCR1"
+      }
+    ]
+  },
+  {
+    "interacts": false,
+    "text": "These Ala mutants triggered neutrophil degranulation and induced calcium responses mediated by CXCR1 and CXCR2.",
+    "participant1Id": "AIMed.d29.s245.e0",
+    "participant1Offset": 95,
+    "participant1Len": 5,
+    "participant1Text": "CXCR1",
+    "participant2Id": "AIMed.d29.s245.e1",
+    "participant2Offset": 105,
+    "participant2Len": 5,
+    "participant2Text": "CXCR2",
+    "documentId": "AIMed.d29",
+    "sentenceId": "AIMed.d29.s245",
+    "otherEntities": []
+  },
+  {
+    "interacts": false,
+    "text": "Single Asp or Ser substitutions, H18D, F21D, F21S, and double substitutions, H18A/F21D, H18A/F21S, and H18D/F21D, reduced up to 431-fold the binding affinity to CXCR1, CXCR2, and the Duffy antigen.",
+    "participant1Id": "AIMed.d29.s246.e0",
+    "participant1Offset": 161,
+    "participant1Len": 5,
+    "participant1Text": "CXCR1",
+    "participant2Id": "AIMed.d29.s246.e1",
+    "participant2Offset": 168,
+    "participant2Len": 5,
+    "participant2Text": "CXCR2",
+    "documentId": "AIMed.d29",
+    "sentenceId": "AIMed.d29.s246",
+    "otherEntities": [
+      {
+        "id": "AIMed.d29.s246.e2",
+        "charOffset": 183,
+        "len": 13,
+        "text": "Duffy antigen"
+      }
+    ]
+  },
+  {
+    "interacts": false,
+    "text": "Single Asp or Ser substitutions, H18D, F21D, F21S, and double substitutions, H18A/F21D, H18A/F21S, and H18D/F21D, reduced up to 431-fold the binding affinity to CXCR1, CXCR2, and the Duffy antigen.",
+    "participant1Id": "AIMed.d29.s246.e0",
+    "participant1Offset": 161,
+    "participant1Len": 5,
+    "participant1Text": "CXCR1",
+    "participant2Id": "AIMed.d29.s246.e2",
+    "participant2Offset": 183,
+    "participant2Len": 13,
+    "participant2Text": "Duffy antigen",
+    "documentId": "AIMed.d29",
+    "sentenceId": "AIMed.d29.s246",
+    "otherEntities": [
+      {
+        "id": "AIMed.d29.s246.e1",
+        "charOffset": 168,
+        "len": 5,
+        "text": "CXCR2"
+      }
+    ]
+  },
+  {
+    "interacts": false,
+    "text": "Single Asp or Ser substitutions, H18D, F21D, F21S, and double substitutions, H18A/F21D, H18A/F21S, and H18D/F21D, reduced up to 431-fold the binding affinity to CXCR1, CXCR2, and the Duffy antigen.",
+    "participant1Id": "AIMed.d29.s246.e1",
+    "participant1Offset": 168,
+    "participant1Len": 5,
+    "participant1Text": "CXCR2",
+    "participant2Id": "AIMed.d29.s246.e2",
+    "participant2Offset": 183,
+    "participant2Len": 13,
+    "participant2Text": "Duffy antigen",
+    "documentId": "AIMed.d29",
+    "sentenceId": "AIMed.d29.s246",
+    "otherEntities": [
+      {
+        "id": "AIMed.d29.s246.e0",
+        "charOffset": 161,
+        "len": 5,
+        "text": "CXCR1"
+      }
+    ]
+  },
+  {
+    "interacts": true,
+    "text": "This study demonstrates that IL-8 recognizes and activates CXCR1, CXCR2, and the Duffy antigen by distinct mechanisms.",
+    "participant1Id": "AIMed.d29.s249.e0",
+    "participant1Offset": 29,
+    "participant1Len": 4,
+    "participant1Text": "IL-8",
+    "participant2Id": "AIMed.d29.s249.e1",
+    "participant2Offset": 59,
+    "participant2Len": 5,
+    "participant2Text": "CXCR1",
+    "documentId": "AIMed.d29",
+    "sentenceId": "AIMed.d29.s249",
+    "otherEntities": [
+      {
+        "id": "AIMed.d29.s249.e2",
+        "charOffset": 66,
+        "len": 5,
+        "text": "CXCR2"
+      },
+      {
+        "id": "AIMed.d29.s249.e3",
+        "charOffset": 81,
+        "len": 13,
+        "text": "Duffy antigen"
+      }
+    ]
+  },
+  {
+    "interacts": true,
+    "text": "This study demonstrates that IL-8 recognizes and activates CXCR1, CXCR2, and the Duffy antigen by distinct mechanisms.",
+    "participant1Id": "AIMed.d29.s249.e0",
+    "participant1Offset": 29,
+    "participant1Len": 4,
+    "participant1Text": "IL-8",
+    "participant2Id": "AIMed.d29.s249.e2",
+    "participant2Offset": 66,
+    "participant2Len": 5,
+    "participant2Text": "CXCR2",
+    "documentId": "AIMed.d29",
+    "sentenceId": "AIMed.d29.s249",
+    "otherEntities": [
+      {
+        "id": "AIMed.d29.s249.e1",
+        "charOffset": 59,
+        "len": 5,
+        "text": "CXCR1"
+      },
+      {
+        "id": "AIMed.d29.s249.e3",
+        "charOffset": 81,
+        "len": 13,
+        "text": "Duffy antigen"
+      }
+    ]
+  },
+  {
+    "interacts": true,
+    "text": "This study demonstrates that IL-8 recognizes and activates CXCR1, CXCR2, and the Duffy antigen by distinct mechanisms.",
+    "participant1Id": "AIMed.d29.s249.e0",
+    "participant1Offset": 29,
+    "participant1Len": 4,
+    "participant1Text": "IL-8",
+    "participant2Id": "AIMed.d29.s249.e3",
+    "participant2Offset": 81,
+    "participant2Len": 13,
+    "participant2Text": "Duffy antigen",
+    "documentId": "AIMed.d29",
+    "sentenceId": "AIMed.d29.s249",
+    "otherEntities": [
+      {
+        "id": "AIMed.d29.s249.e1",
+        "charOffset": 59,
+        "len": 5,
+        "text": "CXCR1"
+      },
+      {
+        "id": "AIMed.d29.s249.e2",
+        "charOffset": 66,
+        "len": 5,
+        "text": "CXCR2"
+      }
+    ]
+  },
+  {
+    "interacts": false,
+    "text": "This study demonstrates that IL-8 recognizes and activates CXCR1, CXCR2, and the Duffy antigen by distinct mechanisms.",
+    "participant1Id": "AIMed.d29.s249.e1",
+    "participant1Offset": 59,
+    "participant1Len": 5,
+    "participant1Text": "CXCR1",
+    "participant2Id": "AIMed.d29.s249.e2",
+    "participant2Offset": 66,
+    "participant2Len": 5,
+    "participant2Text": "CXCR2",
+    "documentId": "AIMed.d29",
+    "sentenceId": "AIMed.d29.s249",
+    "otherEntities": [
+      {
+        "id": "AIMed.d29.s249.e0",
+        "charOffset": 29,
+        "len": 4,
+        "text": "IL-8"
+      },
+      {
+        "id": "AIMed.d29.s249.e3",
+        "charOffset": 81,
+        "len": 13,
+        "text": "Duffy antigen"
+      }
+    ]
+  },
+  {
+    "interacts": false,
+    "text": "This study demonstrates that IL-8 recognizes and activates CXCR1, CXCR2, and the Duffy antigen by distinct mechanisms.",
+    "participant1Id": "AIMed.d29.s249.e1",
+    "participant1Offset": 59,
+    "participant1Len": 5,
+    "participant1Text": "CXCR1",
+    "participant2Id": "AIMed.d29.s249.e3",
+    "participant2Offset": 81,
+    "participant2Len": 13,
+    "participant2Text": "Duffy antigen",
+    "documentId": "AIMed.d29",
+    "sentenceId": "AIMed.d29.s249",
+    "otherEntities": [
+      {
+        "id": "AIMed.d29.s249.e0",
+        "charOffset": 29,
+        "len": 4,
+        "text": "IL-8"
+      },
+      {
+        "id": "AIMed.d29.s249.e2",
+        "charOffset": 66,
+        "len": 5,
+        "text": "CXCR2"
+      }
+    ]
+  },
+  {
+    "interacts": false,
+    "text": "This study demonstrates that IL-8 recognizes and activates CXCR1, CXCR2, and the Duffy antigen by distinct mechanisms.",
+    "participant1Id": "AIMed.d29.s249.e2",
+    "participant1Offset": 66,
+    "participant1Len": 5,
+    "participant1Text": "CXCR2",
+    "participant2Id": "AIMed.d29.s249.e3",
+    "participant2Offset": 81,
+    "participant2Len": 13,
+    "participant2Text": "Duffy antigen",
+    "documentId": "AIMed.d29",
+    "sentenceId": "AIMed.d29.s249",
+    "otherEntities": [
+      {
+        "id": "AIMed.d29.s249.e0",
+        "charOffset": 29,
+        "len": 4,
+        "text": "IL-8"
+      },
+      {
+        "id": "AIMed.d29.s249.e1",
+        "charOffset": 59,
+        "len": 5,
+        "text": "CXCR1"
+      }
+    ]
+  }
+]
