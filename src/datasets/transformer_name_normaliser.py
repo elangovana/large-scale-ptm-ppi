@@ -60,7 +60,6 @@ class TransformerNameNormaliser:
                 , "len": e["len"]
                 , "replacement": replacement_text
             })
-        print(entities_replacements)
 
         p1_start = payload[self.participant1_offset_key]
         p1_len = payload[self.participant1_len_key]
