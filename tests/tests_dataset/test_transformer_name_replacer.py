@@ -71,3 +71,4 @@ class TestTransformerNameReplacer(TestCase):
 
         # Assert
         self.assertEqual(expected_text, actual)
+
