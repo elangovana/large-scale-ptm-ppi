@@ -7,9 +7,11 @@ class AimedDataset(Dataset):
     Loads an AIMed dataset formatted as Json.
     """
 
-    def __init__(self, file_path_or_dataframe, transformer=None):
+    def __init__(self, file_path_or_dataframe, transformer=None, label_transformer = None):
         self._file_path = file_path_or_dataframe
         self.transformer = transformer
+        self.label_transformer = label_transformer
+
         # Read json
         if isinstance(file_path_or_dataframe, str):
             data_df = pd.read_json(self._file_path)
@@ -34,12 +36,14 @@ class AimedDataset(Dataset):
         return self._data_df.shape[0]
 
     def __getitem__(self, index):
-        row_values = self._data_df.iloc[index, :].to_dict()
+        x = self._data_df.iloc[index, :].to_dict()
+        y = self._labels[index]
 
         # transform
         if self.transformer is not None:
-            row_values = self.transformer(row_values)
+            x = self.transformer(x)
 
-        x = row_values
-        y = self._labels[index]
+        if  self.label_transformer is not None:
+            y = self.label_transformer.map(y)
+
         return x, y
