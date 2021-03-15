@@ -45,7 +45,7 @@ class TestTransformerNameNormaliser(TestCase):
 
         # Assert
         mock_name_replacer.assert_called_with(
-            entities=[{'charOffset': 62, 'len': 62, 'replacement': 'PROTEIN0'},
+            entities=[{'charOffset': 62, 'len': 4, 'replacement': 'PROTEIN0'},
                       {'charOffset': 62, 'len': 11, 'replacement': 'PROTEINA'},
                       {'charOffset': 75, 'len': 6, 'replacement': 'PROTEINB'}],
             text=sentence)

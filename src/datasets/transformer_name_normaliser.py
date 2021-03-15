@@ -57,7 +57,7 @@ class TransformerNameNormaliser:
             replacement_text = random_replacement[raw_text[s_pos: e_pos]]
             entities_replacements.append({
                 "charOffset": e["charOffset"]
-                , "len": e["charOffset"]
+                , "len": e["len"]
                 , "replacement": replacement_text
             })
         print(entities_replacements)
