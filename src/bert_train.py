@@ -14,9 +14,8 @@ class Train:
     Trains on GPU / CPU
     """
 
-    def __init__(self, model_dir, device=None, epochs=10, early_stopping_patience=20, checkpoint_frequency=1,
-                 checkpoint_dir=None,
-                 accumulation_steps=1):
+    def __init__(self, model_dir, scorer, device=None, epochs=10, early_stopping_patience=20,
+                 checkpoint_frequency=1, checkpoint_dir=None, accumulation_steps=1):
         self.model_dir = model_dir
         self.accumulation_steps = accumulation_steps
         self.checkpoint_dir = checkpoint_dir
@@ -24,6 +23,7 @@ class Train:
         self.early_stopping_patience = early_stopping_patience
         self.epochs = epochs
         self.snapshotter = None
+        self.scorer = scorer
 
         # Set up device is not set
         available_device = "cuda:0" if torch.cuda.is_available() else "cpu"
@@ -53,7 +53,7 @@ class Train:
 
         torch.save(model, snapshot_path)
 
-    def run_train(self, train_iter, validation_iter, model_network, loss_function, optimizer, pos_label):
+    def run_train(self, train_iter, validation_iter, model_network, loss_function, optimizer, pos_label ):
         """
     Runs train...
         :param pos_label:
@@ -62,6 +62,7 @@ class Train:
         :param model_network: A neural network
         :param loss_function: Pytorch loss function
         :param optimizer: Optimiser
+        :param scorer: scorer function
         """
         best_results = None
         start = datetime.datetime.now()
@@ -122,14 +123,15 @@ class Train:
 
             # Print training set results
             self._logger.info("Train set result details:")
-            train_loss = sum(losses_train) / len(losses_train)
-            train_score = accuracy_score(actual_train, predicted_train)
+            train_actuals, train_predicted, train_loss, train_conf = self._validate(loss_function, model_network, train_iter)
+            train_score = self.scorer(train_actuals, train_conf, pos_label=pos_label)
+
             self._logger.info("Train set result details: {}".format(train_score))
 
             # Print validation set results
             self._logger.info("Validation set result details:")
-            val_actuals, val_predicted, val_loss = self.validate(loss_function, model_network, validation_iter)
-            val_score = accuracy_score(val_actuals, val_predicted)
+            val_actuals, val_predicted, val_loss, val_conf = self._validate(loss_function, model_network, validation_iter)
+            val_score = self.scorer(val_actuals, val_conf, pos_label=pos_label)
             self._logger.info("Validation set result details: {} ".format(val_score))
 
             # Snapshot best score
@@ -165,17 +167,20 @@ class Train:
 
         return best_results
 
-    def validate(self, loss_function, model_network, val_iter):
+    def _validate(self, loss_function, model_network, val_iter):
         # switch model to evaluation mode
         model_network.eval()
 
         # total loss
         val_loss = 0
 
-        actuals = torch.tensor([], dtype=torch.long).to(device=self._default_device)
-        predicted = torch.tensor([], dtype=torch.long).to(device=self._default_device)
-
         with torch.no_grad():
+
+            actuals = torch.tensor([], dtype=torch.long).to(device=self._default_device)
+            predicted = torch.tensor([], dtype=torch.long).to(device=self._default_device)
+            conf_scores = torch.tensor([], dtype=torch.float).to(device=self._default_device)
+
+            soft_max_func = nn.Softmax(dim=-1)
             for idx, val in enumerate(val_iter):
                 val_batch_idx = val[0].to(device=self._default_device)
                 val_y = val[1].to(device=self._default_device)
@@ -188,10 +193,11 @@ class Train:
                 actuals = torch.cat([actuals, val_y])
                 pred_flat = torch.max(pred_batch_y, dim=1)[1].view(-1)
                 predicted = torch.cat([predicted, pred_flat])
+                conf_scores = torch.cat([conf_scores, soft_max_func(pred_batch_y)])
 
         # Average loss
         val_loss = val_loss / len(actuals)
-        return actuals.cpu().tolist(), predicted.cpu().tolist(), val_loss
+        return actuals.cpu().numpy(), predicted.cpu().numpy(), val_loss, conf_scores.cpu().numpy()
 
     def create_checkpoint(self, model, checkpoint_dir):
         checkpoint_path = os.path.join(checkpoint_dir, 'checkpoint.pt')

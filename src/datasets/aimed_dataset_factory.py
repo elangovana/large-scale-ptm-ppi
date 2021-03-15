@@ -5,9 +5,13 @@ from datasets.aimed_label_mapper import AimedLabelMapper
 from datasets.base_dataset_factory import BaseDatasetFactory
 from datasets.transformer_chain import TransformerChain
 from datasets.transformer_name_normaliser import TransformerNameNormaliser
+from scorers.result_scorer_f1_binary_factory import ResultScorerF1BinaryFactory
 
 
 class AimedDatasetFactory(BaseDatasetFactory):
+
+    def get_scorer(self):
+        return ResultScorerF1BinaryFactory().get()
 
     def get_label_mapper(self, data=None, preprocessor=None, **kwargs):
         return AimedLabelMapper()
