@@ -89,4 +89,4 @@ class TransformerNameNormaliser:
             , "replacement": random_participant_replacement[participant2]
         })
 
-        return self.name_replacer.transform(text=raw_text, entities=entities_replacements)
+        return self.name_replacer(text=raw_text, entities=entities_replacements)
