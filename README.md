@@ -19,3 +19,19 @@ AIMed protein protein relation extraction
 ```bash
 python src/preprocessors/aimed_json_converter.py --inputfile tests/sample_data/aimed.xml --outputfile aimed.json
 ```
+
+### Step 2: 10 fold split
+
+You can either choose random split, or split by unique documents
+
+[Option R - Random ] This randomly splits into n folds
+
+   ```bash
+   python src/preprocessors/kfold_aimed_json_splitter.py --inputfile aimed.json --outputdir temp_data/kfolds_random  --kfoldLabelColumn interacts --k 10
+   ```
+
+[Option U - Unique Document] This splits into n folds, taking into account document id uniqueness
+
+   ```bash
+   python src/preprocessors/kfold_aimed_json_splitter.py --inputfile aimed.json --outputdir temp_data/kfolds_unique  --kfoldLabelColumn interacts --k 10  --kfoldDocId documentId
+   ```
