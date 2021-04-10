@@ -1,12 +1,10 @@
 import datetime
-import glob
 import logging
 import os
 
 import torch
 import torch.nn as nn
 import torch.utils.data
-from sklearn.metrics import accuracy_score
 
 
 class Train:
@@ -15,7 +13,8 @@ class Train:
     """
 
     def __init__(self, model_dir, scorer, device=None, epochs=10, early_stopping_patience=20,
-                 checkpoint_frequency=1, checkpoint_dir=None, accumulation_steps=1):
+                 checkpoint_frequency=1, checkpoint_dir=None, accumulation_steps=1, checkpoint_manager=None):
+        self.checkpoint_manager = checkpoint_manager
         self.model_dir = model_dir
         self.accumulation_steps = accumulation_steps
         self.checkpoint_dir = checkpoint_dir
@@ -53,7 +52,7 @@ class Train:
 
         torch.save(model, snapshot_path)
 
-    def run_train(self, train_iter, validation_iter, model_network, loss_function, optimizer, pos_label ):
+    def run_train(self, train_iter, validation_iter, model_network, loss_function, optimizer, pos_label):
         """
     Runs train...
         :param pos_label:
@@ -123,14 +122,16 @@ class Train:
 
             # Print training set results
             self._logger.info("Train set result details:")
-            train_actuals, train_predicted, train_loss, train_conf = self._validate(loss_function, model_network, train_iter)
+            train_actuals, train_predicted, train_loss, train_conf = self._validate(loss_function, model_network,
+                                                                                    train_iter)
             train_score = self.scorer(train_actuals, train_conf, pos_label=pos_label)
 
             self._logger.info("Train set result details: {}".format(train_score))
 
             # Print validation set results
             self._logger.info("Validation set result details:")
-            val_actuals, val_predicted, val_loss, val_conf = self._validate(loss_function, model_network, validation_iter)
+            val_actuals, val_predicted, val_loss, val_conf = self._validate(loss_function, model_network,
+                                                                            validation_iter)
             val_score = self.scorer(val_actuals, val_conf, pos_label=pos_label)
             self._logger.info("Validation set result details: {} ".format(val_score))
 
@@ -175,7 +176,6 @@ class Train:
         val_loss = 0
 
         with torch.no_grad():
-
             actuals = torch.tensor([], dtype=torch.long).to(device=self._default_device)
             predicted = torch.tensor([], dtype=torch.long).to(device=self._default_device)
             conf_scores = torch.tensor([], dtype=torch.float).to(device=self._default_device)
@@ -200,26 +200,5 @@ class Train:
         return actuals.cpu().numpy(), predicted.cpu().numpy(), val_loss, conf_scores.cpu().numpy()
 
     def create_checkpoint(self, model, checkpoint_dir):
-        checkpoint_path = os.path.join(checkpoint_dir, 'checkpoint.pt')
-
-        self._logger.info("Checkpoint model to {}".format(checkpoint_path))
-
-        # If nn.dataparallel, get the underlying module
-        if isinstance(model, torch.nn.DataParallel):
-            model = model.module
-
-        torch.save({
-            'model_state_dict': model.state_dict(),
-        }, checkpoint_path)
-
-    def try_load_statedict_from_checkpoint(self):
-        loaded_weights = None
-        if self.checkpoint_dir is not None:
-            model_files = list(glob.glob("{}/*.pt".format(self.checkpoint_dir)))
-            if len(model_files) > 0:
-                model_file = model_files[0]
-                self._logger.info(
-                    "Loading checkpoint {} , found {} checkpoint files".format(model_file, len(model_files)))
-                checkpoint = torch.load(model_file)
-                loaded_weights = checkpoint['model_state_dict']
-        return loaded_weights
+        if self.checkpoint_manager:
+            self.checkpoint_manager.write(model, checkpoint_dir)

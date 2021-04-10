@@ -1,9 +1,8 @@
+import json
 import os
 import tempfile
 from unittest import TestCase
 from unittest.mock import MagicMock
-
-import transformers
 
 from builder import Builder
 
@@ -20,22 +19,26 @@ class TestSitTrain(TestCase):
         vocab_size = 20000
         sequence_len = 20
         num_classes = 2
-        bert_config = transformers.BertConfig(vocab_size=vocab_size, hidden_size=10, num_hidden_layers=1,
-                                              num_attention_heads=1, num_labels=num_classes)
+        bert_config = {"vocab_size": vocab_size, "hidden_size": 10, "num_hidden_layers": 1,
+                       "num_attention_heads": 1, "num_labels": num_classes}
 
         # Mock tokenisor
         mock_tokenisor = MagicMock()
         mock_tokenisor.tokenize.side_effect = lambda x: x.split(" ")
         mock_tokenisor.convert_tokens_to_ids = lambda x: [i for i, _ in enumerate(x)]
 
+        # Additional args
+        additional_args = {"model_config": json.dumps(bert_config)
+            , "tokenisor_data_dir": os.path.join(os.path.dirname(__file__), "sample_data", "tokensior_data")
+                           }
+
         # Builder
         b = Builder(train_data=train_data_file, val_data=train_data_file,
                     dataset_factory_name="datasets.aimed_dataset_factory.AimedDatasetFactory",
+                    model_factory_name="models.bert_model_factory.BertModelFactory",
                     checkpoint_dir=tempdir, epochs=2, grad_accumulation_steps=1, num_workers=1,
                     early_stopping_patience=2, batch_size=batch,
-                    max_seq_len=sequence_len, model_dir=tempdir)
-        b.set_tokensior(mock_tokenisor)
-        b.set_bert_config(bert_config)
+                    max_seq_len=sequence_len, model_dir=tempdir, addition_args_dict=additional_args)
 
         trainer = b.get_trainer()
 
