@@ -40,13 +40,14 @@ class TransformerNameReplacer:
 
             if s_orig_pos  <= (previous_data_pos+previous_data_len):
                 self._logger.warning(
-                    "The position {}, is overlaps with previous data pos {} including len {} \n{} \n{}".format(
+                    "Skip: The position {} overlaps with previous data pos {} including len {} \n{} \n{}".format(
                         s_orig_pos,
                         previous_data_pos,
                         previous_data_len,
                         text,
                         pos_sorted_entities
                     ))
+                continue
             else:
                 assert s_pos > last_replaced_position, "Something has gone wrong..Start position {} is <= last_replaced_position {}, \n{}, \n{} \n{}"\
                     .format(s_pos,last_replaced_position, text,
