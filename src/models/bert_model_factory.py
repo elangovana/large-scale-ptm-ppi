@@ -26,14 +26,18 @@ class BertModelFactory(BaseModelFactory):
         model_config = json.loads(self._get_value(kwargs, "model_config", "{}"))
         model_dir = self._get_value(kwargs, "pretrained_model", "bert-base-cased")
 
+        # If model config is provided load it
         if model_config:
+            self._logger.info("Loading bert from config")
             model_config = transformers.BertConfig(**model_config)
+        else:
+            model_config = None
 
         network = BertModel(model_dir, num_classes, fine_tune=fine_tune, bert_config=model_config)
 
         if state_dict is not None:
             # Only load from BERT pretrained when no checkpoint is available
-            self._logger.info("checkpoint models found")
+            self._logger.info("Checkpoint models found, hence loading from checkpoint")
             network.load_state_dict(state_dict)
 
         self._logger.info("Retrieving model complete")
@@ -47,7 +51,8 @@ class BertModelFactory(BaseModelFactory):
 
         max_seq_len = int(self._get_value(kwargs, "tokenisor_max_seq_len", "512"))
         do_lower_case = bool(self._get_value(kwargs, "tokenisor_lower_case", "0"))
-        data_dir = self._get_value(kwargs, "tokenisor_data_dir", "bert-base-cased")
+        data_dir = self._get_value(kwargs, "tokenisor_data_dir",
+                                   self._get_value(kwargs, "pretrained_model", "bert-base-cased"))
 
         tokenisor = BertTokenizer.from_pretrained(data_dir, do_lower_case=do_lower_case)
 

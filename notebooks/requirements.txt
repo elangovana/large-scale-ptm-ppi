@@ -1,0 +1,2 @@
+matplotlib==3.3.4
+sagemaker==2.33.0

@@ -64,7 +64,7 @@ def run_train(train_dir, val_dir, args, additional_args):
     b = Builder(train_data=train_dir, val_data=val_dir,
                 dataset_factory_name=args.datasetfactory, model_factory_name=args.modelfactory,
                 checkpoint_dir=args.checkpointdir, epochs=args.epochs, grad_accumulation_steps=1,
-                num_workers=args.numworkers,
+                num_workers=args.numworkers, learning_rate=args.learningrate,
                 early_stopping_patience=2, batch_size=args.batch, model_dir=args.modeldir,
                 addition_args_dict=additional_args)
     trainer = b.get_trainer()
@@ -102,6 +102,10 @@ def parse_args():
                         help="The model factory type e.g. models.bert_model_factory.BertModelFactory",
                         default="models.bert_model_factory.BertModelFactory")
 
+    parser.add_argument("--pretrained_model_dir",
+                        help="The pretrained model dir",
+                        default=os.environ.get("SM_CHANNEL_PRETRAINED_MODEL", None))
+
     parser.add_argument("--kfoldtrainprefix",
                         help="If you want to use kFold, set the prefix of the train object. E.g. RootTrainData->OneDirPerFold->kfoldtrainprefix. Objects that do not match the train prefix will be validation  . The number of objects in the root directory will form the number of k",
                         default=None)
@@ -112,6 +116,8 @@ def parse_args():
     parser.add_argument("--checkpointfreq", help="The checkpoint frequency, number of epochs", default=1)
 
     parser.add_argument("--gradaccumulation", help="The number of gradient accumulation steps", type=int, default=1)
+    parser.add_argument("--learningrate", help="The learningrate", type=float, default=0.0001)
+
     parser.add_argument("--batch", help="The batchsize", type=int, default=32)
     parser.add_argument("--epochs", help="The number of epochs", type=int, default=10)
     parser.add_argument("--earlystoppingpatience", help="The number of patience epochs epochs", type=int, default=10)
@@ -122,10 +128,10 @@ def parse_args():
     args, additional = parser.parse_known_args()
 
     # Convert additional args into dict
-    print(additional)
     additional_dict = {}
     for i in range(0, len(additional), 2):
         additional_dict[additional[i].lstrip("--")] = additional[i + 1]
+    additional_dict["pretrained_model"] = args.pretrained_model_dir
 
     return args, additional_dict
 
