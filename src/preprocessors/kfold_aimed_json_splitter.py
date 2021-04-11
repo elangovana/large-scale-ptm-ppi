@@ -24,17 +24,17 @@ class KFoldAimedJsonSplitter:
         output_files = []
         for i, (train, val) in enumerate(k_folds):
             output_path = os.path.join(output_dir, f"fold_{i}")
-            os.makedirs(output_path, exist_ok=True)
 
-            train_file = self._write_file(output_path, train, f"train_{i}")
-            val_file = self._write_file(output_path, val, f"validation_{i}")
+            train_file = self._write_file(output_path, train, "train")
+            val_file = self._write_file(output_path, val, "validation")
 
             output_files.append((train_file, val_file))
 
         return output_files
 
     def _write_file(self, output_dir, df, prefix):
-        out_file = os.path.join(output_dir, f"{prefix}.json")
+        out_file = os.path.join(output_dir, prefix, f"{prefix}.json")
+        os.makedirs(os.path.dirname(out_file), exist_ok=True)
 
         self._logger.info("Writing file {}".format(out_file))
         df.to_json(out_file, orient="records")
