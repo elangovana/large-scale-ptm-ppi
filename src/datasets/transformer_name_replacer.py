@@ -39,7 +39,7 @@ class TransformerNameReplacer:
             e_pos = s_pos + int(entity_len)
 
             if s_orig_pos  <= (previous_data_pos+previous_data_len):
-                self._logger.warning(
+                self._logger.info(
                     "Skip: The position {} overlaps with previous data pos {} including len {} \n{} \n{}".format(
                         s_orig_pos,
                         previous_data_pos,
