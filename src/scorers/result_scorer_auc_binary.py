@@ -1,6 +1,7 @@
-from scorers.base_classification_scorer import BaseClassificationScorer
-from sklearn.metrics import roc_auc_score, average_precision_score
 import numpy as np
+from sklearn.metrics import roc_auc_score
+
+from scorers.base_classification_scorer import BaseClassificationScorer
 
 
 class ResultScorerAucBinary(BaseClassificationScorer):
@@ -16,6 +17,10 @@ class ResultScorerAucBinary(BaseClassificationScorer):
         y_pred = np.array(y_pred)
         y_actual = np.array(y_actual)
 
-        f1 = roc_auc_score(y_actual, y_pred, average='binary')
+        # if 2 D array, get max label index
+        if len(y_pred.shape) == 2:
+            y_pred = y_pred[:, pos_label]
+
+        f1 = roc_auc_score(y_actual, y_pred)
 
         return f1
