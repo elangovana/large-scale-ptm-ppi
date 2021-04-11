@@ -1,13 +1,12 @@
 import os
 from unittest import TestCase
 
-from datasets.aimed_dataset import AimedDataset
 import pandas as pd
+
+from datasets.aimed_dataset import AimedDataset
 
 
 class TestAimedDataset(TestCase):
-
-
 
     def test__call__with_df_with_label(self):
         """
@@ -86,7 +85,22 @@ class TestAimedDataset(TestCase):
         :return:
         """
         # Arrange
-        input_file = os.path.join(os.path.dirname(__file__), "..", "sample_data", "aimed.json")
+        input_file = os.path.join(os.path.dirname(__file__), "..", "sample_data", "train_data", "aimed.json")
+        sut = AimedDataset(input_file)
+
+        # Act
+        actual = sut[1]
+
+        # Assert
+        self.assertIsNotNone(actual)
+
+    def test__call__with_dir(self):
+        """
+        Calls the dataset initialised with file
+        :return:
+        """
+        # Arrange
+        input_file = os.path.join(os.path.dirname(__file__), "..", "sample_data", "train_data")
         sut = AimedDataset(input_file)
 
         # Act

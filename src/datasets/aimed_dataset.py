@@ -1,5 +1,7 @@
-from torch.utils.data import Dataset
+import os
+
 import pandas as pd
+from torch.utils.data import Dataset
 
 
 class AimedDataset(Dataset):
@@ -7,20 +9,28 @@ class AimedDataset(Dataset):
     Loads an AIMed dataset formatted as Json.
     """
 
-    def __init__(self, file_path_or_dataframe, transformer=None, label_transformer = None):
-        self._file_path = file_path_or_dataframe
+    def __init__(self, path_or_dataframe, transformer=None, label_transformer=None):
         self.transformer = transformer
         self.label_transformer = label_transformer
 
-        # Read json
-        if isinstance(file_path_or_dataframe, str):
-            data_df = pd.read_json(self._file_path)
-        elif isinstance(file_path_or_dataframe, pd.DataFrame):
-            data_df = file_path_or_dataframe
+        # Read json from path
+        if isinstance(path_or_dataframe, str):
+            file_path = path_or_dataframe
+            # If directory make sure there is just one file in it
+            if os.path.isdir(path_or_dataframe):
+                files_in_dir = os.listdir(path_or_dataframe)
+                assert len(
+                    files_in_dir) == 1, "Expecting exactly one file in the path_or_dataframe, but found {}".format(
+                    files_in_dir)
+                file_path = os.path.join(path_or_dataframe, files_in_dir[0])
+            data_df = pd.read_json(file_path)
+        # Else read from data frame
+        elif isinstance(path_or_dataframe, pd.DataFrame):
+            data_df = path_or_dataframe
         else:
             raise ValueError(
                 "The type of argument file_path_or_dataframe  must be a str or pandas dataframe, but is {}".format(
-                    type(file_path_or_dataframe)))
+                    type(path_or_dataframe)))
 
         # Filter features
         self._data_df = data_df[
