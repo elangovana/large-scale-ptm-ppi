@@ -35,3 +35,9 @@ You can either choose random split, or split by unique documents
    ```bash
    python src/preprocessors/kfold_aimed_json_splitter.py --inputfile aimed.json --outputdir temp_data/kfolds_unique  --kfoldLabelColumn interacts --k 10  --kfoldDocId documentId
    ```
+
+### Step 3: Run training
+
+```bash
+python src/main_train.py --datasetfactory datasets.aimed_dataset_factory.AimedDatasetFactory --traindir temp_data/kfold_unique --modeldir temp_data --outdir temp_data --kfoldtrainprefix train  --model_config '{"vocab_size": 20000, "hidden_size": 10, "num_hidden_layers": 1, "num_attention_heads": 1, "num_labels": 2}' --tokenisor_data_dir tests/sample_data/tokensior_data --epochs 1 --numworkers 1
+```
