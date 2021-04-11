@@ -5,7 +5,7 @@ from torch import nn
 from torch.optim import Adam
 from torch.utils.data import DataLoader
 
-from bert_train import Train
+from bert_train import BertTrain
 from locator import Locator
 
 
@@ -115,10 +115,11 @@ class Builder:
 
     def get_trainer(self):
         if self._trainer is None:
-            self._trainer = Train(model_dir=self.model_dir, scorer=self.dataset_factory.get_scorer(),
-                                  epochs=self.epochs, early_stopping_patience=self.early_stopping_patience,
-                                  checkpoint_frequency=self.checkpoint_frequency, checkpoint_dir=self.checkpoint_dir,
-                                  accumulation_steps=self.grad_accumulation_steps,
-                                  checkpoint_manager=self.model_factory.get_checkpoint_manager())
+            self._trainer = BertTrain(model_dir=self.model_dir, scorer=self.dataset_factory.get_scorer(),
+                                      epochs=self.epochs, early_stopping_patience=self.early_stopping_patience,
+                                      checkpoint_frequency=self.checkpoint_frequency,
+                                      checkpoint_dir=self.checkpoint_dir,
+                                      accumulation_steps=self.grad_accumulation_steps,
+                                      checkpoint_manager=self.model_factory.get_checkpoint_manager())
 
         return self._trainer

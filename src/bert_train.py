@@ -7,7 +7,7 @@ import torch.nn as nn
 import torch.utils.data
 
 
-class Train:
+class BertTrain:
     """
     Trains on GPU / CPU
     """
