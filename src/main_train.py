@@ -47,6 +47,7 @@ def prepare_run(args, additional_args=None):
     # Kick off training
     results = []
     for i, (train_o, val_o) in enumerate(train_val_objects):
+        logger.info(f"Running fold {i}")
         result = run_train(train_o, val_o, args, additional_args)
         results.append({"id": i
                            , "result": result
@@ -65,7 +66,7 @@ def run_train(train_dir, val_dir, args, additional_args):
                 dataset_factory_name=args.datasetfactory, model_factory_name=args.modelfactory,
                 checkpoint_dir=args.checkpointdir, epochs=args.epochs, grad_accumulation_steps=1,
                 num_workers=args.numworkers, learning_rate=args.learningrate,
-                early_stopping_patience=2, batch_size=args.batch, model_dir=args.modeldir,
+                early_stopping_patience=args.earlystoppingpatience, batch_size=args.batch, model_dir=args.modeldir,
                 addition_args_dict=additional_args)
     trainer = b.get_trainer()
     # Get data loaders
