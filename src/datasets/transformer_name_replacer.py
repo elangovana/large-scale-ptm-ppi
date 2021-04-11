@@ -27,8 +27,8 @@ class TransformerNameReplacer:
 
 
         adjustment_pos = 0
-        previous_data_pos, previous_data_len = -1,-1
-        last_replaced_position = 0
+        previous_data_pos, previous_data_len = -1, -1
+        last_replacement_end_position = 0
 
         replaced_text = text
         for entity_detail in pos_sorted_entities:
@@ -49,9 +49,9 @@ class TransformerNameReplacer:
                     ))
                 continue
             else:
-                assert s_pos > last_replaced_position, "Something has gone wrong..Start position {} is <= last_replaced_position {}, \n{}, \n{} \n{}"\
-                    .format(s_pos,last_replaced_position, text,
-                        pos_sorted_entities, s_orig_pos  )
+                assert s_pos >= last_replacement_end_position, "Something has gone wrong..Start position {} is <= last_replacement_end_position {}, \n{}, \n{} \n{}" \
+                    .format(s_pos, last_replacement_end_position, text,
+                            pos_sorted_entities, s_orig_pos)
 
             replaced_substring = replaced_text[:s_pos] + entity_detail["replacement"]
             replaced_text = replaced_substring + replaced_text[e_pos:]
@@ -59,6 +59,6 @@ class TransformerNameReplacer:
 
             adjustment_pos += len(entity_detail["replacement"]) - (e_pos - s_pos)
 
-            last_replaced_position = len(replaced_substring)
+            last_replacement_end_position = len(replaced_substring)
 
         return replaced_text

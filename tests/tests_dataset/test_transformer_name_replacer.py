@@ -44,6 +44,27 @@ class TestTransformerNameReplacer(TestCase):
         # Assert
         self.assertEqual(expected_text, actual)
 
+    def test_transform_two_replacements_startposition(self):
+        # Arrange
+        raw_text = "KLK3 and KLK4"
+        entities = [{"charOffset": 0
+                        , "len": 4
+                        , "replacement": "Protein1"
+                     },
+                    {"charOffset": 9
+                        , "len": 4
+                        , "replacement": "Protein2"
+                     }]
+
+        expected_text = "Protein1 and Protein2"
+        sut = TransformerNameReplacer()
+
+        # Act
+        actual = sut(text=raw_text, entities=entities)
+
+        # Assert
+        self.assertEqual(expected_text, actual)
+
     def test_transform_overlap_replacements(self):
         # Arrange
         raw_text = "This is KLK3 and KLK4 and klk5"
