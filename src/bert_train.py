@@ -13,7 +13,8 @@ class BertTrain:
     """
 
     def __init__(self, model_dir, scorer, device=None, epochs=10, early_stopping_patience=20,
-                 checkpoint_frequency=1, checkpoint_dir=None, accumulation_steps=1, checkpoint_manager=None):
+                 checkpoint_frequency=1, checkpoint_dir=None, accumulation_steps=1, checkpoint_manager=None,
+                 additional_scorers=None):
         self.checkpoint_manager = checkpoint_manager
         self.model_dir = model_dir
         self.accumulation_steps = accumulation_steps
@@ -22,7 +23,8 @@ class BertTrain:
         self.early_stopping_patience = early_stopping_patience
         self.epochs = epochs
         self.snapshotter = None
-        self.scorer = scorer
+        self.scorers = scorer
+        self.additional_scorers = additional_scorers or []
 
         # Set up device is not set
         available_device = "cuda:0" if torch.cuda.is_available() else "cpu"
@@ -124,20 +126,23 @@ class BertTrain:
             self._logger.info("Train set result details:")
             train_actuals, train_predicted, train_loss, train_conf = self._validate(loss_function, model_network,
                                                                                     train_iter)
-            train_score = self.scorer(train_actuals, train_conf, pos_label=pos_label)
+            train_scores = self._compute_scores(pos_label, train_actuals, train_conf)
 
-            self._logger.info("Train set result details: {}".format(train_score))
+            self._logger.info("Train set result details: {}".format(train_scores))
 
             # Print validation set results
             self._logger.info("Validation set result details:")
             val_actuals, val_predicted, val_loss, val_conf = self._validate(loss_function, model_network,
                                                                             validation_iter)
-            val_score = self.scorer(val_actuals, val_conf, pos_label=pos_label)
-            self._logger.info("Validation set result details: {} ".format(val_score))
+            val_scores = self._compute_scores(pos_label, val_actuals, val_conf)
+            self._logger.info("Validation set result details: {} ".format(val_scores))
 
             # Snapshot best score
+            # evaluator is the first metric
+            val_score = val_scores[0]["score"]
+            train_score = train_scores[0]["score"]
             if best_score is None or val_score > best_score:
-                best_results = (val_score, val_actuals, val_predicted)
+                best_results = {"scores": val_scores, "actual": val_actuals, "pred": val_predicted}
                 self._logger.info(
                     "Snapshotting because the current score {} is greater than {} ".format(val_score, best_score))
                 self.snapshot(model_network, model_dir=self.model_dir)
@@ -161,12 +166,21 @@ class BertTrain:
             print("###score: val_loss### {}".format(val_loss))
             print("###score: train_score### {}".format(train_score))
             print("###score: val_score### {}".format(val_score))
+            self._print_other_scores(train_scores, prefix="train")
+            self._print_other_scores(val_scores, prefix="val")
 
             if no_improvement_epochs > self.early_stopping_patience:
                 self._logger.info("Early stopping.. with no improvement in {}".format(no_improvement_epochs))
                 break
 
         return best_results
+
+    def _compute_scores(self, pos_label, actuals, confidence_scores):
+        scores = []
+        for scorer in self.scorers:
+            train_score = scorer(actuals, confidence_scores, pos_label=pos_label)
+            scores.append({"score_type": type(scorer).__name__, "score": train_score})
+        return scores
 
     def _validate(self, loss_function, model_network, val_iter):
         # switch model to evaluation mode
@@ -202,3 +216,7 @@ class BertTrain:
     def create_checkpoint(self, model, checkpoint_dir):
         if self.checkpoint_manager:
             self.checkpoint_manager.write(model, checkpoint_dir)
+
+    def _print_other_scores(self, scores, prefix):
+        for score in scores:
+            print("###score: {}_{}_score### {}".format(prefix, score["score_type"], score["score"]))

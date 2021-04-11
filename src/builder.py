@@ -115,7 +115,7 @@ class Builder:
 
     def get_trainer(self):
         if self._trainer is None:
-            self._trainer = BertTrain(model_dir=self.model_dir, scorer=self.dataset_factory.get_scorer(),
+            self._trainer = BertTrain(model_dir=self.model_dir, scorer=self.dataset_factory.get_scorers(),
                                       epochs=self.epochs, early_stopping_patience=self.early_stopping_patience,
                                       checkpoint_frequency=self.checkpoint_frequency,
                                       checkpoint_dir=self.checkpoint_dir,
