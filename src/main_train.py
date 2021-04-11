@@ -64,7 +64,7 @@ def run_train(train_dir, val_dir, args, additional_args):
     # Builder
     b = Builder(train_data=train_dir, val_data=val_dir,
                 dataset_factory_name=args.datasetfactory, model_factory_name=args.modelfactory,
-                checkpoint_dir=args.checkpointdir, epochs=args.epochs, grad_accumulation_steps=1,
+                checkpoint_dir=args.checkpointdir, epochs=args.epochs, grad_accumulation_steps=args.gradaccumulation,
                 num_workers=args.numworkers, learning_rate=args.learningrate,
                 early_stopping_patience=args.earlystoppingpatience, batch_size=args.batch, model_dir=args.modeldir,
                 addition_args_dict=additional_args)

@@ -15,10 +15,9 @@ class Builder:
                  checkpoint_dir=None,
                  epochs=10,
                  early_stopping_patience=10, checkpoint_frequency=1, grad_accumulation_steps=8, batch_size=8,
-                 max_seq_len=512, learning_rate=0.00001, fine_tune=True, addition_args_dict=None):
+                 max_seq_len=512, learning_rate=0.00001, addition_args_dict=None):
         self._addition_args_dict = addition_args_dict
         self.model_dir = model_dir
-        self.fine_tune = fine_tune
         self.learning_rate = learning_rate
         self.checkpoint_frequency = checkpoint_frequency
         self.grad_accumulation_steps = grad_accumulation_steps
