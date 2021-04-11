@@ -9,9 +9,9 @@ from utils.kfold_wrapper import KFoldWrapper
 
 
 class KFoldAimedJsonSplitter:
-
-    def __init__(self):
-        pass
+    """
+    Splits the AIMed dataset into k folds
+    """
 
     @property
     def _logger(self):
