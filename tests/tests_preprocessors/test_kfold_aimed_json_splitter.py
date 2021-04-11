@@ -9,7 +9,7 @@ class TestKFoldAimedJsonSplitter(TestCase):
 
     def test_split_random(self):
         # Arrange
-        data_file = os.path.join(os.path.dirname(__file__), "..", "sample_data", "aimed.json")
+        data_file = os.path.join(os.path.dirname(__file__), "..", "sample_data", "train_data", "aimed.json")
         k = 2
         label = "interacts"
         tempdir = tempfile.mkdtemp()
@@ -24,7 +24,7 @@ class TestKFoldAimedJsonSplitter(TestCase):
 
     def test_split_unique_doc(self):
         # Arrange
-        data_file = os.path.join(os.path.dirname(__file__), "..", "sample_data", "aimed.json")
+        data_file = os.path.join(os.path.dirname(__file__), "..", "sample_data", "train_data", "aimed.json")
         k = 2
         label = "interacts"
         tempdir = tempfile.mkdtemp()
