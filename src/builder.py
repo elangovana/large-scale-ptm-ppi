@@ -72,13 +72,15 @@ class Builder:
     def get_train_dataset(self):
         if self._train_dataset is None:
             self._train_dataset = self.dataset_factory.get_dataset(self.train_data,
-                                                                   preprocessors=self.get_tokenisor())
+                                                                   preprocessors=self.get_tokenisor(),
+                                                                   **self._addition_args_dict)
 
         return self._train_dataset
 
     def get_val_dataset(self):
         if self._val_dataset is None:
-            self._val_dataset = self.dataset_factory.get_dataset(self.val_data, preprocessors=self.get_tokenisor())
+            self._val_dataset = self.dataset_factory.get_dataset(self.val_data, preprocessors=self.get_tokenisor(),
+                                                                 **self._addition_args_dict)
 
         return self._val_dataset
 

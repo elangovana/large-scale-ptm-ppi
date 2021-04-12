@@ -1,3 +1,4 @@
+import logging
 from typing import List
 
 from datasets.aimed_dataset import AimedDataset
@@ -18,10 +19,16 @@ class AimedDatasetFactory(BaseDatasetFactory):
         ]
         return scores
 
+    @property
+    def _logger(self):
+        return logging.getLogger(__name__)
+
     def get_label_mapper(self, data=None, preprocessor=None, **kwargs):
         return AimedLabelMapper()
 
     def get_dataset(self, data, preprocessors=None, **kwargs):
+        random_seed = self._get_value(kwargs, "protein_name_replacer_random_seed", None)
+        random_seed = int(random_seed) if random_seed else random_seed
         transformer_list = [
             TransformerNameNormaliser(text_key="text"
                                       , participant1_offset_key="participant1Offset"
@@ -29,7 +36,7 @@ class AimedDatasetFactory(BaseDatasetFactory):
                                       , participant2_offset_key="participant2Offset"
                                       , participant2_len_key="participant2Len"
                                       , other_entities_dict_key="otherEntities"
-                                      , random_seed=None
+                                      , random_seed=random_seed
                                       )
         ]
 
@@ -42,3 +49,8 @@ class AimedDatasetFactory(BaseDatasetFactory):
 
         transformer_chain = TransformerChain(transformer_list)
         return AimedDataset(data, transformer=transformer_chain, label_transformer=self.get_label_mapper())
+
+    def _get_value(self, kwargs, key, default):
+        value = kwargs.get(key, default)
+        self._logger.info("Retrieving key {} with default {}, found {}".format(key, default, value))
+        return value
