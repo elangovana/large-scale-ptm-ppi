@@ -142,7 +142,9 @@ class BertTrain:
             val_score = val_scores[0]["score"]
             train_score = train_scores[0]["score"]
             if best_score is None or val_score > best_score:
-                best_results = {"scores": val_scores, "actual": val_actuals, "pred": val_predicted}
+                # Makre sure results are seralisable
+                best_results = {"scores": val_scores, "actual": val_actuals.tolist(), "pred": val_predicted.tolist()}
+
                 self._logger.info(
                     "Snapshotting because the current score {} is greater than {} ".format(val_score, best_score))
                 self.snapshot(model_network, model_dir=self.model_dir)
