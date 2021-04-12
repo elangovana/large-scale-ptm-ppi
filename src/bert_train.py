@@ -175,6 +175,8 @@ class BertTrain:
                 self._logger.info("Early stopping.. with no improvement in {}".format(no_improvement_epochs))
                 break
 
+        print("Best validation scores: {}".format(best_results["scores"]))
+
         return best_results
 
     def _compute_scores(self, pos_label, actuals, confidence_scores):
