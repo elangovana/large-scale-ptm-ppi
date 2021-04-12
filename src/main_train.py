@@ -64,7 +64,8 @@ def run_train(train_dir, val_dir, args, additional_args):
     # Builder
     b = Builder(train_data=train_dir, val_data=val_dir,
                 dataset_factory_name=args.datasetfactory, model_factory_name=args.modelfactory,
-                checkpoint_dir=args.checkpointdir, epochs=args.epochs, grad_accumulation_steps=args.gradaccumulation,
+                checkpoint_dir=args.checkpointdir, epochs=args.epochs,
+                grad_accumulation_steps=args.gradientaccumulationsteps,
                 num_workers=args.numworkers, learning_rate=args.learningrate,
                 early_stopping_patience=args.earlystoppingpatience, batch_size=args.batch, model_dir=args.modeldir,
                 addition_args_dict=additional_args)
@@ -116,7 +117,8 @@ def parse_args():
     parser.add_argument("--checkpointdir", help="The checkpoint dir", default=None)
     parser.add_argument("--checkpointfreq", help="The checkpoint frequency, number of epochs", default=1)
 
-    parser.add_argument("--gradaccumulation", help="The number of gradient accumulation steps", type=int, default=1)
+    parser.add_argument("--gradientaccumulationsteps", help="The number of gradient accumulation steps", type=int,
+                        default=1)
     parser.add_argument("--learningrate", help="The learningrate", type=float, default=0.0001)
 
     parser.add_argument("--batch", help="The batchsize", type=int, default=32)
