@@ -34,8 +34,8 @@ class TransformerNameNormaliser:
 
         self.name_replacer = name_replacer or TransformerNameReplacer()
 
-        self._participants_fmt = ["PROTEINA", "PROTEINB"]
-        self._other_proteins_fmt = "PROTEIN{}"
+        self._participants_fmt = ["Proteinmarkera", "Proteinmarkerb"]
+        self._other_proteins_fmt = "Proteinextra{}"
 
         self._random = Random(random_seed)
 
