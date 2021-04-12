@@ -47,7 +47,7 @@ def prepare_run(args, additional_args=None):
     # Kick off training
     results = []
     for i, (train_o, val_o) in enumerate(train_val_objects):
-        logger.info(f"Running fold {i}")
+        logger.info("Running fold {} {}".format(i, (train_o, val_o)))
         result = run_train(train_o, val_o, args, additional_args)
         results.append({"id": i
                            , "result": result
