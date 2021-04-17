@@ -1,9 +1,14 @@
+import logging
 
 from torch import nn
 from transformers import BertForSequenceClassification
 
 
 class BertModel(nn.Module):
+
+    @property
+    def _logger(self):
+        return logging.getLogger(__name__)
 
     def __init__(self, model_name_or_dir, num_classes, fine_tune=True, state_dict=None, bert_config=None):
         super().__init__()
@@ -19,6 +24,7 @@ class BertModel(nn.Module):
             self._freeze_base_weights()
 
     def _freeze_base_weights(self):
+        self._logger.info("Freezing weights for base model")
         for param in self.model.base_model.parameters():
             param.requires_grad = False
 

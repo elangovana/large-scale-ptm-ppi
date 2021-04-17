@@ -22,7 +22,7 @@ class BertModelFactory(BaseModelFactory):
         # If checkpoint file is available, load from checkpoint
         state_dict = self.get_checkpoint_manager().read(checkpoint_dir)
 
-        fine_tune = bool(self._get_value(kwargs, "model_fine_tune", "0"))
+        fine_tune = bool(int(self._get_value(kwargs, "model_fine_tune", "0")))
         model_config = json.loads(self._get_value(kwargs, "model_config", "{}"))
         model_dir = self._get_value(kwargs, "pretrained_model", "bert-base-cased")
 
