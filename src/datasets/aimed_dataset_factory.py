@@ -8,13 +8,15 @@ from datasets.transformer_chain import TransformerChain
 from datasets.transformer_name_normaliser import TransformerNameNormaliser
 from scorers.result_scorer_auc_binary_factory import ResultScorerAucBinaryFactory
 from scorers.result_scorer_f1_binary_factory import ResultScorerF1BinaryFactory
+from scorers.result_scorer_pr_binary_factory import ResultScorerPrBinaryFactory
 
 
 class AimedDatasetFactory(BaseDatasetFactory):
 
     def get_scorers(self):
         scores = [
-            ResultScorerAucBinaryFactory().get()
+            ResultScorerPrBinaryFactory().get()
+            , ResultScorerAucBinaryFactory().get()
             , ResultScorerF1BinaryFactory().get()
         ]
         return scores
