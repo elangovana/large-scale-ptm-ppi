@@ -12,9 +12,8 @@ class BertTrain:
     Trains on GPU / CPU
     """
 
-    def __init__(self, model_dir, scorer, device=None, epochs=10, early_stopping_patience=20,
-                 checkpoint_frequency=1, checkpoint_dir=None, accumulation_steps=1, checkpoint_manager=None,
-                 additional_scorers=None):
+    def __init__(self, model_dir, scorers, device=None, epochs=10, early_stopping_patience=20,
+                 checkpoint_frequency=1, checkpoint_dir=None, accumulation_steps=1, checkpoint_manager=None):
         self.checkpoint_manager = checkpoint_manager
         self.model_dir = model_dir
         self.accumulation_steps = accumulation_steps
@@ -23,8 +22,7 @@ class BertTrain:
         self.early_stopping_patience = early_stopping_patience
         self.epochs = epochs
         self.snapshotter = None
-        self.scorers = scorer
-        self.additional_scorers = additional_scorers or []
+        self.scorers = scorers
 
         # Set up device is not set
         available_device = "cuda:0" if torch.cuda.is_available() else "cpu"
