@@ -15,9 +15,9 @@ class AimedDatasetFactory(BaseDatasetFactory):
 
     def get_scorers(self):
         scores = [
-            ResultScorerPrBinaryFactory().get()
+            ResultScorerF1BinaryFactory().get()
+            , ResultScorerPrBinaryFactory().get()
             , ResultScorerAucBinaryFactory().get()
-            , ResultScorerF1BinaryFactory().get()
         ]
         return scores
 
