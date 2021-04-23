@@ -2,7 +2,9 @@ import argparse
 import json
 import logging
 import os
+import shutil
 import sys
+import uuid
 
 from builder import Builder
 
@@ -16,15 +18,11 @@ def prepare_run(args, additional_args=None):
     train_dir = args.traindir
 
     train_val_objects = []
+    checkpoint_dir = args.checkpointdir
 
     # If K Fold prefix is passes in then run k times
     if kfold_trainprefix:
         fold_dirs = os.listdir(args.traindir)
-
-        # Set checkpoint as none when running kfold, as the next fold might pick up the old checkpoint before training..
-        if args.checkpointdir:
-            logger.warning("Checkpoint is not supported during KFold..Disabling checkpointing")
-            args.checkpointdir = None
 
         # Prepare the train and val directories
         for f_dir in fold_dirs:
@@ -45,13 +43,31 @@ def prepare_run(args, additional_args=None):
         train_val_objects = [(train_dir, val_dir)]
 
     # Kick off training
-    results = []
-    for i, (train_o, val_o) in enumerate(train_val_objects):
-        logger.info("Running fold {} {}".format(i, (train_o, val_o)))
-        result = run_train(train_o, val_o, args, additional_args)
-        results.append({"id": i
+    checkpoint_cache = load_kfold_check_point(checkpoint_dir) or {}
+    results = checkpoint_cache["results"]
+    metadata = checkpoint_cache["metadata"]
+    checkpoint_completed_folds = [r["data_files"] for r in results]
+    for i, (train_o, val_o) in enumerate(filter(lambda d: d not in checkpoint_completed_folds, train_val_objects)):
+        fold_key = (train_o, val_o)
+
+        if not fold_key in metadata:
+            metadata[fold_key] = {
+                "checkpoint_dir": os.path.join(checkpoint_dir, str(uuid.uuid4()))
+            }
+
+        model_checkpoint_dir = metadata[fold_key]["checkpoint_dir"]
+        os.makedirs(model_checkpoint_dir, exist_ok=True)
+
+        logger.info("Running fold {} {}".format(i, fold_key))
+        result = run_train(train_o, val_o, model_checkpoint_dir, args, additional_args)
+        results.append({"data_files": fold_key
                            , "result": result
                         })
+
+        save_kfold_check_point(checkpoint_dir, {"results": results, "metadata": metadata})
+
+        # Delete  checkpoint for that fold, training complete
+        shutil.rmtree(model_checkpoint_dir)
 
     # Write results
     output_results = os.path.join(args.outdir, "output.json")
@@ -60,11 +76,38 @@ def prepare_run(args, additional_args=None):
         json.dump(results, f)
 
 
-def run_train(train_dir, val_dir, args, additional_args):
+def load_kfold_check_point(checkpoint_dir):
+    if checkpoint_dir is None: return None
+
+    result = None
+    checkpoint_point_file = os.path.join(checkpoint_dir, "checkpoint_k_fold.json")
+    logger.info("Checking for checkpoints in {}".format(checkpoint_dir))
+
+    if not os.path.exists(checkpoint_point_file): return result
+
+    logger.info("Loading  checkpoints from {}".format(checkpoint_point_file))
+
+    with open(checkpoint_point_file, "r") as f:
+        result = json.load(f)
+
+    return result
+
+
+def save_kfold_check_point(checkpoint_dir, obj):
+    if checkpoint_dir is None: return
+
+    checkpoint_point_file = os.path.join(checkpoint_dir, "checkpoint_k_fold.json")
+    logger.info("Saving  fold checkpoint to {}".format(checkpoint_point_file))
+
+    with open(checkpoint_point_file, "w") as f:
+        json.dump(obj, f)
+
+
+def run_train(train_dir, val_dir, checkpointdir, args, additional_args):
     # Builder
     b = Builder(train_data=train_dir, val_data=val_dir,
                 dataset_factory_name=args.datasetfactory, model_factory_name=args.modelfactory,
-                checkpoint_dir=args.checkpointdir, epochs=args.epochs,
+                checkpoint_dir=checkpointdir, epochs=args.epochs,
                 grad_accumulation_steps=args.gradientaccumulationsteps,
                 num_workers=args.numworkers, learning_rate=args.learningrate,
                 early_stopping_patience=args.earlystoppingpatience, batch_size=args.batch, model_dir=args.modeldir,
