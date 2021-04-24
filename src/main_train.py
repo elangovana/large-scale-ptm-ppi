@@ -47,27 +47,33 @@ def prepare_run(args, additional_args=None):
     results = checkpoint_cache.get("results", [])
     metadata = checkpoint_cache.get("metadata", {})
     checkpoint_completed_folds = [r["data_files"] for r in results]
-    for i, (train_o, val_o) in enumerate(filter(lambda d: d not in checkpoint_completed_folds, train_val_objects)):
-        fold_key = (train_o, val_o)
+    for i, (train_o, val_o) in enumerate(
+            filter(lambda d: list(d) not in checkpoint_completed_folds, train_val_objects)):
+        fold_key = "#".join([train_o, val_o])
 
         if not fold_key in metadata:
             metadata[fold_key] = {
-                "checkpoint_dir": os.path.join(checkpoint_dir, str(uuid.uuid4()))
+                "checkpoint_dir": None
             }
 
-        model_checkpoint_dir = metadata[fold_key]["checkpoint_dir"]
-        os.makedirs(model_checkpoint_dir, exist_ok=True)
+        model_checkpoint_dir = None
+        if checkpoint_dir:
+            new_chckpoint_path = os.path.join(checkpoint_dir, str(uuid.uuid4()))
+            metadata[fold_key]["checkpoint_dir"] = metadata[fold_key]["checkpoint_dir"] or new_chckpoint_path
+            model_checkpoint_dir = metadata[fold_key]["checkpoint_dir"]
+            os.makedirs(model_checkpoint_dir, exist_ok=True)
 
         logger.info("Running fold {} {}".format(i, fold_key))
         result = run_train(train_o, val_o, model_checkpoint_dir, args, additional_args)
-        results.append({"data_files": fold_key
+        results.append({"data_files": [train_o, val_o]
                            , "result": result
                         })
 
         save_kfold_check_point(checkpoint_dir, {"results": results, "metadata": metadata})
 
         # Delete  checkpoint for that fold, training complete
-        shutil.rmtree(model_checkpoint_dir)
+        if model_checkpoint_dir:
+            shutil.rmtree(model_checkpoint_dir)
 
     # Write results
     output_results = os.path.join(args.outdir, "output.json")
