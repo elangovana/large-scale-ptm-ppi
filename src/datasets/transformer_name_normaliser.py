@@ -34,8 +34,8 @@ class TransformerNameNormaliser:
 
         self.name_replacer = name_replacer or TransformerNameReplacer()
 
-        self._participants_fmt = ["Proteinmarkera", "Proteinmarkerb"]
-        self._other_proteins_fmt = "Proteinextra{}"
+        self._participants_norm_prefix = "ProteinMarker"
+        self._other_entities_norm_prefix = "ProteinOther"
 
         self._random = Random(random_seed)
 
@@ -43,49 +43,61 @@ class TransformerNameNormaliser:
         other_entities = payload[self.other_entities_dict_key]
         raw_text = payload[self.text_key]
 
-        # Get replacement for non-participants
-        unique_other_entities = set(
-            [raw_text[e["charOffset"]:(e["charOffset"] + 1 + e["len"])] for e in other_entities])
+        # Get other replacements dict, offset, len, replacement
+        entities_replacements = self._get_replacement(other_entities, raw_text, self._other_entities_norm_prefix)
 
-        randomised_list = self._random.sample(list(unique_other_entities), k=len(unique_other_entities))
-        random_replacement = {v: self._other_proteins_fmt.format(i) for i, v in enumerate(randomised_list)}
+        # Participant replacement dict
+        participants_dict = self._get_participants_dict(payload)
+        participants_replacements = self._get_replacement(participants_dict, raw_text, self._participants_norm_prefix)
+
+        # Combine replacement for participants and other
+        entities_replacements = entities_replacements + participants_replacements
+
+        return self.name_replacer(text=raw_text, entities=entities_replacements)
+
+    def _get_replacement(self, entities_dict_list, raw_text, norm_prefix):
+        # Get replacement for non-participants
+        unique_entity_names = set(
+            [raw_text[e["charOffset"]:(e["charOffset"] + 1 + e["len"])] for e in entities_dict_list])
+
+        entities_random_order = self._random.sample(list(unique_entity_names), k=len(unique_entity_names))
+        entities_norm_replacement = {e: "{}{}".format(norm_prefix, i) for i, e in enumerate(entities_random_order)}
 
         entities_replacements = []
-        for e in other_entities:
+
+        for e in entities_dict_list:
             s_pos = e["charOffset"]
             e_pos = s_pos + 1 + e["len"]
-            replacement_text = random_replacement[raw_text[s_pos: e_pos]]
+            entity_name = raw_text[s_pos: e_pos]
+            norm_replacement = entities_norm_replacement[entity_name]
             entities_replacements.append({
                 "charOffset": e["charOffset"]
                 , "len": e["len"]
-                , "replacement": replacement_text
+                , "replacement": norm_replacement
             })
+        return entities_replacements
 
+    def _get_participants_dict(self, payload):
+        result = []
+
+        # Participant 1
         p1_start = payload[self.participant1_offset_key]
         p1_len = payload[self.participant1_len_key]
-        p1_end = p1_start + p1_len + 1
-        participant1 = raw_text[p1_start: p1_end]
 
+        result.append({
+            "charOffset": p1_start,
+            "len": p1_len
+        }
+        )
+
+        # Participant 2
         p2_start = payload[self.participant2_offset_key]
         p2_len = payload[self.participant2_len_key]
-        p2_end = p2_start + p2_len + 1
-        participant2 = raw_text[p2_start: p2_end]
 
-        # Map participants to replacement
-        random_participant_replacement = {[participant1, participant2][i]: v for i, v in
-                                          enumerate(self._random.sample(self._participants_fmt,
-                                                                        k=len(self._participants_fmt)))}
+        result.append({
+            "charOffset": p2_start,
+            "len": p2_len
+        }
+        )
 
-        entities_replacements.append({
-            "charOffset": p1_start
-            , "len": p1_len
-            , "replacement": random_participant_replacement[participant1]
-        })
-
-        entities_replacements.append({
-            "charOffset": p2_start
-            , "len": p2_len
-            , "replacement": random_participant_replacement[participant2]
-        })
-
-        return self.name_replacer(text=raw_text, entities=entities_replacements)
+        return result
