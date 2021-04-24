@@ -29,26 +29,19 @@ class TestTransformerAimedParticipantAugmentor(TestCase):
 
         expected = payload.copy()
         expected["participantEntities"] = [
-            {"id": "AIMed.d28.s234.e0"
-                , "charOffset": 62
+            {"charOffset": 62
                 , "len": 4
-                , "text": "GITR"
+
              },
-            {"id": "AIMed.d28.s234.e1"
-                , "charOffset": 62
+            {"charOffset": 62
                 , "len": 11
-                , "text": "GITR ligand"
              }
         ]
 
-        sut = TransformerAimedParticipantAugmentor(participant1_id_key="participant1Id"
-                                                   , participant1_offset_key="participant1Offset"
+        sut = TransformerAimedParticipantAugmentor(participant1_offset_key="participant1Offset"
                                                    , participant1_len_key="participant1Len"
-                                                   , participant1_text_key="participant1Text"
-                                                   , participant2_id_key="participant2Id"
                                                    , participant2_offset_key="participant2Offset"
                                                    , participant2_len_key="participant2Len"
-                                                   , participant2_text_key="participant2Text"
                                                    , result_key="participantEntities")
 
         # Act

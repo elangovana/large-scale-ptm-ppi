@@ -4,6 +4,7 @@ from typing import List
 from datasets.aimed_dataset import AimedDataset
 from datasets.aimed_label_mapper import AimedLabelMapper
 from datasets.base_dataset_factory import BaseDatasetFactory
+from datasets.transformer_aimed_participant_augmentor import TransformerAimedParticipantAugmentor
 from datasets.transformer_chain import TransformerChain
 from datasets.transformer_name_normaliser import TransformerNameNormaliser
 from scorers.result_scorer_auc_binary_factory import ResultScorerAucBinaryFactory
@@ -32,14 +33,16 @@ class AimedDatasetFactory(BaseDatasetFactory):
         random_seed = self._get_value(kwargs, "protein_name_replacer_random_seed", None)
         random_seed = int(random_seed) if random_seed else random_seed
         transformer_list = [
-            TransformerNameNormaliser(text_key="text"
-                                      , participant1_offset_key="participant1Offset"
-                                      , participant1_len_key="participant1Len"
-                                      , participant2_offset_key="participant2Offset"
-                                      , participant2_len_key="participant2Len"
-                                      , other_entities_dict_key="otherEntities"
-                                      , random_seed=random_seed
-                                      )
+            TransformerAimedParticipantAugmentor(participant1_offset_key="participant1Offset"
+                                                 , participant1_len_key="participant1Len"
+                                                 , participant2_offset_key="participant2Offset"
+                                                 , participant2_len_key="participant2Len"
+                                                 , result_key="participantEntities"
+                                                 ),
+            TransformerNameNormaliser(text_key="text",
+                                      participants_entities_dict_key="participantEntities",
+                                      other_entities_dict_key="otherEntities",
+                                      random_seed=random_seed)
         ]
 
         preprocessors = preprocessors or []

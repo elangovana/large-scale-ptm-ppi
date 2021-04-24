@@ -21,6 +21,16 @@ class TestTransformerNameNormaliser(TestCase):
             , "participant2Text": "hGITRL"
             , "documentId": "AIMed.d28"
             , "sentenceId": "AIMed.d28.s234"
+            , "participantEntities": [
+                {
+                    "charOffset": 62
+                    , "len": 11
+                },
+                {
+                    "charOffset": 75
+                    , "len": 6
+                }
+            ]
             , "otherEntities": [{"id": "AIMed.d28.s234.e0"
                                     , "charOffset": 62
                                     , "len": 4
@@ -29,15 +39,9 @@ class TestTransformerNameNormaliser(TestCase):
                    }
 
         mock_name_replacer = MagicMock()
-        sut = TransformerNameNormaliser(text_key="text"
-                                        , participant1_offset_key="participant1Offset"
-                                        , participant1_len_key="participant1Len"
-                                        , participant2_offset_key="participant2Offset"
-                                        , participant2_len_key="participant2Len"
-                                        , other_entities_dict_key="otherEntities"
-                                        , name_replacer=mock_name_replacer
-                                        , random_seed=30
-                                        )
+        sut = TransformerNameNormaliser(text_key="text", participants_entities_dict_key="participantEntities",
+                                        other_entities_dict_key="otherEntities", name_replacer=mock_name_replacer,
+                                        random_seed=30)
 
         # Act
         sut(payload)
