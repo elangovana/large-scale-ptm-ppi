@@ -64,11 +64,15 @@ def prepare_run(args, additional_args=None):
             os.makedirs(model_checkpoint_dir, exist_ok=True)
 
         logger.info("Running fold {} {}".format(i, fold_key))
+        # Save before so if training terminates half way through, then the metadata can be loaded
+        save_kfold_check_point(checkpoint_dir, {"results": results, "metadata": metadata})
+
         result = run_train(train_o, val_o, model_checkpoint_dir, args, additional_args)
         results.append({"data_files": [train_o, val_o]
                            , "result": result
                         })
 
+        # Save at the end of fold..
         save_kfold_check_point(checkpoint_dir, {"results": results, "metadata": metadata})
 
         # Delete  checkpoint for that fold, training complete
