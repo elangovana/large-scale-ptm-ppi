@@ -44,8 +44,8 @@ def prepare_run(args, additional_args=None):
 
     # Kick off training
     checkpoint_cache = load_kfold_check_point(checkpoint_dir) or {}
-    results = checkpoint_cache["results"]
-    metadata = checkpoint_cache["metadata"]
+    results = checkpoint_cache.get("results", [])
+    metadata = checkpoint_cache.get("metadata", {})
     checkpoint_completed_folds = [r["data_files"] for r in results]
     for i, (train_o, val_o) in enumerate(filter(lambda d: d not in checkpoint_completed_folds, train_val_objects)):
         fold_key = (train_o, val_o)
