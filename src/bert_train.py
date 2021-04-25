@@ -152,7 +152,9 @@ class BertTrain:
                 best_results = {"scores": val_scores,
                                 "loss": val_loss,
                                 "actual": val_actuals.tolist(),
-                                "pred": val_predicted.tolist(), }
+                                "pred": val_predicted.tolist(),
+                                "conf": val_conf.tolist()
+                                }
 
                 self._logger.info(
                     "Snapshotting because the current score {} is better than {} ".format(eval_score, best_score))
