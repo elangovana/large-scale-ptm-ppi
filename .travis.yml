@@ -6,5 +6,5 @@ install:
   - pip -V
   - pip install --progress-bar off -r tests/requirements.txt
 script:
-  - export PYTHONPATH=./source
+  - export PYTHONPATH=./src
   - pytest --tb=short
