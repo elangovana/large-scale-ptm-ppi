@@ -1,6 +1,8 @@
-# Protien protein interaction AIMed
-AIMed protein protein relation extraction
+[![Build Status](https://travis-ci.org/elangovana/ppi-aimed.svg?branch=main)](https://travis-ci.org/elangovana/ppi-aimed)
 
+# Protien protein interaction AIMed
+
+AIMed protein protein relation extraction
 
 ## Download AIMed dataset
 
