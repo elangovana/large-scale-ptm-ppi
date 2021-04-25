@@ -155,7 +155,7 @@ class BertTrain:
                                 "pred": val_predicted.tolist(), }
 
                 self._logger.info(
-                    "Snapshotting because the current score {} is greater than {} ".format(eval_score, best_score))
+                    "Snapshotting because the current score {} is better than {} ".format(eval_score, best_score))
                 self.snapshot(model_network, model_dir=self.model_dir)
                 best_score = eval_score
                 no_improvement_epochs = 0
