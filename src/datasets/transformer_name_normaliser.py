@@ -54,7 +54,7 @@ class TransformerNameNormaliser:
     def _get_replacement(self, entities_dict_list, raw_text, norm_prefix):
         # Get replacement for non-participants
         unique_entity_names = sorted(set(
-            [raw_text[e["charOffset"]:(e["charOffset"] + 1 + e["len"])] for e in entities_dict_list]))
+            [raw_text[e["charOffset"]:(e["charOffset"] + e["len"])] for e in entities_dict_list]))
 
         entities_random_order = self._random.sample(list(unique_entity_names), k=len(unique_entity_names))
         entities_norm_replacement = {e: "{}{}".format(norm_prefix, i) for i, e in enumerate(entities_random_order)}
@@ -63,13 +63,13 @@ class TransformerNameNormaliser:
 
         for e in entities_dict_list:
             s_pos = e["charOffset"]
-            e_pos = s_pos + 1 + e["len"]
+            e_pos = s_pos + e["len"]
             entity_name = raw_text[s_pos: e_pos]
             norm_replacement = entities_norm_replacement[entity_name]
             entities_replacements.append({
                 "charOffset": e["charOffset"]
                 , "len": e["len"]
                 , "replacement": norm_replacement
+                , "original": entity_name
             })
         return entities_replacements
-

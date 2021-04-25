@@ -8,7 +8,8 @@ class TestTransformerNameNormaliser(TestCase):
 
     def test_transform(self):
         # Arrange
-        sentence = "We have identified a new TNF-related ligand, designated human GITR ligand (hGITRL), and its human receptor (hGITR), an ortholog of the recently discovered murine glucocorticoid-induced TNFR-related (mGITR) protein [4]."
+        sentence = "We have identified a new TNF-related ligand, designated human GITR ligand (hGITRL), and its human receptor (hGITR), and KLK3(KLK3). an ortholog of the recently discovered murine glucocorticoid-induced TNFR-related (mGITR) protein [4]."
+        # We have identified a new TNF-related ligand, designated human GITR ligand (hGITRL), and its human receptor (hGITR), and KLK3(KLK3). an ortholog of the recently discovered murine glucocorticoid-induced TNFR-related (mGITR) protein [4].
         payload = {"interacts": False
             , "text": sentence
             , "participant1Id": "AIMed.d28.s234.e1"
@@ -34,7 +35,15 @@ class TestTransformerNameNormaliser(TestCase):
             , "otherEntities": [{"id": "AIMed.d28.s234.e0"
                                     , "charOffset": 62
                                     , "len": 4
-                                    , "text": "GITR"}
+                                    , "text": "GITR"},
+                                {"id": "AIMed.d28.s234.e5"
+                                    , "charOffset": 120
+                                    , "len": 4
+                                    , "text": "KLK3"},
+                                {"id": "AIMed.d28.s234.e6"
+                                    , "charOffset": 125
+                                    , "len": 4
+                                    , "text": "KLK3"}
                                 ]
                    }
 
@@ -48,7 +57,10 @@ class TestTransformerNameNormaliser(TestCase):
 
         # Assert
         mock_name_replacer.assert_called_with(
-            entities=[{'charOffset': 62, 'len': 4, 'replacement': 'ProteinOther0'},
-                      {'charOffset': 62, 'len': 11, 'replacement': 'ProteinMarker0'},
-                      {'charOffset': 75, 'len': 6, 'replacement': 'ProteinMarker1'}],
+            entities=[{'charOffset': 62, 'len': 4, 'replacement': 'ProteinOther1', "original": "GITR"},
+                      {'charOffset': 120, 'len': 4, 'replacement': 'ProteinOther0', "original": "KLK3"},
+                      {'charOffset': 125, 'len': 4, 'replacement': 'ProteinOther0', "original": "KLK3"},
+                      {'charOffset': 62, 'len': 11, 'replacement': 'ProteinMarker0', "original": "GITR ligand"},
+                      {'charOffset': 75, 'len': 6, 'replacement': 'ProteinMarker1', "original": "hGITRL"},
+                      ],
             text=sentence)
