@@ -12,7 +12,7 @@ class BertTrain:
     Trains on GPU / CPU
     """
 
-    def __init__(self, model_dir, scorers, device=None, epochs=10, early_stopping_patience=20,
+    def __init__(self, model_dir, scorers, use_loss_eval=False, device=None, epochs=10, early_stopping_patience=20,
                  checkpoint_frequency=1, checkpoint_dir=None, accumulation_steps=1, checkpoint_manager=None):
         self.checkpoint_manager = checkpoint_manager
         self.model_dir = model_dir
@@ -23,6 +23,7 @@ class BertTrain:
         self.epochs = epochs
         self.snapshotter = None
         self.scorers = scorers
+        self.use_loss_eval = use_loss_eval
 
         # Set up device is not set
         available_device = "cuda:0" if torch.cuda.is_available() else "cpu"
@@ -79,6 +80,11 @@ class BertTrain:
             self._logger.info("Using multi gpu with devices {}, default {} ".format(self.device, self._default_device))
 
         model_network.to(device=self._default_device)
+
+        eval_is_better = lambda b, n: n > b
+        if self.use_loss_eval:
+            self._logger.info("Using loss function as the eval for best model..")
+            eval_is_better = lambda b, n: n < b
 
         for epoch in range(self.epochs):
             losses_train = []
@@ -139,14 +145,19 @@ class BertTrain:
             # evaluator is the first metric
             val_score = val_scores[0]["score"]
             train_score = train_scores[0]["score"]
-            if best_score is None or val_score > best_score:
-                # Makre sure results are seralisable
-                best_results = {"scores": val_scores, "actual": val_actuals.tolist(), "pred": val_predicted.tolist()}
+
+            eval_score = val_loss if self.use_loss_eval else val_score
+            if best_score is None or eval_is_better(best_score, eval_score):
+                # Make sure results are serialisable
+                best_results = {"scores": val_scores,
+                                "loss": val_loss,
+                                "actual": val_actuals.tolist(),
+                                "pred": val_predicted.tolist(), }
 
                 self._logger.info(
-                    "Snapshotting because the current score {} is greater than {} ".format(val_score, best_score))
+                    "Snapshotting because the current score {} is greater than {} ".format(eval_score, best_score))
                 self.snapshot(model_network, model_dir=self.model_dir)
-                best_score = val_score
+                best_score = eval_score
                 no_improvement_epochs = 0
             else:
                 no_improvement_epochs += 1

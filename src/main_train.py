@@ -119,7 +119,7 @@ def run_train(train_dir, val_dir, checkpointdir, args, additional_args):
                 dataset_factory_name=args.datasetfactory, model_factory_name=args.modelfactory,
                 checkpoint_dir=checkpointdir, epochs=args.epochs,
                 grad_accumulation_steps=args.gradientaccumulationsteps,
-                num_workers=args.numworkers, learning_rate=args.learningrate,
+                num_workers=args.numworkers, learning_rate=args.learningrate, use_loss_eval=args.uselosseval,
                 early_stopping_patience=args.earlystoppingpatience, batch_size=args.batch, model_dir=args.modeldir,
                 addition_args_dict=additional_args)
     trainer = b.get_trainer()
@@ -178,6 +178,9 @@ def parse_args():
     parser.add_argument("--epochs", help="The number of epochs", type=int, default=10)
     parser.add_argument("--earlystoppingpatience", help="The number of patience epochs epochs", type=int, default=10)
     parser.add_argument("--numworkers", help="The number of workers to use", type=int, default=None)
+
+    parser.add_argument("--uselosseval", help="Whether the best model should be optimised for lowest loss", default=0,
+                        choices={0, 1}, type=int)
 
     parser.add_argument("--log-level", help="Log level", default="INFO", choices={"INFO", "WARN", "DEBUG", "ERROR"})
 

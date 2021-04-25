@@ -15,7 +15,8 @@ class Builder:
                  checkpoint_dir=None,
                  epochs=10,
                  early_stopping_patience=10, checkpoint_frequency=1, grad_accumulation_steps=8, batch_size=8,
-                 max_seq_len=512, learning_rate=0.00001, addition_args_dict=None):
+                 max_seq_len=512, learning_rate=0.00001, use_loss_eval=False, addition_args_dict=None):
+        self.use_loss_eval = use_loss_eval
         self._addition_args_dict = addition_args_dict
         self.model_dir = model_dir
         self.learning_rate = learning_rate
@@ -121,6 +122,7 @@ class Builder:
                                       checkpoint_frequency=self.checkpoint_frequency,
                                       checkpoint_dir=self.checkpoint_dir,
                                       accumulation_steps=self.grad_accumulation_steps,
+                                      use_loss_eval=self.use_loss_eval,
                                       checkpoint_manager=self.model_factory.get_checkpoint_manager())
 
         return self._trainer
