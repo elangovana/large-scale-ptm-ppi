@@ -2,7 +2,6 @@ import json
 import os
 import tempfile
 from unittest import TestCase
-from unittest.mock import MagicMock
 
 from builder import Builder
 
@@ -21,11 +20,6 @@ class TestSitTrain(TestCase):
         num_classes = 2
         bert_config = {"vocab_size": vocab_size, "hidden_size": 10, "num_hidden_layers": 1,
                        "num_attention_heads": 1, "num_labels": num_classes}
-
-        # Mock tokenisor
-        mock_tokenisor = MagicMock()
-        mock_tokenisor.tokenize.side_effect = lambda x: x.split(" ")
-        mock_tokenisor.convert_tokens_to_ids = lambda x: [i for i, _ in enumerate(x)]
 
         # Additional args
         additional_args = {"model_config": json.dumps(bert_config)
@@ -65,11 +59,6 @@ class TestSitTrain(TestCase):
         num_classes = 7
         bert_config = {"vocab_size": vocab_size, "hidden_size": 10, "num_hidden_layers": 1,
                        "num_attention_heads": 1, "num_labels": num_classes}
-
-        # Mock tokenisor
-        mock_tokenisor = MagicMock()
-        mock_tokenisor.tokenize.side_effect = lambda x: x.split(" ")
-        mock_tokenisor.convert_tokens_to_ids = lambda x: [i for i, _ in enumerate(x)]
 
         # Additional args
         additional_args = {"model_config": json.dumps(bert_config)
