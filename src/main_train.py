@@ -85,6 +85,12 @@ def prepare_run(args, additional_args=None):
     with open(output_results, "w") as f:
         json.dump(results, f)
 
+    # Persist params
+    output_config = os.path.join(args.modeldir, "training_config_parameters.json")
+    logger.info(f"Writing config to {output_config}")
+    with open(output_config, "w") as f:
+        json.dump({**vars(args), **additional_args}, f)
+
 
 def load_kfold_check_point(checkpoint_dir):
     if checkpoint_dir is None: return None
