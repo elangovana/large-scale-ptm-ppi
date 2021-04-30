@@ -4,8 +4,11 @@ import os
 
 import torch
 
+F
+from models.base_checkpoint_manager import BaseCheckpointManager
 
-class BertCheckpointManager:
+
+class BertCheckpointManager(BaseCheckpointManager):
 
     @property
     def _logger(self):
