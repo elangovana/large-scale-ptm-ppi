@@ -6,7 +6,8 @@ import shutil
 import sys
 import uuid
 
-from builder import Builder
+from dataset_builder import DatasetBuilder
+from train_builder import TrainBuilder
 
 logger = logging.getLogger(__name__)
 
@@ -121,23 +122,28 @@ def save_kfold_check_point(checkpoint_dir, obj):
 
 def run_train(train_dir, val_dir, checkpointdir, args, additional_args):
     # Builder
-    b = Builder(train_data=train_dir, val_data=val_dir,
-                dataset_factory_name=args.datasetfactory, model_factory_name=args.modelfactory,
-                checkpoint_dir=checkpointdir, epochs=args.epochs,
-                grad_accumulation_steps=args.gradientaccumulationsteps,
-                num_workers=args.numworkers, learning_rate=args.learningrate, use_loss_eval=args.uselosseval,
-                early_stopping_patience=args.earlystoppingpatience, batch_size=args.batch, model_dir=args.modeldir,
-                addition_args_dict=additional_args)
-    trainer = b.get_trainer()
-    # Get data loaders
-    train_dataloader, val_dataloader = b.get_train_val_dataloader()
+    dataset_builder = DatasetBuilder(val_data=val_dir, dataset_factory_name=args.datasetfactory,
+                                     tokenisor_factory_name=args.modelfactory, train_data=train_dir,
+                                     num_workers=args.numworkers, batch_size=args.batch,
+                                     addition_args_dict=additional_args)
+
+    train_builder = TrainBuilder(model_factory_name=args.modelfactory, scorers=dataset_builder.get_scorers(),
+                                 num_classes=dataset_builder.num_classes(),
+                                 checkpoint_dir=checkpointdir, epochs=args.epochs,
+                                 grad_accumulation_steps=args.gradientaccumulationsteps,
+                                 learning_rate=args.learningrate, use_loss_eval=args.uselosseval,
+                                 early_stopping_patience=args.earlystoppingpatience, model_dir=args.modeldir,
+                                 addition_args_dict=additional_args)
+
+    trainer = train_builder.get_trainer()
+
     # Run training
-    result = trainer.run_train(train_iter=train_dataloader,
-                               validation_iter=val_dataloader,
-                               model_network=b.get_network(),
-                               loss_function=b.get_loss_function(),
-                               optimizer=b.get_optimiser(),
-                               pos_label=b.get_pos_label_index()
+    result = trainer.run_train(train_iter=dataset_builder.get_train_dataloader(),
+                               validation_iter=dataset_builder.get_val_dataloader(),
+                               model_network=train_builder.get_network(),
+                               loss_function=train_builder.get_loss_function(),
+                               optimizer=train_builder.get_optimiser(),
+                               pos_label=dataset_builder.positive_label_index()
                                )
     return result
 
