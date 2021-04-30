@@ -18,9 +18,10 @@ class TestSitTrain(TestCase):
         # Bert Config
         vocab_size = 20000
         sequence_len = 20
+        num_classes = 2
 
         bert_config = {"vocab_size": vocab_size, "hidden_size": 10, "num_hidden_layers": 1,
-                       "tokenisor_max_seq_len": sequence_len,
+                       "tokenisor_max_seq_len": sequence_len, "num_labels": num_classes,
                        "num_attention_heads": 1}
 
         # Additional args
@@ -43,8 +44,10 @@ class TestSitTrain(TestCase):
         # Bert Config
         vocab_size = 20000
         sequence_len = 20
+        num_classes = 7
+
         bert_config = {"vocab_size": vocab_size, "hidden_size": 10, "num_hidden_layers": 1,
-                       "tokenisor_max_seq_len": sequence_len,
+                       "tokenisor_max_seq_len": sequence_len, "num_labels": num_classes,
                        "num_attention_heads": 1}
 
         # Additional args
