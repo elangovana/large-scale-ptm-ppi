@@ -4,7 +4,6 @@ import os
 
 import torch
 
-F
 from models.base_checkpoint_manager import BaseCheckpointManager
 
 
