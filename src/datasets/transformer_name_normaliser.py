@@ -30,8 +30,8 @@ class TransformerNameNormaliser:
 
         self.name_replacer = name_replacer or TransformerNameReplacer()
 
-        self._participants_norm_prefix = "ProteinMarker"
-        self._other_entities_norm_prefix = "ProteinOther"
+        self._participants_norm_prefix = "PROTPART"
+        self._other_entities_norm_prefix = "PRTIG"
 
         self._random = Random(random_seed)
 

@@ -57,10 +57,10 @@ class TestTransformerNameNormaliser(TestCase):
 
         # Assert
         mock_name_replacer.assert_called_with(
-            entities=[{'charOffset': 62, 'len': 4, 'replacement': 'ProteinOther1', "original": "GITR"},
-                      {'charOffset': 120, 'len': 4, 'replacement': 'ProteinOther0', "original": "KLK3"},
-                      {'charOffset': 125, 'len': 4, 'replacement': 'ProteinOther0', "original": "KLK3"},
-                      {'charOffset': 62, 'len': 11, 'replacement': 'ProteinMarker0', "original": "GITR ligand"},
-                      {'charOffset': 75, 'len': 6, 'replacement': 'ProteinMarker1', "original": "hGITRL"},
+            entities=[{'charOffset': 62, 'len': 4, 'replacement': 'PRTIG1', "original": "GITR"},
+                      {'charOffset': 120, 'len': 4, 'replacement': 'PRTIG0', "original": "KLK3"},
+                      {'charOffset': 125, 'len': 4, 'replacement': 'PRTIG0', "original": "KLK3"},
+                      {'charOffset': 62, 'len': 11, 'replacement': 'PROTPART0', "original": "GITR ligand"},
+                      {'charOffset': 75, 'len': 6, 'replacement': 'PROTPART1', "original": "hGITRL"},
                       ],
             text=sentence)
