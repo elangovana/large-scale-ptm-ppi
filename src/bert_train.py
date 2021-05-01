@@ -1,6 +1,5 @@
 import datetime
 import logging
-import os
 
 import torch
 import torch.nn as nn
@@ -41,17 +40,7 @@ class BertTrain:
     def _logger(self):
         return logging.getLogger(__name__)
 
-    def snapshot(self, model, model_dir, prefix="best_snaphsot"):
-        snapshot_prefix = os.path.join(model_dir, prefix)
-        snapshot_path = snapshot_prefix + 'model.pt'
 
-        self._logger.info("Snapshot model to {}".format(snapshot_path))
-
-        # If nn.dataparallel, get the underlying module
-        if isinstance(model, torch.nn.DataParallel):
-            model = model.module
-
-        torch.save(model, snapshot_path)
 
     def run_train(self, train_iter, validation_iter, model_network, loss_function, optimizer, pos_label):
         """
@@ -158,7 +147,7 @@ class BertTrain:
 
                 self._logger.info(
                     "Snapshotting because the current score {} is better than {} ".format(eval_score, best_score))
-                self.snapshot(model_network, model_dir=self.model_dir)
+                self.create_checkpoint(model_network, self.model_dir)
                 best_score = eval_score
                 no_improvement_epochs = 0
             else:
