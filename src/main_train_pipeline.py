@@ -32,7 +32,7 @@ class TrainPipeline:
 
                 kfold_valprefix = list(set(kfold_dirs) - {kfold_trainprefix})[0]
                 fold_train_dir = os.path.join(train_dir, f_dir, kfold_trainprefix)
-                fold_val_dir = os.path.join(val_dir, f_dir, kfold_valprefix)
+                fold_val_dir = os.path.join(train_dir, f_dir, kfold_valprefix)
 
                 # Add train val pair
                 train_val_objects.append((fold_train_dir, fold_val_dir))
