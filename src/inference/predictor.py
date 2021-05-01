@@ -16,12 +16,11 @@ class Predictor:
         model_network.to(device)
         # switch model to evaluation mode
         model_network.eval()
-        predicted = []
-        scores = []
         self.logger.info("Running inference {}".format(device))
+        scores = []
 
         with torch.no_grad():
-            softmax = torch.nn.Softmax(dim=-1)
+            soft_max_func = torch.nn.Softmax(dim=-1)
             for _, (batch_x, batch_y) in enumerate(dataloader):
 
                 # TODO: CLean this up
@@ -30,16 +29,14 @@ class Predictor:
                 else:
                     val_batch_idx = batch_x.to(device=device)
 
-                pred_batch_y = model_network(val_batch_idx)
+                pred_batch_y = model_network(val_batch_idx)[0]
                 # Soft max the predictions
-                pred_batch_y = softmax(pred_batch_y)
+                pred_batch_y = soft_max_func(pred_batch_y)
+
                 scores.append(pred_batch_y)
-                pred_binary = torch.max(pred_batch_y, -1)[1]
-                pred_flat = pred_binary.view(pred_binary.size())
 
-                predicted.append(pred_flat.cpu().numpy().tolist())
-
-        scores = [r.cpu().numpy().tolist() for r in scores]
+        scores = torch.cat(scores)
+        predicted = torch.max(scores, dim=-1)[1].view(-1)
 
         self.logger.info("Completed inference {}".format(device))
 

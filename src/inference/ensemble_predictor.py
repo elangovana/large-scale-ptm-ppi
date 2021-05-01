@@ -1,6 +1,5 @@
 import logging
 from multiprocessing.dummy import Pool
-from operator import add
 
 import torch
 
@@ -36,33 +35,17 @@ class EnsemblePredictor:
         with Pool(len(devices)) as p:
             agg_pred_scores = p.starmap(self.model_wrapper.predict, model_device_map)
 
-        scores_ensemble = []
-        for _, s in agg_pred_scores:
-            self._populate_aggregate_scores_(s, scores_ensemble)
-
-        scores_ensemble_avg = []
-        # average the confidence
-        for batch in scores_ensemble:
-            scores_ensemble_avg.append([list(map(lambda x: x / len(model_networks), p)) for p in batch])
+        # Compute average
+        ensemble_size = len(agg_pred_scores)
+        _, scores_ensemble = agg_pred_scores[0]
+        for _, s in agg_pred_scores[1:]:
+            scores_ensemble = scores_ensemble + s
+        scores_ensemble = scores_ensemble / ensemble_size
 
         # Predicted ensemble , arg max
-        predicted_ensemble = []
-        for batch in scores_ensemble_avg:
-            predicted_ensemble.append([p.index(max(p)) for p in batch])
-        return predicted_ensemble, scores_ensemble_avg
+        predicted_ensemble = torch.max(scores_ensemble, dim=-1)[1].view(-1)
 
-    @staticmethod
-    def _populate_aggregate_scores_(batches_of_scores, output_scores_ensemble):
-
-        for bi in range(len(batches_of_scores)):
-            # First time not intialised case
-            if len(output_scores_ensemble) < bi + 1:
-                output_scores_ensemble.append(batches_of_scores[bi])
-            else:
-                batch_sum = []
-                for line in range(len(batches_of_scores[bi])):
-                    batch_sum.append(list(map(add, output_scores_ensemble[bi][line], batches_of_scores[bi][line])))
-                output_scores_ensemble[bi] = batch_sum
+        return predicted_ensemble, scores_ensemble
 
     @property
     def _logger(self):
