@@ -20,28 +20,32 @@ class BertModelFactory(BaseModelFactory):
         self._logger.info("Retrieving model")
 
         # If checkpoint file is available, load from checkpoint
-        state_dict = self.get_checkpoint_manager().read(checkpoint_dir)
+        network = self.get_checkpoint_manager().read(checkpoint_dir)
 
         fine_tune = bool(int(self._get_value(kwargs, "model_fine_tune", "0")))
-        model_config = json.loads(self._get_value(kwargs, "model_config", "{}"))
-        model_dir = self._get_value(kwargs, "pretrained_model", "bert-base-cased")
+        model_config = self._get_model_config(kwargs)
+        model_dir = self._get_value(kwargs, "pretrained_model", None)
 
-        # If model config is provided load it
-        if model_config:
-            self._logger.info("Loading bert from config")
-            model_config = transformers.BertConfig(**model_config)
-        else:
-            model_config = None
-
-        network = BertModel(model_dir, num_classes, fine_tune=fine_tune, bert_config=model_config)
-
-        if state_dict is not None:
+        if network is None:
             # Only load from BERT pretrained when no checkpoint is available
-            self._logger.info("Checkpoint models found, hence loading from checkpoint")
-            network.load_state_dict(state_dict)
+            self._logger.info("NO Checkpoint models found, hence loading")
+            network = BertModel(model_dir, num_classes, fine_tune=fine_tune, bert_config=model_config)
 
         self._logger.info("Retrieving model complete")
         return network
+
+    def _get_model_config(self, kwargs):
+        model_config = None
+        config_file = self._get_value(kwargs, "model_config", None)
+
+        # If model config is provided load it
+        if config_file:
+            with open(config_file, "r") as f:
+                config = json.load(f)
+            self._logger.info("Loading bert from config")
+            model_config = transformers.BertConfig(**config)
+
+        return model_config
 
     def get_checkpoint_manager(self, **kwargs):
         return BertCheckpointManager()

@@ -1,8 +1,7 @@
-import glob
 import logging
 import os
 
-import torch
+from transformers import BertForSequenceClassification
 
 from models.base_checkpoint_manager import BaseCheckpointManager
 
@@ -14,27 +13,17 @@ class BertCheckpointManager(BaseCheckpointManager):
         return logging.getLogger(__name__)
 
     def read(self, checkpoint_dir, **kwargs):
-        loaded_weights = None
-        if checkpoint_dir is not None:
-            model_files = list(glob.glob("{}/*.pt".format(checkpoint_dir)))
-            if len(model_files) > 0:
-                model_file = model_files[0]
-                self._logger.info(
-                    "Loading checkpoint {} , found {} checkpoint files".format(model_file, len(model_files)))
-                checkpoint = torch.load(model_file)
-                loaded_weights = checkpoint['model_state_dict']
+        model = None
 
-        return loaded_weights
+        # Make sure there are contents in the checkpoint dir
+        has_checkpoint = bool(checkpoint_dir) and len(os.listdir(checkpoint_dir)) > 0
+
+        if has_checkpoint:
+            model = BertForSequenceClassification.from_pretrained(checkpoint_dir)
+
+        return model
 
     def write(self, model, checkpoint_dir, **kwargs):
-        checkpoint_path = os.path.join(checkpoint_dir, 'checkpoint.pt')
+        self._logger.info("Checkpoint model to {}".format(checkpoint_dir))
 
-        self._logger.info("Checkpoint model to {}".format(checkpoint_path))
-
-        # If nn.dataparallel, get the underlying module
-        if isinstance(model, torch.nn.DataParallel):
-            model = model.module
-
-        torch.save({
-            'model_state_dict': model.state_dict(),
-        }, checkpoint_path)
+        model.save_pretrained(checkpoint_dir)

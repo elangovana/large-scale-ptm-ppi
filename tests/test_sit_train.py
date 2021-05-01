@@ -24,12 +24,13 @@ class TestSitTrain(TestCase):
         bert_config = {"vocab_size": vocab_size, "hidden_size": 10, "num_hidden_layers": 1,
                        "tokenisor_max_seq_len": sequence_len, "num_labels": num_classes,
                        "num_attention_heads": 1}
+        bert_config_file = self._write_bert_config_file(bert_config)
 
         # Additional args
         dataset_factory = "datasets.aimed_dataset_factory.AimedDatasetFactory"
         model_factory = "models.bert_model_factory.BertModelFactory"
         tokenisor_data_dir = os.path.join(os.path.dirname(__file__), "sample_data", "tokensior_data")
-        additional_args = {"model_config": json.dumps(bert_config),
+        additional_args = {"model_config": bert_config_file,
                            "tokenisor_data_dir": tokenisor_data_dir,
                            "datasetfactory": dataset_factory,
                            "modelfactory": model_factory,
@@ -58,10 +59,11 @@ class TestSitTrain(TestCase):
         bert_config = {"vocab_size": vocab_size, "hidden_size": 10, "num_hidden_layers": 1,
                        "tokenisor_max_seq_len": sequence_len, "num_labels": num_classes,
                        "num_attention_heads": 1}
+        bert_config_file = self._write_bert_config_file(bert_config)
 
         # Additional args
         tokenisor_data_dir = os.path.join(os.path.dirname(__file__), "sample_data", "tokensior_data")
-        additional_args = {"model_config": json.dumps(bert_config),
+        additional_args = {"model_config": bert_config_file,
                            "tokenisor_data_dir": tokenisor_data_dir,
                            "datasetfactory": dataset_factory,
                            "modelfactory": model_factory,
@@ -89,10 +91,11 @@ class TestSitTrain(TestCase):
         bert_config = {"vocab_size": vocab_size, "hidden_size": 10, "num_hidden_layers": 1,
                        "tokenisor_max_seq_len": sequence_len, "num_labels": num_classes,
                        "num_attention_heads": 1}
+        bert_config_file = self._write_bert_config_file(bert_config)
 
         # Additional args
         tokenisor_data_dir = os.path.join(os.path.dirname(__file__), "sample_data", "tokensior_data")
-        additional_args = {"model_config": json.dumps(bert_config),
+        additional_args = {"model_config": bert_config_file,
                            "tokenisor_data_dir": tokenisor_data_dir,
                            "datasetfactory": dataset_factory,
                            "modelfactory": model_factory,
@@ -128,3 +131,10 @@ class TestSitTrain(TestCase):
                                                 output_dir=tempdir_out,
                                                 additional_args=additional_args
                                                 )
+
+    def _write_bert_config_file(self, bert_config):
+        bert_config_file = os.path.join(tempfile.mkdtemp(), "config.json")
+        with open(bert_config_file, "w") as f:
+            json.dump(bert_config, f)
+
+        return bert_config_file
