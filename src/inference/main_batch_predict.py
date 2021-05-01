@@ -25,7 +25,7 @@ class BatchPredict:
 
         for d in data_files:
             self._logger.info("Running inference on file {}".format(d))
-            self.predict_from_file(d, base_artefacts_dir, output_dir, is_ensemble, numworkers, batch)
+            self.predict_from_file(d, base_artefacts_dir, output_dir, is_ensemble, numworkers, batch, additional_args)
 
     def predict_from_file(self, data_file, base_artifacts_dir, output_dir, is_ensemble, numworkers=None, batch=32,
                           additional_args=None):
@@ -46,7 +46,7 @@ class BatchPredict:
 
         train_args = {**train_args, **additional_args}
 
-        print(train_args)
+        self._logger.info("Using args :{}".format(train_args))
 
         # Dataset Builder
         model_factory_name = train_args["modelfactory"]
@@ -100,15 +100,13 @@ class BatchPredict:
             json.dump(result, f)
 
 
-if "__main__" == __name__:
+def parse_args_run():
+    global args, additional_dict
     parser = argparse.ArgumentParser()
-
     parser.add_argument("datajson",
                         help="The json data to predict")
-
     parser.add_argument("artefactsdir", help="The base of artefacts dir that contains directories of model, vocab etc")
     parser.add_argument("outdir", help="The output dir")
-
     parser.add_argument("--log-level", help="Log level", default="INFO", choices={"INFO", "WARN", "DEBUG", "ERROR"})
     parser.add_argument("--positives-filter-threshold", help="The threshold to filter positives", type=float,
                         default=0.0)
@@ -116,9 +114,7 @@ if "__main__" == __name__:
     parser.add_argument("--batch", help="The batchsize", type=int, default=32)
     parser.add_argument("--ensemble", help="Set to 1 if ensemble model", type=int, default=0, choices={0, 1})
     args, additional_args = parser.parse_known_args()
-
     print(args.__dict__)
-
     # Convert additional args into dict
     additional_dict = {}
     for i in range(0, len(additional_args), 2):
@@ -131,3 +127,7 @@ if "__main__" == __name__:
 
     BatchPredict().predict_from_directory(args.datajson, args.artefactsdir, args.outdir, args.ensemble, args.numworkers,
                                           args.batch, additional_dict)
+
+
+if "__main__" == __name__:
+    parse_args_run()
