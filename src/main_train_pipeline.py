@@ -17,25 +17,9 @@ class TrainPipeline:
     def run_train_k_fold(self, train_dir, val_dir, model_dir, output_dir, kfold_trainprefix=None, checkpoint_dir=None,
                          additional_args=None):
 
-        train_val_objects = []
-
         # If K Fold prefix is passes in then run k times
         if kfold_trainprefix:
-            fold_dirs = os.listdir(train_dir)
-
-            # Prepare the train and val directories
-            for f_dir in fold_dirs:
-                kfold_dirs = os.listdir("{}{}{}".format(train_dir, os.path.sep, f_dir))
-                assert len(
-                    kfold_dirs) == 2, "Expecting exactly 2 files or directory under the kfold prefix {} but found {}".format(
-                    kfold_trainprefix, kfold_dirs)
-
-                kfold_valprefix = list(set(kfold_dirs) - {kfold_trainprefix})[0]
-                fold_train_dir = os.path.join(train_dir, f_dir, kfold_trainprefix)
-                fold_val_dir = os.path.join(train_dir, f_dir, kfold_valprefix)
-
-                # Add train val pair
-                train_val_objects.append((fold_train_dir, fold_val_dir))
+            train_val_objects = self._get_kfold_data(kfold_trainprefix, train_dir)
 
         # Not using K Fold
         else:
@@ -87,6 +71,24 @@ class TrainPipeline:
         self._persist_config(additional_args, model_dir)
 
         return results
+
+    def _get_kfold_data(self, kfold_trainprefix, train_dir):
+        train_val_objects = []
+        fold_dirs = os.listdir(train_dir)
+        # Prepare the train and val directories
+        for f_dir in fold_dirs:
+            kfold_dirs = os.listdir("{}{}{}".format(train_dir, os.path.sep, f_dir))
+            assert len(
+                kfold_dirs) == 2, "Expecting exactly 2 files or directory under the kfold prefix {} but found {}".format(
+                kfold_trainprefix, kfold_dirs)
+
+            kfold_valprefix = list(set(kfold_dirs) - {kfold_trainprefix})[0]
+            fold_train_dir = os.path.join(train_dir, f_dir, kfold_trainprefix)
+            fold_val_dir = os.path.join(train_dir, f_dir, kfold_valprefix)
+
+            # Add train val pair
+            train_val_objects.append((fold_train_dir, fold_val_dir))
+        return train_val_objects
 
     def _persist_config(self, additional_args, model_dir):
         # Persist params
