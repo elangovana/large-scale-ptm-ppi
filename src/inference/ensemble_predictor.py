@@ -39,7 +39,7 @@ class EnsemblePredictor:
         ensemble_size = len(agg_pred_scores)
         _, scores_ensemble = agg_pred_scores[0]
         for _, s in agg_pred_scores[1:]:
-            scores_ensemble = scores_ensemble + s
+            scores_ensemble = scores_ensemble + s.to(device=scores_ensemble.device)
         scores_ensemble = scores_ensemble / ensemble_size
 
         # Predicted ensemble , arg max
