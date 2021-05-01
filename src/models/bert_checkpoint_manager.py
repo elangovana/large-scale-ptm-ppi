@@ -1,9 +1,8 @@
 import logging
 import os
 
-from transformers import BertForSequenceClassification
-
 from models.base_checkpoint_manager import BaseCheckpointManager
+from models.bert_model import BertModel
 
 
 class BertCheckpointManager(BaseCheckpointManager):
@@ -19,7 +18,7 @@ class BertCheckpointManager(BaseCheckpointManager):
         has_checkpoint = bool(checkpoint_dir) and len(os.listdir(checkpoint_dir)) > 0
 
         if has_checkpoint:
-            model = BertForSequenceClassification.from_pretrained(checkpoint_dir)
+            model = BertModel.from_pretrained(checkpoint_dir)
 
         return model
 

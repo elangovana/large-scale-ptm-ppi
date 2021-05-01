@@ -16,7 +16,7 @@ class BertModel(nn.Module):
 
         if model_name_or_dir:
             self._logger.info("Loading BERT from {}".format(model_name_or_dir))
-            self.model = BertForSequenceClassification.from_pretrained(model_name_or_dir, num_labels=num_classes)
+            self.model = BertModel.from_pretrained(model_name_or_dir, num_labels=num_classes)
         else:
             self._logger.info("Initialing BERT from config")
             self.model = BertForSequenceClassification(config=bert_config)
@@ -35,3 +35,7 @@ class BertModel(nn.Module):
 
     def save_pretrained(self, model_directory):
         self.model.save_pretrained(model_directory)
+
+    @staticmethod
+    def from_pretrained(model_name_or_dir, *args):
+        return BertForSequenceClassification.from_pretrained(model_name_or_dir, *args)
