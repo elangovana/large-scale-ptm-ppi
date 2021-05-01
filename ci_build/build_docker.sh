@@ -15,7 +15,7 @@ echo Building the Docker image $IMAGE_REPO from base ${PYTORCH_DOCKER_ACCOUNT_UR
 ## TODO: Automate version tagging based on datetime for now, ideally should be tied to release tags
 VERSION=$(date '+%Y%m%d%H%M')
 device=gpu
-cuda=101
+cuda=cu101
 
 LATEST_TAG=$device-latest
 VERSION_TAG=$device-$VERSION
