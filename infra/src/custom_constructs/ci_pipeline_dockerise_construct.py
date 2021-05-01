@@ -6,7 +6,7 @@ from aws_cdk import (
 from aws_cdk.aws_codepipeline import Pipeline
 from aws_cdk.aws_codepipeline_actions import GitHubTrigger
 from aws_cdk.aws_iam import PolicyStatement, AccountPrincipal
-from aws_cdk.core import Stack, Fn
+from aws_cdk.core import Stack, Fn, Aws
 
 
 class CIPipelineDockeriseConstruct(Pipeline):
@@ -27,7 +27,8 @@ class CIPipelineDockeriseConstruct(Pipeline):
         super().__init__(scope, id,
                          restart_execution_on_update=True)
 
-        outh = aws_secretsmanager.Secret.from_secret_arn(id="secret", scope=self, secret_arn=secret_arn).secret_value
+        outh = aws_secretsmanager.Secret.from_secret_arn(id=f"{id}secret", scope=self,
+                                                         secret_arn=secret_arn).secret_value
 
         # Source
         source_artifact = aws_codepipeline.Artifact("source")
@@ -52,7 +53,11 @@ class CIPipelineDockeriseConstruct(Pipeline):
                 privileged=True),
             build_spec=aws_codebuild.BuildSpec.from_source_filename(buildspec)
         )
+
         # Docker push & login permissions
+        docker_login = aws_iam.PolicyStatement(actions=["ecr:GetAuthorizationToken"], resources=["*"])
+        code_build_project.add_to_role_policy(docker_login)
+
         docker_repo_push = aws_iam.PolicyStatement(actions=["ecr:GetDownloadUrlForLayer",
                                                             "ecr:BatchGetImage",
                                                             "ecr:BatchCheckLayerAvailability",
@@ -63,8 +68,9 @@ class CIPipelineDockeriseConstruct(Pipeline):
                                                    resources=[docker_repository_arn])
         code_build_project.add_to_role_policy(docker_repo_push)
 
-        docker_login = aws_iam.PolicyStatement(actions=["ecr:GetAuthorizationToken"], resources=["*"])
-        code_build_project.add_to_role_policy(docker_login)
+        # Pytorch docker permissions
+        pytorch_docker_repo, pytorch_docker_repo_permissions = self._get_pytorch_docker_pull_permissions(id)
+        code_build_project.add_to_role_policy(pytorch_docker_repo_permissions)
 
         # Environment variables
         # Docker Repo
@@ -72,7 +78,9 @@ class CIPipelineDockeriseConstruct(Pipeline):
         docker_repo = aws_ecr.Repository.from_repository_attributes(scope=self, id="DockerRepo",
                                                                     repository_arn=docker_repository_arn,
                                                                     repository_name=docker_repo_name)
-        enviornment_variables_dict = {"docker_image": docker_repo.repository_uri}
+        enviornment_variables_dict = {"docker_image": docker_repo.repository_uri,
+                                      "pytorch_training_image": pytorch_docker_repo.repository_uri
+                                      }
 
         env_variables = self._get_codebuild_variables(enviornment_variables_dict)
 
@@ -112,6 +120,30 @@ class CIPipelineDockeriseConstruct(Pipeline):
                             , resources=["*"]
                             )
         )
+
+    def _get_pytorch_docker_pull_permissions(self, id):
+
+        pytorch_map_config = {
+            "us-east-2": {
+                "trainingrepoarn": "arn:aws:ecr:us-east-2:763104351884:repository/pytorch-training"}
+        }
+
+        pytorch_map = core.CfnMapping(scope=self, id=f"{id}pytorchmap", mapping=pytorch_map_config)
+
+        # Provide pull permissions to pytorch
+        pytorch_repo_arn = pytorch_map.find_in_map(Aws.REGION, "trainingrepoarn")
+        pytorch_repo_name = Fn.select(1, Fn.split("/", pytorch_repo_arn))
+
+        pytorch_docker_repo = aws_ecr.Repository.from_repository_attributes(scope=self, id="PytorchDockerRepo",
+                                                                            repository_arn=pytorch_repo_arn,
+                                                                            repository_name=pytorch_repo_name)
+        # Docker push & login permissions
+        pytorch_docker_repo_permissions = aws_iam.PolicyStatement(actions=["ecr:GetDownloadUrlForLayer",
+                                                                           "ecr:BatchGetImage",
+                                                                           "ecr:BatchCheckLayerAvailability",
+                                                                           "ecr:PullImage"],
+                                                                  resources=[pytorch_repo_arn])
+        return pytorch_docker_repo, pytorch_docker_repo_permissions
 
     def _get_codebuild_variables(self, enviornment_variables_dict):
         env_variables = {}
