@@ -23,12 +23,12 @@ class BertModelFactory(BaseModelFactory):
         network = self.get_checkpoint_manager().read(checkpoint_dir)
 
         fine_tune = bool(int(self._get_value(kwargs, "model_fine_tune", "0")))
-        model_config = self._get_model_config(kwargs)
-        model_dir = self._get_value(kwargs, "pretrained_model", None)
 
         if network is None:
+            model_config = self._get_model_config(kwargs)
+            model_dir = self._get_value(kwargs, "pretrained_model", None)
             # Only load from BERT pretrained when no checkpoint is available
-            self._logger.info("NO Checkpoint models found, hence loading")
+            self._logger.info("No Checkpoint models found, using dir or config".format(model_dir, model_config))
             network = BertModel(model_dir, num_classes, fine_tune=fine_tune, bert_config=model_config)
 
         self._logger.info("Retrieving model complete")
