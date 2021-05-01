@@ -16,12 +16,14 @@ device=gpu
 LATEST_TAG=$device-latest
 VERSION_TAG=$device-$VERSION
 
+# Login to pytorch ECR before build
+aws ecr get-login-password --region region | docker login --username AWS --password-stdin ${PYTORCH_DOCKER_ACCOUNT_URL}
 docker build -t $IMAGE_REPO:$LATEST_TAG   -f docker/Dockerfile $DOCKER_BASE_DIR --build-arg device=$device --build-arg account_url=${PYTORCH_DOCKER_ACCOUNT_URL}
 docker tag $IMAGE_REPO:$LATEST_TAG $IMAGE_REPO:$VERSION_TAG
 
 # Log into ecr
 echo Logging in to Amazon ECR...
-$(aws ecr get-login --no-include-email --region $ECR_REGION)
+aws ecr get-login-password --region region | docker login --username AWS --password-stdin ${IMAGE_REPO}
 
 echo Pushing the Docker image...
 docker push $IMAGE_REPO:$LATEST_TAG
