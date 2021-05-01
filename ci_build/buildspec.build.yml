@@ -1,0 +1,44 @@
+version: 0.2
+
+
+env:
+  variables:
+    nodeversion: 10
+    pythonversion: 3.7
+    cdkartifactprefix: cdkartifacts-
+    docker_image: <Specify CodePipeline Variable OrEnter TheRepoURI e.g. "1111.dkr.ecr.us-west-2.amazonaws.com/symptomchecker-bayes>
+
+phases:
+
+  install:
+    runtime-versions:
+      python: $pythonversion
+      nodejs: $nodeversion
+
+
+  pre_build:
+    commands:
+      ##################################
+      # Any set up / config goes here
+      ##################################
+      - echo prebuild steps
+      - bash ci_build/setup.sh
+      - bash ci_build/cdk_setup.sh
+
+  build:
+    commands:
+      # Runs tests
+      - echo Running tests
+      # Run Tests
+      - echo Running tests
+      - export TESTREPORTDIR=$HOME/TESTREPORTS
+      - mkdir -p $TESTREPORTDIR
+      - bash ci_build/run_tests.sh testenv $TESTREPORTDIR/report.xml
+      - bash ci_build/cdk_validate_cfn.sh $cdkartifactprefix$(date +%Y%m%d%H%M%s)
+
+      # Build docker
+      - bash ci_build/build_docker.sh $CODEBUILD_SRC_DIR $docker_image $AWS_DEFAULT_REGION
+
+artifacts:
+  files:
+    - $cdkartifactprefix*/**/*
