@@ -7,6 +7,7 @@ env:
     pythonversion: 3.7
     cdkartifactprefix: cdkartifacts-
     docker_image: <Specify CodePipeline Variable OrEnter TheRepoURI e.g. "1111.dkr.ecr.us-west-2.amazonaws.com/symptomchecker-bayes>
+    pytorch_training_image: <Specify CodePipeline Variable OrEnter Sageameker pytorch URI e.g. "763104351884.dkr.ecr.us-east-1.amazonaws.com/pytorch-training">
 
 phases:
 
@@ -37,7 +38,7 @@ phases:
       - bash ci_build/cdk_validate_cfn.sh $cdkartifactprefix$(date +%Y%m%d%H%M%s)
 
       # Build docker
-      - bash ci_build/build_docker.sh $CODEBUILD_SRC_DIR $docker_image $AWS_DEFAULT_REGION
+      - bash ci_build/build_docker.sh $CODEBUILD_SRC_DIR $docker_image $pytorch_training_image
 
 artifacts:
   files:
