@@ -133,7 +133,7 @@ class TrainPipeline:
                                      checkpoint_dir=checkpointdir, epochs=additional_args["epochs"],
                                      grad_accumulation_steps=additional_args.get("gradientaccumulationsteps", 1),
                                      learning_rate=additional_args.get("learningrate", 0.0001),
-                                     use_loss_eval=additional_args.get("losseval", 0),
+                                     use_loss_eval=additional_args.get("uselosseval", 0),
                                      early_stopping_patience=additional_args["earlystoppingpatience"],
                                      model_dir=model_dir,
                                      addition_args_dict=additional_args)
