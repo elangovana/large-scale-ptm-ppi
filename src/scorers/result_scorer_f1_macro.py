@@ -1,4 +1,4 @@
-from pandas import np
+import numpy as np
 
 from scorers.base_classification_scorer import BaseClassificationScorer
 
