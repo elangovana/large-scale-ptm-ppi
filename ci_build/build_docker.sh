@@ -2,6 +2,8 @@ DOCKER_BASE_DIR=$1
 IMAGE_REPO=$2 # e.g. of image repo 111111.dkr.ecr.us-east-2.amazonaws.com/image
 # Note: The account needs to match the pytorch release images, see https://github.com/aws/deep-learning-containers/blob/master/available_images.md
 PYTORCH_REPO=$3
+echo Running with arguments $@
+
 
 ECR_REGION=`echo $IMAGE_REPO | cut -f 4 -d "."`
 IMAGE_REPO_ACCOUNT=`echo $IMAGE_REPO | cut -f 1 -d "."`
