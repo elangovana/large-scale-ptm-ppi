@@ -12,11 +12,11 @@
 
  #Install requirements
  pip install -r tests/requirements.txt
- pip install pyflakes==2.1.1
+ pip install pyflakes==2.3.0
 
  #Run tests
  export PYTHONPATH=./src
- pytest tests/tests_unittest --tb=short --junitxml=$TEST_REPORT_PATH
+ pytest tests --tb=short --junitxml=$TEST_REPORT_PATH
 
  #Run pyflakes to detect any import / syntax issues
  pyflakes ./**/*.py
