@@ -87,4 +87,5 @@ if "__main__" == __name__:
     logging.basicConfig(level=logging.getLevelName(args.log_level), handlers=[logging.StreamHandler(sys.stdout)],
                         format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 
-    BatchPredict()(args.datajson, args.artefactsdir, args.outdir, args.ensemble, args.numworkers, args.batch)
+    BatchPredict().predict_from_directory(args.datajson, args.artefactsdir, args.outdir, args.ensemble, args.numworkers,
+                                          args.batch)
