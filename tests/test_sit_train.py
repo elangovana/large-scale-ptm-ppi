@@ -5,7 +5,8 @@ from unittest import TestCase
 
 import numpy as np
 
-from inference.main_batch_predict import BatchPredict
+from inference.batch_predict import BatchPredict
+from inference.ppi_multiclass_batch_predict import PpiMulticlassBatchPredict
 from main_train_pipeline import TrainPipeline
 
 
@@ -77,7 +78,7 @@ class TestSitTrain(TestCase):
 
     def test_predict_with_no_exception_ppi_multiclass(self):
         # Arrange
-        train_data_file = os.path.join(os.path.dirname(__file__), "sample_data", "train_data_ppi_multiclass")
+        train_data_dir = os.path.join(os.path.dirname(__file__), "sample_data", "train_data_ppi_multiclass")
         dataset_factory = "datasets.ppi_multiclass_dataset_factory.PpiMulticlassDatasetFactory"
         model_factory = "models.bert_model_factory.BertModelFactory"
 
@@ -101,18 +102,24 @@ class TestSitTrain(TestCase):
                            "modelfactory": model_factory,
                            "batch": batch,
                            "numworkers": 1,
-                           "epochs": 2,
+                           "epochs": 4,
                            "earlystoppingpatience": 1
                            }
         tempdir_model = tempfile.mkdtemp()
-        tempdir_output = tempfile.mkdtemp()
+        tempfile_output = os.path.join(tempfile.mkdtemp(), "out.json")
 
-        conf_scores = self._run_train(train_data_file, additional_args, tempdir_model=tempdir_model)[-1]["result"][
+        tempfile_output = "/Users/aeg/PycharmProjects/ppi-aimed/temp_results/out.json"
+
+        conf_scores = self._run_train(train_data_dir, additional_args, tempdir_model=tempdir_model)[-1]["result"][
             "conf"]
 
+        train_data_file = os.path.join(train_data_dir, "ppi_multiclass.json")
+
         # Act
-        prediction, confidence_scores = BatchPredict().predict_from_file(train_data_file, tempdir_model, tempdir_output,
-                                                                         is_ensemble=False)
+        prediction, confidence_scores = PpiMulticlassBatchPredict(BatchPredict()).predict_from_file(train_data_file,
+                                                                                                    tempdir_model,
+                                                                                                    is_ensemble=False,
+                                                                                                    output_file=tempfile_output)
 
         # Assert
         np.testing.assert_array_almost_equal(conf_scores, confidence_scores)

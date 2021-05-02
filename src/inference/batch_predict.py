@@ -3,6 +3,7 @@ import json
 import logging
 import os
 from pathlib import Path
+from typing import Dict
 
 from dataset_builder import DatasetBuilder
 from inference.ensemble_predictor import EnsemblePredictor
@@ -16,7 +17,7 @@ class BatchPredict:
         return logging.getLogger(__name__)
 
     def predict_from_directory(self, datajson, base_artefacts_dir, is_ensemble, output_dir=None, numworkers=None,
-                               batch=32, additional_args=None):
+                               batch=32, additional_args=None, raw_data_reader_func=None):
         data_files = [datajson]
         if os.path.isdir(datajson):
             data_files = glob.glob("{}/*.json".format(datajson))
@@ -25,12 +26,12 @@ class BatchPredict:
             output_file = "{}.json".format(os.path.join(output_dir, Path(d).name)) if output_dir else None
             self._logger.info("Running inference on file {} with output in {}".format(d, output_file))
             prediction = self.predict_from_file(d, base_artefacts_dir, is_ensemble, output_file, numworkers, batch,
-                                                additional_args)
+                                                additional_args, raw_data_reader_func)
 
             yield prediction
 
     def predict_from_file(self, data_file, base_artifacts_dir, is_ensemble, output_file=None, numworkers=None, batch=32,
-                          additional_args=None):
+                          additional_args=None, raw_data_reader_func=None):
         additional_args = additional_args or {}
 
         artifacts_directories = []
@@ -72,27 +73,42 @@ class BatchPredict:
         predictions, confidence_tensor = EnsemblePredictor().predict(models,
                                                                      dataset_builder.get_val_dataloader())
 
-        self._write_results_to_file(predictions, confidence_tensor, dataset_builder.get_label_mapper(), output_file)
+        raw_data_iter = raw_data_reader_func(data_file) if raw_data_reader_func else None
+        self.write_results_to_file(predictions, confidence_tensor, dataset_builder.get_label_mapper(), output_file,
+                                   raw_data_iter)
 
         return predictions, confidence_tensor
 
-    def _write_results_to_file(self, predictions_tensor, confidence_scores_tensor, label_mapper, output_file):
+    def write_results_to_file(self, predictions_tensor, confidence_scores_tensor, label_mapper, output_file,
+                              raw_data_iter=None):
         result = []
         confidence_scores_tensor = confidence_scores_tensor.cpu().tolist()
         predictions = predictions_tensor.cpu().tolist()
 
+        if raw_data_iter is None:
+            raw_data_iter = [None] * len(predictions)
+
+        assert len(raw_data_iter) == len(
+            predictions), "The length of raw data iterator {} doesnt match the prediction len".format(
+            len(raw_data_iter), len(predictions))
+
         # Convert indices to labels
-        for p, scores in zip(predictions, confidence_scores_tensor):
-            label_mapped_confidence = {s: label_mapper.reverse_map(si) for si, s in enumerate(scores)}
+        for p, scores, raw_data in zip(predictions, confidence_scores_tensor, raw_data_iter):
+            label_mapped_confidence = {label_mapper.reverse_map(si): s for si, s in enumerate(scores)}
             label_mapped_predictions = label_mapper.reverse_map(p)
             predicted_confidence = scores[p]
 
-            # Prepare results
             r = {
                 "prediction": label_mapped_predictions,
-                "confidence": predicted_confidence
-            }
+                "confidence": predicted_confidence}
+
             r = {**label_mapped_confidence, **r}
+
+            # Add raw data if available
+            if isinstance(raw_data, Dict):
+                r = {**raw_data, **r}
+            else:
+                r["raw_data"] = raw_data
 
             result.append(r)
 
