@@ -108,7 +108,6 @@ class TestSitTrain(TestCase):
         tempdir_model = tempfile.mkdtemp()
         tempfile_output = os.path.join(tempfile.mkdtemp(), "out.json")
 
-        tempfile_output = "/Users/aeg/PycharmProjects/ppi-aimed/temp_results/out.json"
 
         conf_scores = self._run_train(train_data_dir, additional_args, tempdir_model=tempdir_model)[-1]["result"][
             "conf"]
