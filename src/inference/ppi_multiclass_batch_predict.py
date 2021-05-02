@@ -19,7 +19,7 @@ class PpiMulticlassBatchPredict:
     def _get_ppi_multiclass_inference_reader(self, data_File):
         return pd.read_json(data_File).to_dict(orient="record")
 
-    def predict_from_directory(self, datajson, base_artefacts_dir, output_dir, is_ensemble, numworkers=None, batch=32,
+    def predict_from_directory(self, datajson, base_artefacts_dir, is_ensemble, output_dir, numworkers=None, batch=32,
                                additional_args=None, raw_data_reader_func=None):
         raw_data_reader_func = raw_data_reader_func or self._get_ppi_multiclass_inference_reader
         return self.batch_predict.predict_from_directory(datajson, base_artefacts_dir,
@@ -28,7 +28,7 @@ class PpiMulticlassBatchPredict:
                                                          additional_args=additional_args,
                                                          raw_data_reader_func=raw_data_reader_func)
 
-    def predict_from_file(self, datajson, base_artefacts_dir, output_file, is_ensemble, numworkers=None, batch=32,
+    def predict_from_file(self, datajson, base_artefacts_dir, is_ensemble, output_file, numworkers=None, batch=32,
                           additional_args=None, raw_data_reader_func=None):
         raw_data_reader_func = raw_data_reader_func or self._get_ppi_multiclass_inference_reader
         return self.batch_predict.predict_from_file(datajson, base_artefacts_dir,
