@@ -30,8 +30,9 @@ def parse_args_run():
     logging.basicConfig(level=logging.getLevelName(args.log_level), handlers=[logging.StreamHandler(sys.stdout)],
                         format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 
-    BatchPredict().predict_from_directory(args.datajson, args.artefactsdir, args.ensemble, args.outdir, args.numworkers,
-                                          args.batch, additional_dict)
+    list(BatchPredict().predict_from_directory(args.datajson, args.artefactsdir, args.ensemble, args.outdir,
+                                               args.numworkers,
+                                               args.batch, additional_dict))
 
 
 if "__main__" == __name__:
