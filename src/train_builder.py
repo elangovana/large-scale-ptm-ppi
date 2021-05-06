@@ -56,7 +56,9 @@ class TrainBuilder:
 
     def get_optimiser(self):
         if self._optimiser is None:
-            self._optimiser = Adam(params=self.get_network().parameters(), lr=self.learning_rate)
+            weight_decay = float(self._get_value(self._addition_args_dict, "weight_decay", "0.0"))
+            self._optimiser = Adam(params=self.get_network().parameters(), lr=self.learning_rate,
+                                   weight_decay=weight_decay)
         return self._optimiser
 
     def get_trainer(self):
@@ -70,3 +72,8 @@ class TrainBuilder:
                                       checkpoint_manager=self.model_factory.get_checkpoint_manager())
 
         return self._trainer
+
+    def _get_value(self, kwargs, key, default):
+        value = kwargs.get(key, default)
+        self._logger.info("Retrieving key {} with default {}, found {}".format(key, default, value))
+        return value
