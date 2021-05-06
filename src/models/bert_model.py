@@ -2,6 +2,7 @@ import logging
 
 from torch import nn
 from transformers import BertForSequenceClassification
+from transformers import BertModel as HuggingBert
 
 
 class BertModel(nn.Module):
@@ -16,7 +17,7 @@ class BertModel(nn.Module):
 
         if model_name_or_dir:
             self._logger.info("Loading BERT from {}".format(model_name_or_dir))
-            self.model = BertModel.from_pretrained(model_name_or_dir, num_labels=num_classes)
+            self.model = HuggingBert.from_pretrained(model_name_or_dir, num_labels=num_classes)
         else:
             self._logger.info("Initialing BERT from config")
             self.model = BertForSequenceClassification(config=bert_config)
