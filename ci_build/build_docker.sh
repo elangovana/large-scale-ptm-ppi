@@ -16,7 +16,7 @@ echo Building the Docker image $IMAGE_REPO from base ${PYTORCH_DOCKER_ACCOUNT_UR
 VERSION=$(date '+%Y%m%d%H%M')
 
 
-function build_docker{
+function build_docker(){
   DEVICE=$1
   TAG=$2
   CUDA=$3
