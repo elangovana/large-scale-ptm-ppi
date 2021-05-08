@@ -22,6 +22,8 @@ function build_docker{
   CUDA=$3
   LATEST_TAG=$4
 
+  echo build docker with args $@
+
   # Login to pytorch ECR before build
   # aws ecr get-login-password --region region | docker login --username AWS --password-stdin ${PYTORCH_DOCKER_ACCOUNT_URL}
   $(aws ecr get-login --no-include-email --region $ECR_REGION --registry-ids ${PYTORCH_DOCKER_ACCOUNT} )
@@ -30,7 +32,7 @@ function build_docker{
 
   echo Logging in to Amazon ECR...
   $(aws ecr get-login --no-include-email --region $ECR_REGION)
-  echo Pushing the Docker image...
+  echo Pushing the Docker image $IMAGE_REPO:$TAG...
   docker push $IMAGE_REPO:$TAG
 
   if [-n $LATEST_TAG]
