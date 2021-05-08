@@ -37,6 +37,7 @@ function build_docker{
 
   if [-n $LATEST_TAG]
   then
+    echo tagging the Docker image $IMAGE_REPO:$LATEST_TAG...
     docker tag $IMAGE_REPO:$TAG $IMAGE_REPO:$LATEST_TAG
     docker push $IMAGE_REPO:$LATEST_TAG
 
