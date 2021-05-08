@@ -1,3 +1,6 @@
+# exit when any command fails
+set -e
+
 DOCKER_BASE_DIR=$1
 IMAGE_REPO=$2 # e.g. of image repo 111111.dkr.ecr.us-east-2.amazonaws.com/image
 # Note: The account needs to match the pytorch release images, see https://github.com/aws/deep-learning-containers/blob/master/available_images.md
@@ -43,7 +46,7 @@ function build_docker(){
 VERSION=$(date '+%Y%m%d%H%M')
 
 device=gpu
-cuda=cu101
+cuda="-cu101"
 LATEST_TAG=$device-latest
 VERSION_TAG=$device-$VERSION
 build_docker $device $VERSION_TAG $cuda $LATEST_TAG

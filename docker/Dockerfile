@@ -2,7 +2,7 @@
 ARG device=gpu
 ARG account_url=763104351884.dkr.ecr.us-east-1.amazonaws.com/pytorch-training
 ARG cuda=cu101
-FROM ${account_url}:1.4.0-${device}-py36-${cuda}-ubuntu16.04
+FROM ${account_url}:1.4.0-${device}-py36${cuda}-ubuntu16.04
 
 ENV PATH="/opt/ml/code:${PATH}"
 
