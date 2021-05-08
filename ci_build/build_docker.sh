@@ -37,8 +37,8 @@ function build_docker{
 
   if [-n $LATEST_TAG]
   then
-    docker tag $IMAGE_REPO:$LATEST_TAG $IMAGE_REPO:$TAG
-    docker push $IMAGE_REPO:$TAG
+    docker tag $IMAGE_REPO:$TAG $IMAGE_REPO:$LATEST_TAG
+    docker push $IMAGE_REPO:$LATEST_TAG
 
   fi
 
