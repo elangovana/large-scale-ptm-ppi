@@ -11,11 +11,6 @@ IMAGE_REPO_ACCOUNT=`echo $IMAGE_REPO | cut -f 1 -d "."`
 PYTORCH_DOCKER_ACCOUNT=`echo $PYTORCH_REPO | cut -f 1 -d "."`
 echo Building the Docker image $IMAGE_REPO from base ${PYTORCH_DOCKER_ACCOUNT_URL}...
 
-
-## TODO: Automate version tagging based on datetime for now, ideally should be tied to release tags
-VERSION=$(date '+%Y%m%d%H%M')
-
-
 function build_docker(){
   DEVICE=$1
   TAG=$2
@@ -43,6 +38,9 @@ function build_docker(){
   fi
 
 }
+
+## TODO: Automate version tagging based on datetime for now, ideally should be tied to release tags
+VERSION=$(date '+%Y%m%d%H%M')
 
 device=gpu
 cuda=cu101
