@@ -33,14 +33,12 @@ class Predictor:
                 # Soft max the predictions
                 pred_batch_y = soft_max_func(pred_batch_y)
 
-                scores.append(pred_batch_y)
+                # Copy to CPU to release gpu mem...
+                scores.append(pred_batch_y.cpu())
 
         scores = torch.cat(scores)
         predicted = torch.max(scores, dim=-1)[1].view(-1)
 
-        # Copy to CPU to release gpu mem...
-        predicted = predicted.cpu()
-        scores = scores.cpu()
         self.logger.info("Completed inference {}".format(device))
 
         return predicted, scores
