@@ -38,6 +38,9 @@ class Predictor:
         scores = torch.cat(scores)
         predicted = torch.max(scores, dim=-1)[1].view(-1)
 
+        # Copy to CPU to release gpu mem...
+        predicted = predicted.cpu()
+        scores = scores.cpu()
         self.logger.info("Completed inference {}".format(device))
 
         return predicted, scores
