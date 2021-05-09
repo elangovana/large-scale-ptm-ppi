@@ -63,7 +63,7 @@ class ResultScorerEce(BaseClassificationScorer):
 
     def _get_bins(self, pred_confidence_min, pred_confidence_max):
         bin_size = (pred_confidence_max - pred_confidence_min) / self.num_bins
-        bins = [bin_size * i for i in range(1, self.num_bins + 1)]
+        bins = [bin_size * i for i in range(0, self.num_bins + 1)]
 
         return bins
 
