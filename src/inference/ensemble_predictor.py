@@ -31,7 +31,8 @@ class EnsemblePredictor:
 
         # Use all available GPUS using multithreading
         self._logger.info("Using devices {}".format(devices))
-        model_device_map = [(m, dataloader, devices[i % len(devices)]) for i, m in enumerate(model_networks)]
+        model_device_map = [(m.to(devices[i % len(devices)]), dataloader, devices[i % len(devices)]) for i, m in
+                            enumerate(model_networks)]
         with Pool(len(devices)) as p:
             agg_pred_scores = p.starmap(self.model_wrapper.predict, model_device_map)
 
