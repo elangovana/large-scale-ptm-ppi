@@ -9,9 +9,9 @@ PYTORCH_REPO=$3
 echo Running with arguments "$@"
 
 
-ECR_REGION=`echo $IMAGE_REPO | cut -f 4 -d "."`
-IMAGE_REPO_ACCOUNT=`echo $IMAGE_REPO | cut -f 1 -d "."`
-PYTORCH_DOCKER_ACCOUNT=`echo $PYTORCH_REPO | cut -f 1 -d "."`
+ECR_REGION=$(echo $IMAGE_REPO | cut -f 4 -d ".")
+IMAGE_REPO_ACCOUNT=$(echo $IMAGE_REPO | cut -f 1 -d ".")
+PYTORCH_DOCKER_ACCOUNT=$(echo $PYTORCH_REPO | cut -f 1 -d ".")
 echo Building the Docker image $IMAGE_REPO from base ${PYTORCH_DOCKER_ACCOUNT_URL}...
 
 function build_docker(){
