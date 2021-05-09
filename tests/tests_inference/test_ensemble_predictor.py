@@ -23,8 +23,10 @@ class TestEnsemblePredictor(TestCase):
         mock_predictor = MagicMock()
         mock_predictor.predict.return_value = predictions, confidence_scores
 
-        mock_model = MagicMock
-        models = mock_model
+        mock_model = MagicMock()
+        mock_model.to.return_value = mock_model
+
+        models = [mock_model]
 
         sut = EnsemblePredictor(model_wrapper=mock_predictor)
 
@@ -34,8 +36,6 @@ class TestEnsemblePredictor(TestCase):
         # Assert
         np.testing.assert_array_equal(confidence_scores.numpy(), actual_confidence.numpy())
         np.testing.assert_array_equal(predictions.numpy(), actual_predictions.numpy())
-
-
 
     def test_predict_2_different_confidence(self):
         """
@@ -50,7 +50,9 @@ class TestEnsemblePredictor(TestCase):
         expected_confidence_scores = torch.tensor([[0.05 / 2, 1.95 / 2], [1.8 / 2, 0.2 / 2]])
 
         mock_model_1 = MagicMock()
+        mock_model_1.to.return_value = mock_model_1
         mock_model_2 = MagicMock()
+        mock_model_2.to.return_value = mock_model_2
 
         models = [mock_model_1, mock_model_2]
 
@@ -59,7 +61,6 @@ class TestEnsemblePredictor(TestCase):
 
         def mock_model_wrapper_call(m, d, h):
             return (predictions, confidence_scores_1) if m == mock_model_1 else (predictions, confidence_scores_2)
-
         mock_model_wrapper.predict.side_effect = mock_model_wrapper_call
 
         # 2 models
