@@ -21,8 +21,8 @@ class Predictor:
 
         with torch.no_grad():
             soft_max_func = torch.nn.Softmax(dim=-1)
-            for _, (batch_x, batch_y) in enumerate(dataloader):
-
+            for i, (batch_x, batch_y) in enumerate(dataloader):
+                self.logger.info("running batch {}".format(i))
                 # TODO: CLean this up
                 if isinstance(batch_x, list):
                     val_batch_idx = [t.to(device=device) for t in batch_x]
@@ -35,6 +35,8 @@ class Predictor:
 
                 # Copy to CPU to release gpu mem...
                 scores.append(pred_batch_y.cpu())
+
+        self.logger.info("running concat {}".format(i))
 
         scores = torch.cat(scores)
         predicted = torch.max(scores, dim=-1)[1].view(-1)
