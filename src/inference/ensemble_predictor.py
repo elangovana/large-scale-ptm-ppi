@@ -36,15 +36,19 @@ class EnsemblePredictor:
             agg_pred_scores = p.starmap(self.model_wrapper.predict, model_device_map)
 
         # Compute average
+        self._logger.info("Computing average ")
         ensemble_size = len(agg_pred_scores)
         _, scores_ensemble = agg_pred_scores[0]
+        scores_ensemble.to(device="cpu")
         for _, s in agg_pred_scores[1:]:
             scores_ensemble = scores_ensemble + s.to(device=scores_ensemble.device)
         scores_ensemble = scores_ensemble / ensemble_size
 
         # Predicted ensemble , arg max
+        self._logger.info("Computing ensemble prediction ")
         predicted_ensemble = torch.max(scores_ensemble, dim=-1)[1].view(-1)
 
+        self._logger.info("Comppleted ensemble prediction ")
         return predicted_ensemble, scores_ensemble
 
     @property

@@ -81,6 +81,9 @@ class BatchPredict:
 
     def write_results_to_file(self, predictions_tensor, confidence_scores_tensor, label_mapper, output_file,
                               raw_data_iter=None):
+
+        self._logger.info(f"Writing to file {output_file}")
+
         result = []
         confidence_scores_tensor = confidence_scores_tensor.cpu().tolist()
         predictions = predictions_tensor.cpu().tolist()
@@ -115,3 +118,5 @@ class BatchPredict:
         # Write json to file
         with open(output_file, "w") as f:
             json.dump(result, f)
+
+        self._logger.info(f"Completed writing to file {output_file}")
