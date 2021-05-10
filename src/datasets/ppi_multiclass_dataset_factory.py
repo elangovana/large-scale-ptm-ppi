@@ -14,8 +14,9 @@ from scorers.result_scorer_f1_macro_factory import ResultScorerF1MacroFactory
 class PpiMulticlassDatasetFactory(BaseDatasetFactory):
 
     def get_scorers(self):
-        scores = [ResultScorerAucMacroFactory().get()
-            , ResultScorerF1MacroFactory().get()
+        scores = [ResultScorerF1MacroFactory().get(),
+                  ResultScorerAucMacroFactory().get()
+
                   ]
         return scores
 
