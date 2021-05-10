@@ -41,12 +41,13 @@ class Predictor:
 
                 # Copy to CPU to release gpu mem...
                 scores.append(pred_batch_y.cpu())
+                self.logger.info("Completed cpu {}".format(i))
 
-        self.logger.info("running concat {}".format(i))
+        self.logger.info("running concat {}".format(device))
 
-        scores = torch.cat(scores)
-        predicted = torch.max(scores, dim=-1)[1].view(-1)
+        scores_tensor = torch.cat(scores)
+        predicted = torch.max(scores_tensor, dim=-1)[1].view(-1)
 
         self.logger.info("Completed inference {}".format(device))
 
-        return predicted, scores
+        return predicted, scores_tensor
