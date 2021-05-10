@@ -13,13 +13,15 @@ class Predictor:
         device = device or ('cuda:0' if torch.cuda.is_available() else 'cpu')
 
         self.logger.info("Using device {}".format(device))
-        model_network.to(device)
-        # switch model to evaluation mode
-        model_network.eval()
+
         self.logger.info("Running inference {}".format(device))
         scores = []
 
         with torch.no_grad():
+            model_network.to(device)
+            # switch model to evaluation mode
+            model_network.eval()
+
             soft_max_func = torch.nn.Softmax(dim=-1)
             for i, (batch_x, batch_y) in enumerate(dataloader):
                 self.logger.info("running batch {}".format(i))
@@ -42,6 +44,7 @@ class Predictor:
                 # Copy to CPU to release gpu mem...
                 scores.append(pred_batch_y.cpu())
                 self.logger.info("Completed cpu {}".format(i))
+            self.logger.info("In grad {}".format(i))
 
         self.logger.info("running concat {}".format(device))
 
