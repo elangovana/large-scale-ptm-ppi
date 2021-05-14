@@ -38,19 +38,16 @@ class EnsemblePredictor:
 
         # Compute average
         self._logger.info("Computing average ")
-        ensemble_size = len(agg_pred_scores)
-        _, scores_ensemble = agg_pred_scores[0]
-        scores_ensemble.to(device="cpu")
-        for _, s in agg_pred_scores[1:]:
-            scores_ensemble = scores_ensemble + s.to(device=scores_ensemble.device)
-        scores_ensemble = scores_ensemble / ensemble_size
+        ensemble_tensor = torch.cat([torch.unsqueeze(s, dim=0) for _, s in agg_pred_scores], dim=0)
+        average_scores_ensemble = torch.mean(ensemble_tensor, dim=0)
+        std_scores_ensemble = torch.std(ensemble_tensor, dim=0)
 
         # Predicted ensemble , arg max
         self._logger.info("Computing ensemble prediction ")
-        predicted_ensemble = torch.max(scores_ensemble, dim=-1)[1].view(-1)
+        predicted_ensemble = torch.max(average_scores_ensemble, dim=-1)[1].view(-1)
 
-        self._logger.info("Comppleted ensemble prediction ")
-        return predicted_ensemble, scores_ensemble
+        self._logger.info("Completed ensemble prediction ")
+        return predicted_ensemble, average_scores_ensemble, std_scores_ensemble
 
     @property
     def _logger(self):

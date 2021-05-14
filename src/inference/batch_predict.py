@@ -70,16 +70,18 @@ class BatchPredict:
 
             models.append(model)
 
-        predictions, confidence_tensor = EnsemblePredictor().predict(models,
-                                                                     dataset_builder.get_val_dataloader())
+        predictions, confidence_tensor, variation_tensor = EnsemblePredictor().predict(models,
+                                                                                       dataset_builder.get_val_dataloader())
 
         raw_data_iter = raw_data_reader_func(data_file) if raw_data_reader_func else None
-        self.write_results_to_file(predictions, confidence_tensor, dataset_builder.get_label_mapper(), output_file,
+        self.write_results_to_file(predictions, confidence_tensor, variation_tensor, dataset_builder.get_label_mapper(),
+                                   output_file,
                                    raw_data_iter)
 
         return predictions, confidence_tensor
 
-    def write_results_to_file(self, predictions_tensor, confidence_scores_tensor, label_mapper, output_file,
+    def write_results_to_file(self, predictions_tensor, confidence_scores_tensor, variation_tensor, label_mapper,
+                              output_file,
                               raw_data_iter=None):
 
         self._logger.info(f"Writing to file {output_file}")
@@ -87,6 +89,7 @@ class BatchPredict:
         result = []
         confidence_scores_tensor = confidence_scores_tensor.cpu().tolist()
         predictions = predictions_tensor.cpu().tolist()
+        variation_tensor = variation_tensor.cpu().tolist()
 
         if raw_data_iter is None:
             raw_data_iter = [None] * len(predictions)
@@ -96,14 +99,17 @@ class BatchPredict:
             len(raw_data_iter), len(predictions))
 
         # Convert indices to labels
-        for p, scores, raw_data in zip(predictions, confidence_scores_tensor, raw_data_iter):
+        for p, scores, v, raw_data in zip(predictions, confidence_scores_tensor, variation_tensor, raw_data_iter):
             label_mapped_confidence = {label_mapper.reverse_map(si): s for si, s in enumerate(scores)}
             label_mapped_predictions = label_mapper.reverse_map(p)
             predicted_confidence = scores[p]
+            predicted_confidence_variance = v[p]
 
             r = {
                 "prediction": label_mapped_predictions,
-                "confidence": predicted_confidence}
+                "confidence": predicted_confidence,
+                "confidence_var": predicted_confidence_variance
+            }
 
             r = {**label_mapped_confidence, **r}
 

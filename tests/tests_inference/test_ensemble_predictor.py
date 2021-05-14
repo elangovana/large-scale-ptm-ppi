@@ -31,7 +31,7 @@ class TestEnsemblePredictor(TestCase):
         sut = EnsemblePredictor(model_wrapper=mock_predictor)
 
         # Act
-        actual_predictions, actual_confidence = sut.predict(models, input)
+        actual_predictions, actual_confidence, actual_variance = sut.predict(models, input)
 
         # Assert
         np.testing.assert_array_equal(confidence_scores.numpy(), actual_confidence.numpy())
@@ -43,11 +43,14 @@ class TestEnsemblePredictor(TestCase):
         """
         # Arrange
         # output mock data
-        predictions = torch.tensor([1, 0])
-        confidence_scores_1 = torch.tensor([[0.0, 1], [1.0, 0.0]])
-        confidence_scores_2 = torch.tensor([[0.05, .95], [.80, 0.2]])
+        predictions = torch.tensor([1, 0, 1])
+        confidence_scores_1 = torch.tensor([[0.0, 1], [1.0, 0.0], [1.0, 0.0]])
+        confidence_scores_2 = torch.tensor([[0.05, .95], [.80, 0.2], [2.0, 5.0]])
 
-        expected_confidence_scores = torch.tensor([[0.05 / 2, 1.95 / 2], [1.8 / 2, 0.2 / 2]])
+        expected_confidence_scores = torch.tensor([[0.05 / 2, 1.95 / 2], [1.8 / 2, 0.2 / 2], [3.0 / 2, 5 / 2]])
+        expected_var = torch.tensor([[0.0354, 0.0354],
+                                     [0.1414, 0.1414],
+                                     [0.7071, 3.5355]])
 
         mock_model_1 = MagicMock()
         mock_model_1.to.return_value = mock_model_1
@@ -61,14 +64,16 @@ class TestEnsemblePredictor(TestCase):
 
         def mock_model_wrapper_call(m, d, h):
             return (predictions, confidence_scores_1) if m == mock_model_1 else (predictions, confidence_scores_2)
+
         mock_model_wrapper.predict.side_effect = mock_model_wrapper_call
 
         # 2 models
         sut = EnsemblePredictor(model_wrapper=mock_model_wrapper)
 
         # Act
-        actual_predictions, actual_confidence = sut.predict(models, input)
+        actual_predictions, actual_confidence, actual_variance = sut.predict(models, input)
 
         # Assert
         np.testing.assert_array_equal(expected_confidence_scores.numpy(), actual_confidence.numpy())
         np.testing.assert_array_equal(predictions.numpy(), actual_predictions.numpy())
+        np.testing.assert_array_equal(expected_var.numpy(), np.round(actual_variance.numpy(), 4))
