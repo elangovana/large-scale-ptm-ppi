@@ -108,7 +108,7 @@ class BatchPredict:
             r = {
                 "prediction": label_mapped_predictions,
                 "confidence": predicted_confidence,
-                "confidence_var": predicted_confidence_variance
+                "confidence_std": predicted_confidence_variance
             }
 
             r = {**label_mapped_confidence, **r}
