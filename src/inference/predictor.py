@@ -23,7 +23,7 @@ class Predictor:
 
             soft_max_func = torch.nn.Softmax(dim=-1)
             for i, (batch_x, batch_y) in enumerate(dataloader):
-                self.logger.info("running batch {}".format(i))
+                self.logger.debug("running batch {}".format(i))
                 # TODO: CLean this up
                 if isinstance(batch_x, list):
                     val_batch_idx = [t.to(device=device) for t in batch_x]
