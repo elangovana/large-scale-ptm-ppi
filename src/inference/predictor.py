@@ -33,7 +33,7 @@ class Predictor:
 
                 pred_batch_y = model_network(val_batch_idx)[0]
 
-                self.logger.debug("softmax batch {] {}".format(device, i))
+                self.logger.debug("softmax batch {} {}".format(device, i))
 
                 # Soft max the predictions
                 pred_batch_y = soft_max_func(pred_batch_y)
