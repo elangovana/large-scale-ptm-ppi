@@ -29,21 +29,21 @@ class Predictor:
                     val_batch_idx = [t.to(device=device) for t in batch_x]
                 else:
                     val_batch_idx = batch_x.to(device=device)
-                self.logger.info("predict batch {}".format(i))
+                self.logger.info("predict batch {} {}".format(device, i))
 
                 pred_batch_y = model_network(val_batch_idx)[0]
 
-                self.logger.debug("softmax batch {}".format(i))
+                self.logger.debug("softmax batch {] {}".format(device, i))
 
                 # Soft max the predictions
                 pred_batch_y = soft_max_func(pred_batch_y)
 
-                self.logger.info("copy cpu {}".format(i))
+                self.logger.info("copy cpu {} {}".format(device, i))
 
                 # Copy to CPU to release gpu mem...
                 scores.append(pred_batch_y.cpu())
-                self.logger.info("Completed cpu {}".format(i))
-            self.logger.info("In grad {}".format(i))
+                self.logger.info("Completed cpu {} {}".format(device, i))
+            self.logger.info("In grad {}".format(device))
 
         self.logger.debug("running concat {}".format(device))
 
