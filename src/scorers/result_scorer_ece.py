@@ -83,9 +83,15 @@ class ResultScorerEce(BaseClassificationScorer):
         predictions = np.argmax(item_in_y_pred, axis=-1)
         actual = item_in_y_actual
 
+        # compute mean, if no items then set accuracy to 0
         bin_accuracy = np.mean(predictions == actual)
 
         bin_average_confidence = np.mean(np.max(item_in_y_pred, axis=-1))
+
+        # if no items then set accuracy to 0
+        if len(predictions) == 0:
+            bin_accuracy = 0
+            bin_average_confidence = 0
 
         result = bin_accuracy, bin_expected_accuracy, items_in_bin, bin_average_confidence
 
