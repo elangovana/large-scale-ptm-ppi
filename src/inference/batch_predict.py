@@ -70,45 +70,58 @@ class BatchPredict:
 
             models.append(model)
 
-        predictions, confidence_tensor, variation_tensor = EnsemblePredictor().predict(models,
-                                                                                       dataset_builder.get_val_dataloader())
+        predictions_data = EnsemblePredictor().predict(models,
+                                                       dataset_builder.get_val_dataloader())
 
         raw_data_iter = raw_data_reader_func(data_file) if raw_data_reader_func else None
-        self.write_results_to_file(predictions, confidence_tensor, variation_tensor, dataset_builder.get_label_mapper(),
+        self.write_results_to_file(predictions_data, dataset_builder.get_label_mapper(),
                                    output_file,
                                    raw_data_iter)
 
-        return predictions, confidence_tensor
+        return predictions_data
 
-    def write_results_to_file(self, predictions_tensor, confidence_scores_tensor, variation_tensor, label_mapper,
+    def write_results_to_file(self, predictions_data_tuple, label_mapper,
                               output_file,
                               raw_data_iter=None):
 
         self._logger.info(f"Writing to file {output_file}")
 
         result = []
-        confidence_scores_tensor = confidence_scores_tensor.cpu().tolist()
-        predictions = predictions_tensor.cpu().tolist()
-        variation_tensor = variation_tensor.cpu().tolist()
+
+        predictions_tensor = predictions_data_tuple[0]
+        confidence_scores = predictions_data_tuple[1]
+        variation_tensor = predictions_data_tuple[2]
+        raw_confidence_scores_tensor = predictions_data_tuple[3]
 
         if raw_data_iter is None:
-            raw_data_iter = [None] * len(predictions)
+            raw_data_iter = [None] * len(predictions_tensor)
 
         assert len(raw_data_iter) == len(
-            predictions), "The length of raw data iterator {} doesnt match the prediction len".format(
-            len(raw_data_iter), len(predictions))
+            predictions_tensor), "The length of raw data iterator {} doesnt match the prediction len {}".format(
+            len(raw_data_iter), len(predictions_tensor))
 
         # Convert indices to labels
-        for p, scores, v, raw_data in zip(predictions, confidence_scores_tensor, variation_tensor, raw_data_iter):
-            label_mapped_confidence = {label_mapper.reverse_map(si): s for si, s in enumerate(scores)}
-            label_mapped_predictions = label_mapper.reverse_map(p)
-            predicted_confidence = scores[p]
-            predicted_confidence_variance = v[p]
+        for i, raw_data in enumerate(raw_data_iter):
+            pred_i_tensor = predictions_tensor[i]
+            conf_i_tensor = confidence_scores[i]
+            var_i_tensor = variation_tensor[i]
+            raw_conf_i_tensor = raw_confidence_scores_tensor[i]
+
+            pred_i = pred_i_tensor.cpu().item()
+            var_i = var_i_tensor.cpu().tolist()
+            conf_i = conf_i_tensor.cpu().tolist()
+            raw_conf_i = raw_conf_i_tensor.cpu().tolist()
+
+            label_mapped_confidence = {label_mapper.reverse_map(si): s for si, s in enumerate(conf_i)}
+            label_mapped_predictions = label_mapper.reverse_map(pred_i)
+            predicted_confidence = conf_i[pred_i]
+            predicted_confidence_variance = var_i[pred_i]
 
             r = {
                 "prediction": label_mapped_predictions,
                 "confidence": predicted_confidence,
-                "confidence_std": predicted_confidence_variance
+                "confidence_std": predicted_confidence_variance,
+                "raw_confidence": raw_conf_i
             }
 
             r = {**label_mapped_confidence, **r}

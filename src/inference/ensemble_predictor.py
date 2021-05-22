@@ -46,8 +46,11 @@ class EnsemblePredictor:
         self._logger.info("Computing ensemble prediction ")
         predicted_ensemble = torch.max(average_scores_ensemble, dim=-1)[1].view(-1)
 
+        conf_indices = [[i for i, _ in enumerate(predicted_ensemble)], predicted_ensemble.cpu().tolist()]
+        predicted_ensemble_conf_scores = ensemble_tensor.permute(1, 2, 0)[conf_indices]
+
         self._logger.info("Completed ensemble prediction ")
-        return predicted_ensemble, average_scores_ensemble, std_scores_ensemble
+        return predicted_ensemble, average_scores_ensemble, std_scores_ensemble, predicted_ensemble_conf_scores
 
     @property
     def _logger(self):
