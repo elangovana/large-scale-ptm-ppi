@@ -1,5 +1,4 @@
 import logging
-from multiprocessing.dummy import Pool
 
 import torch
 
@@ -33,8 +32,12 @@ class EnsemblePredictor:
         self._logger.info("Using devices {}".format(devices))
         model_device_map = ((m.to(devices[i % len(devices)]), dataloader, devices[i % len(devices)]) for i, m in
                             enumerate(model_networks))
-        with Pool(len(devices)) as p:
-            agg_pred_scores = p.starmap(self.model_wrapper.predict, model_device_map)
+        # Multithreading seems to deadlock....
+        # with Pool(len(devices)) as p:
+        #     agg_pred_scores = p.starmap(self.model_wrapper.predict, model_device_map)
+        agg_pred_scores = []
+        for item in model_device_map:
+            agg_pred_scores.append(self.model_wrapper.predict(*item))
 
         # Compute average
         self._logger.info("Computing average ")
