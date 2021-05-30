@@ -28,7 +28,7 @@ class PpiMulticlassBatchPredict:
         # Use filter if
         default_filter = lambda p, c, s: True
         if self.use_filter:
-            default_filter = lambda p, c, s: p != 'other'
+            default_filter = lambda p, c, s: p != 'other' and s <= self.filter_std
         filter_func = filter_func or default_filter
 
         # Invoke underlying batch predict
