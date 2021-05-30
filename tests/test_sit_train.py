@@ -119,7 +119,10 @@ class TestSitTrain(TestCase):
             train_data_file,
             tempdir_model,
             is_ensemble=False,
-            output_file=tempfile_output)
+            output_file=tempfile_output,
+            filter_func=lambda p, c, s: s < 0.5
+
+        )
 
         # Assert
         np.testing.assert_array_almost_equal(conf_scores, confidence_scores)

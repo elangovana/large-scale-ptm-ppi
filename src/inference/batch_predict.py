@@ -17,7 +17,7 @@ class BatchPredict:
         return logging.getLogger(__name__)
 
     def predict_from_directory(self, datajson, base_artefacts_dir, is_ensemble, output_dir=None, numworkers=None,
-                               batch=32, additional_args=None, raw_data_reader_func=None):
+                               batch=32, additional_args=None, raw_data_reader_func=None, filter_func=None):
         data_files = [datajson]
         if os.path.isdir(datajson):
             data_files = glob.glob("{}/*.json".format(datajson))
@@ -31,7 +31,7 @@ class BatchPredict:
             yield prediction
 
     def predict_from_file(self, data_file, base_artifacts_dir, is_ensemble, output_file=None, numworkers=None, batch=32,
-                          additional_args=None, raw_data_reader_func=None):
+                          additional_args=None, raw_data_reader_func=None, filter_func=None):
         additional_args = additional_args or {}
 
         artifacts_directories = []
@@ -82,7 +82,7 @@ class BatchPredict:
 
     def write_results_to_file(self, predictions_data_tuple, label_mapper,
                               output_file,
-                              raw_data_iter=None):
+                              raw_data_iter=None, filter_func=None):
 
         self._logger.info(f"Writing to file {output_file}")
 
@@ -93,6 +93,10 @@ class BatchPredict:
         variation_tensor = predictions_data_tuple[2]
         raw_confidence_scores_tensor = predictions_data_tuple[3]
 
+        # If no filter pass everything through
+        default_filter = lambda p, c, s: True
+        filter_func = filter_func or default_filter
+
         if raw_data_iter is None:
             raw_data_iter = [None] * len(predictions_tensor)
 
@@ -102,6 +106,7 @@ class BatchPredict:
 
         # Convert indices to labels
         for i, raw_data in enumerate(raw_data_iter):
+
             pred_i_tensor = predictions_tensor[i]
             conf_i_tensor = confidence_scores[i]
             var_i_tensor = variation_tensor[i]
@@ -113,14 +118,16 @@ class BatchPredict:
             raw_conf_i = raw_conf_i_tensor.cpu().tolist()
 
             label_mapped_confidence = {label_mapper.reverse_map(si): s for si, s in enumerate(conf_i)}
-            label_mapped_predictions = label_mapper.reverse_map(pred_i)
+            label_mapped_prediction = label_mapper.reverse_map(pred_i)
             predicted_confidence = conf_i[pred_i]
-            predicted_confidence_variance = var_i[pred_i]
+            predicted_confidence_std = var_i[pred_i]
+
+            if not filter_func(label_mapped_prediction, predicted_confidence, predicted_confidence_std): continue
 
             r = {
-                "prediction": label_mapped_predictions,
+                "prediction": label_mapped_prediction,
                 "confidence": predicted_confidence,
-                "confidence_std": predicted_confidence_variance,
+                "confidence_std": predicted_confidence_std,
                 "raw_confidence": raw_conf_i
             }
 
@@ -134,8 +141,9 @@ class BatchPredict:
 
             result.append(r)
 
-        # Write json to file
-        with open(output_file, "w") as f:
-            json.dump(result, f)
+        if len(result) > 0:
+            # Write json to file
+            with open(output_file, "w") as f:
+                json.dump(result, f)
 
         self._logger.info(f"Completed writing to file {output_file}")
