@@ -28,7 +28,7 @@ class PpiMulticlassBatchPredict:
         # Use filter if
         default_filter = lambda p, c, s: True
         if self.use_filter:
-            self._logger.info("Using filter ..")
+            self._logger.info("Using filter with threshold {}".format(self.filter_std))
             default_filter = lambda p, c, s: p != 'other' and s <= self.filter_std
         filter_func = filter_func or default_filter
 
@@ -66,6 +66,7 @@ def parse_args_run():
     parser.add_argument("--batch", help="The batchsize", type=int, default=32)
     parser.add_argument("--ensemble", help="Set to 1 if ensemble model", type=int, default=0, choices={0, 1})
     parser.add_argument("--filter", help="Set to 1 if ensemble model", type=int, default=0, choices={0, 1})
+    parser.add_argument("--filterstdthreshold", help="Set the filter threshold", type=float, default=1.0)
 
     args, additional_args = parser.parse_known_args()
     print(args.__dict__)
@@ -79,13 +80,14 @@ def parse_args_run():
     logging.basicConfig(level=logging.getLevelName(args.log_level), handlers=[logging.StreamHandler(sys.stdout)],
                         format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 
-    PpiMulticlassBatchPredict(BatchPredict(), use_filter=args.filter).predict_from_directory(args.datajson,
-                                                                                             args.artefactsdir,
-                                                                                             args.ensemble,
-                                                                                             args.outdir,
-                                                                                             args.numworkers,
-                                                                                             args.batch,
-                                                                                             additional_dict)
+    PpiMulticlassBatchPredict(BatchPredict(), use_filter=args.filter,
+                              filter_std=args.filterstdthreshold).predict_from_directory(args.datajson,
+                                                                                         args.artefactsdir,
+                                                                                         args.ensemble,
+                                                                                         args.outdir,
+                                                                                         args.numworkers,
+                                                                                         args.batch,
+                                                                                         additional_dict)
 
 
 if "__main__" == __name__:
