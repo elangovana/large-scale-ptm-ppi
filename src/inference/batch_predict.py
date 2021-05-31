@@ -78,7 +78,8 @@ class BatchPredict:
         raw_data_iter = raw_data_reader_func(data_file) if raw_data_reader_func else None
         self.write_results_to_file(predictions_data, dataset_builder.get_label_mapper(),
                                    output_file,
-                                   raw_data_iter)
+                                   raw_data_iter,
+                                   filter_func)
 
         self._logger.info(f"Completed file {data_file}")
 
