@@ -34,6 +34,8 @@ class BatchPredict:
                           additional_args=None, raw_data_reader_func=None, filter_func=None):
         additional_args = additional_args or {}
 
+        self._logger.info(f"Processing data file {data_file}")
+
         artifacts_directories = []
         if is_ensemble:
             for d in os.listdir(base_artifacts_dir):
@@ -78,13 +80,13 @@ class BatchPredict:
                                    output_file,
                                    raw_data_iter)
 
+        self._logger.info(f"Completed file {data_file}")
+
         return predictions_data
 
     def write_results_to_file(self, predictions_data_tuple, label_mapper,
                               output_file,
                               raw_data_iter=None, filter_func=None):
-
-        self._logger.info(f"Writing to file {output_file}")
 
         result = []
 
@@ -141,9 +143,10 @@ class BatchPredict:
 
             result.append(r)
 
+        self._logger.info("Records to write: {}".format(len(result)))
+
         if len(result) > 0:
+            self._logger.info(f"Writing to file {output_file}")
             # Write json to file
             with open(output_file, "w") as f:
                 json.dump(result, f)
-
-        self._logger.info(f"Completed writing to file {output_file}")
