@@ -26,7 +26,7 @@ class BatchPredict:
             output_file = "{}.json".format(os.path.join(output_dir, Path(d).name)) if output_dir else None
             self._logger.info("Running inference on file {} with output in {}".format(d, output_file))
             prediction = self.predict_from_file(d, base_artefacts_dir, is_ensemble, output_file, numworkers, batch,
-                                                additional_args, raw_data_reader_func)
+                                                additional_args, raw_data_reader_func, filter_func)
 
             yield prediction
 
