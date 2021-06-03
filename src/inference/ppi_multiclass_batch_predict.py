@@ -60,8 +60,6 @@ def parse_args_run():
     parser.add_argument("artefactsdir", help="The base of artefacts dir that contains directories of model, vocab etc")
     parser.add_argument("outdir", help="The output dir")
     parser.add_argument("--log-level", help="Log level", default="INFO", choices={"INFO", "WARN", "DEBUG", "ERROR"})
-    parser.add_argument("--positives-filter-threshold", help="The threshold to filter positives", type=float,
-                        default=0.0)
     parser.add_argument("--numworkers", help="The number of workers to use", type=int, default=None)
     parser.add_argument("--batch", help="The batchsize", type=int, default=32)
     parser.add_argument("--ensemble", help="Set to 1 if ensemble model", type=int, default=0, choices={0, 1})

@@ -131,3 +131,4 @@ dmypy.json
 /temp_results/
 .idea
 notebooks/.ipynb_checkpoints
+temp_plots
