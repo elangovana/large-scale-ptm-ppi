@@ -25,10 +25,14 @@ class BatchPredict:
         for d in data_files:
             output_file = "{}.json".format(os.path.join(output_dir, Path(d).name)) if output_dir else None
             self._logger.info("Running inference on file {} with output in {}".format(d, output_file))
-            prediction = self.predict_from_file(d, base_artefacts_dir, is_ensemble, output_file, numworkers, batch,
-                                                additional_args, raw_data_reader_func, filter_func)
+            try:
+                prediction = self.predict_from_file(d, base_artefacts_dir, is_ensemble, output_file, numworkers, batch,
+                                                    additional_args, raw_data_reader_func, filter_func)
 
-            yield prediction
+                yield prediction
+            except AssertionError as ex:
+                self._logger.warning("Failed processing file {} due to error {}".format(d, ex))
+                yield None
 
     def predict_from_file(self, data_file, base_artifacts_dir, is_ensemble, output_file=None, numworkers=None, batch=32,
                           additional_args=None, raw_data_reader_func=None, filter_func=None):
