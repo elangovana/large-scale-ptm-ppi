@@ -1,6 +1,4 @@
-import numpy as np
 from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.metrics.pairwise import cosine_similarity
 
 
 class TopWordsSimilarityComparer:
@@ -9,17 +7,14 @@ class TopWordsSimilarityComparer:
         self._vectorizer = CountVectorizer(analyzer='word', ngram_range=(n_gram, n_gram), stop_words=stop_words)
 
     def __call__(self, list_reference, list_new):
+        # Merge ref and new so no unknown words
         vec = self._vectorizer.fit(list_reference + list_new)
-        x_vector_ref = self._vectorizer.transform(list_reference)
-        y_vector_new = self._vectorizer.transform(list_new)
+        word_indices = {i: w for w, i in vec.vocabulary_.items()}
 
-        bag_of_words = vec.transform(list_reference)
-        print(x_vector_ref)
+        x_vector_ref = vec.transform(list_reference)
+        y_vector_new = vec.transform(list_new)
 
-        sim_scores = cosine_similarity(y_vector_new, x_vector_ref, dense_output=False).toarray()
+        ref_word_count = x_vector_ref.sum(axis=0).tolist()[0]
+        new_word_count = y_vector_new.sum(axis=0).tolist()[0]
 
-        best_score = sim_scores.max(axis=1).flatten()
-        best_match_index = sim_scores.argmax(axis=1).flatten()
-        best_match = np.array(list_reference)[best_match_index]
-
-        return best_score, best_match
+        return ref_word_count, new_word_count, word_indices
