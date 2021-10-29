@@ -1,3 +1,5 @@
+import logging
+
 import torch
 
 
@@ -32,11 +34,18 @@ class TransformerBertTokeniser:
 
         return self.item
 
+    @property
+    def _logger(self):
+        return logging.getLogger(__name__)
+
     def tokenise(self):
         """
         Converts text to tokens, e.g. "The dog" would return ["The", "dog"]
         """
+        self._logger.debug("Text : {}".format(self.item))
         tokens = self.tokeniser.tokenize(self.item)
+        self._logger.debug("Tokens : {}".format(tokens))
+
         self.item = tokens
         return self
 
@@ -47,6 +56,7 @@ class TransformerBertTokeniser:
         """
         result = self.tokeniser.convert_tokens_to_ids(self.item)
         self.item = result
+
         return self
 
     def sequence_pad(self):
