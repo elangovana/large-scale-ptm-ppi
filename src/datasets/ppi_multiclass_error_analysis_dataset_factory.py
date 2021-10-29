@@ -28,6 +28,9 @@ class PpiMulticlassErrorAnalysisDatasetFactory(BaseDatasetFactory):
     def get_label_mapper(self, data=None, preprocessor=None, **kwargs):
         return PpiMulticlassLabelMapper()
 
+    def _simple_preprocessor(self, data):
+        return data["normalised_abstract"]
+
     def get_dataset(self, data, preprocessors=None, **kwargs):
         """
         Return dataset without the markers for specifying protein names
@@ -51,13 +54,14 @@ class PpiMulticlassErrorAnalysisDatasetFactory(BaseDatasetFactory):
         #                               random_seed=random_seed)
         # ]
 
+        transformer_list = [self._simple_preprocessor]
+
         preprocessors = preprocessors or []
         if not isinstance(preprocessors, List):
             preprocessors = [preprocessors]
 
         # Add additional preprocessors
-        # transformer_list = transformer_list + preprocessors
-        transformer_list = preprocessors
+        transformer_list = transformer_list + preprocessors
 
         transformer_chain = TransformerChain(transformer_list)
         return PpiMulticlassDataset(data, transformer=transformer_chain, label_transformer=self.get_label_mapper())
