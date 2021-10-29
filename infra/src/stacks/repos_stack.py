@@ -11,7 +11,7 @@ class ReposStack(core.Stack):
         super().__init__(scope, id, **kwargs)
 
         cfn_docker_repo_parameter = CfnParameter(self, "DockerRepoName", type="String",
-                                                 default="ppiaimed",
+                                                 default="large-scale-ptm-ppi",
                                                  description="The docker ecr repo to use")
         docker_repo_name = cfn_docker_repo_parameter.value_as_string
 

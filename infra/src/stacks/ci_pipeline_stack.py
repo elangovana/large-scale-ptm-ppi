@@ -13,8 +13,8 @@ class CIPipelineStack(core.Stack):
         super().__init__(scope, id, **kwargs)
 
         cfn_source_repo_parameter = core.CfnParameter(self, "GithubUrl", type="String",
-                                                      default="https://github.com/elangovana/ppi-aimed",
-                                                      description="The github url. e.g. https://github.com/elangovana/ppi-aimed")
+                                                      default="https://github.com/elangovana/large-scale-ptm-ppi",
+                                                      description="The github url. e.g. https://github.com/elangovana/large-scale-ptm-ppi")
         source_repo_arn = cfn_source_repo_parameter.value_as_string
 
         cfn_auth_arn_parameter = core.CfnParameter(self, "secretarn", type="String",

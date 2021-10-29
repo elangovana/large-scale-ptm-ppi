@@ -18,13 +18,13 @@ This deploys the stack into the aws profile pointed to using the example named p
 
 ```bash
      export PYTHONPATH=./infra/src
-     cdk --app "python infra/src/app.py" deploy  ppi-Repos  --parameters DockerRepoName=ppi --profile default 
+     cdk --app "python infra/src/app.py" deploy  ppi-Repos  --parameters DockerRepoName=large-scale-ptm-ppi --profile default 
 ```
 
 Make a note of the output arns e.g below to use in the next step
 
 ```text
-Ppiaimed-Repos.OutputECRARN = arn:aws:ecr:us-west-2:11111:repository/ppi
+Ppiaimed-Repos.OutputECRARN = arn:aws:ecr:us-west-2:11111:repository/large-scale-ptm-ppi
 Ppiaimed-Repos.OutputECRARN =  arn:aws:secretsmanager:us-west-2:111:secret:githubauthCD82D024-18om8waIrUBI-JRbHkQ
 
 ```
@@ -35,5 +35,5 @@ To deploy a continous integration pipeline using AWS codepipeline to build a doc
 previous step
 
 ```bash
-cdk --app "python infra/src/app.py" deploy  ppi-CIPipeline --parameters  GithubUrl="https://github.com/elangovana/ppi-aimed"  --parameters BranchName=main  --parameters DockerRepoArn=arn:aws:ecr:us-west-2:11111:repository/ppi  --parameters secretarn=arn:aws:secretsmanager:us-west-2:111:secret:githubauthCD82D024-18om8waIrUBI-JRbHkQ
+cdk --app "python infra/src/app.py" deploy  ppi-CIPipeline --parameters  GithubUrl="https://github.com/elangovana/large-scale-ptm-ppi"  --parameters BranchName=main  --parameters DockerRepoArn=arn:aws:ecr:us-east-2:111:repository/large-scale-ptm-ppi  --parameters secretarn=arn:aws:secretsmanager:us-west-2:111:secret:githubauthCD82D024-18om8waIrUBI-JRbHkQ
 ```
