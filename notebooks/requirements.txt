@@ -2,3 +2,4 @@ matplotlib==3.4.3
 sagemaker==2.33.0
 scikit-plot==0.3.7
 wordcloud==1.8.1
+bertviz==1.2.0
