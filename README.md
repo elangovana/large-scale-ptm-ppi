@@ -4,6 +4,9 @@
 
 ![docs/images/Overview.png](docs/images/Overview.png)
 
+The silver standard data is
+available https://github.com/elangovana/large-scale-ptm-ppi/releases/download/v1.0.0/distant_silver_data.zip
+
 ## PTM-PPI Dataset relation extraction
 
 - For data preparation, see https://github.com/elangovana/PPI-typed-relation-extractor
