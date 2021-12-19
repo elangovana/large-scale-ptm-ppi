@@ -55,3 +55,11 @@ You can either choose random split, or split by unique documents
 ```bash
 python src/main_train.py --datasetfactory datasets.aimed_dataset_factory.AimedDatasetFactory --traindir temp_data/kfold_unique --modeldir temp_data --outdir temp_data --kfoldtrainprefix train  --model_config '{"vocab_size": 20000, "hidden_size": 10, "num_hidden_layers": 1, "num_attention_heads": 1, "num_labels": 2}' --tokenisor_data_dir tests/sample_data/tokensior_data --epochs 1 --numworkers 1
 ```
+
+## Utils
+
+1. To create the preprocessed file with protein names replaced with markers
+
+```bash
+python utils/static_markers_ppi_multiclass.py --inputfile /Users/aeg/PycharmProjects/ppi-aimed/temp_data/data/laregscale_hq_above_threshold.json  --outputfile markers_largescale_multiclass.json  --additionalcols "class,confidence"
+```
