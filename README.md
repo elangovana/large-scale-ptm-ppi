@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/elangovana/ppi-aimed.svg?branch=main)](https://travis-ci.org/elangovana/ppi-aimed)
+[![Build Status](https://app.travis-ci.com/elangovana/large-scale-ptm-ppi.svg?branch=main)](https://app.travis-ci.com/elangovana/large-scale-ptm-ppi)
 
 # Large-scale protein-protein post-translational modification extraction with distant supervision and confidence calibrated BioBERT
 
@@ -61,5 +61,5 @@ python src/main_train.py --datasetfactory datasets.aimed_dataset_factory.AimedDa
 1. To create the preprocessed file with protein names replaced with markers
 
 ```bash
-python utils/static_markers_ppi_multiclass.py --inputfile /Users/aeg/PycharmProjects/ppi-aimed/temp_data/data/laregscale_hq_above_threshold.json  --outputfile markers_largescale_multiclass.json  --additionalcols "class,confidence"
+python utils/static_markers_ppi_multiclass.py --inputfile temp_data/data/laregscale_hq_above_threshold.json  --outputfile markers_largescale_multiclass.json  --additionalcols "class,confidence"
 ```
