@@ -21,14 +21,15 @@ class ChemprotJsonConverter:
             for r in relations:
                 p1_id = r["p1"]
                 p2_id = r["p2"]
-                s, p1, p2 = self._extract_sentence(abstract_dict[abstract_id],
-                                                   entities_dict[abstract_id][p1_id],
-                                                   entities_dict[abstract_id][p2_id])
+                s, s_anon, p1, p2 = self._extract_sentence(abstract_dict[abstract_id],
+                                                           entities_dict[abstract_id][p1_id],
+                                                           entities_dict[abstract_id][p2_id])
                 entities_in_relationship.append(frozenset([p1_id, p2_id]))
                 result.append({
                     "abstract_id": abstract_id,
                     "abstract": abstract_dict[abstract_id],
-                    "sentence": s,
+                    "sentence_raw": s,
+                    "sentence_anonymised": s_anon,
                     "participant1_id": p1["id"],
                     "participant1": p1,
                     "participant2_id": p2["id"],
@@ -198,7 +199,14 @@ class ChemprotJsonConverter:
         p2_details["end_pos"] = p2_details["end_pos"] - sentence_start
 
         sentence = abstract[sentence_start:sentence_end]
-        return sentence, p1_details, p2_details
+        sentence_anonymised = "{} _{}_ {} _{}_{}".format(sentence[:p1_details["start_pos"]],
+                                                         p1_details["entity_type"],
+                                                         sentence[p1_details["end_pos"]:p2_details["start_pos"]],
+                                                         p2_details["entity_type"],
+                                                         sentence[p2_details["end_pos"]:]
+                                                         )
+
+        return sentence, sentence_anonymised, p1_details, p2_details
 
 
 def run_main():
