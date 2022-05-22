@@ -18,12 +18,21 @@ class ChemprotJsonConverter:
         relations_dict = self._get_relationship(relationship_file)
         for abstract_id, relations in relations_dict.items():
             entities_in_relationship = []
+
+            relations_found_in_file = []
+
             for r in relations:
                 p1_id = r["p1"]
                 p2_id = r["p2"]
-                s, s_anon, p1, p2 = self._extract_sentence(abstract_dict[abstract_id],
-                                                           entities_dict[abstract_id][p1_id],
-                                                           entities_dict[abstract_id][p2_id])
+                relations_found_in_file.append(frozenset([entities_dict[abstract_id][p1_id]["entity_name"],
+                                                          entities_dict[abstract_id][p2_id]["entity_name"]]))
+
+                s_details = self._extract_sentence(abstract_dict[abstract_id],
+                                                   entities_dict[abstract_id][p1_id],
+                                                   entities_dict[abstract_id][p2_id])
+                if s_details is None: continue
+                s, s_anon, p1, p2 = s_details
+
                 entities_in_relationship.append(frozenset([p1_id, p2_id]))
                 label = r["relationship_group"] if r["is_eval"] == "Y" else "NEGATIVE"
                 result.append({
@@ -40,6 +49,42 @@ class ChemprotJsonConverter:
                     "is_eval": r["is_eval"],
                     "label": label
                 })
+            # # Add more negative relationships, exclude self relationships
+            # for e_pair in filter(lambda e: e[0] != e[1],
+            #                      itertools.combinations(list(entities_dict[abstract_id].keys()), 2)):
+            #     e_pair_names = [entities_dict[abstract_id][e_pair[0]]["entity_name"],
+            #                     entities_dict[abstract_id][e_pair[1]]["entity_name"]]
+            #
+            #     # We have already added this pair in the relationship file, so skip
+            #     if frozenset(e_pair_names) in relations_found_in_file: continue
+            #
+            #     # Only negative samples of drug/chem, so skip
+            #     e_pair_type = [entities_dict[abstract_id][e_pair[0]]["entity_type"],
+            #                    entities_dict[abstract_id][e_pair[1]]["entity_type"]]
+            #     if frozenset(e_pair_type) not in [frozenset(["CHEMICAL", "GENE-Y"]),
+            #                                       frozenset(["CHEMICAL", "GENE-N"])]: continue
+            #
+            #     s_details = self._extract_sentence(abstract_dict[abstract_id],
+            #                                        entities_dict[abstract_id][e_pair[0]],
+            #                                        entities_dict[abstract_id][e_pair[1]])
+            #     if s_details is None: continue
+            #
+            #     s, s_anon, p1, p2 = s_details
+            #
+            #     result.append({
+            #         "abstract_id": abstract_id,
+            #         "abstract": abstract_dict[abstract_id],
+            #         "sentence_raw": s,
+            #         "sentence_anonymised": s_anon,
+            #         "participant1_id": p1["id"],
+            #         "participant1": p1,
+            #         "participant2_id": p2["id"],
+            #         "participant2": p2,
+            #         "relationship_type": "NEGATIVE",
+            #         "relationship_group": "NEGATIVE",
+            #         "is_eval": "N",
+            #         "label": "NEGATIVE"
+            #     })
 
         if dest_json_file:
             with open(dest_json_file, "w") as f:
@@ -171,6 +216,10 @@ class ChemprotJsonConverter:
         We used only the sentences with candidate relationships and ignored the other sentences.
         Among the candidate relationships, we labeled the gold-standard relations as true instances and the others as negative instances.
         """
+        # Hack sentence split.
+        sentences = abstract.split(". ")
+        # check at least one sentence contains both p1 and p2.
+        if not any([p1_details["entity_name"] in s and p2_details["entity_name"] in s for s in sentences]): return None
 
         # Ensure p1 is occurs before p2
         p1_details = p1_details.copy()
