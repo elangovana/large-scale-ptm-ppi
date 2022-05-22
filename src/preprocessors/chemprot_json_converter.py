@@ -25,6 +25,7 @@ class ChemprotJsonConverter:
                                                            entities_dict[abstract_id][p1_id],
                                                            entities_dict[abstract_id][p2_id])
                 entities_in_relationship.append(frozenset([p1_id, p2_id]))
+                label = r["relationship_group"] if r["is_eval"] == "Y" else "NEGATIVE"
                 result.append({
                     "abstract_id": abstract_id,
                     "abstract": abstract_dict[abstract_id],
@@ -36,7 +37,8 @@ class ChemprotJsonConverter:
                     "participant2": p2,
                     "relationship_type": r["relationship_type"],
                     "relationship_group": r["relationship_group"],
-                    "is_eval": r["is_eval"]
+                    "is_eval": r["is_eval"],
+                    "label": label
                 })
 
         if dest_json_file:
