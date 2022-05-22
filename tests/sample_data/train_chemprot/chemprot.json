@@ -1,0 +1,394 @@
+[
+  {
+    "abstract_id": "10047461",
+    "abstract": "Cyclin E-cdk2 activation is associated with cell cycle arrest and inhibition of DNA replication induced by the thymidylate synthase inhibitor Tomudex. Tomudex (ZD1694) is a specific antifolate-based thymidylate synthase inhibitor active in a variety of solid tumor malignancies. Studies were carried out in vitro to evaluate downstream molecular alterations induced as a consequence of the potent and sustained inhibition of thymidylate synthase by Tomudex. Twenty-four hours following the initial 2-h treatment with Tomudex, human A253 head and neck squamous carcinoma cells, not expressing p53 and p21(WAF1), were accumulated with DNA content characteristic of early S phase of the cell cycle with a concomitant reduction of cells in G1 and G2/M phases. The changes in cyclin and cdk protein expression and their kinase activities were examined in control and drug-treated A253 cells. Tomudex treatment resulted in the decrease in p27(kip1) expression, with an increase in cyclin E and cdk2 protein expression and kinase activities 24 h after a 2-h exposure. Although cyclin A protein expression was markedly increased, cyclin A kinase activity was only slightly increased. Cyclin D1, cyclin B, cdk4, and cdc2 protein expression and kinase activities remain constant. Lack of activation of cyclin A- and B-cdc2 was associated with a reduced proportion of cells in G2/M phases. Increased cyclin E-cdk2 protein expression was accompanied by the inhibition of DNA synthesis, with a decrease in E2F-1 expression. These results propose that cyclin E-cdk2 kinase can negatively regulate DNA replication. The studies with dThyd rescue from cyclin E-cdk2 protein overexpression and growth inhibition by Tomudex indicate that increased cyclin E-cdk2 protein expression is associated with effective inhibition of thymidylate synthase and resultant dNTP pool imbalance. Provision of dThyd more than 24 h after exposure to Tomudex allowed cells to replicate DNA for a single cycle back to G1, but did not prevent the profound growth-inhibitory effect manifested in the following 5 days. Tomudex treatment resulted in a time-dependent induction of the megabase DNA fragments, followed by secondary 50- to 300-kb DNA fragmentation. The 50- to 300-kb DNA fragmentation may be derived from the inhibition of DNA synthesis associated with cyclin E-cdk2 activation. These results suggest that the megabase DNA fragmentation is induced as a consequence of inhibition of thymidylate synthase by Tomudex and kilobase DNA fragmentation may correlate with the reduction of p27(kip1) expression and the increase in cyclin E and cdk2 kinase activities. Activation of cyclin E and cdk2 kinases allows cells to transit from G1 to S phase accompanied by the inhibition of DNA synthesis. The changes in cell cycle regulatory proteins associated with growth inhibition and DNA damage by Tomudex are not p53 dependent.",
+    "sentence_raw": "Tomudex treatment resulted in the decrease in p27(kip1) expression, with an increase in cyclin E and cdk2 protein expression and kinase activities 24 h after a 2-h exposure",
+    "sentence_anonymised": " _CHEMICAL_  treatment resulted in the decrease in p27(kip1) expression, with an increase in cyclin E and cdk2 protein expression and  _GENE-N_ activities 24 h after a 2-h exposure",
+    "participant1_id": "T13",
+    "participant1": {
+      "abstract_id": "10047461",
+      "id": "T13",
+      "entity_type": "CHEMICAL",
+      "start_pos": 0,
+      "end_pos": 7,
+      "entity_name": "Tomudex"
+    },
+    "participant2_id": "T57",
+    "participant2": {
+      "abstract_id": "10047461",
+      "id": "T57",
+      "entity_type": "GENE-N",
+      "start_pos": 129,
+      "end_pos": 135,
+      "entity_name": "kinase"
+    },
+    "relationship_type": "ACTIVATOR",
+    "relationship_group": "CPR:3",
+    "is_eval": "Y",
+    "label": "CPR:3"
+  },
+  {
+    "abstract_id": "10047461",
+    "abstract": "Cyclin E-cdk2 activation is associated with cell cycle arrest and inhibition of DNA replication induced by the thymidylate synthase inhibitor Tomudex. Tomudex (ZD1694) is a specific antifolate-based thymidylate synthase inhibitor active in a variety of solid tumor malignancies. Studies were carried out in vitro to evaluate downstream molecular alterations induced as a consequence of the potent and sustained inhibition of thymidylate synthase by Tomudex. Twenty-four hours following the initial 2-h treatment with Tomudex, human A253 head and neck squamous carcinoma cells, not expressing p53 and p21(WAF1), were accumulated with DNA content characteristic of early S phase of the cell cycle with a concomitant reduction of cells in G1 and G2/M phases. The changes in cyclin and cdk protein expression and their kinase activities were examined in control and drug-treated A253 cells. Tomudex treatment resulted in the decrease in p27(kip1) expression, with an increase in cyclin E and cdk2 protein expression and kinase activities 24 h after a 2-h exposure. Although cyclin A protein expression was markedly increased, cyclin A kinase activity was only slightly increased. Cyclin D1, cyclin B, cdk4, and cdc2 protein expression and kinase activities remain constant. Lack of activation of cyclin A- and B-cdc2 was associated with a reduced proportion of cells in G2/M phases. Increased cyclin E-cdk2 protein expression was accompanied by the inhibition of DNA synthesis, with a decrease in E2F-1 expression. These results propose that cyclin E-cdk2 kinase can negatively regulate DNA replication. The studies with dThyd rescue from cyclin E-cdk2 protein overexpression and growth inhibition by Tomudex indicate that increased cyclin E-cdk2 protein expression is associated with effective inhibition of thymidylate synthase and resultant dNTP pool imbalance. Provision of dThyd more than 24 h after exposure to Tomudex allowed cells to replicate DNA for a single cycle back to G1, but did not prevent the profound growth-inhibitory effect manifested in the following 5 days. Tomudex treatment resulted in a time-dependent induction of the megabase DNA fragments, followed by secondary 50- to 300-kb DNA fragmentation. The 50- to 300-kb DNA fragmentation may be derived from the inhibition of DNA synthesis associated with cyclin E-cdk2 activation. These results suggest that the megabase DNA fragmentation is induced as a consequence of inhibition of thymidylate synthase by Tomudex and kilobase DNA fragmentation may correlate with the reduction of p27(kip1) expression and the increase in cyclin E and cdk2 kinase activities. Activation of cyclin E and cdk2 kinases allows cells to transit from G1 to S phase accompanied by the inhibition of DNA synthesis. The changes in cell cycle regulatory proteins associated with growth inhibition and DNA damage by Tomudex are not p53 dependent.",
+    "sentence_raw": "These results suggest that the megabase DNA fragmentation is induced as a consequence of inhibition of thymidylate synthase by Tomudex and kilobase DNA fragmentation may correlate with the reduction of p27(kip1) expression and the increase in cyclin E and cdk2 kinase activities",
+    "sentence_anonymised": "These results suggest that the megabase DNA fragmentation is induced as a consequence of inhibition of thymidylate synthase by  _CHEMICAL_  and kilobase DNA fragmentation may correlate with the reduction of p27(kip1) expression and the increase in  _GENE-Y_ and cdk2 kinase activities",
+    "participant1_id": "T7",
+    "participant1": {
+      "abstract_id": "10047461",
+      "id": "T7",
+      "entity_type": "CHEMICAL",
+      "start_pos": 127,
+      "end_pos": 134,
+      "entity_name": "Tomudex"
+    },
+    "participant2_id": "T39",
+    "participant2": {
+      "abstract_id": "10047461",
+      "id": "T39",
+      "entity_type": "GENE-Y",
+      "start_pos": 243,
+      "end_pos": 251,
+      "entity_name": "cyclin E"
+    },
+    "relationship_type": "ACTIVATOR",
+    "relationship_group": "CPR:3",
+    "is_eval": "Y",
+    "label": "CPR:3"
+  },
+  {
+    "abstract_id": "10047461",
+    "abstract": "Cyclin E-cdk2 activation is associated with cell cycle arrest and inhibition of DNA replication induced by the thymidylate synthase inhibitor Tomudex. Tomudex (ZD1694) is a specific antifolate-based thymidylate synthase inhibitor active in a variety of solid tumor malignancies. Studies were carried out in vitro to evaluate downstream molecular alterations induced as a consequence of the potent and sustained inhibition of thymidylate synthase by Tomudex. Twenty-four hours following the initial 2-h treatment with Tomudex, human A253 head and neck squamous carcinoma cells, not expressing p53 and p21(WAF1), were accumulated with DNA content characteristic of early S phase of the cell cycle with a concomitant reduction of cells in G1 and G2/M phases. The changes in cyclin and cdk protein expression and their kinase activities were examined in control and drug-treated A253 cells. Tomudex treatment resulted in the decrease in p27(kip1) expression, with an increase in cyclin E and cdk2 protein expression and kinase activities 24 h after a 2-h exposure. Although cyclin A protein expression was markedly increased, cyclin A kinase activity was only slightly increased. Cyclin D1, cyclin B, cdk4, and cdc2 protein expression and kinase activities remain constant. Lack of activation of cyclin A- and B-cdc2 was associated with a reduced proportion of cells in G2/M phases. Increased cyclin E-cdk2 protein expression was accompanied by the inhibition of DNA synthesis, with a decrease in E2F-1 expression. These results propose that cyclin E-cdk2 kinase can negatively regulate DNA replication. The studies with dThyd rescue from cyclin E-cdk2 protein overexpression and growth inhibition by Tomudex indicate that increased cyclin E-cdk2 protein expression is associated with effective inhibition of thymidylate synthase and resultant dNTP pool imbalance. Provision of dThyd more than 24 h after exposure to Tomudex allowed cells to replicate DNA for a single cycle back to G1, but did not prevent the profound growth-inhibitory effect manifested in the following 5 days. Tomudex treatment resulted in a time-dependent induction of the megabase DNA fragments, followed by secondary 50- to 300-kb DNA fragmentation. The 50- to 300-kb DNA fragmentation may be derived from the inhibition of DNA synthesis associated with cyclin E-cdk2 activation. These results suggest that the megabase DNA fragmentation is induced as a consequence of inhibition of thymidylate synthase by Tomudex and kilobase DNA fragmentation may correlate with the reduction of p27(kip1) expression and the increase in cyclin E and cdk2 kinase activities. Activation of cyclin E and cdk2 kinases allows cells to transit from G1 to S phase accompanied by the inhibition of DNA synthesis. The changes in cell cycle regulatory proteins associated with growth inhibition and DNA damage by Tomudex are not p53 dependent.",
+    "sentence_raw": "These results suggest that the megabase DNA fragmentation is induced as a consequence of inhibition of thymidylate synthase by Tomudex and kilobase DNA fragmentation may correlate with the reduction of p27(kip1) expression and the increase in cyclin E and cdk2 kinase activities",
+    "sentence_anonymised": "These results suggest that the megabase DNA fragmentation is induced as a consequence of inhibition of thymidylate synthase by  _CHEMICAL_  and kilobase DNA fragmentation may correlate with the reduction of p27(kip1) expression and the increase in cyclin E and  _GENE-Y_ kinase activities",
+    "participant1_id": "T7",
+    "participant1": {
+      "abstract_id": "10047461",
+      "id": "T7",
+      "entity_type": "CHEMICAL",
+      "start_pos": 127,
+      "end_pos": 134,
+      "entity_name": "Tomudex"
+    },
+    "participant2_id": "T40",
+    "participant2": {
+      "abstract_id": "10047461",
+      "id": "T40",
+      "entity_type": "GENE-Y",
+      "start_pos": 256,
+      "end_pos": 260,
+      "entity_name": "cdk2"
+    },
+    "relationship_type": "ACTIVATOR",
+    "relationship_group": "CPR:3",
+    "is_eval": "Y",
+    "label": "CPR:3"
+  },
+  {
+    "abstract_id": "10047461",
+    "abstract": "Cyclin E-cdk2 activation is associated with cell cycle arrest and inhibition of DNA replication induced by the thymidylate synthase inhibitor Tomudex. Tomudex (ZD1694) is a specific antifolate-based thymidylate synthase inhibitor active in a variety of solid tumor malignancies. Studies were carried out in vitro to evaluate downstream molecular alterations induced as a consequence of the potent and sustained inhibition of thymidylate synthase by Tomudex. Twenty-four hours following the initial 2-h treatment with Tomudex, human A253 head and neck squamous carcinoma cells, not expressing p53 and p21(WAF1), were accumulated with DNA content characteristic of early S phase of the cell cycle with a concomitant reduction of cells in G1 and G2/M phases. The changes in cyclin and cdk protein expression and their kinase activities were examined in control and drug-treated A253 cells. Tomudex treatment resulted in the decrease in p27(kip1) expression, with an increase in cyclin E and cdk2 protein expression and kinase activities 24 h after a 2-h exposure. Although cyclin A protein expression was markedly increased, cyclin A kinase activity was only slightly increased. Cyclin D1, cyclin B, cdk4, and cdc2 protein expression and kinase activities remain constant. Lack of activation of cyclin A- and B-cdc2 was associated with a reduced proportion of cells in G2/M phases. Increased cyclin E-cdk2 protein expression was accompanied by the inhibition of DNA synthesis, with a decrease in E2F-1 expression. These results propose that cyclin E-cdk2 kinase can negatively regulate DNA replication. The studies with dThyd rescue from cyclin E-cdk2 protein overexpression and growth inhibition by Tomudex indicate that increased cyclin E-cdk2 protein expression is associated with effective inhibition of thymidylate synthase and resultant dNTP pool imbalance. Provision of dThyd more than 24 h after exposure to Tomudex allowed cells to replicate DNA for a single cycle back to G1, but did not prevent the profound growth-inhibitory effect manifested in the following 5 days. Tomudex treatment resulted in a time-dependent induction of the megabase DNA fragments, followed by secondary 50- to 300-kb DNA fragmentation. The 50- to 300-kb DNA fragmentation may be derived from the inhibition of DNA synthesis associated with cyclin E-cdk2 activation. These results suggest that the megabase DNA fragmentation is induced as a consequence of inhibition of thymidylate synthase by Tomudex and kilobase DNA fragmentation may correlate with the reduction of p27(kip1) expression and the increase in cyclin E and cdk2 kinase activities. Activation of cyclin E and cdk2 kinases allows cells to transit from G1 to S phase accompanied by the inhibition of DNA synthesis. The changes in cell cycle regulatory proteins associated with growth inhibition and DNA damage by Tomudex are not p53 dependent.",
+    "sentence_raw": "These results suggest that the megabase DNA fragmentation is induced as a consequence of inhibition of thymidylate synthase by Tomudex and kilobase DNA fragmentation may correlate with the reduction of p27(kip1) expression and the increase in cyclin E and cdk2 kinase activities",
+    "sentence_anonymised": "These results suggest that the megabase DNA fragmentation is induced as a consequence of inhibition of thymidylate synthase by  _CHEMICAL_  and kilobase DNA fragmentation may correlate with the reduction of p27(kip1) expression and the increase in cyclin E and cdk2  _GENE-N_ activities",
+    "participant1_id": "T7",
+    "participant1": {
+      "abstract_id": "10047461",
+      "id": "T7",
+      "entity_type": "CHEMICAL",
+      "start_pos": 127,
+      "end_pos": 134,
+      "entity_name": "Tomudex"
+    },
+    "participant2_id": "T41",
+    "participant2": {
+      "abstract_id": "10047461",
+      "id": "T41",
+      "entity_type": "GENE-N",
+      "start_pos": 261,
+      "end_pos": 267,
+      "entity_name": "kinase"
+    },
+    "relationship_type": "ACTIVATOR",
+    "relationship_group": "CPR:3",
+    "is_eval": "Y",
+    "label": "CPR:3"
+  },
+  {
+    "abstract_id": "10047461",
+    "abstract": "Cyclin E-cdk2 activation is associated with cell cycle arrest and inhibition of DNA replication induced by the thymidylate synthase inhibitor Tomudex. Tomudex (ZD1694) is a specific antifolate-based thymidylate synthase inhibitor active in a variety of solid tumor malignancies. Studies were carried out in vitro to evaluate downstream molecular alterations induced as a consequence of the potent and sustained inhibition of thymidylate synthase by Tomudex. Twenty-four hours following the initial 2-h treatment with Tomudex, human A253 head and neck squamous carcinoma cells, not expressing p53 and p21(WAF1), were accumulated with DNA content characteristic of early S phase of the cell cycle with a concomitant reduction of cells in G1 and G2/M phases. The changes in cyclin and cdk protein expression and their kinase activities were examined in control and drug-treated A253 cells. Tomudex treatment resulted in the decrease in p27(kip1) expression, with an increase in cyclin E and cdk2 protein expression and kinase activities 24 h after a 2-h exposure. Although cyclin A protein expression was markedly increased, cyclin A kinase activity was only slightly increased. Cyclin D1, cyclin B, cdk4, and cdc2 protein expression and kinase activities remain constant. Lack of activation of cyclin A- and B-cdc2 was associated with a reduced proportion of cells in G2/M phases. Increased cyclin E-cdk2 protein expression was accompanied by the inhibition of DNA synthesis, with a decrease in E2F-1 expression. These results propose that cyclin E-cdk2 kinase can negatively regulate DNA replication. The studies with dThyd rescue from cyclin E-cdk2 protein overexpression and growth inhibition by Tomudex indicate that increased cyclin E-cdk2 protein expression is associated with effective inhibition of thymidylate synthase and resultant dNTP pool imbalance. Provision of dThyd more than 24 h after exposure to Tomudex allowed cells to replicate DNA for a single cycle back to G1, but did not prevent the profound growth-inhibitory effect manifested in the following 5 days. Tomudex treatment resulted in a time-dependent induction of the megabase DNA fragments, followed by secondary 50- to 300-kb DNA fragmentation. The 50- to 300-kb DNA fragmentation may be derived from the inhibition of DNA synthesis associated with cyclin E-cdk2 activation. These results suggest that the megabase DNA fragmentation is induced as a consequence of inhibition of thymidylate synthase by Tomudex and kilobase DNA fragmentation may correlate with the reduction of p27(kip1) expression and the increase in cyclin E and cdk2 kinase activities. Activation of cyclin E and cdk2 kinases allows cells to transit from G1 to S phase accompanied by the inhibition of DNA synthesis. The changes in cell cycle regulatory proteins associated with growth inhibition and DNA damage by Tomudex are not p53 dependent.",
+    "sentence_raw": "Tomudex treatment resulted in the decrease in p27(kip1) expression, with an increase in cyclin E and cdk2 protein expression and kinase activities 24 h after a 2-h exposure",
+    "sentence_anonymised": " _CHEMICAL_  treatment resulted in the decrease in p27(kip1) expression, with an increase in  _GENE-Y_ and cdk2 protein expression and kinase activities 24 h after a 2-h exposure",
+    "participant1_id": "T13",
+    "participant1": {
+      "abstract_id": "10047461",
+      "id": "T13",
+      "entity_type": "CHEMICAL",
+      "start_pos": 0,
+      "end_pos": 7,
+      "entity_name": "Tomudex"
+    },
+    "participant2_id": "T55",
+    "participant2": {
+      "abstract_id": "10047461",
+      "id": "T55",
+      "entity_type": "GENE-Y",
+      "start_pos": 88,
+      "end_pos": 96,
+      "entity_name": "cyclin E"
+    },
+    "relationship_type": "INDIRECT-UPREGULATOR",
+    "relationship_group": "CPR:3",
+    "is_eval": "Y",
+    "label": "CPR:3"
+  },
+  {
+    "abstract_id": "10047461",
+    "abstract": "Cyclin E-cdk2 activation is associated with cell cycle arrest and inhibition of DNA replication induced by the thymidylate synthase inhibitor Tomudex. Tomudex (ZD1694) is a specific antifolate-based thymidylate synthase inhibitor active in a variety of solid tumor malignancies. Studies were carried out in vitro to evaluate downstream molecular alterations induced as a consequence of the potent and sustained inhibition of thymidylate synthase by Tomudex. Twenty-four hours following the initial 2-h treatment with Tomudex, human A253 head and neck squamous carcinoma cells, not expressing p53 and p21(WAF1), were accumulated with DNA content characteristic of early S phase of the cell cycle with a concomitant reduction of cells in G1 and G2/M phases. The changes in cyclin and cdk protein expression and their kinase activities were examined in control and drug-treated A253 cells. Tomudex treatment resulted in the decrease in p27(kip1) expression, with an increase in cyclin E and cdk2 protein expression and kinase activities 24 h after a 2-h exposure. Although cyclin A protein expression was markedly increased, cyclin A kinase activity was only slightly increased. Cyclin D1, cyclin B, cdk4, and cdc2 protein expression and kinase activities remain constant. Lack of activation of cyclin A- and B-cdc2 was associated with a reduced proportion of cells in G2/M phases. Increased cyclin E-cdk2 protein expression was accompanied by the inhibition of DNA synthesis, with a decrease in E2F-1 expression. These results propose that cyclin E-cdk2 kinase can negatively regulate DNA replication. The studies with dThyd rescue from cyclin E-cdk2 protein overexpression and growth inhibition by Tomudex indicate that increased cyclin E-cdk2 protein expression is associated with effective inhibition of thymidylate synthase and resultant dNTP pool imbalance. Provision of dThyd more than 24 h after exposure to Tomudex allowed cells to replicate DNA for a single cycle back to G1, but did not prevent the profound growth-inhibitory effect manifested in the following 5 days. Tomudex treatment resulted in a time-dependent induction of the megabase DNA fragments, followed by secondary 50- to 300-kb DNA fragmentation. The 50- to 300-kb DNA fragmentation may be derived from the inhibition of DNA synthesis associated with cyclin E-cdk2 activation. These results suggest that the megabase DNA fragmentation is induced as a consequence of inhibition of thymidylate synthase by Tomudex and kilobase DNA fragmentation may correlate with the reduction of p27(kip1) expression and the increase in cyclin E and cdk2 kinase activities. Activation of cyclin E and cdk2 kinases allows cells to transit from G1 to S phase accompanied by the inhibition of DNA synthesis. The changes in cell cycle regulatory proteins associated with growth inhibition and DNA damage by Tomudex are not p53 dependent.",
+    "sentence_raw": "Tomudex treatment resulted in the decrease in p27(kip1) expression, with an increase in cyclin E and cdk2 protein expression and kinase activities 24 h after a 2-h exposure",
+    "sentence_anonymised": " _CHEMICAL_  treatment resulted in the decrease in p27(kip1) expression, with an increase in cyclin E and  _GENE-Y_ protein expression and kinase activities 24 h after a 2-h exposure",
+    "participant1_id": "T13",
+    "participant1": {
+      "abstract_id": "10047461",
+      "id": "T13",
+      "entity_type": "CHEMICAL",
+      "start_pos": 0,
+      "end_pos": 7,
+      "entity_name": "Tomudex"
+    },
+    "participant2_id": "T56",
+    "participant2": {
+      "abstract_id": "10047461",
+      "id": "T56",
+      "entity_type": "GENE-Y",
+      "start_pos": 101,
+      "end_pos": 105,
+      "entity_name": "cdk2"
+    },
+    "relationship_type": "INDIRECT-UPREGULATOR",
+    "relationship_group": "CPR:3",
+    "is_eval": "Y",
+    "label": "CPR:3"
+  },
+  {
+    "abstract_id": "10047461",
+    "abstract": "Cyclin E-cdk2 activation is associated with cell cycle arrest and inhibition of DNA replication induced by the thymidylate synthase inhibitor Tomudex. Tomudex (ZD1694) is a specific antifolate-based thymidylate synthase inhibitor active in a variety of solid tumor malignancies. Studies were carried out in vitro to evaluate downstream molecular alterations induced as a consequence of the potent and sustained inhibition of thymidylate synthase by Tomudex. Twenty-four hours following the initial 2-h treatment with Tomudex, human A253 head and neck squamous carcinoma cells, not expressing p53 and p21(WAF1), were accumulated with DNA content characteristic of early S phase of the cell cycle with a concomitant reduction of cells in G1 and G2/M phases. The changes in cyclin and cdk protein expression and their kinase activities were examined in control and drug-treated A253 cells. Tomudex treatment resulted in the decrease in p27(kip1) expression, with an increase in cyclin E and cdk2 protein expression and kinase activities 24 h after a 2-h exposure. Although cyclin A protein expression was markedly increased, cyclin A kinase activity was only slightly increased. Cyclin D1, cyclin B, cdk4, and cdc2 protein expression and kinase activities remain constant. Lack of activation of cyclin A- and B-cdc2 was associated with a reduced proportion of cells in G2/M phases. Increased cyclin E-cdk2 protein expression was accompanied by the inhibition of DNA synthesis, with a decrease in E2F-1 expression. These results propose that cyclin E-cdk2 kinase can negatively regulate DNA replication. The studies with dThyd rescue from cyclin E-cdk2 protein overexpression and growth inhibition by Tomudex indicate that increased cyclin E-cdk2 protein expression is associated with effective inhibition of thymidylate synthase and resultant dNTP pool imbalance. Provision of dThyd more than 24 h after exposure to Tomudex allowed cells to replicate DNA for a single cycle back to G1, but did not prevent the profound growth-inhibitory effect manifested in the following 5 days. Tomudex treatment resulted in a time-dependent induction of the megabase DNA fragments, followed by secondary 50- to 300-kb DNA fragmentation. The 50- to 300-kb DNA fragmentation may be derived from the inhibition of DNA synthesis associated with cyclin E-cdk2 activation. These results suggest that the megabase DNA fragmentation is induced as a consequence of inhibition of thymidylate synthase by Tomudex and kilobase DNA fragmentation may correlate with the reduction of p27(kip1) expression and the increase in cyclin E and cdk2 kinase activities. Activation of cyclin E and cdk2 kinases allows cells to transit from G1 to S phase accompanied by the inhibition of DNA synthesis. The changes in cell cycle regulatory proteins associated with growth inhibition and DNA damage by Tomudex are not p53 dependent.",
+    "sentence_raw": "The studies with dThyd rescue from cyclin E-cdk2 protein overexpression and growth inhibition by Tomudex indicate that increased cyclin E-cdk2 protein expression is associated with effective inhibition of thymidylate synthase and resultant dNTP pool imbalance",
+    "sentence_anonymised": "The studies with dThyd rescue from  _GENE-Y_ -cdk2 protein overexpression and growth inhibition by  _CHEMICAL_ indicate that increased cyclin E-cdk2 protein expression is associated with effective inhibition of thymidylate synthase and resultant dNTP pool imbalance",
+    "participant1_id": "T30",
+    "participant1": {
+      "abstract_id": "10047461",
+      "id": "T30",
+      "entity_type": "GENE-Y",
+      "start_pos": 35,
+      "end_pos": 43,
+      "entity_name": "cyclin E"
+    },
+    "participant2_id": "T2",
+    "participant2": {
+      "abstract_id": "10047461",
+      "id": "T2",
+      "entity_type": "CHEMICAL",
+      "start_pos": 97,
+      "end_pos": 104,
+      "entity_name": "Tomudex"
+    },
+    "relationship_type": "INDIRECT-UPREGULATOR",
+    "relationship_group": "CPR:3",
+    "is_eval": "Y",
+    "label": "CPR:3"
+  },
+  {
+    "abstract_id": "10047461",
+    "abstract": "Cyclin E-cdk2 activation is associated with cell cycle arrest and inhibition of DNA replication induced by the thymidylate synthase inhibitor Tomudex. Tomudex (ZD1694) is a specific antifolate-based thymidylate synthase inhibitor active in a variety of solid tumor malignancies. Studies were carried out in vitro to evaluate downstream molecular alterations induced as a consequence of the potent and sustained inhibition of thymidylate synthase by Tomudex. Twenty-four hours following the initial 2-h treatment with Tomudex, human A253 head and neck squamous carcinoma cells, not expressing p53 and p21(WAF1), were accumulated with DNA content characteristic of early S phase of the cell cycle with a concomitant reduction of cells in G1 and G2/M phases. The changes in cyclin and cdk protein expression and their kinase activities were examined in control and drug-treated A253 cells. Tomudex treatment resulted in the decrease in p27(kip1) expression, with an increase in cyclin E and cdk2 protein expression and kinase activities 24 h after a 2-h exposure. Although cyclin A protein expression was markedly increased, cyclin A kinase activity was only slightly increased. Cyclin D1, cyclin B, cdk4, and cdc2 protein expression and kinase activities remain constant. Lack of activation of cyclin A- and B-cdc2 was associated with a reduced proportion of cells in G2/M phases. Increased cyclin E-cdk2 protein expression was accompanied by the inhibition of DNA synthesis, with a decrease in E2F-1 expression. These results propose that cyclin E-cdk2 kinase can negatively regulate DNA replication. The studies with dThyd rescue from cyclin E-cdk2 protein overexpression and growth inhibition by Tomudex indicate that increased cyclin E-cdk2 protein expression is associated with effective inhibition of thymidylate synthase and resultant dNTP pool imbalance. Provision of dThyd more than 24 h after exposure to Tomudex allowed cells to replicate DNA for a single cycle back to G1, but did not prevent the profound growth-inhibitory effect manifested in the following 5 days. Tomudex treatment resulted in a time-dependent induction of the megabase DNA fragments, followed by secondary 50- to 300-kb DNA fragmentation. The 50- to 300-kb DNA fragmentation may be derived from the inhibition of DNA synthesis associated with cyclin E-cdk2 activation. These results suggest that the megabase DNA fragmentation is induced as a consequence of inhibition of thymidylate synthase by Tomudex and kilobase DNA fragmentation may correlate with the reduction of p27(kip1) expression and the increase in cyclin E and cdk2 kinase activities. Activation of cyclin E and cdk2 kinases allows cells to transit from G1 to S phase accompanied by the inhibition of DNA synthesis. The changes in cell cycle regulatory proteins associated with growth inhibition and DNA damage by Tomudex are not p53 dependent.",
+    "sentence_raw": "The studies with dThyd rescue from cyclin E-cdk2 protein overexpression and growth inhibition by Tomudex indicate that increased cyclin E-cdk2 protein expression is associated with effective inhibition of thymidylate synthase and resultant dNTP pool imbalance",
+    "sentence_anonymised": "The studies with dThyd rescue from cyclin E- _GENE-Y_  protein overexpression and growth inhibition by  _CHEMICAL_ indicate that increased cyclin E-cdk2 protein expression is associated with effective inhibition of thymidylate synthase and resultant dNTP pool imbalance",
+    "participant1_id": "T31",
+    "participant1": {
+      "abstract_id": "10047461",
+      "id": "T31",
+      "entity_type": "GENE-Y",
+      "start_pos": 44,
+      "end_pos": 48,
+      "entity_name": "cdk2"
+    },
+    "participant2_id": "T2",
+    "participant2": {
+      "abstract_id": "10047461",
+      "id": "T2",
+      "entity_type": "CHEMICAL",
+      "start_pos": 97,
+      "end_pos": 104,
+      "entity_name": "Tomudex"
+    },
+    "relationship_type": "INDIRECT-UPREGULATOR",
+    "relationship_group": "CPR:3",
+    "is_eval": "Y",
+    "label": "CPR:3"
+  },
+  {
+    "abstract_id": "10047461",
+    "abstract": "Cyclin E-cdk2 activation is associated with cell cycle arrest and inhibition of DNA replication induced by the thymidylate synthase inhibitor Tomudex. Tomudex (ZD1694) is a specific antifolate-based thymidylate synthase inhibitor active in a variety of solid tumor malignancies. Studies were carried out in vitro to evaluate downstream molecular alterations induced as a consequence of the potent and sustained inhibition of thymidylate synthase by Tomudex. Twenty-four hours following the initial 2-h treatment with Tomudex, human A253 head and neck squamous carcinoma cells, not expressing p53 and p21(WAF1), were accumulated with DNA content characteristic of early S phase of the cell cycle with a concomitant reduction of cells in G1 and G2/M phases. The changes in cyclin and cdk protein expression and their kinase activities were examined in control and drug-treated A253 cells. Tomudex treatment resulted in the decrease in p27(kip1) expression, with an increase in cyclin E and cdk2 protein expression and kinase activities 24 h after a 2-h exposure. Although cyclin A protein expression was markedly increased, cyclin A kinase activity was only slightly increased. Cyclin D1, cyclin B, cdk4, and cdc2 protein expression and kinase activities remain constant. Lack of activation of cyclin A- and B-cdc2 was associated with a reduced proportion of cells in G2/M phases. Increased cyclin E-cdk2 protein expression was accompanied by the inhibition of DNA synthesis, with a decrease in E2F-1 expression. These results propose that cyclin E-cdk2 kinase can negatively regulate DNA replication. The studies with dThyd rescue from cyclin E-cdk2 protein overexpression and growth inhibition by Tomudex indicate that increased cyclin E-cdk2 protein expression is associated with effective inhibition of thymidylate synthase and resultant dNTP pool imbalance. Provision of dThyd more than 24 h after exposure to Tomudex allowed cells to replicate DNA for a single cycle back to G1, but did not prevent the profound growth-inhibitory effect manifested in the following 5 days. Tomudex treatment resulted in a time-dependent induction of the megabase DNA fragments, followed by secondary 50- to 300-kb DNA fragmentation. The 50- to 300-kb DNA fragmentation may be derived from the inhibition of DNA synthesis associated with cyclin E-cdk2 activation. These results suggest that the megabase DNA fragmentation is induced as a consequence of inhibition of thymidylate synthase by Tomudex and kilobase DNA fragmentation may correlate with the reduction of p27(kip1) expression and the increase in cyclin E and cdk2 kinase activities. Activation of cyclin E and cdk2 kinases allows cells to transit from G1 to S phase accompanied by the inhibition of DNA synthesis. The changes in cell cycle regulatory proteins associated with growth inhibition and DNA damage by Tomudex are not p53 dependent.",
+    "sentence_raw": "The studies with dThyd rescue from cyclin E-cdk2 protein overexpression and growth inhibition by Tomudex indicate that increased cyclin E-cdk2 protein expression is associated with effective inhibition of thymidylate synthase and resultant dNTP pool imbalance",
+    "sentence_anonymised": "The studies with dThyd rescue from cyclin E-cdk2 protein overexpression and growth inhibition by  _CHEMICAL_  indicate that increased  _GENE-Y_-cdk2 protein expression is associated with effective inhibition of thymidylate synthase and resultant dNTP pool imbalance",
+    "participant1_id": "T2",
+    "participant1": {
+      "abstract_id": "10047461",
+      "id": "T2",
+      "entity_type": "CHEMICAL",
+      "start_pos": 97,
+      "end_pos": 104,
+      "entity_name": "Tomudex"
+    },
+    "participant2_id": "T32",
+    "participant2": {
+      "abstract_id": "10047461",
+      "id": "T32",
+      "entity_type": "GENE-Y",
+      "start_pos": 129,
+      "end_pos": 137,
+      "entity_name": "cyclin E"
+    },
+    "relationship_type": "INDIRECT-UPREGULATOR",
+    "relationship_group": "CPR:3",
+    "is_eval": "Y",
+    "label": "CPR:3"
+  },
+  {
+    "abstract_id": "10047461",
+    "abstract": "Cyclin E-cdk2 activation is associated with cell cycle arrest and inhibition of DNA replication induced by the thymidylate synthase inhibitor Tomudex. Tomudex (ZD1694) is a specific antifolate-based thymidylate synthase inhibitor active in a variety of solid tumor malignancies. Studies were carried out in vitro to evaluate downstream molecular alterations induced as a consequence of the potent and sustained inhibition of thymidylate synthase by Tomudex. Twenty-four hours following the initial 2-h treatment with Tomudex, human A253 head and neck squamous carcinoma cells, not expressing p53 and p21(WAF1), were accumulated with DNA content characteristic of early S phase of the cell cycle with a concomitant reduction of cells in G1 and G2/M phases. The changes in cyclin and cdk protein expression and their kinase activities were examined in control and drug-treated A253 cells. Tomudex treatment resulted in the decrease in p27(kip1) expression, with an increase in cyclin E and cdk2 protein expression and kinase activities 24 h after a 2-h exposure. Although cyclin A protein expression was markedly increased, cyclin A kinase activity was only slightly increased. Cyclin D1, cyclin B, cdk4, and cdc2 protein expression and kinase activities remain constant. Lack of activation of cyclin A- and B-cdc2 was associated with a reduced proportion of cells in G2/M phases. Increased cyclin E-cdk2 protein expression was accompanied by the inhibition of DNA synthesis, with a decrease in E2F-1 expression. These results propose that cyclin E-cdk2 kinase can negatively regulate DNA replication. The studies with dThyd rescue from cyclin E-cdk2 protein overexpression and growth inhibition by Tomudex indicate that increased cyclin E-cdk2 protein expression is associated with effective inhibition of thymidylate synthase and resultant dNTP pool imbalance. Provision of dThyd more than 24 h after exposure to Tomudex allowed cells to replicate DNA for a single cycle back to G1, but did not prevent the profound growth-inhibitory effect manifested in the following 5 days. Tomudex treatment resulted in a time-dependent induction of the megabase DNA fragments, followed by secondary 50- to 300-kb DNA fragmentation. The 50- to 300-kb DNA fragmentation may be derived from the inhibition of DNA synthesis associated with cyclin E-cdk2 activation. These results suggest that the megabase DNA fragmentation is induced as a consequence of inhibition of thymidylate synthase by Tomudex and kilobase DNA fragmentation may correlate with the reduction of p27(kip1) expression and the increase in cyclin E and cdk2 kinase activities. Activation of cyclin E and cdk2 kinases allows cells to transit from G1 to S phase accompanied by the inhibition of DNA synthesis. The changes in cell cycle regulatory proteins associated with growth inhibition and DNA damage by Tomudex are not p53 dependent.",
+    "sentence_raw": "The studies with dThyd rescue from cyclin E-cdk2 protein overexpression and growth inhibition by Tomudex indicate that increased cyclin E-cdk2 protein expression is associated with effective inhibition of thymidylate synthase and resultant dNTP pool imbalance",
+    "sentence_anonymised": "The studies with dThyd rescue from cyclin E-cdk2 protein overexpression and growth inhibition by  _CHEMICAL_  indicate that increased cyclin E- _GENE-Y_ protein expression is associated with effective inhibition of thymidylate synthase and resultant dNTP pool imbalance",
+    "participant1_id": "T2",
+    "participant1": {
+      "abstract_id": "10047461",
+      "id": "T2",
+      "entity_type": "CHEMICAL",
+      "start_pos": 97,
+      "end_pos": 104,
+      "entity_name": "Tomudex"
+    },
+    "participant2_id": "T33",
+    "participant2": {
+      "abstract_id": "10047461",
+      "id": "T33",
+      "entity_type": "GENE-Y",
+      "start_pos": 138,
+      "end_pos": 142,
+      "entity_name": "cdk2"
+    },
+    "relationship_type": "INDIRECT-UPREGULATOR",
+    "relationship_group": "CPR:3",
+    "is_eval": "Y",
+    "label": "CPR:3"
+  },
+  {
+    "abstract_id": "10047461",
+    "abstract": "Cyclin E-cdk2 activation is associated with cell cycle arrest and inhibition of DNA replication induced by the thymidylate synthase inhibitor Tomudex. Tomudex (ZD1694) is a specific antifolate-based thymidylate synthase inhibitor active in a variety of solid tumor malignancies. Studies were carried out in vitro to evaluate downstream molecular alterations induced as a consequence of the potent and sustained inhibition of thymidylate synthase by Tomudex. Twenty-four hours following the initial 2-h treatment with Tomudex, human A253 head and neck squamous carcinoma cells, not expressing p53 and p21(WAF1), were accumulated with DNA content characteristic of early S phase of the cell cycle with a concomitant reduction of cells in G1 and G2/M phases. The changes in cyclin and cdk protein expression and their kinase activities were examined in control and drug-treated A253 cells. Tomudex treatment resulted in the decrease in p27(kip1) expression, with an increase in cyclin E and cdk2 protein expression and kinase activities 24 h after a 2-h exposure. Although cyclin A protein expression was markedly increased, cyclin A kinase activity was only slightly increased. Cyclin D1, cyclin B, cdk4, and cdc2 protein expression and kinase activities remain constant. Lack of activation of cyclin A- and B-cdc2 was associated with a reduced proportion of cells in G2/M phases. Increased cyclin E-cdk2 protein expression was accompanied by the inhibition of DNA synthesis, with a decrease in E2F-1 expression. These results propose that cyclin E-cdk2 kinase can negatively regulate DNA replication. The studies with dThyd rescue from cyclin E-cdk2 protein overexpression and growth inhibition by Tomudex indicate that increased cyclin E-cdk2 protein expression is associated with effective inhibition of thymidylate synthase and resultant dNTP pool imbalance. Provision of dThyd more than 24 h after exposure to Tomudex allowed cells to replicate DNA for a single cycle back to G1, but did not prevent the profound growth-inhibitory effect manifested in the following 5 days. Tomudex treatment resulted in a time-dependent induction of the megabase DNA fragments, followed by secondary 50- to 300-kb DNA fragmentation. The 50- to 300-kb DNA fragmentation may be derived from the inhibition of DNA synthesis associated with cyclin E-cdk2 activation. These results suggest that the megabase DNA fragmentation is induced as a consequence of inhibition of thymidylate synthase by Tomudex and kilobase DNA fragmentation may correlate with the reduction of p27(kip1) expression and the increase in cyclin E and cdk2 kinase activities. Activation of cyclin E and cdk2 kinases allows cells to transit from G1 to S phase accompanied by the inhibition of DNA synthesis. The changes in cell cycle regulatory proteins associated with growth inhibition and DNA damage by Tomudex are not p53 dependent.",
+    "sentence_raw": "Tomudex treatment resulted in the decrease in p27(kip1) expression, with an increase in cyclin E and cdk2 protein expression and kinase activities 24 h after a 2-h exposure",
+    "sentence_anonymised": " _CHEMICAL_  treatment resulted in the decrease in  _GENE-Y_ expression, with an increase in cyclin E and cdk2 protein expression and kinase activities 24 h after a 2-h exposure",
+    "participant1_id": "T13",
+    "participant1": {
+      "abstract_id": "10047461",
+      "id": "T13",
+      "entity_type": "CHEMICAL",
+      "start_pos": 0,
+      "end_pos": 7,
+      "entity_name": "Tomudex"
+    },
+    "participant2_id": "T54",
+    "participant2": {
+      "abstract_id": "10047461",
+      "id": "T54",
+      "entity_type": "GENE-Y",
+      "start_pos": 46,
+      "end_pos": 55,
+      "entity_name": "p27(kip1)"
+    },
+    "relationship_type": "INDIRECT-DOWNREGULATOR",
+    "relationship_group": "CPR:4",
+    "is_eval": "Y",
+    "label": "CPR:4"
+  },
+  {
+    "abstract_id": "10047461",
+    "abstract": "Cyclin E-cdk2 activation is associated with cell cycle arrest and inhibition of DNA replication induced by the thymidylate synthase inhibitor Tomudex. Tomudex (ZD1694) is a specific antifolate-based thymidylate synthase inhibitor active in a variety of solid tumor malignancies. Studies were carried out in vitro to evaluate downstream molecular alterations induced as a consequence of the potent and sustained inhibition of thymidylate synthase by Tomudex. Twenty-four hours following the initial 2-h treatment with Tomudex, human A253 head and neck squamous carcinoma cells, not expressing p53 and p21(WAF1), were accumulated with DNA content characteristic of early S phase of the cell cycle with a concomitant reduction of cells in G1 and G2/M phases. The changes in cyclin and cdk protein expression and their kinase activities were examined in control and drug-treated A253 cells. Tomudex treatment resulted in the decrease in p27(kip1) expression, with an increase in cyclin E and cdk2 protein expression and kinase activities 24 h after a 2-h exposure. Although cyclin A protein expression was markedly increased, cyclin A kinase activity was only slightly increased. Cyclin D1, cyclin B, cdk4, and cdc2 protein expression and kinase activities remain constant. Lack of activation of cyclin A- and B-cdc2 was associated with a reduced proportion of cells in G2/M phases. Increased cyclin E-cdk2 protein expression was accompanied by the inhibition of DNA synthesis, with a decrease in E2F-1 expression. These results propose that cyclin E-cdk2 kinase can negatively regulate DNA replication. The studies with dThyd rescue from cyclin E-cdk2 protein overexpression and growth inhibition by Tomudex indicate that increased cyclin E-cdk2 protein expression is associated with effective inhibition of thymidylate synthase and resultant dNTP pool imbalance. Provision of dThyd more than 24 h after exposure to Tomudex allowed cells to replicate DNA for a single cycle back to G1, but did not prevent the profound growth-inhibitory effect manifested in the following 5 days. Tomudex treatment resulted in a time-dependent induction of the megabase DNA fragments, followed by secondary 50- to 300-kb DNA fragmentation. The 50- to 300-kb DNA fragmentation may be derived from the inhibition of DNA synthesis associated with cyclin E-cdk2 activation. These results suggest that the megabase DNA fragmentation is induced as a consequence of inhibition of thymidylate synthase by Tomudex and kilobase DNA fragmentation may correlate with the reduction of p27(kip1) expression and the increase in cyclin E and cdk2 kinase activities. Activation of cyclin E and cdk2 kinases allows cells to transit from G1 to S phase accompanied by the inhibition of DNA synthesis. The changes in cell cycle regulatory proteins associated with growth inhibition and DNA damage by Tomudex are not p53 dependent.",
+    "sentence_raw": "These results suggest that the megabase DNA fragmentation is induced as a consequence of inhibition of thymidylate synthase by Tomudex and kilobase DNA fragmentation may correlate with the reduction of p27(kip1) expression and the increase in cyclin E and cdk2 kinase activities",
+    "sentence_anonymised": "These results suggest that the megabase DNA fragmentation is induced as a consequence of inhibition of thymidylate synthase by  _CHEMICAL_  and kilobase DNA fragmentation may correlate with the reduction of  _GENE-Y_ expression and the increase in cyclin E and cdk2 kinase activities",
+    "participant1_id": "T7",
+    "participant1": {
+      "abstract_id": "10047461",
+      "id": "T7",
+      "entity_type": "CHEMICAL",
+      "start_pos": 127,
+      "end_pos": 134,
+      "entity_name": "Tomudex"
+    },
+    "participant2_id": "T38",
+    "participant2": {
+      "abstract_id": "10047461",
+      "id": "T38",
+      "entity_type": "GENE-Y",
+      "start_pos": 202,
+      "end_pos": 211,
+      "entity_name": "p27(kip1)"
+    },
+    "relationship_type": "INDIRECT-DOWNREGULATOR",
+    "relationship_group": "CPR:4",
+    "is_eval": "Y",
+    "label": "CPR:4"
+  },
+  {
+    "abstract_id": "10047461",
+    "abstract": "Cyclin E-cdk2 activation is associated with cell cycle arrest and inhibition of DNA replication induced by the thymidylate synthase inhibitor Tomudex. Tomudex (ZD1694) is a specific antifolate-based thymidylate synthase inhibitor active in a variety of solid tumor malignancies. Studies were carried out in vitro to evaluate downstream molecular alterations induced as a consequence of the potent and sustained inhibition of thymidylate synthase by Tomudex. Twenty-four hours following the initial 2-h treatment with Tomudex, human A253 head and neck squamous carcinoma cells, not expressing p53 and p21(WAF1), were accumulated with DNA content characteristic of early S phase of the cell cycle with a concomitant reduction of cells in G1 and G2/M phases. The changes in cyclin and cdk protein expression and their kinase activities were examined in control and drug-treated A253 cells. Tomudex treatment resulted in the decrease in p27(kip1) expression, with an increase in cyclin E and cdk2 protein expression and kinase activities 24 h after a 2-h exposure. Although cyclin A protein expression was markedly increased, cyclin A kinase activity was only slightly increased. Cyclin D1, cyclin B, cdk4, and cdc2 protein expression and kinase activities remain constant. Lack of activation of cyclin A- and B-cdc2 was associated with a reduced proportion of cells in G2/M phases. Increased cyclin E-cdk2 protein expression was accompanied by the inhibition of DNA synthesis, with a decrease in E2F-1 expression. These results propose that cyclin E-cdk2 kinase can negatively regulate DNA replication. The studies with dThyd rescue from cyclin E-cdk2 protein overexpression and growth inhibition by Tomudex indicate that increased cyclin E-cdk2 protein expression is associated with effective inhibition of thymidylate synthase and resultant dNTP pool imbalance. Provision of dThyd more than 24 h after exposure to Tomudex allowed cells to replicate DNA for a single cycle back to G1, but did not prevent the profound growth-inhibitory effect manifested in the following 5 days. Tomudex treatment resulted in a time-dependent induction of the megabase DNA fragments, followed by secondary 50- to 300-kb DNA fragmentation. The 50- to 300-kb DNA fragmentation may be derived from the inhibition of DNA synthesis associated with cyclin E-cdk2 activation. These results suggest that the megabase DNA fragmentation is induced as a consequence of inhibition of thymidylate synthase by Tomudex and kilobase DNA fragmentation may correlate with the reduction of p27(kip1) expression and the increase in cyclin E and cdk2 kinase activities. Activation of cyclin E and cdk2 kinases allows cells to transit from G1 to S phase accompanied by the inhibition of DNA synthesis. The changes in cell cycle regulatory proteins associated with growth inhibition and DNA damage by Tomudex are not p53 dependent.",
+    "sentence_raw": "Studies were carried out in vitro to evaluate downstream molecular alterations induced as a consequence of the potent and sustained inhibition of thymidylate synthase by Tomudex",
+    "sentence_anonymised": "Studies were carried out in vitro to evaluate downstream molecular alterations induced as a consequence of the potent and sustained inhibition of  _GENE-Y_  by  _CHEMICAL_",
+    "participant1_id": "T46",
+    "participant1": {
+      "abstract_id": "10047461",
+      "id": "T46",
+      "entity_type": "GENE-Y",
+      "start_pos": 146,
+      "end_pos": 166,
+      "entity_name": "thymidylate synthase"
+    },
+    "participant2_id": "T10",
+    "participant2": {
+      "abstract_id": "10047461",
+      "id": "T10",
+      "entity_type": "CHEMICAL",
+      "start_pos": 170,
+      "end_pos": 177,
+      "entity_name": "Tomudex"
+    },
+    "relationship_type": "INHIBITOR",
+    "relationship_group": "CPR:4",
+    "is_eval": "Y",
+    "label": "CPR:4"
+  },
+  {
+    "abstract_id": "10047461",
+    "abstract": "Cyclin E-cdk2 activation is associated with cell cycle arrest and inhibition of DNA replication induced by the thymidylate synthase inhibitor Tomudex. Tomudex (ZD1694) is a specific antifolate-based thymidylate synthase inhibitor active in a variety of solid tumor malignancies. Studies were carried out in vitro to evaluate downstream molecular alterations induced as a consequence of the potent and sustained inhibition of thymidylate synthase by Tomudex. Twenty-four hours following the initial 2-h treatment with Tomudex, human A253 head and neck squamous carcinoma cells, not expressing p53 and p21(WAF1), were accumulated with DNA content characteristic of early S phase of the cell cycle with a concomitant reduction of cells in G1 and G2/M phases. The changes in cyclin and cdk protein expression and their kinase activities were examined in control and drug-treated A253 cells. Tomudex treatment resulted in the decrease in p27(kip1) expression, with an increase in cyclin E and cdk2 protein expression and kinase activities 24 h after a 2-h exposure. Although cyclin A protein expression was markedly increased, cyclin A kinase activity was only slightly increased. Cyclin D1, cyclin B, cdk4, and cdc2 protein expression and kinase activities remain constant. Lack of activation of cyclin A- and B-cdc2 was associated with a reduced proportion of cells in G2/M phases. Increased cyclin E-cdk2 protein expression was accompanied by the inhibition of DNA synthesis, with a decrease in E2F-1 expression. These results propose that cyclin E-cdk2 kinase can negatively regulate DNA replication. The studies with dThyd rescue from cyclin E-cdk2 protein overexpression and growth inhibition by Tomudex indicate that increased cyclin E-cdk2 protein expression is associated with effective inhibition of thymidylate synthase and resultant dNTP pool imbalance. Provision of dThyd more than 24 h after exposure to Tomudex allowed cells to replicate DNA for a single cycle back to G1, but did not prevent the profound growth-inhibitory effect manifested in the following 5 days. Tomudex treatment resulted in a time-dependent induction of the megabase DNA fragments, followed by secondary 50- to 300-kb DNA fragmentation. The 50- to 300-kb DNA fragmentation may be derived from the inhibition of DNA synthesis associated with cyclin E-cdk2 activation. These results suggest that the megabase DNA fragmentation is induced as a consequence of inhibition of thymidylate synthase by Tomudex and kilobase DNA fragmentation may correlate with the reduction of p27(kip1) expression and the increase in cyclin E and cdk2 kinase activities. Activation of cyclin E and cdk2 kinases allows cells to transit from G1 to S phase accompanied by the inhibition of DNA synthesis. The changes in cell cycle regulatory proteins associated with growth inhibition and DNA damage by Tomudex are not p53 dependent.",
+    "sentence_raw": "clin E-cdk2 activation is associated with cell cycle arrest and inhibition of DNA replication induced by the thymidylate synthase inhibitor Tomudex",
+    "sentence_anonymised": "clin E-cdk2 activation is associated with cell cycle arrest and inhibition of DNA replication induced by the  _GENE-Y_  inhibitor  _CHEMICAL_",
+    "participant1_id": "T62",
+    "participant1": {
+      "abstract_id": "10047461",
+      "id": "T62",
+      "entity_type": "GENE-Y",
+      "start_pos": 109,
+      "end_pos": 129,
+      "entity_name": "thymidylate synthase"
+    },
+    "participant2_id": "T16",
+    "participant2": {
+      "abstract_id": "10047461",
+      "id": "T16",
+      "entity_type": "CHEMICAL",
+      "start_pos": 140,
+      "end_pos": 147,
+      "entity_name": "Tomudex"
+    },
+    "relationship_type": "INHIBITOR",
+    "relationship_group": "CPR:4",
+    "is_eval": "Y",
+    "label": "CPR:4"
+  }
+]

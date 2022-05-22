@@ -63,3 +63,10 @@ python src/main_train.py --datasetfactory datasets.aimed_dataset_factory.AimedDa
 ```bash
 python utils/static_markers_ppi_multiclass.py --inputfile temp_data/data/laregscale_hq_above_threshold.json  --outputfile markers_largescale_multiclass.json  --additionalcols "class,confidence"
 ```
+
+## Chem prot dataset
+
+```bash
+python src/preprocessors/chemprot_json_converter.py --abstractfile temp_data/chemprot_test_gs/chemprot_test_abstracts_gs.tsv  --entitiesfile temp_data/chemprot_test_gs/chemprot_test_entities_gs.tsv --relfile temp_data/chemprot_test_gs/chemprot_test_relations_gs.tsv --outputfile chemprot_test.json
+
+``` 
