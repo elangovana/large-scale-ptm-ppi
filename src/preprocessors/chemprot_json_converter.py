@@ -218,19 +218,22 @@ class ChemprotJsonConverter:
         """
         # Hack sentence split.
         sentences = abstract.split(". ")
+
         # check at least one sentence contains both p1 and p2.
         if not any([p1_details["entity_name"] in s and p2_details["entity_name"] in s for s in sentences]): return None
 
         # Ensure p1 is occurs before p2
         p1_details = p1_details.copy()
         p2_details = p2_details.copy()
+        is_swap = False
         if p1_details["start_pos"] > p2_details["start_pos"]:
-            t = p1_details
-            p1_details = p2_details
-            p2_details = t
+            p1_details, p2_details = self._swap(p1_details, p2_details)
+            is_swap = True
 
         s = p1_details["start_pos"]
         e = p2_details["end_pos"]
+
+        assert s < e, f"Start position {s} must be earlier than end {e}"
 
         # This is a loose heuristic for sentence split, there are "." in the abstracts that are not EOS.
         sentence_start = abstract[:s].rfind(". ")
@@ -256,8 +259,13 @@ class ChemprotJsonConverter:
                                                          p2_details["entity_type"],
                                                          sentence[p2_details["end_pos"]:]
                                                          )
+        if is_swap:
+            p1_details, p2_details = self._swap(p1_details, p2_details)
 
         return sentence, sentence_anonymised, p1_details, p2_details
+
+    def _swap(self, p1_details, p2_details):
+        return p2_details, p1_details
 
 
 def run_main():
