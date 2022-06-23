@@ -66,7 +66,7 @@ def parse_args_run():
     parser.add_argument("--ensemble", help="Set to 1 if ensemble model", type=int, default=0, choices={0, 1})
     parser.add_argument("--filter", help="Set to 1 if ensemble model", type=int, default=0, choices={0, 1})
     parser.add_argument("--filterstdthreshold", help="Set the filter threshold", type=float, default=1.0)
-    parser.add_argument("--filterthresholdother", help="Set the filter threshold for other", type=float, default=99.0)
+    parser.add_argument("--filterthresholdother", help="Set the filter threshold for other", type=float, default=0.99)
 
     args, additional_args = parser.parse_known_args()
     print(args.__dict__)
