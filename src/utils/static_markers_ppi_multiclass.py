@@ -12,9 +12,9 @@ class StaticMarkerPpiMulticlass:
     Writes static file with the protein markers
     """
 
-    def create(self, ppi_multiclass_file, output_file, additional_cols=None):
+    def create(self, ppi_multiclass_file_or_df, output_file, additional_cols=None):
         dataset_factory = PpiMulticlassDatasetFactory()
-        dataset = dataset_factory.get_dataset(ppi_multiclass_file)
+        dataset = dataset_factory.get_dataset(ppi_multiclass_file_or_df)
         label_mapper = dataset.label_transformer
         dataset.label_transformer = None
 
@@ -24,9 +24,10 @@ class StaticMarkerPpiMulticlass:
 
         if additional_cols:
             cols_to_copy = [c.strip(" ") for c in additional_cols.split(",")]
-            raw_input_json = pd.read_json(ppi_multiclass_file)
+            raw_df = pd.read_json(ppi_multiclass_file_or_df) if isinstance(ppi_multiclass_file_or_df,
+                                                                           str) else ppi_multiclass_file_or_df
             for c in cols_to_copy:
-                df[c] = raw_input_json[c]
+                df[c] = raw_df[c].tolist()
 
         df.to_json(output_file, orient="records")
 
