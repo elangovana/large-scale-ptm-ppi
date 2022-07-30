@@ -1,0 +1,3584 @@
+[
+  {
+    "abstract_id": "10047461",
+    "abstract": "Cyclin E-cdk2 activation is associated with cell cycle arrest and inhibition of DNA replication induced by the thymidylate synthase inhibitor Tomudex. Tomudex (ZD1694) is a specific antifolate-based thymidylate synthase inhibitor active in a variety of solid tumor malignancies. Studies were carried out in vitro to evaluate downstream molecular alterations induced as a consequence of the potent and sustained inhibition of thymidylate synthase by Tomudex. Twenty-four hours following the initial 2-h treatment with Tomudex, human A253 head and neck squamous carcinoma cells, not expressing p53 and p21(WAF1), were accumulated with DNA content characteristic of early S phase of the cell cycle with a concomitant reduction of cells in G1 and G2/M phases. The changes in cyclin and cdk protein expression and their kinase activities were examined in control and drug-treated A253 cells. Tomudex treatment resulted in the decrease in p27(kip1) expression, with an increase in cyclin E and cdk2 protein expression and kinase activities 24 h after a 2-h exposure. Although cyclin A protein expression was markedly increased, cyclin A kinase activity was only slightly increased. Cyclin D1, cyclin B, cdk4, and cdc2 protein expression and kinase activities remain constant. Lack of activation of cyclin A- and B-cdc2 was associated with a reduced proportion of cells in G2/M phases. Increased cyclin E-cdk2 protein expression was accompanied by the inhibition of DNA synthesis, with a decrease in E2F-1 expression. These results propose that cyclin E-cdk2 kinase can negatively regulate DNA replication. The studies with dThyd rescue from cyclin E-cdk2 protein overexpression and growth inhibition by Tomudex indicate that increased cyclin E-cdk2 protein expression is associated with effective inhibition of thymidylate synthase and resultant dNTP pool imbalance. Provision of dThyd more than 24 h after exposure to Tomudex allowed cells to replicate DNA for a single cycle back to G1, but did not prevent the profound growth-inhibitory effect manifested in the following 5 days. Tomudex treatment resulted in a time-dependent induction of the megabase DNA fragments, followed by secondary 50- to 300-kb DNA fragmentation. The 50- to 300-kb DNA fragmentation may be derived from the inhibition of DNA synthesis associated with cyclin E-cdk2 activation. These results suggest that the megabase DNA fragmentation is induced as a consequence of inhibition of thymidylate synthase by Tomudex and kilobase DNA fragmentation may correlate with the reduction of p27(kip1) expression and the increase in cyclin E and cdk2 kinase activities. Activation of cyclin E and cdk2 kinases allows cells to transit from G1 to S phase accompanied by the inhibition of DNA synthesis. The changes in cell cycle regulatory proteins associated with growth inhibition and DNA damage by Tomudex are not p53 dependent.",
+    "participant1_id": "T13",
+    "participant1": {
+      "abstract_id": "10047461",
+      "id": "T13",
+      "entity_type": "CHEMICAL",
+      "charOffset": 887,
+      "len": 7,
+      "entity_name": "Tomudex",
+      "text": "T13"
+    },
+    "participant2_id": "T57",
+    "participant2": {
+      "abstract_id": "10047461",
+      "id": "T57",
+      "entity_type": "GENE-N",
+      "charOffset": 1016,
+      "len": 6,
+      "entity_name": "kinase",
+      "text": "T57"
+    },
+    "annotations": [
+      {
+        "abstract_id": "10047461",
+        "id": "T1",
+        "entity_type": "CHEMICAL",
+        "charOffset": 151,
+        "len": 7,
+        "entity_name": "Tomudex",
+        "text": "T1"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T2",
+        "entity_type": "CHEMICAL",
+        "charOffset": 1697,
+        "len": 7,
+        "entity_name": "Tomudex",
+        "text": "T2"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T3",
+        "entity_type": "CHEMICAL",
+        "charOffset": 1805,
+        "len": 11,
+        "entity_name": "thymidylate",
+        "text": "T3"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T4",
+        "entity_type": "CHEMICAL",
+        "charOffset": 1913,
+        "len": 7,
+        "entity_name": "Tomudex",
+        "text": "T4"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T5",
+        "entity_type": "CHEMICAL",
+        "charOffset": 2077,
+        "len": 7,
+        "entity_name": "Tomudex",
+        "text": "T5"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T6",
+        "entity_type": "CHEMICAL",
+        "charOffset": 2453,
+        "len": 11,
+        "entity_name": "thymidylate",
+        "text": "T6"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T7",
+        "entity_type": "CHEMICAL",
+        "charOffset": 2477,
+        "len": 7,
+        "entity_name": "Tomudex",
+        "text": "T7"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T8",
+        "entity_type": "CHEMICAL",
+        "charOffset": 2859,
+        "len": 7,
+        "entity_name": "Tomudex",
+        "text": "T8"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T9",
+        "entity_type": "CHEMICAL",
+        "charOffset": 425,
+        "len": 11,
+        "entity_name": "thymidylate",
+        "text": "T9"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T10",
+        "entity_type": "CHEMICAL",
+        "charOffset": 449,
+        "len": 7,
+        "entity_name": "Tomudex",
+        "text": "T10"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T11",
+        "entity_type": "CHEMICAL",
+        "charOffset": 517,
+        "len": 7,
+        "entity_name": "Tomudex",
+        "text": "T11"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T12",
+        "entity_type": "CHEMICAL",
+        "charOffset": 199,
+        "len": 11,
+        "entity_name": "thymidylate",
+        "text": "T12"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T13",
+        "entity_type": "CHEMICAL",
+        "charOffset": 887,
+        "len": 7,
+        "entity_name": "Tomudex",
+        "text": "T13"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T14",
+        "entity_type": "CHEMICAL",
+        "charOffset": 160,
+        "len": 6,
+        "entity_name": "ZD1694",
+        "text": "T14"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T15",
+        "entity_type": "CHEMICAL",
+        "charOffset": 111,
+        "len": 11,
+        "entity_name": "thymidylate",
+        "text": "T15"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T16",
+        "entity_type": "CHEMICAL",
+        "charOffset": 142,
+        "len": 7,
+        "entity_name": "Tomudex",
+        "text": "T16"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T17",
+        "entity_type": "GENE-Y",
+        "charOffset": 1176,
+        "len": 9,
+        "entity_name": "Cyclin D1",
+        "text": "T17"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T18",
+        "entity_type": "GENE-Y",
+        "charOffset": 1187,
+        "len": 8,
+        "entity_name": "cyclin B",
+        "text": "T18"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T19",
+        "entity_type": "GENE-Y",
+        "charOffset": 1197,
+        "len": 4,
+        "entity_name": "cdk4",
+        "text": "T19"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T20",
+        "entity_type": "GENE-Y",
+        "charOffset": 1207,
+        "len": 4,
+        "entity_name": "cdc2",
+        "text": "T20"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T21",
+        "entity_type": "GENE-N",
+        "charOffset": 1235,
+        "len": 6,
+        "entity_name": "kinase",
+        "text": "T21"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T22",
+        "entity_type": "GENE-N",
+        "charOffset": 1292,
+        "len": 15,
+        "entity_name": "cyclin A- and B",
+        "text": "T22"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T23",
+        "entity_type": "GENE-Y",
+        "charOffset": 1308,
+        "len": 4,
+        "entity_name": "cdc2",
+        "text": "T23"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T24",
+        "entity_type": "GENE-Y",
+        "charOffset": 1389,
+        "len": 8,
+        "entity_name": "cyclin E",
+        "text": "T24"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T25",
+        "entity_type": "GENE-Y",
+        "charOffset": 1398,
+        "len": 4,
+        "entity_name": "cdk2",
+        "text": "T25"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T26",
+        "entity_type": "GENE-Y",
+        "charOffset": 1493,
+        "len": 5,
+        "entity_name": "E2F-1",
+        "text": "T26"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T27",
+        "entity_type": "GENE-Y",
+        "charOffset": 1538,
+        "len": 8,
+        "entity_name": "cyclin E",
+        "text": "T27"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T28",
+        "entity_type": "GENE-Y",
+        "charOffset": 1547,
+        "len": 4,
+        "entity_name": "cdk2",
+        "text": "T28"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T29",
+        "entity_type": "GENE-N",
+        "charOffset": 1552,
+        "len": 6,
+        "entity_name": "kinase",
+        "text": "T29"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T30",
+        "entity_type": "GENE-Y",
+        "charOffset": 1635,
+        "len": 8,
+        "entity_name": "cyclin E",
+        "text": "T30"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T31",
+        "entity_type": "GENE-Y",
+        "charOffset": 1644,
+        "len": 4,
+        "entity_name": "cdk2",
+        "text": "T31"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T32",
+        "entity_type": "GENE-Y",
+        "charOffset": 1729,
+        "len": 8,
+        "entity_name": "cyclin E",
+        "text": "T32"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T33",
+        "entity_type": "GENE-Y",
+        "charOffset": 1738,
+        "len": 4,
+        "entity_name": "cdk2",
+        "text": "T33"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T34",
+        "entity_type": "GENE-Y",
+        "charOffset": 1805,
+        "len": 20,
+        "entity_name": "thymidylate synthase",
+        "text": "T34"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T35",
+        "entity_type": "GENE-Y",
+        "charOffset": 2324,
+        "len": 8,
+        "entity_name": "cyclin E",
+        "text": "T35"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T36",
+        "entity_type": "GENE-Y",
+        "charOffset": 2333,
+        "len": 4,
+        "entity_name": "cdk2",
+        "text": "T36"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T37",
+        "entity_type": "GENE-Y",
+        "charOffset": 2453,
+        "len": 20,
+        "entity_name": "thymidylate synthase",
+        "text": "T37"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T38",
+        "entity_type": "GENE-Y",
+        "charOffset": 2552,
+        "len": 9,
+        "entity_name": "p27(kip1)",
+        "text": "T38"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T39",
+        "entity_type": "GENE-Y",
+        "charOffset": 2593,
+        "len": 8,
+        "entity_name": "cyclin E",
+        "text": "T39"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T40",
+        "entity_type": "GENE-Y",
+        "charOffset": 2606,
+        "len": 4,
+        "entity_name": "cdk2",
+        "text": "T40"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T41",
+        "entity_type": "GENE-N",
+        "charOffset": 2611,
+        "len": 6,
+        "entity_name": "kinase",
+        "text": "T41"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T42",
+        "entity_type": "GENE-Y",
+        "charOffset": 2644,
+        "len": 8,
+        "entity_name": "cyclin E",
+        "text": "T42"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T43",
+        "entity_type": "GENE-Y",
+        "charOffset": 2657,
+        "len": 4,
+        "entity_name": "cdk2",
+        "text": "T43"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T44",
+        "entity_type": "GENE-N",
+        "charOffset": 2662,
+        "len": 7,
+        "entity_name": "kinases",
+        "text": "T44"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T45",
+        "entity_type": "GENE-Y",
+        "charOffset": 2875,
+        "len": 3,
+        "entity_name": "p53",
+        "text": "T45"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T46",
+        "entity_type": "GENE-Y",
+        "charOffset": 425,
+        "len": 20,
+        "entity_name": "thymidylate synthase",
+        "text": "T46"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T47",
+        "entity_type": "GENE-Y",
+        "charOffset": 592,
+        "len": 3,
+        "entity_name": "p53",
+        "text": "T47"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T48",
+        "entity_type": "GENE-Y",
+        "charOffset": 600,
+        "len": 3,
+        "entity_name": "p21",
+        "text": "T48"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T49",
+        "entity_type": "GENE-Y",
+        "charOffset": 604,
+        "len": 4,
+        "entity_name": "WAF1",
+        "text": "T49"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T50",
+        "entity_type": "GENE-Y",
+        "charOffset": 199,
+        "len": 20,
+        "entity_name": "thymidylate synthase",
+        "text": "T50"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T51",
+        "entity_type": "GENE-N",
+        "charOffset": 771,
+        "len": 6,
+        "entity_name": "cyclin",
+        "text": "T51"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T52",
+        "entity_type": "GENE-N",
+        "charOffset": 782,
+        "len": 3,
+        "entity_name": "cdk",
+        "text": "T52"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T53",
+        "entity_type": "GENE-N",
+        "charOffset": 815,
+        "len": 6,
+        "entity_name": "kinase",
+        "text": "T53"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T54",
+        "entity_type": "GENE-Y",
+        "charOffset": 933,
+        "len": 9,
+        "entity_name": "p27(kip1)",
+        "text": "T54"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T55",
+        "entity_type": "GENE-Y",
+        "charOffset": 975,
+        "len": 8,
+        "entity_name": "cyclin E",
+        "text": "T55"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T56",
+        "entity_type": "GENE-Y",
+        "charOffset": 988,
+        "len": 4,
+        "entity_name": "cdk2",
+        "text": "T56"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T57",
+        "entity_type": "GENE-N",
+        "charOffset": 1016,
+        "len": 6,
+        "entity_name": "kinase",
+        "text": "T57"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T58",
+        "entity_type": "GENE-Y",
+        "charOffset": 1070,
+        "len": 8,
+        "entity_name": "cyclin A",
+        "text": "T58"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T59",
+        "entity_type": "GENE-Y",
+        "charOffset": 1122,
+        "len": 8,
+        "entity_name": "cyclin A",
+        "text": "T59"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T60",
+        "entity_type": "GENE-N",
+        "charOffset": 1131,
+        "len": 6,
+        "entity_name": "kinase",
+        "text": "T60"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T61",
+        "entity_type": "GENE-Y",
+        "charOffset": 0,
+        "len": 8,
+        "entity_name": "Cyclin E",
+        "text": "T61"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T62",
+        "entity_type": "GENE-Y",
+        "charOffset": 111,
+        "len": 20,
+        "entity_name": "thymidylate synthase",
+        "text": "T62"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T63",
+        "entity_type": "GENE-Y",
+        "charOffset": 9,
+        "len": 4,
+        "entity_name": "cdk2",
+        "text": "T63"
+      }
+    ],
+    "relationship_type": "ACTIVATOR",
+    "relationship_group": "CPR:3",
+    "is_eval": "Y",
+    "label": "CPR:3"
+  },
+  {
+    "abstract_id": "10047461",
+    "abstract": "Cyclin E-cdk2 activation is associated with cell cycle arrest and inhibition of DNA replication induced by the thymidylate synthase inhibitor Tomudex. Tomudex (ZD1694) is a specific antifolate-based thymidylate synthase inhibitor active in a variety of solid tumor malignancies. Studies were carried out in vitro to evaluate downstream molecular alterations induced as a consequence of the potent and sustained inhibition of thymidylate synthase by Tomudex. Twenty-four hours following the initial 2-h treatment with Tomudex, human A253 head and neck squamous carcinoma cells, not expressing p53 and p21(WAF1), were accumulated with DNA content characteristic of early S phase of the cell cycle with a concomitant reduction of cells in G1 and G2/M phases. The changes in cyclin and cdk protein expression and their kinase activities were examined in control and drug-treated A253 cells. Tomudex treatment resulted in the decrease in p27(kip1) expression, with an increase in cyclin E and cdk2 protein expression and kinase activities 24 h after a 2-h exposure. Although cyclin A protein expression was markedly increased, cyclin A kinase activity was only slightly increased. Cyclin D1, cyclin B, cdk4, and cdc2 protein expression and kinase activities remain constant. Lack of activation of cyclin A- and B-cdc2 was associated with a reduced proportion of cells in G2/M phases. Increased cyclin E-cdk2 protein expression was accompanied by the inhibition of DNA synthesis, with a decrease in E2F-1 expression. These results propose that cyclin E-cdk2 kinase can negatively regulate DNA replication. The studies with dThyd rescue from cyclin E-cdk2 protein overexpression and growth inhibition by Tomudex indicate that increased cyclin E-cdk2 protein expression is associated with effective inhibition of thymidylate synthase and resultant dNTP pool imbalance. Provision of dThyd more than 24 h after exposure to Tomudex allowed cells to replicate DNA for a single cycle back to G1, but did not prevent the profound growth-inhibitory effect manifested in the following 5 days. Tomudex treatment resulted in a time-dependent induction of the megabase DNA fragments, followed by secondary 50- to 300-kb DNA fragmentation. The 50- to 300-kb DNA fragmentation may be derived from the inhibition of DNA synthesis associated with cyclin E-cdk2 activation. These results suggest that the megabase DNA fragmentation is induced as a consequence of inhibition of thymidylate synthase by Tomudex and kilobase DNA fragmentation may correlate with the reduction of p27(kip1) expression and the increase in cyclin E and cdk2 kinase activities. Activation of cyclin E and cdk2 kinases allows cells to transit from G1 to S phase accompanied by the inhibition of DNA synthesis. The changes in cell cycle regulatory proteins associated with growth inhibition and DNA damage by Tomudex are not p53 dependent.",
+    "participant1_id": "T7",
+    "participant1": {
+      "abstract_id": "10047461",
+      "id": "T7",
+      "entity_type": "CHEMICAL",
+      "charOffset": 2477,
+      "len": 7,
+      "entity_name": "Tomudex",
+      "text": "T7"
+    },
+    "participant2_id": "T39",
+    "participant2": {
+      "abstract_id": "10047461",
+      "id": "T39",
+      "entity_type": "GENE-Y",
+      "charOffset": 2593,
+      "len": 8,
+      "entity_name": "cyclin E",
+      "text": "T39"
+    },
+    "annotations": [
+      {
+        "abstract_id": "10047461",
+        "id": "T1",
+        "entity_type": "CHEMICAL",
+        "charOffset": 151,
+        "len": 7,
+        "entity_name": "Tomudex",
+        "text": "T1"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T2",
+        "entity_type": "CHEMICAL",
+        "charOffset": 1697,
+        "len": 7,
+        "entity_name": "Tomudex",
+        "text": "T2"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T3",
+        "entity_type": "CHEMICAL",
+        "charOffset": 1805,
+        "len": 11,
+        "entity_name": "thymidylate",
+        "text": "T3"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T4",
+        "entity_type": "CHEMICAL",
+        "charOffset": 1913,
+        "len": 7,
+        "entity_name": "Tomudex",
+        "text": "T4"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T5",
+        "entity_type": "CHEMICAL",
+        "charOffset": 2077,
+        "len": 7,
+        "entity_name": "Tomudex",
+        "text": "T5"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T6",
+        "entity_type": "CHEMICAL",
+        "charOffset": 2453,
+        "len": 11,
+        "entity_name": "thymidylate",
+        "text": "T6"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T7",
+        "entity_type": "CHEMICAL",
+        "charOffset": 2477,
+        "len": 7,
+        "entity_name": "Tomudex",
+        "text": "T7"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T8",
+        "entity_type": "CHEMICAL",
+        "charOffset": 2859,
+        "len": 7,
+        "entity_name": "Tomudex",
+        "text": "T8"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T9",
+        "entity_type": "CHEMICAL",
+        "charOffset": 425,
+        "len": 11,
+        "entity_name": "thymidylate",
+        "text": "T9"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T10",
+        "entity_type": "CHEMICAL",
+        "charOffset": 449,
+        "len": 7,
+        "entity_name": "Tomudex",
+        "text": "T10"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T11",
+        "entity_type": "CHEMICAL",
+        "charOffset": 517,
+        "len": 7,
+        "entity_name": "Tomudex",
+        "text": "T11"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T12",
+        "entity_type": "CHEMICAL",
+        "charOffset": 199,
+        "len": 11,
+        "entity_name": "thymidylate",
+        "text": "T12"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T13",
+        "entity_type": "CHEMICAL",
+        "charOffset": 887,
+        "len": 7,
+        "entity_name": "Tomudex",
+        "text": "T13"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T14",
+        "entity_type": "CHEMICAL",
+        "charOffset": 160,
+        "len": 6,
+        "entity_name": "ZD1694",
+        "text": "T14"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T15",
+        "entity_type": "CHEMICAL",
+        "charOffset": 111,
+        "len": 11,
+        "entity_name": "thymidylate",
+        "text": "T15"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T16",
+        "entity_type": "CHEMICAL",
+        "charOffset": 142,
+        "len": 7,
+        "entity_name": "Tomudex",
+        "text": "T16"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T17",
+        "entity_type": "GENE-Y",
+        "charOffset": 1176,
+        "len": 9,
+        "entity_name": "Cyclin D1",
+        "text": "T17"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T18",
+        "entity_type": "GENE-Y",
+        "charOffset": 1187,
+        "len": 8,
+        "entity_name": "cyclin B",
+        "text": "T18"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T19",
+        "entity_type": "GENE-Y",
+        "charOffset": 1197,
+        "len": 4,
+        "entity_name": "cdk4",
+        "text": "T19"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T20",
+        "entity_type": "GENE-Y",
+        "charOffset": 1207,
+        "len": 4,
+        "entity_name": "cdc2",
+        "text": "T20"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T21",
+        "entity_type": "GENE-N",
+        "charOffset": 1235,
+        "len": 6,
+        "entity_name": "kinase",
+        "text": "T21"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T22",
+        "entity_type": "GENE-N",
+        "charOffset": 1292,
+        "len": 15,
+        "entity_name": "cyclin A- and B",
+        "text": "T22"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T23",
+        "entity_type": "GENE-Y",
+        "charOffset": 1308,
+        "len": 4,
+        "entity_name": "cdc2",
+        "text": "T23"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T24",
+        "entity_type": "GENE-Y",
+        "charOffset": 1389,
+        "len": 8,
+        "entity_name": "cyclin E",
+        "text": "T24"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T25",
+        "entity_type": "GENE-Y",
+        "charOffset": 1398,
+        "len": 4,
+        "entity_name": "cdk2",
+        "text": "T25"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T26",
+        "entity_type": "GENE-Y",
+        "charOffset": 1493,
+        "len": 5,
+        "entity_name": "E2F-1",
+        "text": "T26"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T27",
+        "entity_type": "GENE-Y",
+        "charOffset": 1538,
+        "len": 8,
+        "entity_name": "cyclin E",
+        "text": "T27"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T28",
+        "entity_type": "GENE-Y",
+        "charOffset": 1547,
+        "len": 4,
+        "entity_name": "cdk2",
+        "text": "T28"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T29",
+        "entity_type": "GENE-N",
+        "charOffset": 1552,
+        "len": 6,
+        "entity_name": "kinase",
+        "text": "T29"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T30",
+        "entity_type": "GENE-Y",
+        "charOffset": 1635,
+        "len": 8,
+        "entity_name": "cyclin E",
+        "text": "T30"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T31",
+        "entity_type": "GENE-Y",
+        "charOffset": 1644,
+        "len": 4,
+        "entity_name": "cdk2",
+        "text": "T31"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T32",
+        "entity_type": "GENE-Y",
+        "charOffset": 1729,
+        "len": 8,
+        "entity_name": "cyclin E",
+        "text": "T32"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T33",
+        "entity_type": "GENE-Y",
+        "charOffset": 1738,
+        "len": 4,
+        "entity_name": "cdk2",
+        "text": "T33"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T34",
+        "entity_type": "GENE-Y",
+        "charOffset": 1805,
+        "len": 20,
+        "entity_name": "thymidylate synthase",
+        "text": "T34"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T35",
+        "entity_type": "GENE-Y",
+        "charOffset": 2324,
+        "len": 8,
+        "entity_name": "cyclin E",
+        "text": "T35"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T36",
+        "entity_type": "GENE-Y",
+        "charOffset": 2333,
+        "len": 4,
+        "entity_name": "cdk2",
+        "text": "T36"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T37",
+        "entity_type": "GENE-Y",
+        "charOffset": 2453,
+        "len": 20,
+        "entity_name": "thymidylate synthase",
+        "text": "T37"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T38",
+        "entity_type": "GENE-Y",
+        "charOffset": 2552,
+        "len": 9,
+        "entity_name": "p27(kip1)",
+        "text": "T38"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T39",
+        "entity_type": "GENE-Y",
+        "charOffset": 2593,
+        "len": 8,
+        "entity_name": "cyclin E",
+        "text": "T39"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T40",
+        "entity_type": "GENE-Y",
+        "charOffset": 2606,
+        "len": 4,
+        "entity_name": "cdk2",
+        "text": "T40"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T41",
+        "entity_type": "GENE-N",
+        "charOffset": 2611,
+        "len": 6,
+        "entity_name": "kinase",
+        "text": "T41"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T42",
+        "entity_type": "GENE-Y",
+        "charOffset": 2644,
+        "len": 8,
+        "entity_name": "cyclin E",
+        "text": "T42"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T43",
+        "entity_type": "GENE-Y",
+        "charOffset": 2657,
+        "len": 4,
+        "entity_name": "cdk2",
+        "text": "T43"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T44",
+        "entity_type": "GENE-N",
+        "charOffset": 2662,
+        "len": 7,
+        "entity_name": "kinases",
+        "text": "T44"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T45",
+        "entity_type": "GENE-Y",
+        "charOffset": 2875,
+        "len": 3,
+        "entity_name": "p53",
+        "text": "T45"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T46",
+        "entity_type": "GENE-Y",
+        "charOffset": 425,
+        "len": 20,
+        "entity_name": "thymidylate synthase",
+        "text": "T46"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T47",
+        "entity_type": "GENE-Y",
+        "charOffset": 592,
+        "len": 3,
+        "entity_name": "p53",
+        "text": "T47"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T48",
+        "entity_type": "GENE-Y",
+        "charOffset": 600,
+        "len": 3,
+        "entity_name": "p21",
+        "text": "T48"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T49",
+        "entity_type": "GENE-Y",
+        "charOffset": 604,
+        "len": 4,
+        "entity_name": "WAF1",
+        "text": "T49"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T50",
+        "entity_type": "GENE-Y",
+        "charOffset": 199,
+        "len": 20,
+        "entity_name": "thymidylate synthase",
+        "text": "T50"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T51",
+        "entity_type": "GENE-N",
+        "charOffset": 771,
+        "len": 6,
+        "entity_name": "cyclin",
+        "text": "T51"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T52",
+        "entity_type": "GENE-N",
+        "charOffset": 782,
+        "len": 3,
+        "entity_name": "cdk",
+        "text": "T52"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T53",
+        "entity_type": "GENE-N",
+        "charOffset": 815,
+        "len": 6,
+        "entity_name": "kinase",
+        "text": "T53"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T54",
+        "entity_type": "GENE-Y",
+        "charOffset": 933,
+        "len": 9,
+        "entity_name": "p27(kip1)",
+        "text": "T54"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T55",
+        "entity_type": "GENE-Y",
+        "charOffset": 975,
+        "len": 8,
+        "entity_name": "cyclin E",
+        "text": "T55"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T56",
+        "entity_type": "GENE-Y",
+        "charOffset": 988,
+        "len": 4,
+        "entity_name": "cdk2",
+        "text": "T56"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T57",
+        "entity_type": "GENE-N",
+        "charOffset": 1016,
+        "len": 6,
+        "entity_name": "kinase",
+        "text": "T57"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T58",
+        "entity_type": "GENE-Y",
+        "charOffset": 1070,
+        "len": 8,
+        "entity_name": "cyclin A",
+        "text": "T58"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T59",
+        "entity_type": "GENE-Y",
+        "charOffset": 1122,
+        "len": 8,
+        "entity_name": "cyclin A",
+        "text": "T59"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T60",
+        "entity_type": "GENE-N",
+        "charOffset": 1131,
+        "len": 6,
+        "entity_name": "kinase",
+        "text": "T60"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T61",
+        "entity_type": "GENE-Y",
+        "charOffset": 0,
+        "len": 8,
+        "entity_name": "Cyclin E",
+        "text": "T61"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T62",
+        "entity_type": "GENE-Y",
+        "charOffset": 111,
+        "len": 20,
+        "entity_name": "thymidylate synthase",
+        "text": "T62"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T63",
+        "entity_type": "GENE-Y",
+        "charOffset": 9,
+        "len": 4,
+        "entity_name": "cdk2",
+        "text": "T63"
+      }
+    ],
+    "relationship_type": "ACTIVATOR",
+    "relationship_group": "CPR:3",
+    "is_eval": "Y",
+    "label": "CPR:3"
+  },
+  {
+    "abstract_id": "10047461",
+    "abstract": "Cyclin E-cdk2 activation is associated with cell cycle arrest and inhibition of DNA replication induced by the thymidylate synthase inhibitor Tomudex. Tomudex (ZD1694) is a specific antifolate-based thymidylate synthase inhibitor active in a variety of solid tumor malignancies. Studies were carried out in vitro to evaluate downstream molecular alterations induced as a consequence of the potent and sustained inhibition of thymidylate synthase by Tomudex. Twenty-four hours following the initial 2-h treatment with Tomudex, human A253 head and neck squamous carcinoma cells, not expressing p53 and p21(WAF1), were accumulated with DNA content characteristic of early S phase of the cell cycle with a concomitant reduction of cells in G1 and G2/M phases. The changes in cyclin and cdk protein expression and their kinase activities were examined in control and drug-treated A253 cells. Tomudex treatment resulted in the decrease in p27(kip1) expression, with an increase in cyclin E and cdk2 protein expression and kinase activities 24 h after a 2-h exposure. Although cyclin A protein expression was markedly increased, cyclin A kinase activity was only slightly increased. Cyclin D1, cyclin B, cdk4, and cdc2 protein expression and kinase activities remain constant. Lack of activation of cyclin A- and B-cdc2 was associated with a reduced proportion of cells in G2/M phases. Increased cyclin E-cdk2 protein expression was accompanied by the inhibition of DNA synthesis, with a decrease in E2F-1 expression. These results propose that cyclin E-cdk2 kinase can negatively regulate DNA replication. The studies with dThyd rescue from cyclin E-cdk2 protein overexpression and growth inhibition by Tomudex indicate that increased cyclin E-cdk2 protein expression is associated with effective inhibition of thymidylate synthase and resultant dNTP pool imbalance. Provision of dThyd more than 24 h after exposure to Tomudex allowed cells to replicate DNA for a single cycle back to G1, but did not prevent the profound growth-inhibitory effect manifested in the following 5 days. Tomudex treatment resulted in a time-dependent induction of the megabase DNA fragments, followed by secondary 50- to 300-kb DNA fragmentation. The 50- to 300-kb DNA fragmentation may be derived from the inhibition of DNA synthesis associated with cyclin E-cdk2 activation. These results suggest that the megabase DNA fragmentation is induced as a consequence of inhibition of thymidylate synthase by Tomudex and kilobase DNA fragmentation may correlate with the reduction of p27(kip1) expression and the increase in cyclin E and cdk2 kinase activities. Activation of cyclin E and cdk2 kinases allows cells to transit from G1 to S phase accompanied by the inhibition of DNA synthesis. The changes in cell cycle regulatory proteins associated with growth inhibition and DNA damage by Tomudex are not p53 dependent.",
+    "participant1_id": "T7",
+    "participant1": {
+      "abstract_id": "10047461",
+      "id": "T7",
+      "entity_type": "CHEMICAL",
+      "charOffset": 2477,
+      "len": 7,
+      "entity_name": "Tomudex",
+      "text": "T7"
+    },
+    "participant2_id": "T40",
+    "participant2": {
+      "abstract_id": "10047461",
+      "id": "T40",
+      "entity_type": "GENE-Y",
+      "charOffset": 2606,
+      "len": 4,
+      "entity_name": "cdk2",
+      "text": "T40"
+    },
+    "annotations": [
+      {
+        "abstract_id": "10047461",
+        "id": "T1",
+        "entity_type": "CHEMICAL",
+        "charOffset": 151,
+        "len": 7,
+        "entity_name": "Tomudex",
+        "text": "T1"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T2",
+        "entity_type": "CHEMICAL",
+        "charOffset": 1697,
+        "len": 7,
+        "entity_name": "Tomudex",
+        "text": "T2"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T3",
+        "entity_type": "CHEMICAL",
+        "charOffset": 1805,
+        "len": 11,
+        "entity_name": "thymidylate",
+        "text": "T3"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T4",
+        "entity_type": "CHEMICAL",
+        "charOffset": 1913,
+        "len": 7,
+        "entity_name": "Tomudex",
+        "text": "T4"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T5",
+        "entity_type": "CHEMICAL",
+        "charOffset": 2077,
+        "len": 7,
+        "entity_name": "Tomudex",
+        "text": "T5"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T6",
+        "entity_type": "CHEMICAL",
+        "charOffset": 2453,
+        "len": 11,
+        "entity_name": "thymidylate",
+        "text": "T6"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T7",
+        "entity_type": "CHEMICAL",
+        "charOffset": 2477,
+        "len": 7,
+        "entity_name": "Tomudex",
+        "text": "T7"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T8",
+        "entity_type": "CHEMICAL",
+        "charOffset": 2859,
+        "len": 7,
+        "entity_name": "Tomudex",
+        "text": "T8"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T9",
+        "entity_type": "CHEMICAL",
+        "charOffset": 425,
+        "len": 11,
+        "entity_name": "thymidylate",
+        "text": "T9"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T10",
+        "entity_type": "CHEMICAL",
+        "charOffset": 449,
+        "len": 7,
+        "entity_name": "Tomudex",
+        "text": "T10"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T11",
+        "entity_type": "CHEMICAL",
+        "charOffset": 517,
+        "len": 7,
+        "entity_name": "Tomudex",
+        "text": "T11"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T12",
+        "entity_type": "CHEMICAL",
+        "charOffset": 199,
+        "len": 11,
+        "entity_name": "thymidylate",
+        "text": "T12"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T13",
+        "entity_type": "CHEMICAL",
+        "charOffset": 887,
+        "len": 7,
+        "entity_name": "Tomudex",
+        "text": "T13"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T14",
+        "entity_type": "CHEMICAL",
+        "charOffset": 160,
+        "len": 6,
+        "entity_name": "ZD1694",
+        "text": "T14"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T15",
+        "entity_type": "CHEMICAL",
+        "charOffset": 111,
+        "len": 11,
+        "entity_name": "thymidylate",
+        "text": "T15"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T16",
+        "entity_type": "CHEMICAL",
+        "charOffset": 142,
+        "len": 7,
+        "entity_name": "Tomudex",
+        "text": "T16"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T17",
+        "entity_type": "GENE-Y",
+        "charOffset": 1176,
+        "len": 9,
+        "entity_name": "Cyclin D1",
+        "text": "T17"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T18",
+        "entity_type": "GENE-Y",
+        "charOffset": 1187,
+        "len": 8,
+        "entity_name": "cyclin B",
+        "text": "T18"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T19",
+        "entity_type": "GENE-Y",
+        "charOffset": 1197,
+        "len": 4,
+        "entity_name": "cdk4",
+        "text": "T19"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T20",
+        "entity_type": "GENE-Y",
+        "charOffset": 1207,
+        "len": 4,
+        "entity_name": "cdc2",
+        "text": "T20"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T21",
+        "entity_type": "GENE-N",
+        "charOffset": 1235,
+        "len": 6,
+        "entity_name": "kinase",
+        "text": "T21"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T22",
+        "entity_type": "GENE-N",
+        "charOffset": 1292,
+        "len": 15,
+        "entity_name": "cyclin A- and B",
+        "text": "T22"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T23",
+        "entity_type": "GENE-Y",
+        "charOffset": 1308,
+        "len": 4,
+        "entity_name": "cdc2",
+        "text": "T23"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T24",
+        "entity_type": "GENE-Y",
+        "charOffset": 1389,
+        "len": 8,
+        "entity_name": "cyclin E",
+        "text": "T24"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T25",
+        "entity_type": "GENE-Y",
+        "charOffset": 1398,
+        "len": 4,
+        "entity_name": "cdk2",
+        "text": "T25"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T26",
+        "entity_type": "GENE-Y",
+        "charOffset": 1493,
+        "len": 5,
+        "entity_name": "E2F-1",
+        "text": "T26"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T27",
+        "entity_type": "GENE-Y",
+        "charOffset": 1538,
+        "len": 8,
+        "entity_name": "cyclin E",
+        "text": "T27"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T28",
+        "entity_type": "GENE-Y",
+        "charOffset": 1547,
+        "len": 4,
+        "entity_name": "cdk2",
+        "text": "T28"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T29",
+        "entity_type": "GENE-N",
+        "charOffset": 1552,
+        "len": 6,
+        "entity_name": "kinase",
+        "text": "T29"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T30",
+        "entity_type": "GENE-Y",
+        "charOffset": 1635,
+        "len": 8,
+        "entity_name": "cyclin E",
+        "text": "T30"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T31",
+        "entity_type": "GENE-Y",
+        "charOffset": 1644,
+        "len": 4,
+        "entity_name": "cdk2",
+        "text": "T31"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T32",
+        "entity_type": "GENE-Y",
+        "charOffset": 1729,
+        "len": 8,
+        "entity_name": "cyclin E",
+        "text": "T32"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T33",
+        "entity_type": "GENE-Y",
+        "charOffset": 1738,
+        "len": 4,
+        "entity_name": "cdk2",
+        "text": "T33"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T34",
+        "entity_type": "GENE-Y",
+        "charOffset": 1805,
+        "len": 20,
+        "entity_name": "thymidylate synthase",
+        "text": "T34"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T35",
+        "entity_type": "GENE-Y",
+        "charOffset": 2324,
+        "len": 8,
+        "entity_name": "cyclin E",
+        "text": "T35"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T36",
+        "entity_type": "GENE-Y",
+        "charOffset": 2333,
+        "len": 4,
+        "entity_name": "cdk2",
+        "text": "T36"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T37",
+        "entity_type": "GENE-Y",
+        "charOffset": 2453,
+        "len": 20,
+        "entity_name": "thymidylate synthase",
+        "text": "T37"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T38",
+        "entity_type": "GENE-Y",
+        "charOffset": 2552,
+        "len": 9,
+        "entity_name": "p27(kip1)",
+        "text": "T38"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T39",
+        "entity_type": "GENE-Y",
+        "charOffset": 2593,
+        "len": 8,
+        "entity_name": "cyclin E",
+        "text": "T39"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T40",
+        "entity_type": "GENE-Y",
+        "charOffset": 2606,
+        "len": 4,
+        "entity_name": "cdk2",
+        "text": "T40"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T41",
+        "entity_type": "GENE-N",
+        "charOffset": 2611,
+        "len": 6,
+        "entity_name": "kinase",
+        "text": "T41"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T42",
+        "entity_type": "GENE-Y",
+        "charOffset": 2644,
+        "len": 8,
+        "entity_name": "cyclin E",
+        "text": "T42"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T43",
+        "entity_type": "GENE-Y",
+        "charOffset": 2657,
+        "len": 4,
+        "entity_name": "cdk2",
+        "text": "T43"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T44",
+        "entity_type": "GENE-N",
+        "charOffset": 2662,
+        "len": 7,
+        "entity_name": "kinases",
+        "text": "T44"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T45",
+        "entity_type": "GENE-Y",
+        "charOffset": 2875,
+        "len": 3,
+        "entity_name": "p53",
+        "text": "T45"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T46",
+        "entity_type": "GENE-Y",
+        "charOffset": 425,
+        "len": 20,
+        "entity_name": "thymidylate synthase",
+        "text": "T46"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T47",
+        "entity_type": "GENE-Y",
+        "charOffset": 592,
+        "len": 3,
+        "entity_name": "p53",
+        "text": "T47"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T48",
+        "entity_type": "GENE-Y",
+        "charOffset": 600,
+        "len": 3,
+        "entity_name": "p21",
+        "text": "T48"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T49",
+        "entity_type": "GENE-Y",
+        "charOffset": 604,
+        "len": 4,
+        "entity_name": "WAF1",
+        "text": "T49"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T50",
+        "entity_type": "GENE-Y",
+        "charOffset": 199,
+        "len": 20,
+        "entity_name": "thymidylate synthase",
+        "text": "T50"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T51",
+        "entity_type": "GENE-N",
+        "charOffset": 771,
+        "len": 6,
+        "entity_name": "cyclin",
+        "text": "T51"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T52",
+        "entity_type": "GENE-N",
+        "charOffset": 782,
+        "len": 3,
+        "entity_name": "cdk",
+        "text": "T52"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T53",
+        "entity_type": "GENE-N",
+        "charOffset": 815,
+        "len": 6,
+        "entity_name": "kinase",
+        "text": "T53"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T54",
+        "entity_type": "GENE-Y",
+        "charOffset": 933,
+        "len": 9,
+        "entity_name": "p27(kip1)",
+        "text": "T54"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T55",
+        "entity_type": "GENE-Y",
+        "charOffset": 975,
+        "len": 8,
+        "entity_name": "cyclin E",
+        "text": "T55"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T56",
+        "entity_type": "GENE-Y",
+        "charOffset": 988,
+        "len": 4,
+        "entity_name": "cdk2",
+        "text": "T56"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T57",
+        "entity_type": "GENE-N",
+        "charOffset": 1016,
+        "len": 6,
+        "entity_name": "kinase",
+        "text": "T57"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T58",
+        "entity_type": "GENE-Y",
+        "charOffset": 1070,
+        "len": 8,
+        "entity_name": "cyclin A",
+        "text": "T58"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T59",
+        "entity_type": "GENE-Y",
+        "charOffset": 1122,
+        "len": 8,
+        "entity_name": "cyclin A",
+        "text": "T59"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T60",
+        "entity_type": "GENE-N",
+        "charOffset": 1131,
+        "len": 6,
+        "entity_name": "kinase",
+        "text": "T60"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T61",
+        "entity_type": "GENE-Y",
+        "charOffset": 0,
+        "len": 8,
+        "entity_name": "Cyclin E",
+        "text": "T61"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T62",
+        "entity_type": "GENE-Y",
+        "charOffset": 111,
+        "len": 20,
+        "entity_name": "thymidylate synthase",
+        "text": "T62"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T63",
+        "entity_type": "GENE-Y",
+        "charOffset": 9,
+        "len": 4,
+        "entity_name": "cdk2",
+        "text": "T63"
+      }
+    ],
+    "relationship_type": "ACTIVATOR",
+    "relationship_group": "CPR:3",
+    "is_eval": "Y",
+    "label": "CPR:3"
+  },
+  {
+    "abstract_id": "10047461",
+    "abstract": "Cyclin E-cdk2 activation is associated with cell cycle arrest and inhibition of DNA replication induced by the thymidylate synthase inhibitor Tomudex. Tomudex (ZD1694) is a specific antifolate-based thymidylate synthase inhibitor active in a variety of solid tumor malignancies. Studies were carried out in vitro to evaluate downstream molecular alterations induced as a consequence of the potent and sustained inhibition of thymidylate synthase by Tomudex. Twenty-four hours following the initial 2-h treatment with Tomudex, human A253 head and neck squamous carcinoma cells, not expressing p53 and p21(WAF1), were accumulated with DNA content characteristic of early S phase of the cell cycle with a concomitant reduction of cells in G1 and G2/M phases. The changes in cyclin and cdk protein expression and their kinase activities were examined in control and drug-treated A253 cells. Tomudex treatment resulted in the decrease in p27(kip1) expression, with an increase in cyclin E and cdk2 protein expression and kinase activities 24 h after a 2-h exposure. Although cyclin A protein expression was markedly increased, cyclin A kinase activity was only slightly increased. Cyclin D1, cyclin B, cdk4, and cdc2 protein expression and kinase activities remain constant. Lack of activation of cyclin A- and B-cdc2 was associated with a reduced proportion of cells in G2/M phases. Increased cyclin E-cdk2 protein expression was accompanied by the inhibition of DNA synthesis, with a decrease in E2F-1 expression. These results propose that cyclin E-cdk2 kinase can negatively regulate DNA replication. The studies with dThyd rescue from cyclin E-cdk2 protein overexpression and growth inhibition by Tomudex indicate that increased cyclin E-cdk2 protein expression is associated with effective inhibition of thymidylate synthase and resultant dNTP pool imbalance. Provision of dThyd more than 24 h after exposure to Tomudex allowed cells to replicate DNA for a single cycle back to G1, but did not prevent the profound growth-inhibitory effect manifested in the following 5 days. Tomudex treatment resulted in a time-dependent induction of the megabase DNA fragments, followed by secondary 50- to 300-kb DNA fragmentation. The 50- to 300-kb DNA fragmentation may be derived from the inhibition of DNA synthesis associated with cyclin E-cdk2 activation. These results suggest that the megabase DNA fragmentation is induced as a consequence of inhibition of thymidylate synthase by Tomudex and kilobase DNA fragmentation may correlate with the reduction of p27(kip1) expression and the increase in cyclin E and cdk2 kinase activities. Activation of cyclin E and cdk2 kinases allows cells to transit from G1 to S phase accompanied by the inhibition of DNA synthesis. The changes in cell cycle regulatory proteins associated with growth inhibition and DNA damage by Tomudex are not p53 dependent.",
+    "participant1_id": "T7",
+    "participant1": {
+      "abstract_id": "10047461",
+      "id": "T7",
+      "entity_type": "CHEMICAL",
+      "charOffset": 2477,
+      "len": 7,
+      "entity_name": "Tomudex",
+      "text": "T7"
+    },
+    "participant2_id": "T41",
+    "participant2": {
+      "abstract_id": "10047461",
+      "id": "T41",
+      "entity_type": "GENE-N",
+      "charOffset": 2611,
+      "len": 6,
+      "entity_name": "kinase",
+      "text": "T41"
+    },
+    "annotations": [
+      {
+        "abstract_id": "10047461",
+        "id": "T1",
+        "entity_type": "CHEMICAL",
+        "charOffset": 151,
+        "len": 7,
+        "entity_name": "Tomudex",
+        "text": "T1"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T2",
+        "entity_type": "CHEMICAL",
+        "charOffset": 1697,
+        "len": 7,
+        "entity_name": "Tomudex",
+        "text": "T2"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T3",
+        "entity_type": "CHEMICAL",
+        "charOffset": 1805,
+        "len": 11,
+        "entity_name": "thymidylate",
+        "text": "T3"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T4",
+        "entity_type": "CHEMICAL",
+        "charOffset": 1913,
+        "len": 7,
+        "entity_name": "Tomudex",
+        "text": "T4"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T5",
+        "entity_type": "CHEMICAL",
+        "charOffset": 2077,
+        "len": 7,
+        "entity_name": "Tomudex",
+        "text": "T5"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T6",
+        "entity_type": "CHEMICAL",
+        "charOffset": 2453,
+        "len": 11,
+        "entity_name": "thymidylate",
+        "text": "T6"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T7",
+        "entity_type": "CHEMICAL",
+        "charOffset": 2477,
+        "len": 7,
+        "entity_name": "Tomudex",
+        "text": "T7"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T8",
+        "entity_type": "CHEMICAL",
+        "charOffset": 2859,
+        "len": 7,
+        "entity_name": "Tomudex",
+        "text": "T8"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T9",
+        "entity_type": "CHEMICAL",
+        "charOffset": 425,
+        "len": 11,
+        "entity_name": "thymidylate",
+        "text": "T9"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T10",
+        "entity_type": "CHEMICAL",
+        "charOffset": 449,
+        "len": 7,
+        "entity_name": "Tomudex",
+        "text": "T10"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T11",
+        "entity_type": "CHEMICAL",
+        "charOffset": 517,
+        "len": 7,
+        "entity_name": "Tomudex",
+        "text": "T11"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T12",
+        "entity_type": "CHEMICAL",
+        "charOffset": 199,
+        "len": 11,
+        "entity_name": "thymidylate",
+        "text": "T12"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T13",
+        "entity_type": "CHEMICAL",
+        "charOffset": 887,
+        "len": 7,
+        "entity_name": "Tomudex",
+        "text": "T13"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T14",
+        "entity_type": "CHEMICAL",
+        "charOffset": 160,
+        "len": 6,
+        "entity_name": "ZD1694",
+        "text": "T14"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T15",
+        "entity_type": "CHEMICAL",
+        "charOffset": 111,
+        "len": 11,
+        "entity_name": "thymidylate",
+        "text": "T15"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T16",
+        "entity_type": "CHEMICAL",
+        "charOffset": 142,
+        "len": 7,
+        "entity_name": "Tomudex",
+        "text": "T16"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T17",
+        "entity_type": "GENE-Y",
+        "charOffset": 1176,
+        "len": 9,
+        "entity_name": "Cyclin D1",
+        "text": "T17"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T18",
+        "entity_type": "GENE-Y",
+        "charOffset": 1187,
+        "len": 8,
+        "entity_name": "cyclin B",
+        "text": "T18"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T19",
+        "entity_type": "GENE-Y",
+        "charOffset": 1197,
+        "len": 4,
+        "entity_name": "cdk4",
+        "text": "T19"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T20",
+        "entity_type": "GENE-Y",
+        "charOffset": 1207,
+        "len": 4,
+        "entity_name": "cdc2",
+        "text": "T20"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T21",
+        "entity_type": "GENE-N",
+        "charOffset": 1235,
+        "len": 6,
+        "entity_name": "kinase",
+        "text": "T21"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T22",
+        "entity_type": "GENE-N",
+        "charOffset": 1292,
+        "len": 15,
+        "entity_name": "cyclin A- and B",
+        "text": "T22"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T23",
+        "entity_type": "GENE-Y",
+        "charOffset": 1308,
+        "len": 4,
+        "entity_name": "cdc2",
+        "text": "T23"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T24",
+        "entity_type": "GENE-Y",
+        "charOffset": 1389,
+        "len": 8,
+        "entity_name": "cyclin E",
+        "text": "T24"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T25",
+        "entity_type": "GENE-Y",
+        "charOffset": 1398,
+        "len": 4,
+        "entity_name": "cdk2",
+        "text": "T25"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T26",
+        "entity_type": "GENE-Y",
+        "charOffset": 1493,
+        "len": 5,
+        "entity_name": "E2F-1",
+        "text": "T26"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T27",
+        "entity_type": "GENE-Y",
+        "charOffset": 1538,
+        "len": 8,
+        "entity_name": "cyclin E",
+        "text": "T27"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T28",
+        "entity_type": "GENE-Y",
+        "charOffset": 1547,
+        "len": 4,
+        "entity_name": "cdk2",
+        "text": "T28"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T29",
+        "entity_type": "GENE-N",
+        "charOffset": 1552,
+        "len": 6,
+        "entity_name": "kinase",
+        "text": "T29"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T30",
+        "entity_type": "GENE-Y",
+        "charOffset": 1635,
+        "len": 8,
+        "entity_name": "cyclin E",
+        "text": "T30"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T31",
+        "entity_type": "GENE-Y",
+        "charOffset": 1644,
+        "len": 4,
+        "entity_name": "cdk2",
+        "text": "T31"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T32",
+        "entity_type": "GENE-Y",
+        "charOffset": 1729,
+        "len": 8,
+        "entity_name": "cyclin E",
+        "text": "T32"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T33",
+        "entity_type": "GENE-Y",
+        "charOffset": 1738,
+        "len": 4,
+        "entity_name": "cdk2",
+        "text": "T33"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T34",
+        "entity_type": "GENE-Y",
+        "charOffset": 1805,
+        "len": 20,
+        "entity_name": "thymidylate synthase",
+        "text": "T34"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T35",
+        "entity_type": "GENE-Y",
+        "charOffset": 2324,
+        "len": 8,
+        "entity_name": "cyclin E",
+        "text": "T35"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T36",
+        "entity_type": "GENE-Y",
+        "charOffset": 2333,
+        "len": 4,
+        "entity_name": "cdk2",
+        "text": "T36"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T37",
+        "entity_type": "GENE-Y",
+        "charOffset": 2453,
+        "len": 20,
+        "entity_name": "thymidylate synthase",
+        "text": "T37"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T38",
+        "entity_type": "GENE-Y",
+        "charOffset": 2552,
+        "len": 9,
+        "entity_name": "p27(kip1)",
+        "text": "T38"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T39",
+        "entity_type": "GENE-Y",
+        "charOffset": 2593,
+        "len": 8,
+        "entity_name": "cyclin E",
+        "text": "T39"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T40",
+        "entity_type": "GENE-Y",
+        "charOffset": 2606,
+        "len": 4,
+        "entity_name": "cdk2",
+        "text": "T40"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T41",
+        "entity_type": "GENE-N",
+        "charOffset": 2611,
+        "len": 6,
+        "entity_name": "kinase",
+        "text": "T41"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T42",
+        "entity_type": "GENE-Y",
+        "charOffset": 2644,
+        "len": 8,
+        "entity_name": "cyclin E",
+        "text": "T42"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T43",
+        "entity_type": "GENE-Y",
+        "charOffset": 2657,
+        "len": 4,
+        "entity_name": "cdk2",
+        "text": "T43"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T44",
+        "entity_type": "GENE-N",
+        "charOffset": 2662,
+        "len": 7,
+        "entity_name": "kinases",
+        "text": "T44"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T45",
+        "entity_type": "GENE-Y",
+        "charOffset": 2875,
+        "len": 3,
+        "entity_name": "p53",
+        "text": "T45"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T46",
+        "entity_type": "GENE-Y",
+        "charOffset": 425,
+        "len": 20,
+        "entity_name": "thymidylate synthase",
+        "text": "T46"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T47",
+        "entity_type": "GENE-Y",
+        "charOffset": 592,
+        "len": 3,
+        "entity_name": "p53",
+        "text": "T47"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T48",
+        "entity_type": "GENE-Y",
+        "charOffset": 600,
+        "len": 3,
+        "entity_name": "p21",
+        "text": "T48"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T49",
+        "entity_type": "GENE-Y",
+        "charOffset": 604,
+        "len": 4,
+        "entity_name": "WAF1",
+        "text": "T49"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T50",
+        "entity_type": "GENE-Y",
+        "charOffset": 199,
+        "len": 20,
+        "entity_name": "thymidylate synthase",
+        "text": "T50"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T51",
+        "entity_type": "GENE-N",
+        "charOffset": 771,
+        "len": 6,
+        "entity_name": "cyclin",
+        "text": "T51"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T52",
+        "entity_type": "GENE-N",
+        "charOffset": 782,
+        "len": 3,
+        "entity_name": "cdk",
+        "text": "T52"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T53",
+        "entity_type": "GENE-N",
+        "charOffset": 815,
+        "len": 6,
+        "entity_name": "kinase",
+        "text": "T53"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T54",
+        "entity_type": "GENE-Y",
+        "charOffset": 933,
+        "len": 9,
+        "entity_name": "p27(kip1)",
+        "text": "T54"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T55",
+        "entity_type": "GENE-Y",
+        "charOffset": 975,
+        "len": 8,
+        "entity_name": "cyclin E",
+        "text": "T55"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T56",
+        "entity_type": "GENE-Y",
+        "charOffset": 988,
+        "len": 4,
+        "entity_name": "cdk2",
+        "text": "T56"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T57",
+        "entity_type": "GENE-N",
+        "charOffset": 1016,
+        "len": 6,
+        "entity_name": "kinase",
+        "text": "T57"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T58",
+        "entity_type": "GENE-Y",
+        "charOffset": 1070,
+        "len": 8,
+        "entity_name": "cyclin A",
+        "text": "T58"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T59",
+        "entity_type": "GENE-Y",
+        "charOffset": 1122,
+        "len": 8,
+        "entity_name": "cyclin A",
+        "text": "T59"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T60",
+        "entity_type": "GENE-N",
+        "charOffset": 1131,
+        "len": 6,
+        "entity_name": "kinase",
+        "text": "T60"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T61",
+        "entity_type": "GENE-Y",
+        "charOffset": 0,
+        "len": 8,
+        "entity_name": "Cyclin E",
+        "text": "T61"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T62",
+        "entity_type": "GENE-Y",
+        "charOffset": 111,
+        "len": 20,
+        "entity_name": "thymidylate synthase",
+        "text": "T62"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T63",
+        "entity_type": "GENE-Y",
+        "charOffset": 9,
+        "len": 4,
+        "entity_name": "cdk2",
+        "text": "T63"
+      }
+    ],
+    "relationship_type": "ACTIVATOR",
+    "relationship_group": "CPR:3",
+    "is_eval": "Y",
+    "label": "CPR:3"
+  },
+  {
+    "abstract_id": "10047461",
+    "abstract": "Cyclin E-cdk2 activation is associated with cell cycle arrest and inhibition of DNA replication induced by the thymidylate synthase inhibitor Tomudex. Tomudex (ZD1694) is a specific antifolate-based thymidylate synthase inhibitor active in a variety of solid tumor malignancies. Studies were carried out in vitro to evaluate downstream molecular alterations induced as a consequence of the potent and sustained inhibition of thymidylate synthase by Tomudex. Twenty-four hours following the initial 2-h treatment with Tomudex, human A253 head and neck squamous carcinoma cells, not expressing p53 and p21(WAF1), were accumulated with DNA content characteristic of early S phase of the cell cycle with a concomitant reduction of cells in G1 and G2/M phases. The changes in cyclin and cdk protein expression and their kinase activities were examined in control and drug-treated A253 cells. Tomudex treatment resulted in the decrease in p27(kip1) expression, with an increase in cyclin E and cdk2 protein expression and kinase activities 24 h after a 2-h exposure. Although cyclin A protein expression was markedly increased, cyclin A kinase activity was only slightly increased. Cyclin D1, cyclin B, cdk4, and cdc2 protein expression and kinase activities remain constant. Lack of activation of cyclin A- and B-cdc2 was associated with a reduced proportion of cells in G2/M phases. Increased cyclin E-cdk2 protein expression was accompanied by the inhibition of DNA synthesis, with a decrease in E2F-1 expression. These results propose that cyclin E-cdk2 kinase can negatively regulate DNA replication. The studies with dThyd rescue from cyclin E-cdk2 protein overexpression and growth inhibition by Tomudex indicate that increased cyclin E-cdk2 protein expression is associated with effective inhibition of thymidylate synthase and resultant dNTP pool imbalance. Provision of dThyd more than 24 h after exposure to Tomudex allowed cells to replicate DNA for a single cycle back to G1, but did not prevent the profound growth-inhibitory effect manifested in the following 5 days. Tomudex treatment resulted in a time-dependent induction of the megabase DNA fragments, followed by secondary 50- to 300-kb DNA fragmentation. The 50- to 300-kb DNA fragmentation may be derived from the inhibition of DNA synthesis associated with cyclin E-cdk2 activation. These results suggest that the megabase DNA fragmentation is induced as a consequence of inhibition of thymidylate synthase by Tomudex and kilobase DNA fragmentation may correlate with the reduction of p27(kip1) expression and the increase in cyclin E and cdk2 kinase activities. Activation of cyclin E and cdk2 kinases allows cells to transit from G1 to S phase accompanied by the inhibition of DNA synthesis. The changes in cell cycle regulatory proteins associated with growth inhibition and DNA damage by Tomudex are not p53 dependent.",
+    "participant1_id": "T13",
+    "participant1": {
+      "abstract_id": "10047461",
+      "id": "T13",
+      "entity_type": "CHEMICAL",
+      "charOffset": 887,
+      "len": 7,
+      "entity_name": "Tomudex",
+      "text": "T13"
+    },
+    "participant2_id": "T55",
+    "participant2": {
+      "abstract_id": "10047461",
+      "id": "T55",
+      "entity_type": "GENE-Y",
+      "charOffset": 975,
+      "len": 8,
+      "entity_name": "cyclin E",
+      "text": "T55"
+    },
+    "annotations": [
+      {
+        "abstract_id": "10047461",
+        "id": "T1",
+        "entity_type": "CHEMICAL",
+        "charOffset": 151,
+        "len": 7,
+        "entity_name": "Tomudex",
+        "text": "T1"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T2",
+        "entity_type": "CHEMICAL",
+        "charOffset": 1697,
+        "len": 7,
+        "entity_name": "Tomudex",
+        "text": "T2"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T3",
+        "entity_type": "CHEMICAL",
+        "charOffset": 1805,
+        "len": 11,
+        "entity_name": "thymidylate",
+        "text": "T3"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T4",
+        "entity_type": "CHEMICAL",
+        "charOffset": 1913,
+        "len": 7,
+        "entity_name": "Tomudex",
+        "text": "T4"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T5",
+        "entity_type": "CHEMICAL",
+        "charOffset": 2077,
+        "len": 7,
+        "entity_name": "Tomudex",
+        "text": "T5"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T6",
+        "entity_type": "CHEMICAL",
+        "charOffset": 2453,
+        "len": 11,
+        "entity_name": "thymidylate",
+        "text": "T6"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T7",
+        "entity_type": "CHEMICAL",
+        "charOffset": 2477,
+        "len": 7,
+        "entity_name": "Tomudex",
+        "text": "T7"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T8",
+        "entity_type": "CHEMICAL",
+        "charOffset": 2859,
+        "len": 7,
+        "entity_name": "Tomudex",
+        "text": "T8"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T9",
+        "entity_type": "CHEMICAL",
+        "charOffset": 425,
+        "len": 11,
+        "entity_name": "thymidylate",
+        "text": "T9"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T10",
+        "entity_type": "CHEMICAL",
+        "charOffset": 449,
+        "len": 7,
+        "entity_name": "Tomudex",
+        "text": "T10"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T11",
+        "entity_type": "CHEMICAL",
+        "charOffset": 517,
+        "len": 7,
+        "entity_name": "Tomudex",
+        "text": "T11"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T12",
+        "entity_type": "CHEMICAL",
+        "charOffset": 199,
+        "len": 11,
+        "entity_name": "thymidylate",
+        "text": "T12"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T13",
+        "entity_type": "CHEMICAL",
+        "charOffset": 887,
+        "len": 7,
+        "entity_name": "Tomudex",
+        "text": "T13"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T14",
+        "entity_type": "CHEMICAL",
+        "charOffset": 160,
+        "len": 6,
+        "entity_name": "ZD1694",
+        "text": "T14"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T15",
+        "entity_type": "CHEMICAL",
+        "charOffset": 111,
+        "len": 11,
+        "entity_name": "thymidylate",
+        "text": "T15"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T16",
+        "entity_type": "CHEMICAL",
+        "charOffset": 142,
+        "len": 7,
+        "entity_name": "Tomudex",
+        "text": "T16"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T17",
+        "entity_type": "GENE-Y",
+        "charOffset": 1176,
+        "len": 9,
+        "entity_name": "Cyclin D1",
+        "text": "T17"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T18",
+        "entity_type": "GENE-Y",
+        "charOffset": 1187,
+        "len": 8,
+        "entity_name": "cyclin B",
+        "text": "T18"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T19",
+        "entity_type": "GENE-Y",
+        "charOffset": 1197,
+        "len": 4,
+        "entity_name": "cdk4",
+        "text": "T19"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T20",
+        "entity_type": "GENE-Y",
+        "charOffset": 1207,
+        "len": 4,
+        "entity_name": "cdc2",
+        "text": "T20"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T21",
+        "entity_type": "GENE-N",
+        "charOffset": 1235,
+        "len": 6,
+        "entity_name": "kinase",
+        "text": "T21"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T22",
+        "entity_type": "GENE-N",
+        "charOffset": 1292,
+        "len": 15,
+        "entity_name": "cyclin A- and B",
+        "text": "T22"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T23",
+        "entity_type": "GENE-Y",
+        "charOffset": 1308,
+        "len": 4,
+        "entity_name": "cdc2",
+        "text": "T23"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T24",
+        "entity_type": "GENE-Y",
+        "charOffset": 1389,
+        "len": 8,
+        "entity_name": "cyclin E",
+        "text": "T24"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T25",
+        "entity_type": "GENE-Y",
+        "charOffset": 1398,
+        "len": 4,
+        "entity_name": "cdk2",
+        "text": "T25"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T26",
+        "entity_type": "GENE-Y",
+        "charOffset": 1493,
+        "len": 5,
+        "entity_name": "E2F-1",
+        "text": "T26"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T27",
+        "entity_type": "GENE-Y",
+        "charOffset": 1538,
+        "len": 8,
+        "entity_name": "cyclin E",
+        "text": "T27"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T28",
+        "entity_type": "GENE-Y",
+        "charOffset": 1547,
+        "len": 4,
+        "entity_name": "cdk2",
+        "text": "T28"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T29",
+        "entity_type": "GENE-N",
+        "charOffset": 1552,
+        "len": 6,
+        "entity_name": "kinase",
+        "text": "T29"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T30",
+        "entity_type": "GENE-Y",
+        "charOffset": 1635,
+        "len": 8,
+        "entity_name": "cyclin E",
+        "text": "T30"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T31",
+        "entity_type": "GENE-Y",
+        "charOffset": 1644,
+        "len": 4,
+        "entity_name": "cdk2",
+        "text": "T31"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T32",
+        "entity_type": "GENE-Y",
+        "charOffset": 1729,
+        "len": 8,
+        "entity_name": "cyclin E",
+        "text": "T32"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T33",
+        "entity_type": "GENE-Y",
+        "charOffset": 1738,
+        "len": 4,
+        "entity_name": "cdk2",
+        "text": "T33"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T34",
+        "entity_type": "GENE-Y",
+        "charOffset": 1805,
+        "len": 20,
+        "entity_name": "thymidylate synthase",
+        "text": "T34"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T35",
+        "entity_type": "GENE-Y",
+        "charOffset": 2324,
+        "len": 8,
+        "entity_name": "cyclin E",
+        "text": "T35"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T36",
+        "entity_type": "GENE-Y",
+        "charOffset": 2333,
+        "len": 4,
+        "entity_name": "cdk2",
+        "text": "T36"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T37",
+        "entity_type": "GENE-Y",
+        "charOffset": 2453,
+        "len": 20,
+        "entity_name": "thymidylate synthase",
+        "text": "T37"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T38",
+        "entity_type": "GENE-Y",
+        "charOffset": 2552,
+        "len": 9,
+        "entity_name": "p27(kip1)",
+        "text": "T38"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T39",
+        "entity_type": "GENE-Y",
+        "charOffset": 2593,
+        "len": 8,
+        "entity_name": "cyclin E",
+        "text": "T39"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T40",
+        "entity_type": "GENE-Y",
+        "charOffset": 2606,
+        "len": 4,
+        "entity_name": "cdk2",
+        "text": "T40"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T41",
+        "entity_type": "GENE-N",
+        "charOffset": 2611,
+        "len": 6,
+        "entity_name": "kinase",
+        "text": "T41"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T42",
+        "entity_type": "GENE-Y",
+        "charOffset": 2644,
+        "len": 8,
+        "entity_name": "cyclin E",
+        "text": "T42"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T43",
+        "entity_type": "GENE-Y",
+        "charOffset": 2657,
+        "len": 4,
+        "entity_name": "cdk2",
+        "text": "T43"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T44",
+        "entity_type": "GENE-N",
+        "charOffset": 2662,
+        "len": 7,
+        "entity_name": "kinases",
+        "text": "T44"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T45",
+        "entity_type": "GENE-Y",
+        "charOffset": 2875,
+        "len": 3,
+        "entity_name": "p53",
+        "text": "T45"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T46",
+        "entity_type": "GENE-Y",
+        "charOffset": 425,
+        "len": 20,
+        "entity_name": "thymidylate synthase",
+        "text": "T46"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T47",
+        "entity_type": "GENE-Y",
+        "charOffset": 592,
+        "len": 3,
+        "entity_name": "p53",
+        "text": "T47"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T48",
+        "entity_type": "GENE-Y",
+        "charOffset": 600,
+        "len": 3,
+        "entity_name": "p21",
+        "text": "T48"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T49",
+        "entity_type": "GENE-Y",
+        "charOffset": 604,
+        "len": 4,
+        "entity_name": "WAF1",
+        "text": "T49"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T50",
+        "entity_type": "GENE-Y",
+        "charOffset": 199,
+        "len": 20,
+        "entity_name": "thymidylate synthase",
+        "text": "T50"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T51",
+        "entity_type": "GENE-N",
+        "charOffset": 771,
+        "len": 6,
+        "entity_name": "cyclin",
+        "text": "T51"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T52",
+        "entity_type": "GENE-N",
+        "charOffset": 782,
+        "len": 3,
+        "entity_name": "cdk",
+        "text": "T52"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T53",
+        "entity_type": "GENE-N",
+        "charOffset": 815,
+        "len": 6,
+        "entity_name": "kinase",
+        "text": "T53"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T54",
+        "entity_type": "GENE-Y",
+        "charOffset": 933,
+        "len": 9,
+        "entity_name": "p27(kip1)",
+        "text": "T54"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T55",
+        "entity_type": "GENE-Y",
+        "charOffset": 975,
+        "len": 8,
+        "entity_name": "cyclin E",
+        "text": "T55"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T56",
+        "entity_type": "GENE-Y",
+        "charOffset": 988,
+        "len": 4,
+        "entity_name": "cdk2",
+        "text": "T56"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T57",
+        "entity_type": "GENE-N",
+        "charOffset": 1016,
+        "len": 6,
+        "entity_name": "kinase",
+        "text": "T57"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T58",
+        "entity_type": "GENE-Y",
+        "charOffset": 1070,
+        "len": 8,
+        "entity_name": "cyclin A",
+        "text": "T58"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T59",
+        "entity_type": "GENE-Y",
+        "charOffset": 1122,
+        "len": 8,
+        "entity_name": "cyclin A",
+        "text": "T59"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T60",
+        "entity_type": "GENE-N",
+        "charOffset": 1131,
+        "len": 6,
+        "entity_name": "kinase",
+        "text": "T60"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T61",
+        "entity_type": "GENE-Y",
+        "charOffset": 0,
+        "len": 8,
+        "entity_name": "Cyclin E",
+        "text": "T61"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T62",
+        "entity_type": "GENE-Y",
+        "charOffset": 111,
+        "len": 20,
+        "entity_name": "thymidylate synthase",
+        "text": "T62"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T63",
+        "entity_type": "GENE-Y",
+        "charOffset": 9,
+        "len": 4,
+        "entity_name": "cdk2",
+        "text": "T63"
+      }
+    ],
+    "relationship_type": "INDIRECT-UPREGULATOR",
+    "relationship_group": "CPR:3",
+    "is_eval": "Y",
+    "label": "CPR:3"
+  },
+  {
+    "abstract_id": "10047461",
+    "abstract": "Cyclin E-cdk2 activation is associated with cell cycle arrest and inhibition of DNA replication induced by the thymidylate synthase inhibitor Tomudex. Tomudex (ZD1694) is a specific antifolate-based thymidylate synthase inhibitor active in a variety of solid tumor malignancies. Studies were carried out in vitro to evaluate downstream molecular alterations induced as a consequence of the potent and sustained inhibition of thymidylate synthase by Tomudex. Twenty-four hours following the initial 2-h treatment with Tomudex, human A253 head and neck squamous carcinoma cells, not expressing p53 and p21(WAF1), were accumulated with DNA content characteristic of early S phase of the cell cycle with a concomitant reduction of cells in G1 and G2/M phases. The changes in cyclin and cdk protein expression and their kinase activities were examined in control and drug-treated A253 cells. Tomudex treatment resulted in the decrease in p27(kip1) expression, with an increase in cyclin E and cdk2 protein expression and kinase activities 24 h after a 2-h exposure. Although cyclin A protein expression was markedly increased, cyclin A kinase activity was only slightly increased. Cyclin D1, cyclin B, cdk4, and cdc2 protein expression and kinase activities remain constant. Lack of activation of cyclin A- and B-cdc2 was associated with a reduced proportion of cells in G2/M phases. Increased cyclin E-cdk2 protein expression was accompanied by the inhibition of DNA synthesis, with a decrease in E2F-1 expression. These results propose that cyclin E-cdk2 kinase can negatively regulate DNA replication. The studies with dThyd rescue from cyclin E-cdk2 protein overexpression and growth inhibition by Tomudex indicate that increased cyclin E-cdk2 protein expression is associated with effective inhibition of thymidylate synthase and resultant dNTP pool imbalance. Provision of dThyd more than 24 h after exposure to Tomudex allowed cells to replicate DNA for a single cycle back to G1, but did not prevent the profound growth-inhibitory effect manifested in the following 5 days. Tomudex treatment resulted in a time-dependent induction of the megabase DNA fragments, followed by secondary 50- to 300-kb DNA fragmentation. The 50- to 300-kb DNA fragmentation may be derived from the inhibition of DNA synthesis associated with cyclin E-cdk2 activation. These results suggest that the megabase DNA fragmentation is induced as a consequence of inhibition of thymidylate synthase by Tomudex and kilobase DNA fragmentation may correlate with the reduction of p27(kip1) expression and the increase in cyclin E and cdk2 kinase activities. Activation of cyclin E and cdk2 kinases allows cells to transit from G1 to S phase accompanied by the inhibition of DNA synthesis. The changes in cell cycle regulatory proteins associated with growth inhibition and DNA damage by Tomudex are not p53 dependent.",
+    "participant1_id": "T13",
+    "participant1": {
+      "abstract_id": "10047461",
+      "id": "T13",
+      "entity_type": "CHEMICAL",
+      "charOffset": 887,
+      "len": 7,
+      "entity_name": "Tomudex",
+      "text": "T13"
+    },
+    "participant2_id": "T56",
+    "participant2": {
+      "abstract_id": "10047461",
+      "id": "T56",
+      "entity_type": "GENE-Y",
+      "charOffset": 988,
+      "len": 4,
+      "entity_name": "cdk2",
+      "text": "T56"
+    },
+    "annotations": [
+      {
+        "abstract_id": "10047461",
+        "id": "T1",
+        "entity_type": "CHEMICAL",
+        "charOffset": 151,
+        "len": 7,
+        "entity_name": "Tomudex",
+        "text": "T1"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T2",
+        "entity_type": "CHEMICAL",
+        "charOffset": 1697,
+        "len": 7,
+        "entity_name": "Tomudex",
+        "text": "T2"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T3",
+        "entity_type": "CHEMICAL",
+        "charOffset": 1805,
+        "len": 11,
+        "entity_name": "thymidylate",
+        "text": "T3"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T4",
+        "entity_type": "CHEMICAL",
+        "charOffset": 1913,
+        "len": 7,
+        "entity_name": "Tomudex",
+        "text": "T4"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T5",
+        "entity_type": "CHEMICAL",
+        "charOffset": 2077,
+        "len": 7,
+        "entity_name": "Tomudex",
+        "text": "T5"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T6",
+        "entity_type": "CHEMICAL",
+        "charOffset": 2453,
+        "len": 11,
+        "entity_name": "thymidylate",
+        "text": "T6"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T7",
+        "entity_type": "CHEMICAL",
+        "charOffset": 2477,
+        "len": 7,
+        "entity_name": "Tomudex",
+        "text": "T7"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T8",
+        "entity_type": "CHEMICAL",
+        "charOffset": 2859,
+        "len": 7,
+        "entity_name": "Tomudex",
+        "text": "T8"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T9",
+        "entity_type": "CHEMICAL",
+        "charOffset": 425,
+        "len": 11,
+        "entity_name": "thymidylate",
+        "text": "T9"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T10",
+        "entity_type": "CHEMICAL",
+        "charOffset": 449,
+        "len": 7,
+        "entity_name": "Tomudex",
+        "text": "T10"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T11",
+        "entity_type": "CHEMICAL",
+        "charOffset": 517,
+        "len": 7,
+        "entity_name": "Tomudex",
+        "text": "T11"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T12",
+        "entity_type": "CHEMICAL",
+        "charOffset": 199,
+        "len": 11,
+        "entity_name": "thymidylate",
+        "text": "T12"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T13",
+        "entity_type": "CHEMICAL",
+        "charOffset": 887,
+        "len": 7,
+        "entity_name": "Tomudex",
+        "text": "T13"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T14",
+        "entity_type": "CHEMICAL",
+        "charOffset": 160,
+        "len": 6,
+        "entity_name": "ZD1694",
+        "text": "T14"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T15",
+        "entity_type": "CHEMICAL",
+        "charOffset": 111,
+        "len": 11,
+        "entity_name": "thymidylate",
+        "text": "T15"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T16",
+        "entity_type": "CHEMICAL",
+        "charOffset": 142,
+        "len": 7,
+        "entity_name": "Tomudex",
+        "text": "T16"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T17",
+        "entity_type": "GENE-Y",
+        "charOffset": 1176,
+        "len": 9,
+        "entity_name": "Cyclin D1",
+        "text": "T17"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T18",
+        "entity_type": "GENE-Y",
+        "charOffset": 1187,
+        "len": 8,
+        "entity_name": "cyclin B",
+        "text": "T18"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T19",
+        "entity_type": "GENE-Y",
+        "charOffset": 1197,
+        "len": 4,
+        "entity_name": "cdk4",
+        "text": "T19"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T20",
+        "entity_type": "GENE-Y",
+        "charOffset": 1207,
+        "len": 4,
+        "entity_name": "cdc2",
+        "text": "T20"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T21",
+        "entity_type": "GENE-N",
+        "charOffset": 1235,
+        "len": 6,
+        "entity_name": "kinase",
+        "text": "T21"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T22",
+        "entity_type": "GENE-N",
+        "charOffset": 1292,
+        "len": 15,
+        "entity_name": "cyclin A- and B",
+        "text": "T22"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T23",
+        "entity_type": "GENE-Y",
+        "charOffset": 1308,
+        "len": 4,
+        "entity_name": "cdc2",
+        "text": "T23"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T24",
+        "entity_type": "GENE-Y",
+        "charOffset": 1389,
+        "len": 8,
+        "entity_name": "cyclin E",
+        "text": "T24"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T25",
+        "entity_type": "GENE-Y",
+        "charOffset": 1398,
+        "len": 4,
+        "entity_name": "cdk2",
+        "text": "T25"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T26",
+        "entity_type": "GENE-Y",
+        "charOffset": 1493,
+        "len": 5,
+        "entity_name": "E2F-1",
+        "text": "T26"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T27",
+        "entity_type": "GENE-Y",
+        "charOffset": 1538,
+        "len": 8,
+        "entity_name": "cyclin E",
+        "text": "T27"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T28",
+        "entity_type": "GENE-Y",
+        "charOffset": 1547,
+        "len": 4,
+        "entity_name": "cdk2",
+        "text": "T28"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T29",
+        "entity_type": "GENE-N",
+        "charOffset": 1552,
+        "len": 6,
+        "entity_name": "kinase",
+        "text": "T29"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T30",
+        "entity_type": "GENE-Y",
+        "charOffset": 1635,
+        "len": 8,
+        "entity_name": "cyclin E",
+        "text": "T30"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T31",
+        "entity_type": "GENE-Y",
+        "charOffset": 1644,
+        "len": 4,
+        "entity_name": "cdk2",
+        "text": "T31"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T32",
+        "entity_type": "GENE-Y",
+        "charOffset": 1729,
+        "len": 8,
+        "entity_name": "cyclin E",
+        "text": "T32"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T33",
+        "entity_type": "GENE-Y",
+        "charOffset": 1738,
+        "len": 4,
+        "entity_name": "cdk2",
+        "text": "T33"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T34",
+        "entity_type": "GENE-Y",
+        "charOffset": 1805,
+        "len": 20,
+        "entity_name": "thymidylate synthase",
+        "text": "T34"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T35",
+        "entity_type": "GENE-Y",
+        "charOffset": 2324,
+        "len": 8,
+        "entity_name": "cyclin E",
+        "text": "T35"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T36",
+        "entity_type": "GENE-Y",
+        "charOffset": 2333,
+        "len": 4,
+        "entity_name": "cdk2",
+        "text": "T36"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T37",
+        "entity_type": "GENE-Y",
+        "charOffset": 2453,
+        "len": 20,
+        "entity_name": "thymidylate synthase",
+        "text": "T37"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T38",
+        "entity_type": "GENE-Y",
+        "charOffset": 2552,
+        "len": 9,
+        "entity_name": "p27(kip1)",
+        "text": "T38"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T39",
+        "entity_type": "GENE-Y",
+        "charOffset": 2593,
+        "len": 8,
+        "entity_name": "cyclin E",
+        "text": "T39"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T40",
+        "entity_type": "GENE-Y",
+        "charOffset": 2606,
+        "len": 4,
+        "entity_name": "cdk2",
+        "text": "T40"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T41",
+        "entity_type": "GENE-N",
+        "charOffset": 2611,
+        "len": 6,
+        "entity_name": "kinase",
+        "text": "T41"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T42",
+        "entity_type": "GENE-Y",
+        "charOffset": 2644,
+        "len": 8,
+        "entity_name": "cyclin E",
+        "text": "T42"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T43",
+        "entity_type": "GENE-Y",
+        "charOffset": 2657,
+        "len": 4,
+        "entity_name": "cdk2",
+        "text": "T43"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T44",
+        "entity_type": "GENE-N",
+        "charOffset": 2662,
+        "len": 7,
+        "entity_name": "kinases",
+        "text": "T44"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T45",
+        "entity_type": "GENE-Y",
+        "charOffset": 2875,
+        "len": 3,
+        "entity_name": "p53",
+        "text": "T45"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T46",
+        "entity_type": "GENE-Y",
+        "charOffset": 425,
+        "len": 20,
+        "entity_name": "thymidylate synthase",
+        "text": "T46"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T47",
+        "entity_type": "GENE-Y",
+        "charOffset": 592,
+        "len": 3,
+        "entity_name": "p53",
+        "text": "T47"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T48",
+        "entity_type": "GENE-Y",
+        "charOffset": 600,
+        "len": 3,
+        "entity_name": "p21",
+        "text": "T48"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T49",
+        "entity_type": "GENE-Y",
+        "charOffset": 604,
+        "len": 4,
+        "entity_name": "WAF1",
+        "text": "T49"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T50",
+        "entity_type": "GENE-Y",
+        "charOffset": 199,
+        "len": 20,
+        "entity_name": "thymidylate synthase",
+        "text": "T50"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T51",
+        "entity_type": "GENE-N",
+        "charOffset": 771,
+        "len": 6,
+        "entity_name": "cyclin",
+        "text": "T51"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T52",
+        "entity_type": "GENE-N",
+        "charOffset": 782,
+        "len": 3,
+        "entity_name": "cdk",
+        "text": "T52"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T53",
+        "entity_type": "GENE-N",
+        "charOffset": 815,
+        "len": 6,
+        "entity_name": "kinase",
+        "text": "T53"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T54",
+        "entity_type": "GENE-Y",
+        "charOffset": 933,
+        "len": 9,
+        "entity_name": "p27(kip1)",
+        "text": "T54"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T55",
+        "entity_type": "GENE-Y",
+        "charOffset": 975,
+        "len": 8,
+        "entity_name": "cyclin E",
+        "text": "T55"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T56",
+        "entity_type": "GENE-Y",
+        "charOffset": 988,
+        "len": 4,
+        "entity_name": "cdk2",
+        "text": "T56"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T57",
+        "entity_type": "GENE-N",
+        "charOffset": 1016,
+        "len": 6,
+        "entity_name": "kinase",
+        "text": "T57"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T58",
+        "entity_type": "GENE-Y",
+        "charOffset": 1070,
+        "len": 8,
+        "entity_name": "cyclin A",
+        "text": "T58"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T59",
+        "entity_type": "GENE-Y",
+        "charOffset": 1122,
+        "len": 8,
+        "entity_name": "cyclin A",
+        "text": "T59"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T60",
+        "entity_type": "GENE-N",
+        "charOffset": 1131,
+        "len": 6,
+        "entity_name": "kinase",
+        "text": "T60"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T61",
+        "entity_type": "GENE-Y",
+        "charOffset": 0,
+        "len": 8,
+        "entity_name": "Cyclin E",
+        "text": "T61"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T62",
+        "entity_type": "GENE-Y",
+        "charOffset": 111,
+        "len": 20,
+        "entity_name": "thymidylate synthase",
+        "text": "T62"
+      },
+      {
+        "abstract_id": "10047461",
+        "id": "T63",
+        "entity_type": "GENE-Y",
+        "charOffset": 9,
+        "len": 4,
+        "entity_name": "cdk2",
+        "text": "T63"
+      }
+    ],
+    "relationship_type": "INDIRECT-UPREGULATOR",
+    "relationship_group": "CPR:3",
+    "is_eval": "Y",
+    "label": "CPR:3"
+  }
+]
