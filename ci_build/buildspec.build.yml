@@ -36,8 +36,8 @@ phases:
       - mkdir -p $TESTREPORTDIR
       - bash ci_build/run_tests.sh testenv $TESTREPORTDIR/report.xml
       - bash ci_build/cdk_validate_cfn.sh $cdkartifactprefix$(date +%Y%m%d%H%M%s)
-
       # Build docker
+      - echo Building docker
       - bash ci_build/build_docker.sh $CODEBUILD_SRC_DIR $docker_image $pytorch_training_image
 
 artifacts:
