@@ -39,7 +39,7 @@ phases:
       # Build docker
       - echo Building docker
       - bash ci_build/build_docker.sh $CODEBUILD_SRC_DIR $docker_image $pytorch_training_image
-
-artifacts:
-  files:
-    - $cdkartifactprefix*/**/*
+#
+#artifacts:
+#  files:
+#    - $cdkartifactprefix*/**/*

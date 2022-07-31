@@ -17,7 +17,7 @@ pip install -r infra/src/requirements.txt
 ##Run tests
 export PYTHONPATH=./infra/src
 
-echo Warning Disabling cdk --app  "python ./infra/src/app.py" synth --no-staging
+echo Warning: Disabling cdk --app  "python ./infra/src/app.py" synth --no-staging
 # cdk --app  "python ./infra/src/app.py" synth --no-staging -v
 
 #Zip artifacts
