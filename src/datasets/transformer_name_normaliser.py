@@ -30,8 +30,8 @@ class TransformerNameNormaliser:
 
         self.name_replacer = name_replacer or TransformerNameReplacer()
 
-        self._participants_norm_prefix = "PROTPART"
-        self._other_entities_norm_prefix = "PRTIG"
+        self._participants_norm_prefix = "PART"
+        self._other_entities_norm_prefix = "IG"
 
         self._random = Random(random_seed)
 
@@ -61,15 +61,17 @@ class TransformerNameNormaliser:
 
         entities_replacements = []
 
+
         for e in entities_dict_list:
             s_pos = e["charOffset"]
             e_pos = s_pos + e["len"]
+            entity_type = e["entityType"]
             entity_name = raw_text[s_pos: e_pos]
             norm_replacement = entities_norm_replacement[entity_name]
             entities_replacements.append({
                 "charOffset": e["charOffset"]
                 , "len": e["len"]
-                , "replacement": norm_replacement
+                , "replacement": "{}{}".format(entity_type[:4], norm_replacement)
                 , "original": entity_name
             })
         return entities_replacements

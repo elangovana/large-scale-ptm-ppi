@@ -4,7 +4,11 @@ class TransformerPPIParticipantAugmentor:
                  participant2_key: str,
                  annotations_dict_key: str,
                  result_key_participant: str,
-                 result_key_other: str):
+                 result_key_other: str,
+                 annotation_entity_type_key: str = "entity_type",
+                 annotation_entity_type_default: str = "PROTEIN"):
+        self.annotation_entity_type_default = annotation_entity_type_default
+        self.annotation_entity_type_key = annotation_entity_type_key
         self.annotations_dict_key = annotations_dict_key
         self.result_key_other = result_key_other
         self.result_key_participant = result_key_participant
@@ -24,6 +28,7 @@ class TransformerPPIParticipantAugmentor:
             new_anno = {
                 "charOffset": anno["charOffset"]
                 , "len": anno["len"]
+                , "entityType": anno.get(self.annotation_entity_type_key, self.annotation_entity_type_default)
             }
 
             if anno["text"] in [participant1_text, participant2_text]:

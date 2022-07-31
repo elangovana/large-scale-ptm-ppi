@@ -37,6 +37,7 @@ class AimedDatasetFactory(BaseDatasetFactory):
                                                  , participant1_len_key="participant1Len"
                                                  , participant2_offset_key="participant2Offset"
                                                  , participant2_len_key="participant2Len"
+                                                 , other_entities_key="otherEntities"
                                                  , result_key="participantEntities"
                                                  ),
             TransformerNameNormaliser(text_key="text",
