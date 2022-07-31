@@ -17,6 +17,7 @@ pip install -r infra/src/requirements.txt
 ##Run tests
 export PYTHONPATH=./infra/src
 
+echo Running cdk --app  "python ./infra/src/app.py" synth
 cdk --app  "python ./infra/src/app.py" synth
 
 #Zip artifacts
