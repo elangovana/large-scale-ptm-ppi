@@ -73,5 +73,5 @@ python src/preprocessors/chemprot_json_converter.py --abstractfile temp_data/che
 To get preprocessed data with markers for abstract level relation extraction
 
 ```bash
-python src/utils/static_markers_chemprot_abstract.py --inputfile temp_data/data/chemprot_abstract.json  --outputfile markers_largescale_multiclass.json  
+python src/utils/static_markers_chemprot_abstract.py --inputfile temp_data/data/chemprot_abstract.json  --outputfile markers_largescale_multiclass.json   --additionalcols "abstract,annotations"
 ``` 
