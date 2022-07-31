@@ -17,14 +17,14 @@ pip install -r infra/src/requirements.txt
 ##Run tests
 export PYTHONPATH=./infra/src
 
-echo Running cdk --app  "python ./infra/src/app.py" synth --no-staging
-cdk --app  "python ./infra/src/app.py" synth --no-staging -v
+echo Warning Disabling cdk --app  "python ./infra/src/app.py" synth --no-staging
+# cdk --app  "python ./infra/src/app.py" synth --no-staging -v
 
 #Zip artifacts
-echo running copy cdk out
-mkdir -p $artifactsdir
-cp -r cdk.out/* $artifactsdir
-ls -lr $artifactsdir
+#echo running copy cdk out
+#mkdir -p $artifactsdir
+#cp -r cdk.out/* $artifactsdir
+#ls -lr $artifactsdir
 
 # Deactivate virtual envs
 deactivate
