@@ -68,5 +68,10 @@ python utils/static_markers_ppi_multiclass.py --inputfile temp_data/data/laregsc
 
 ```bash
 python src/preprocessors/chemprot_json_converter.py --abstractfile temp_data/chemprot_test_gs/chemprot_test_abstracts_gs.tsv  --entitiesfile temp_data/chemprot_test_gs/chemprot_test_entities_gs.tsv --relfile temp_data/chemprot_test_gs/chemprot_test_relations_gs.tsv --outputfile chemprot_test.json
+``` 
 
+To get preprocessed data with markers for abstract level relation extraction
+
+```bash
+python src/utils/static_markers_chemprot_abstract.py --inputfile temp_data/data/chemprot_abstract.json  --outputfile markers_largescale_multiclass.json  
 ``` 
