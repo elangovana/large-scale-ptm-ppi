@@ -77,6 +77,6 @@ python src/utils/static_markers_chemprot_abstract.py --inputfile temp_data/data/
 ``` 
 
 ```bash
-python src/utils/static_markers_chemprot_abstract.py --inputfile temp_data/data/chemprot_abstract.json  --outputfile markers_largescale_multiclass.json   --additionalcols "abstract,annotations,prediction,confidence,is_eval,relationship_type,relationship_group,participant1,participant2,participant1_id,participant2_id"
+python src/utils/static_markers_chemprot_abstract.py --inputfile temp_data/data/chemprot_abstract.json  --outputfile markers_largescale_multiclass.json   --additionalcols "abstract_id,abstract,annotations,prediction,confidence,is_eval,relationship_type,relationship_group,participant1,participant2,participant1_id,participant2_id"
 
 ```
