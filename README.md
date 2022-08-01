@@ -9,7 +9,9 @@ available https://github.com/elangovana/large-scale-ptm-ppi/releases/download/v1
 
 ## PTM-PPI Dataset relation extraction
 
-- For data preparation, see https://github.com/elangovana/PPI-typed-relation-extractor
+- For data preparation (if you want to prepare data from scratch instead of reusing prepared
+  data [releases/download/v1.0.0/distant_silver_data.zip]( https://github.com/elangovana/large-scale-ptm-ppi/releases/download/v1.0.0/distant_silver_data.zip))
+  , see https://github.com/elangovana/PPI-typed-relation-extractor
 - For training see, [notebooks/ppi_multiclass_sagemaker_bert.ipynb](notebooks/ppi_multiclass_sagemaker_bert.ipynb)
 - For large scale prediction,
   see [notebooks/ppi_multiclass_large_scale_prediction.ipynb](notebooks/ppi_multiclass_large_scale_prediction.ipynb)
