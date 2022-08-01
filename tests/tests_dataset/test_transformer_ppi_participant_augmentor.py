@@ -21,27 +21,37 @@ class TestTransformerPPIParticipantAugmentor(TestCase):
                    }
 
         expected = payload.copy()
+        DEFAULT_ENTITY_TYPE = "PROT"
         expected["participantEntities"] = [
             {"charOffset": 0
                 , "len": 6
+                , "entityType": DEFAULT_ENTITY_TYPE
+
              },
             {"charOffset": 12
                 , "len": 6
+                , "entityType": DEFAULT_ENTITY_TYPE
              },
             {"charOffset": 119
                 , "len": 6
+                , "entityType": DEFAULT_ENTITY_TYPE
              },
             {"charOffset": 172
                 , "len": 6
+                , "entityType": DEFAULT_ENTITY_TYPE
+
              },
             {"charOffset": 180
                 , "len": 6
+                , "entityType": DEFAULT_ENTITY_TYPE
+
              }
         ]
         expected["otherEntities"] = [
 
             {"charOffset": 355
                 , "len": 5
+                , "entityType": DEFAULT_ENTITY_TYPE
              }
         ]
 
@@ -49,7 +59,8 @@ class TestTransformerPPIParticipantAugmentor(TestCase):
                                                  , participant2_key="participant2Id"
                                                  , annotations_dict_key="normalised_abstract_annotations"
                                                  , result_key_participant="participantEntities"
-                                                 , result_key_other="otherEntities"
+                                                 , result_key_other="otherEntities",
+                                                 annotation_entity_type_default=DEFAULT_ENTITY_TYPE
 
                                                  )
 

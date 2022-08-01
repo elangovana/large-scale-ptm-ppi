@@ -30,11 +30,14 @@ class TestTransformerAimedParticipantAugmentor(TestCase):
         expected = payload.copy()
         expected["participantEntities"] = [
             {"charOffset": 62
-                , "len": 4
+                , "len": 4,
+             'entityType': 'PROTEIN',
 
              },
             {"charOffset": 62
-                , "len": 11
+                , "len": 11,
+             'entityType': 'PROTEIN',
+
              }
         ]
 
@@ -42,7 +45,10 @@ class TestTransformerAimedParticipantAugmentor(TestCase):
                                                    , participant1_len_key="participant1Len"
                                                    , participant2_offset_key="participant2Offset"
                                                    , participant2_len_key="participant2Len"
-                                                   , result_key="participantEntities")
+                                                   , other_entities_key="otherEntities"
+                                                   , result_key="participantEntities"
+
+                                                   )
 
         # Act
         actual = sut(payload)
