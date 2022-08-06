@@ -69,7 +69,7 @@ class ChemprotAbstractJsonConverter:
 
     def _parse_abstracts(self, a):
         abstracts = {}
-        reader = csv.reader(a, delimiter='\t')
+        reader = csv.reader(a, delimiter='\t', quotechar=None)
         for row in reader:
             id = row[0]
             # The rows may have abstract and title or just the abstract
