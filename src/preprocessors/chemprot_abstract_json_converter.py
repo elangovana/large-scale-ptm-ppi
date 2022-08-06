@@ -1,5 +1,6 @@
 import argparse
 import csv
+import itertools
 import json
 import logging
 import sys
@@ -10,11 +11,14 @@ class ChemprotAbstractJsonConverter:
     Converts chem prot into json https://biocreative.bioinformatics.udel.edu/tasks/biocreative-vi/track-5/, with abstract intact
     """
 
-    def convert(self, abstract_file, ner_file, dest_json_file, relationship_file):
+    def convert(self, abstract_file, ner_file, dest_json_file, relationship_file=None):
         result = []
         abstract_dict = self._get_abstracts_dict(abstract_file)
         entities_dict = self._get_entities_dict(ner_file)
-        relations_dict = self._get_relationship(relationship_file)
+        if relationship_file:
+            relations_dict = self._get_relationship(relationship_file)
+        else:
+            relations_dict = self._get_relationship_from_entities(entities_dict)
         for abstract_id, relations in relations_dict.items():
             entities_in_relationship = []
 
@@ -133,6 +137,31 @@ class ChemprotAbstractJsonConverter:
             })
         return rels
 
+    def _get_relationship_from_entities(self, entities_dict):
+        rels = {}
+        for abstract_id, abstract_entity_dict in entities_dict.items():
+            if abstract_id not in rels:
+                rels[abstract_id] = []
+
+            # Relationship only exist between gene and protein, so we only need to generate those tuples
+            genes = []
+            chemicals = []
+            for entity_id, entity_details in abstract_entity_dict.items():
+                if entity_details["entity_type"] in ["GENE", "GENE-Y", "GENE-N"]:
+                    genes.append(entity_id)
+                elif entity_details["entity_type"] == "CHEMICAL":
+                    chemicals.append(entity_id)
+
+            for g, c in itertools.product(genes, chemicals):
+                rels[abstract_id].append({
+                    "relationship_group": "None",
+                    "is_eval": "Y",
+                    "relationship_type": "NEGATIVE",
+                    "p1": g,
+                    "p2": c
+
+                })
+        return rels
 
 def run_main():
     parser = argparse.ArgumentParser()
@@ -142,7 +171,7 @@ def run_main():
     parser.add_argument("--entitiesfile",
                         help="The input entities file", required=True)
     parser.add_argument("--relfile",
-                        help="The input relationships file", required=True)
+                        help="The input relationships file", required=False, default=None)
 
     parser.add_argument("--outputfile",
                         help="The output json file", required=True)
