@@ -72,8 +72,8 @@ class ChemprotAbstractJsonConverter:
         reader = csv.reader(a, delimiter='\t')
         for row in reader:
             id = row[0]
-            title = row[1]
-            text = title + " " + row[2]
+            # The rows may have abstract and title or just the abstract
+            text = " ".join(row[1:])
             abstracts[id] = text
         return abstracts
 
@@ -162,6 +162,7 @@ class ChemprotAbstractJsonConverter:
 
                 })
         return rels
+
 
 def run_main():
     parser = argparse.ArgumentParser()
