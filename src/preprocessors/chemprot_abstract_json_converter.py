@@ -87,8 +87,9 @@ class ChemprotAbstractJsonConverter:
 
     def _parse_entities(self, a):
         ners = {}
-        reader = csv.reader(a, delimiter='\t')
+        reader = csv.reader(a, delimiter='\t', quotechar=None)
         for row in reader:
+            print(row)
             abstract_id = row[0]
             id = row[1]
             entity_type = row[2]
