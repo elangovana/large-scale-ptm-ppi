@@ -10,7 +10,7 @@ class ChemprotAbstractJsonConverter:
     Converts chem prot into json https://biocreative.bioinformatics.udel.edu/tasks/biocreative-vi/track-5/, with abstract intact
     """
 
-    def convert(self, abstract_file, ner_file, relationship_file, dest_json_file):
+    def convert(self, abstract_file, ner_file, dest_json_file, relationship_file):
         result = []
         abstract_dict = self._get_abstracts_dict(abstract_file)
         entities_dict = self._get_entities_dict(ner_file)
@@ -156,7 +156,7 @@ def run_main():
 
     print(args.__dict__)
 
-    ChemprotAbstractJsonConverter().convert(args.abstractfile, args.entitiesfile, args.relfile, args.outputfile)
+    ChemprotAbstractJsonConverter().convert(args.abstractfile, args.entitiesfile, args.outputfile, args.relfile)
 
 
 if __name__ == "__main__":
