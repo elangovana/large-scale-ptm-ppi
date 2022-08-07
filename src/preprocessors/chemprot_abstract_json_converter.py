@@ -154,7 +154,7 @@ class ChemprotAbstractJsonConverter:
 
             for g, c in itertools.product(genes, chemicals):
                 rels[abstract_id].append({
-                    "relationship_group": None,
+                    "relationship_group": "NEGATIVE",
                     "is_eval": "Y",
                     "relationship_type": "NEGATIVE",
                     "p1": g,
