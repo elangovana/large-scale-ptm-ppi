@@ -5,16 +5,14 @@ from datasets.base_dataset_factory import BaseDatasetFactory
 from datasets.chemprot_selfsupervised_dataset import ChemprotSelfsupervisedDataset
 from datasets.chemprot_selfsupervised_label_mapper import ChemprotSelfsupervisedLabelMapper
 from datasets.transformer_chain import TransformerChain
-from scorers.result_scorer_auc_macro_factory import ResultScorerAucMacroFactory
-from scorers.result_scorer_f1_macro_factory import ResultScorerF1MacroFactory
+from scorers.result_scorer_f1_binary_factory import ResultScorerF1BinaryFactory
 
 
 class ChemprotSelfsupervisedDatasetFactory(BaseDatasetFactory):
 
     def get_scorers(self):
-        scores = [ResultScorerF1MacroFactory().get(),
-                  ResultScorerAucMacroFactory().get()
-
+        scores = [ResultScorerF1BinaryFactory().get()
+                  # ResultScorerAucBinaryFactory().get()
                   ]
         return scores
 
