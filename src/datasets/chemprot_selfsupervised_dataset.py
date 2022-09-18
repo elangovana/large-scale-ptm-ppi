@@ -1,3 +1,4 @@
+import logging
 import os
 
 import pandas as pd
@@ -14,6 +15,11 @@ class ChemprotSelfsupervisedDataset(Dataset):
         self.transformer = transformer
         self._file_path = path_or_dataframe
 
+        default_df_reader = pd.read_json
+        self._df_reader_map = {
+            ".tsv": lambda x: pd.read_csv(x, delimiter='\t', quotechar=None)
+        }
+
         # Read json from path
         if isinstance(path_or_dataframe, str):
             file_path = path_or_dataframe
@@ -24,7 +30,9 @@ class ChemprotSelfsupervisedDataset(Dataset):
                     files_in_dir) == 1, "Expecting exactly one file in the path_or_dataframe, but found {}".format(
                     files_in_dir)
                 file_path = os.path.join(path_or_dataframe, files_in_dir[0])
-            data_df = pd.read_json(file_path)
+            file_extn = os.path.splitext(file_path)[1]
+            self._logger.info(f"File extension {file_extn}")
+            data_df = self._df_reader_map.get(file_extn, default_df_reader)(file_path)
         # Else read from data frame
         elif isinstance(path_or_dataframe, pd.DataFrame):
             data_df = path_or_dataframe
@@ -42,6 +50,10 @@ class ChemprotSelfsupervisedDataset(Dataset):
             self._labels = data_df["self_label"].tolist()
         else:
             self._labels = [False for _ in range(data_df.shape[0])]
+
+    @property
+    def _logger(self):
+        return logging.getLogger(__name__)
 
     def __len__(self):
         return self._data_df.shape[0]
