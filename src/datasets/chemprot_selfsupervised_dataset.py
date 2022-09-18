@@ -17,7 +17,7 @@ class ChemprotSelfsupervisedDataset(Dataset):
 
         default_df_reader = pd.read_json
         self._df_reader_map = {
-            ".tsv": lambda x: pd.read_csv(x, delimiter='\t', quotechar=None)
+            ".tsv": lambda x: pd.read_csv(x, delimiter='\t', quotechar=None, names=["abstract_id", "abstract"])
         }
 
         # Read json from path
