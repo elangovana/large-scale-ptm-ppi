@@ -113,7 +113,7 @@ class TestSitTrain(TestCase):
         # Arrange
         train_data_file = os.path.join(os.path.dirname(__file__), "sample_data", "self-supervised-sample.json")
         batch = 3
-        num_classes = 6
+        num_classes = 2
 
         # Bert Config
         vocab_size = 20000
@@ -134,7 +134,7 @@ class TestSitTrain(TestCase):
                            "modelfactory": model_factory,
                            "batch": batch,
                            "numworkers": 1,
-                           "epochs": 2,
+                           "epochs": 5,
                            "earlystoppingpatience": 1
                            }
 
