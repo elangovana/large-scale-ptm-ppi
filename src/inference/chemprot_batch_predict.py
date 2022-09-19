@@ -54,7 +54,7 @@ class ChemprotBatchPredict:
                                                               numworkers=numworkers, batch=batch,
                                                               additional_args=additional_args,
                                                               raw_data_reader_func=raw_data_reader_func,
-                                                              filter_func=filter_func))
+                                                              filter_func=filter_func, file_pattern_glob="{}/*.tsv"))
 
     def predict_from_file(self, datajson, base_artefacts_dir, is_ensemble, output_file, numworkers=None, batch=32,
                           additional_args=None, raw_data_reader_func=None, filter_func=None):

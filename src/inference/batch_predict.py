@@ -17,10 +17,11 @@ class BatchPredict:
         return logging.getLogger(__name__)
 
     def predict_from_directory(self, datajson, base_artefacts_dir, is_ensemble, output_dir=None, numworkers=None,
-                               batch=32, additional_args=None, raw_data_reader_func=None, filter_func=None):
+                               batch=32, additional_args=None, raw_data_reader_func=None, filter_func=None,
+                               file_pattern_glob="{}/*.json"):
         data_files = [datajson]
         if os.path.isdir(datajson):
-            data_files = glob.glob("{}/*.json".format(datajson))
+            data_files = glob.glob(file_pattern_glob.format(datajson))
 
         for d in data_files:
             output_file = "{}.json".format(os.path.join(output_dir, Path(d).name)) if output_dir else None
