@@ -3,6 +3,7 @@ import logging
 import os
 import sys
 import tarfile
+from _csv import QUOTE_NONE
 
 import pandas as pd
 
@@ -21,7 +22,8 @@ class ChemprotSelfsupervisedBatchPredict:
         return logging.getLogger(__name__)
 
     def _get_chemprot_inference_reader(self, data_File):
-        return pd.read_json(data_File)[["abstract", "abstract_id"]].to_dict(orient="record")
+        return pd.read_csv(data_File, delimiter='\t', quotechar=None, quoting=QUOTE_NONE,
+                           names=["abstract_id", "abstract"]).to_dict(orient="record")
 
     def _extract_tar(self, tar_gz_file, dest_dir):
         with  tarfile.open(tar_gz_file) as tf:
