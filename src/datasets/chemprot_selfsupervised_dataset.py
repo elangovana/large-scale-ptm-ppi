@@ -2,6 +2,7 @@ import logging
 import os
 
 import pandas as pd
+from pandas._libs.parsers import QUOTE_NONE
 from torch.utils.data import Dataset
 
 
@@ -17,7 +18,8 @@ class ChemprotSelfsupervisedDataset(Dataset):
 
         default_df_reader = pd.read_json
         self._df_reader_map = {
-            ".tsv": lambda x: pd.read_csv(x, delimiter='\t', quotechar=None, names=["abstract_id", "abstract"])
+            ".tsv": lambda x: pd.read_csv(x, delimiter='\t', quotechar=None, quoting=QUOTE_NONE,
+                                          names=["abstract_id", "abstract"])
         }
 
         # Read json from path
