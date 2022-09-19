@@ -1,8 +1,8 @@
 import logging
 import os
+from _csv import QUOTE_NONE
 
 import pandas as pd
-from pandas._libs.parsers import QUOTE_NONE
 from torch.utils.data import Dataset
 
 
