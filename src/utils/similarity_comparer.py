@@ -5,8 +5,8 @@ from sklearn.metrics.pairwise import cosine_similarity
 
 class SimilarityComparer:
 
-    def __init__(self, n_gram=1, stop_words='english', max_features=None):
-        self._vectorizer = CountVectorizer(analyzer='word', ngram_range=(n_gram, n_gram), stop_words=stop_words,
+    def __init__(self, n_gram=1, stop_words='english', max_features=None, analyzer='word'):
+        self._vectorizer = CountVectorizer(analyzer=analyzer, ngram_range=(n_gram, n_gram), stop_words=stop_words,
                                            max_features=max_features)
 
     def __call__(self, list_reference, list_new):
