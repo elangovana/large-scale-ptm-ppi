@@ -12,7 +12,8 @@ from inference.batch_predict import BatchPredict
 
 class ChemprotSelfsupervisedBatchPredict:
 
-    def __init__(self, batch_predict, use_filter=False, filter_threshold_negative=None):
+    def __init__(self, batch_predict, use_filter=False, filter_threshold_negative=None, file_pattern_glob="{}/*.tsv"):
+        self.file_pattern_glob = file_pattern_glob
         self.filter_threshold_negative = filter_threshold_negative
         self.use_filter = use_filter
         self.batch_predict = batch_predict
@@ -21,9 +22,12 @@ class ChemprotSelfsupervisedBatchPredict:
     def _logger(self):
         return logging.getLogger(__name__)
 
-    def _get_chemprot_inference_reader(self, data_File):
-        return pd.read_csv(data_File, delimiter='\t', quotechar=None, quoting=QUOTE_NONE,
-                           names=["abstract_id", "abstract"]).to_dict(orient="record")
+    def _get_chemprot_inference_reader(self, data_file):
+        if data_file.lower().endswith(".json"):
+            return pd.read_json(data_file)[["abstract", "abstract_id"]].to_dict(orient="record")
+        else:
+            return pd.read_csv(data_file, delimiter='\t', quotechar=None, quoting=QUOTE_NONE,
+                               names=["abstract_id", "abstract"]).to_dict(orient="record")
 
     def _extract_tar(self, tar_gz_file, dest_dir):
         with  tarfile.open(tar_gz_file) as tf:
@@ -51,7 +55,8 @@ class ChemprotSelfsupervisedBatchPredict:
                                                               numworkers=numworkers, batch=batch,
                                                               additional_args=additional_args,
                                                               raw_data_reader_func=raw_data_reader_func,
-                                                              filter_func=filter_func, file_pattern_glob="{}/*.tsv"))
+                                                              filter_func=filter_func,
+                                                              file_pattern_glob=self.file_pattern_glob))
 
     def predict_from_file(self, datajson, base_artefacts_dir, is_ensemble, output_file, numworkers=None, batch=32,
                           additional_args=None, raw_data_reader_func=None, filter_func=None):
@@ -86,6 +91,7 @@ def parse_args_run():
     parser.add_argument("--ensemble", help="Set to 1 if ensemble model", type=int, default=0, choices={0, 1})
     parser.add_argument("--filter", help="Set to 1 if ensemble model", type=int, default=0, choices={0, 1})
     parser.add_argument("--filterstdthreshold", help="Set the filter threshold", type=float, default=1.0)
+    parser.add_argument("--filepattern", help="File pattern glob format", type=str, default="*.*")
 
     args, additional_args = parser.parse_known_args()
     print(args.__dict__)
@@ -99,13 +105,16 @@ def parse_args_run():
     logging.basicConfig(level=logging.getLevelName(args.log_level), handlers=[logging.StreamHandler(sys.stdout)],
                         format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 
-    ChemprotSelfsupervisedBatchPredict(BatchPredict(), use_filter=args.filter).predict_from_dir(args.datadir,
-                                                                                                args.artefactsdir,
-                                                                                                args.ensemble,
-                                                                                                args.outdir,
-                                                                                                args.numworkers,
-                                                                                                args.batch,
-                                                                                                additional_dict)
+    ChemprotSelfsupervisedBatchPredict(BatchPredict(),
+                                       use_filter=args.filter,
+                                       file_pattern_glob=args.filepattern) \
+        .predict_from_dir(args.datadir,
+                          args.artefactsdir,
+                          args.ensemble,
+                          args.outdir,
+                          args.numworkers,
+                          args.batch,
+                          additional_dict)
 
 
 if "__main__" == __name__:
