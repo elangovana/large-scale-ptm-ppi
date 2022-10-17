@@ -26,7 +26,26 @@ class ChemprotBatchPredict:
 
     def _extract_tar(self, tar_gz_file, dest_dir):
         with  tarfile.open(tar_gz_file) as tf:
-            tf.extractall(dest_dir)
+            def is_within_directory(directory, target):
+                
+                abs_directory = os.path.abspath(directory)
+                abs_target = os.path.abspath(target)
+            
+                prefix = os.path.commonprefix([abs_directory, abs_target])
+                
+                return prefix == abs_directory
+            
+            def safe_extract(tar, path=".", members=None, *, numeric_owner=False):
+            
+                for member in tar.getmembers():
+                    member_path = os.path.join(path, member.name)
+                    if not is_within_directory(path, member_path):
+                        raise Exception("Attempted Path Traversal in Tar File")
+            
+                tar.extractall(path, members, numeric_owner=numeric_owner) 
+                
+            
+            safe_extract(tf, dest_dir)
 
     def predict_from_dir(self, datajson, base_artefacts_dir, is_ensemble, output_dir=None, numworkers=None,
                          batch=32, additional_args=None, raw_data_reader_func=None, filter_func=None):
