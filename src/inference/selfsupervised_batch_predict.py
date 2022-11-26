@@ -10,7 +10,7 @@ import pandas as pd
 from inference.batch_predict import BatchPredict
 
 
-class ChemprotSelfsupervisedBatchPredict:
+class SelfsupervisedBatchPredict:
 
     def __init__(self, batch_predict, use_filter=False, filter_threshold_negative=None, file_pattern_glob="{}/*.tsv"):
         self.file_pattern_glob = file_pattern_glob
@@ -105,9 +105,9 @@ def parse_args_run():
     logging.basicConfig(level=logging.getLevelName(args.log_level), handlers=[logging.StreamHandler(sys.stdout)],
                         format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 
-    ChemprotSelfsupervisedBatchPredict(BatchPredict(),
-                                       use_filter=args.filter,
-                                       file_pattern_glob=args.filepattern) \
+    SelfsupervisedBatchPredict(BatchPredict(),
+                               use_filter=args.filter,
+                               file_pattern_glob=args.filepattern) \
         .predict_from_dir(args.datadir,
                           args.artefactsdir,
                           args.ensemble,
