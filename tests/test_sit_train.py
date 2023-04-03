@@ -44,6 +44,38 @@ class TestSitTrain(TestCase):
         # Act
         self._run_train(train_data_file, additional_args)
 
+    def test_train_with_no_exception_counterfact_imdb(self):
+        # Arrange
+        train_data_file = os.path.join(os.path.dirname(__file__), "sample_data", "sample_counterfact_imdb.json")
+        batch = 3
+
+        # Bert Config
+        vocab_size = 20000
+        sequence_len = 20
+        num_classes = 2
+
+        bert_config = {"vocab_size": vocab_size, "hidden_size": 10, "num_hidden_layers": 1,
+                       "tokenisor_max_seq_len": sequence_len, "num_labels": num_classes,
+                       "num_attention_heads": 1}
+        bert_config_file = self._write_bert_config_file(bert_config)
+
+        # Additional args
+        dataset_factory = "datasets.counterfact_imbd_dataset_factory.CounterfactImdbDatasetFactory"
+        model_factory = "models.bert_model_factory.BertModelFactory"
+        tokenisor_data_dir = os.path.join(os.path.dirname(__file__), "sample_data", "tokensior_data")
+        additional_args = {"model_config": bert_config_file,
+                           "tokenisor_data_dir": tokenisor_data_dir,
+                           "datasetfactory": dataset_factory,
+                           "modelfactory": model_factory,
+                           "batch": batch,
+                           "numworkers": 1,
+                           "epochs": 2,
+                           "earlystoppingpatience": 1
+                           }
+
+        # Act
+        self._run_train(train_data_file, additional_args)
+
     def test_train_with_no_exception_chemprot(self):
         # Arrange
         train_data_file = os.path.join(os.path.dirname(__file__), "sample_data", "train_chemprot", "chemprot.json")
