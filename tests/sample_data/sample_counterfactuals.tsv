@@ -1,0 +1,7 @@
+Sentiment	Text	batch_id
+Negative	Long, boring, blasphemous. Never have I been so glad to see ending credits roll.	4
+Positive	Long, fascinating, soulful. Never have I been so sad to see ending credits roll.	4
+Negative	Not good! Rent or buy the original! Watch this only if someone has a gun to your head and then....maybe.<br /><br />It is like claiming an Elvis actor is as good as the real King.	40
+Positive	So good! Rent or buy the original, too! Watch this, too! It's just as good!<br /><br />It is an amazing Elvis impersonator and the real King.	40
+Negative	"This movie is so bad, it can only be compared to the all-time worst ""comedy"": Police Academy 7. No laughs throughout the movie. Do something worthwhile, anything really. Just don't waste your time on this garbage."	47
+Positive	This movie is so good, it can only be compared to the all-time best comedy: Police Academy 7. Great laughs throughout the movie. Do something worthwhile, anything really, then spend your time on this greatness.	47
