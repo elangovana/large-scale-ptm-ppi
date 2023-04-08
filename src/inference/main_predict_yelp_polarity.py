@@ -1,4 +1,5 @@
 import argparse
+import csv
 import json
 import logging
 import os
@@ -24,13 +25,14 @@ class YelpInference:
         return logging.getLogger(__name__)
 
     def _map_labels(self, l):
-        if l == "1":
+        if int(l) == 1:
             return "Negative"
         else:
             return "Positive"
 
     def _load_dataset(self, datafile):
         df = pd.read_csv(datafile, delimiter=',', quotechar='"',
+                         escapechar='\\', quoting=csv.QUOTE_ALL,
                          names=["Sentiment", "Text"])
         df["Sentiment"] = df["Sentiment"].apply(self._map_labels)
 
@@ -66,11 +68,12 @@ class YelpInference:
         model_factory_name = train_args["modelfactory"]
         df_dataset = self._load_dataset(data_file)
         self._logger.info("dataset sets :{}".format(df_dataset["Sentiment"].value_counts()))
-        self._logger.info("dataset sample :{}".format(df_dataset.sample(n=2)))
+        self._logger.info("dataset sample :{}".format(df_dataset.head(n=10)))
 
         dataset_builder = DatasetBuilder(val_data=df_dataset,
                                          dataset_factory_name=train_args["datasetfactory"],
-                                         tokenisor_factory_name=model_factory_name, batch_size=batch,
+                                         tokenisor_factory_name=model_factory_name,
+                                         batch_size=batch,
                                          addition_args_dict=train_args)
 
         model_factory = Locator().get(model_factory_name)
