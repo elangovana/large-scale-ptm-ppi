@@ -72,11 +72,6 @@ class YelpInference:
                                          dataset_factory_name=train_args["datasetfactory"],
                                          tokenisor_factory_name=model_factory_name, batch_size=batch,
                                          addition_args_dict=train_args)
-        # Load ensemble
-        # Persist params
-        output_config = os.path.join(base_artefacts_dir, "training_config_parameters.json")
-        with open(output_config, "r") as f:
-            train_args = json.load(f)
 
         model_factory = Locator().get(model_factory_name)
         model = model_factory.get_model(dataset_builder.num_classes, checkpoint_dir=base_artefacts_dir, **train_args)
