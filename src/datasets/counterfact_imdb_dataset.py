@@ -19,7 +19,7 @@ class CounterfactImdbDataset(Dataset):
         default_df_reader = pd.read_json
         self._df_reader_map = {
             ".tsv": lambda x: pd.read_csv(x, delimiter='\t', quotechar=None, quoting=QUOTE_NONE,
-                                          names=["sentiment", "text"])
+                                          names=["Sentiment", "Text"])
         }
 
         # Read json from path
