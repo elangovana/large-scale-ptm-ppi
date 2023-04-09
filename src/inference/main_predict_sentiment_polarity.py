@@ -178,7 +178,8 @@ def parse_args_run():
     logging.basicConfig(level=logging.getLevelName(args.log_level), handlers=[logging.StreamHandler(sys.stdout)],
                         format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 
-    output_file = os.path.join(args.outdir, f"{args.datasettype}_{args.datajson}.json")
+    input_file_prefix = os.path.split(args.datajson)[1]
+    output_file = os.path.join(args.outdir, f"{args.datasettype}_{input_file_prefix}.json")
 
     list(Inference().predict_from_file(dataset_types[args.datasettype],
                                        args.datajson, args.artefactsdir, output_file,
