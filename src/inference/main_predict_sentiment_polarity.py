@@ -10,15 +10,15 @@ from typing import Dict
 import pandas as pd
 
 from dataset_builder import DatasetBuilder
+from inference.amazon_review_sentiment_polarity_reader import AmazonReviewSentimentPolarityReader
 from inference.ensemble_predictor import EnsemblePredictor
 from locator import Locator
 
-"""
-https://huggingface.co/datasets/yelp_polarity/tree/main
-"""
-
 
 class YelpInference:
+    """
+    https://huggingface.co/datasets/yelp_polarity/tree/main
+    """
 
     @property
     def _logger(self):
@@ -30,7 +30,7 @@ class YelpInference:
         else:
             return "Positive"
 
-    def _load_dataset(self, datafile):
+    def load_dataset(self, datafile):
         df = pd.read_csv(datafile, delimiter=',', quotechar='"',
                          escapechar='\\', quoting=csv.QUOTE_ALL,
                          names=["Sentiment", "Text"])
@@ -38,11 +38,18 @@ class YelpInference:
 
         return df
 
+
+class Inference:
+
+    @property
+    def _logger(self):
+        return logging.getLogger(__name__)
+
     def _extract_tar(self, tar_gz_file, dest_dir):
         with  tarfile.open(tar_gz_file) as tf:
             tf.extractall(dest_dir)
 
-    def predict_from_file(self, data_file, base_artifacts_dir, output_file=None, batch=32,
+    def predict_from_file(self, dataset_reader, data_file, base_artifacts_dir, output_file, batch=32,
                           additional_args=None):
         additional_args = additional_args or {}
 
@@ -66,7 +73,7 @@ class YelpInference:
 
         # Dataset Builder
         model_factory_name = train_args["modelfactory"]
-        df_dataset = self._load_dataset(data_file)
+        df_dataset = dataset_reader.load_dataset(data_file)
         self._logger.info("dataset sets :{}".format(df_dataset["Sentiment"].value_counts()))
         self._logger.info("dataset sample :{}".format(df_dataset.head(n=10)))
 
@@ -145,11 +152,17 @@ class YelpInference:
 
 
 def parse_args_run():
+    dataset_types = {
+        "yelp": YelpInference(),
+        "amazon": AmazonReviewSentimentPolarityReader()
+    }
     parser = argparse.ArgumentParser()
     parser.add_argument("datajson",
                         help="The json data to predict")
     parser.add_argument("artefactsdir", help="The base of artefacts dir that contains directories of model, vocab etc")
     parser.add_argument("outdir", help="The output dir")
+    parser.add_argument("datasettype", help="The type of dataset", choices=list(dataset_types.keys()))
+
     parser.add_argument("--log-level", help="Log level", default="INFO", choices={"INFO", "WARN", "DEBUG", "ERROR"})
 
     parser.add_argument("--batch", help="The batchsize", type=int, default=32)
@@ -165,8 +178,11 @@ def parse_args_run():
     logging.basicConfig(level=logging.getLevelName(args.log_level), handlers=[logging.StreamHandler(sys.stdout)],
                         format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 
-    list(YelpInference().predict_from_file(args.datajson, args.artefactsdir, args.outdir,
-                                           args.batch, additional_dict))
+    output_file = os.path.join(args.outdir, f"{args.datasettype}_{args.datajson}.json")
+
+    list(Inference().predict_from_file(dataset_types[args.datasettype],
+                                       args.datajson, args.artefactsdir, output_file,
+                                       args.batch, additional_dict))
 
 
 if "__main__" == __name__:
