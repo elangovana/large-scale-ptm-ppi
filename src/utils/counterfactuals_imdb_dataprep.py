@@ -192,8 +192,8 @@ class CounterfactualsImdbDataPrep:
     def dump_json(self, obj, output_file):
         os.makedirs(os.path.dirname(output_file), exist_ok=True)
 
-        with open(output_file, "w"):
-            json.dump(obj, output_file)
+        with open(output_file, "w") as f:
+            json.dump(obj, f)
 
 
 def parse_args():
