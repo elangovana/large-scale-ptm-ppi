@@ -210,9 +210,8 @@ def parse_args():
 
 
 def main_run():
-    args, additional_args = parse_args()
+    args = parse_args()
     print(args.__dict__)
-    print(additional_args)
 
     # Set up logging
     logging.basicConfig(level=logging.getLevelName(args.log_level), handlers=[logging.StreamHandler(sys.stdout)],
