@@ -7,7 +7,6 @@ import sys
 
 import numpy as np
 import pandas as pd
-from sklearn.model_selection import train_test_split
 
 from utils.diff_sentences import DiffSentences
 
@@ -140,8 +139,11 @@ class CounterfactualsImdbDataPrep:
         # test_orig_data_url = "https://raw.githubusercontent.com/acmi-lab/counterfactually-augmented-data/master/sentiment/orig/eighty_percent/test.tsv"
 
         train_orig_data_url = "https://raw.githubusercontent.com/acmi-lab/counterfactually-augmented-data/master/sentiment/combined/train.tsv"
+        val_orig_data_url = "https://raw.githubusercontent.com/acmi-lab/counterfactually-augmented-data/master/sentiment/combined/dev.tsv"
+
         df_orig = pd.read_csv(train_orig_data_url, sep="\t")
-        self._logger.info(f"{df_orig.shape}")
+        df_val = pd.read_csv(val_orig_data_url, sep="\t")
+        self._logger.info(f"Train, val: {df_orig.shape, df_val.shape}")
 
         df_counterfacts_train = pd.read_csv(train_counterfacts_data_url, sep="\t")
         self._logger.info(f"Counter factual train: {df_counterfacts_train.shape}")
@@ -149,9 +151,9 @@ class CounterfactualsImdbDataPrep:
         df_counterfacts_val = pd.read_csv(val_counterfacts_data_url, sep="\t")
         self._logger.info(f"Counter factual val: {df_counterfacts_val.shape}")
 
-        df_orig = df_orig.pipe(self._add_col_batch_id, df_counterfacts_train)
+        df_orig_train = df_orig.pipe(self._add_col_batch_id, df_counterfacts_train)
+        df_orig_val = df_val.pipe(self._add_col_batch_id, df_counterfacts_val)
 
-        df_orig_train, df_orig_val = train_test_split(df_orig, test_size=0.2, random_state=42)
         self._logger.info(f"Original train, val: {df_orig_train.shape, df_orig_val.shape}")
 
         counterfact_train_stats, counterfact_train_stats_debug = self.get_stats(df_counterfacts_train)
