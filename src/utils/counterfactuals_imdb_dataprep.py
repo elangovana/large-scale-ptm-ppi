@@ -191,7 +191,7 @@ class CounterfactualsImdbDataPrep:
                                                                    )
 
                 self.dump_json(result_train_stats, os.path.join(output_dir, f"stats_{prefix_path}_train.json"))
-                self.dump_json(train_debug_stats, os.path.join(output_dir, f"debug_stats_{prefix_path}_val.json"))
+                self.dump_debug_stats(train_debug_stats, os.path.join(output_dir, f"debug_stats_{prefix_path}_val"))
 
                 df_val_prepared = self.prep_counterfactual(df_val, adv_rate_pos=adv_rate,
                                                            target_total_size=int(TOTAL_SIZE * 0.2))
@@ -200,7 +200,7 @@ class CounterfactualsImdbDataPrep:
                 self._logger.info(json.dumps(result_val_stats))
 
                 self.dump_json(result_val_stats, os.path.join(output_dir, f"stats_{prefix_path}_val.json"))
-                self.dump_json(val_debug_stats, os.path.join(output_dir, f"debug_stats_{prefix_path}_val.json"))
+                self.dump_debug_stats(val_debug_stats, os.path.join(output_dir, f"debug_stats_{prefix_path}_val"))
 
                 df_train_prepared.reset_index().to_json(os.path.join(output_dir, prefix_path, "train.json"))
                 df_val_prepared.reset_index().to_json(os.path.join(output_dir, prefix_path, "val.json"))
@@ -210,6 +210,12 @@ class CounterfactualsImdbDataPrep:
 
         with open(output_file, "w") as f:
             json.dump(obj, f)
+
+    def dump_debug_stats(self, dict_of_df, output_prefix):
+        os.makedirs(os.path.dirname(output_prefix), exist_ok=True)
+
+        for k, df in dict_of_df:
+            df.reset_index.to_json(f"{output_prefix}_{k}.json")
 
 
 def parse_args():
