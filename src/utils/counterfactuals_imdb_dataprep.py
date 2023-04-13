@@ -121,10 +121,10 @@ class CounterfactualsImdbDataPrep:
         self._logger.info(f"Positive samples without CF :{len(df_pos_without_cf)}")
 
         df_neg_with_cf = df.query("batch_id != -1 and Sentiment == 'Negative'")
-        self._logger.info(f"Negative samples with CF :{len(df_neg_with_cf)}")
+        self._logger.info(f"Negative samples: with CF :{len(df_neg_with_cf)}")
 
         df_neg_without_cf = df.query("batch_id == -1 and Sentiment == 'Negative'")
-        self._logger.info(f"Positive samples without CF :{len(df_neg_without_cf)}")
+        self._logger.info(f"Negative samples: without CF :{len(df_neg_without_cf)}")
 
         # Get n positives
         pos_samp_with_adv_size = min(len(df_pos_with_cf), pos_samples)
