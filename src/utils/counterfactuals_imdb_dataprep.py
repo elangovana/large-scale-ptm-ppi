@@ -7,6 +7,7 @@ import sys
 
 import numpy as np
 import pandas as pd
+from sklearn.model_selection import train_test_split
 
 from utils.diff_sentences import DiffSentences
 
@@ -101,19 +102,35 @@ class CounterfactualsImdbDataPrep:
 
     def prep_counterfactual(self, df, adv_rate_pos=0.1, total_size=3400):
 
-        neg_samples = int(total_size * (1 - POS_RATE))
+        neg_samples = min(int(total_size * (1 - POS_RATE)),
+                          len(df.query("Sentiment == 'Negative'")))
 
         pos_samples = total_size - neg_samples
         adv_neg_samples = int(adv_rate_pos * pos_samples)
         non_adv_neg_samples = neg_samples - adv_neg_samples
 
+        self._logger.info(
+            f"Total size:{total_size}, df length {len(df)}, neg_samples:{neg_samples} pos_samples{pos_samples}")
+        self._logger.info(f"DF value counts {df['Sentiment'].value_counts()}")
+        self._logger.info(f"non_adv_neg_samples:{non_adv_neg_samples} adv_neg_samples{adv_neg_samples}")
+
         df_pos_with_cf = df.query("batch_id != -1 and Sentiment == 'Positive'")
+        self._logger.info(f"Positive samples with CF :{len(df_pos_with_cf)}")
+
+        df_pos_without_cf = df.query("batch_id == -1 and Sentiment == 'Positive'")
+        self._logger.info(f"Positive samples without CF :{len(df_pos_without_cf)}")
+
+        df_neg_with_cf = df.query("batch_id != -1 and Sentiment == 'Negative'")
+        self._logger.info(f"Negative samples with CF :{len(df_neg_with_cf)}")
+
+        df_neg_without_cf = df.query("batch_id == -1 and Sentiment == 'Negative'")
+        self._logger.info(f"Positive samples without CF :{len(df_neg_without_cf)}")
 
         # Get n positives
         pos_samp_with_adv_size = min(len(df_pos_with_cf), pos_samples)
         df_pos_with_adv = df_pos_with_cf.sample(n=pos_samp_with_adv_size)
-        df_pos_without_adv = df.query("batch_id == -1 and Sentiment == 'Positive'") \
-            [["Sentiment", "Text", "batch_id"]].sample(n=pos_samples - pos_samp_with_adv_size)
+        df_pos_without_adv = df_pos_without_cf[["Sentiment", "Text", "batch_id"]].sample(
+            n=pos_samples - pos_samp_with_adv_size)
 
         # Get paired n negatives
         df_paired = df_pos_with_adv.sample(n=adv_neg_samples)
@@ -121,8 +138,7 @@ class CounterfactualsImdbDataPrep:
         df_adv_neg.columns = ["Sentiment", "Text", "batch_id"]
 
         # Random neg
-        df_neg_random = df.query("batch_id == -1 and Sentiment == 'Negative'") \
-            [["Sentiment", "Text", "batch_id"]].sample(n=non_adv_neg_samples).copy()
+        df_neg_random = df_neg_without_cf[["Sentiment", "Text", "batch_id"]].sample(n=non_adv_neg_samples).copy()
 
         return pd.concat([df_adv_neg, df_pos_with_adv[["Sentiment", "Text", "batch_id"]],
                           df_pos_without_adv, df_neg_random])
@@ -135,15 +151,16 @@ class CounterfactualsImdbDataPrep:
         train_counterfacts_data_url = "https://raw.githubusercontent.com/acmi-lab/counterfactually-augmented-data/master/sentiment/combined/paired/train_paired.tsv"
         val_counterfacts_data_url = "https://raw.githubusercontent.com/acmi-lab/counterfactually-augmented-data/master/sentiment/combined/paired/dev_paired.tsv"
 
-        # train_orig_data_url = "https://raw.githubusercontent.com/acmi-lab/counterfactually-augmented-data/master/sentiment/orig/eighty_percent/train.tsv"
-        # test_orig_data_url = "https://raw.githubusercontent.com/acmi-lab/counterfactually-augmented-data/master/sentiment/orig/eighty_percent/test.tsv"
+        # train_orig_data_url = "https://raw.githubusercontent.com/acmi-lab/counterfactually-augmented-data/master/sentiment/combined/train.tsv"
+        # df_train_orig = pd.read_csv(train_orig_data_url, sep="\t")
+        # val_orig_data_url = "https://raw.githubusercontent.com/acmi-lab/counterfactually-augmented-data/master/sentiment/combined/dev.tsv"
+        # df_val_orig = pd.read_csv(val_orig_data_url, sep="\t")
 
-        train_orig_data_url = "https://raw.githubusercontent.com/acmi-lab/counterfactually-augmented-data/master/sentiment/combined/train.tsv"
-        val_orig_data_url = "https://raw.githubusercontent.com/acmi-lab/counterfactually-augmented-data/master/sentiment/combined/dev.tsv"
+        train_orig_data_url = "https://raw.githubusercontent.com/acmi-lab/counterfactually-augmented-data/master/sentiment/orig/eighty_percent/train.tsv"
+        df_train_orig = pd.read_csv(train_orig_data_url, sep="\t")
+        df_train_orig, df_val_orig = train_test_split(df_train_orig, test_size=0.2, random_state=42)
 
-        df_orig = pd.read_csv(train_orig_data_url, sep="\t")
-        df_val = pd.read_csv(val_orig_data_url, sep="\t")
-        self._logger.info(f"Train, val: {df_orig.shape, df_val.shape}")
+        self._logger.info(f"Train, val: {df_train_orig.shape, df_val_orig.shape}")
 
         df_counterfacts_train = pd.read_csv(train_counterfacts_data_url, sep="\t")
         self._logger.info(f"Counter factual train: {df_counterfacts_train.shape}")
@@ -151,10 +168,10 @@ class CounterfactualsImdbDataPrep:
         df_counterfacts_val = pd.read_csv(val_counterfacts_data_url, sep="\t")
         self._logger.info(f"Counter factual val: {df_counterfacts_val.shape}")
 
-        df_orig_train = df_orig.pipe(self._add_col_batch_id, df_counterfacts_train)
-        df_orig_val = df_val.pipe(self._add_col_batch_id, df_counterfacts_val)
+        df_train = df_train_orig.pipe(self._add_col_batch_id, df_counterfacts_train)
+        df_val = df_val_orig.pipe(self._add_col_batch_id, df_counterfacts_val)
 
-        self._logger.info(f"Original train, val: {df_orig_train.shape, df_orig_val.shape}")
+        self._logger.info(f"Original train, val: {df_train.shape, df_val.shape}")
 
         counterfact_train_stats, counterfact_train_stats_debug = self.get_stats(df_counterfacts_train)
         self.dump_json(counterfact_train_stats, os.path.join(output_dir, "counterfact_train_stats.json"))
@@ -164,7 +181,7 @@ class CounterfactualsImdbDataPrep:
 
         for adv_rate in adv_ranges:
             for i in range(5):
-                df_train_prepared = self.prep_counterfactual(df_orig_train, adv_rate_pos=adv_rate,
+                df_train_prepared = self.prep_counterfactual(df_train, adv_rate_pos=adv_rate,
                                                              total_size=TOTAL_SIZE)
 
                 result_train_stats, train_debug_stats = self.get_stats(df_train_prepared, threshold_adv=ADV_THRESHOLD,
@@ -179,7 +196,7 @@ class CounterfactualsImdbDataPrep:
                 self.dump_json(result_train_stats, os.path.join(output_dir, f"stats_{prefix_path}_train.json"))
                 self.dump_json(train_debug_stats, os.path.join(output_dir, f"debug_stats_{prefix_path}_val.json"))
 
-                df_val_prepared = self.prep_counterfactual(df_orig_val, adv_rate_pos=adv_rate,
+                df_val_prepared = self.prep_counterfactual(df_val, adv_rate_pos=adv_rate,
                                                            total_size=int(TOTAL_SIZE * 0.2))
                 result_val_stats, val_debug_stats = self.get_stats(
                     df_val_prepared, threshold_adv=ADV_THRESHOLD, threshold_aff=AFF_THRESHOLD)
