@@ -100,45 +100,42 @@ class CounterfactualsImdbDataPrep:
 
         return df
 
-    def prep_counterfactual(self, df, adv_rate_pos=0.1, total_size=3400):
+    def prep_counterfactual(self, df, adv_rate_pos=0.1, target_total_size=3400):
 
-        neg_samples = min(int(total_size * (1 - POS_RATE)),
-                          len(df.query("Sentiment == 'Negative'")))
+        target_neg_samples = min(int(target_total_size * (1 - POS_RATE)),
+                                 len(df.query("Sentiment == 'Negative'")))
 
-        pos_samples = total_size - neg_samples
-        adv_neg_samples = int(adv_rate_pos * pos_samples)
-        non_adv_neg_samples = neg_samples - adv_neg_samples
+        target_pos_samples = target_total_size - target_neg_samples
+        target_adv_neg_samples = int(adv_rate_pos * target_pos_samples)
+        target_non_adv_neg_samples = target_neg_samples - target_adv_neg_samples
 
         self._logger.info(
-            f"Total size:{total_size}, df length {len(df)}, neg_samples:{neg_samples} pos_samples{pos_samples}")
-        self._logger.info(f"DF value counts {df['Sentiment'].value_counts()}")
-        self._logger.info(f"non_adv_neg_samples:{non_adv_neg_samples} adv_neg_samples{adv_neg_samples}")
+            f"Target Total size:{target_total_size},  target_neg_samples:{target_neg_samples} target_pos_samples{target_pos_samples}")
+        self._logger.info(f"DF value counts {df['Sentiment'].value_counts()}, Total: {len(df)},")
+        self._logger.info(
+            f"target_non_adv_neg_samples:{target_non_adv_neg_samples} target_adv_neg_samples{target_adv_neg_samples}")
 
         df_pos_with_cf = df.query("batch_id != -1 and Sentiment == 'Positive'")
-        self._logger.info(f"Positive samples with CF :{len(df_pos_with_cf)}")
-
         df_pos_without_cf = df.query("batch_id == -1 and Sentiment == 'Positive'")
-        self._logger.info(f"Positive samples without CF :{len(df_pos_without_cf)}")
+        self._logger.info(f"Positive samples: with CF :{len(df_pos_with_cf)}, without CF :{len(df_pos_without_cf)}")
 
         df_neg_with_cf = df.query("batch_id != -1 and Sentiment == 'Negative'")
-        self._logger.info(f"Negative samples: with CF :{len(df_neg_with_cf)}")
-
         df_neg_without_cf = df.query("batch_id == -1 and Sentiment == 'Negative'")
-        self._logger.info(f"Negative samples: without CF :{len(df_neg_without_cf)}")
+        self._logger.info(f"Negative samples: with CF :{len(df_neg_with_cf)}, without CF :{len(df_neg_without_cf)}")
 
         # Get n positives
-        pos_samp_with_adv_size = min(len(df_pos_with_cf), pos_samples)
+        pos_samp_with_adv_size = min(len(df_pos_with_cf), target_pos_samples)
         df_pos_with_adv = df_pos_with_cf.sample(n=pos_samp_with_adv_size)
         df_pos_without_adv = df_pos_without_cf[["Sentiment", "Text", "batch_id"]].sample(
-            n=pos_samples - pos_samp_with_adv_size)
+            n=target_pos_samples - pos_samp_with_adv_size)
 
         # Get paired n negatives
-        df_paired = df_pos_with_adv.sample(n=adv_neg_samples)
+        df_paired = df_pos_with_adv.sample(n=target_adv_neg_samples)
         df_adv_neg = df_paired[["counter_sentiment", "counter_text", "batch_id"]]
         df_adv_neg.columns = ["Sentiment", "Text", "batch_id"]
 
         # Random neg
-        df_neg_random = df_neg_without_cf[["Sentiment", "Text", "batch_id"]].sample(n=non_adv_neg_samples).copy()
+        df_neg_random = df_neg_without_cf[["Sentiment", "Text", "batch_id"]].sample(n=target_non_adv_neg_samples).copy()
 
         return pd.concat([df_adv_neg, df_pos_with_adv[["Sentiment", "Text", "batch_id"]],
                           df_pos_without_adv, df_neg_random])
@@ -182,7 +179,7 @@ class CounterfactualsImdbDataPrep:
         for adv_rate in adv_ranges:
             for i in range(5):
                 df_train_prepared = self.prep_counterfactual(df_train, adv_rate_pos=adv_rate,
-                                                             total_size=TOTAL_SIZE)
+                                                             target_total_size=TOTAL_SIZE)
 
                 result_train_stats, train_debug_stats = self.get_stats(df_train_prepared, threshold_adv=ADV_THRESHOLD,
                                                                        threshold_aff=AFF_THRESHOLD)
@@ -197,7 +194,7 @@ class CounterfactualsImdbDataPrep:
                 self.dump_json(train_debug_stats, os.path.join(output_dir, f"debug_stats_{prefix_path}_val.json"))
 
                 df_val_prepared = self.prep_counterfactual(df_val, adv_rate_pos=adv_rate,
-                                                           total_size=int(TOTAL_SIZE * 0.2))
+                                                           target_total_size=int(TOTAL_SIZE * 0.2))
                 result_val_stats, val_debug_stats = self.get_stats(
                     df_val_prepared, threshold_adv=ADV_THRESHOLD, threshold_aff=AFF_THRESHOLD)
                 self._logger.info(json.dumps(result_val_stats))
