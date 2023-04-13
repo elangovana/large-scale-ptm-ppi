@@ -113,7 +113,7 @@ class CounterfactualsImdbDataPrep:
             f"Target Total size:{target_total_size},  target_neg_samples:{target_neg_samples} target_pos_samples{target_pos_samples}")
         self._logger.info(f"DF value counts {df['Sentiment'].value_counts()}, Total: {len(df)},")
         self._logger.info(
-            f"target_non_adv_neg_samples:{target_non_adv_neg_samples} target_adv_neg_samples{target_adv_neg_samples}")
+            f"target_non_adv_neg_samples: {target_non_adv_neg_samples} target_adv_neg_samples: {target_adv_neg_samples}")
 
         df_pos_with_cf = df.query("batch_id != -1 and Sentiment == 'Positive'")
         df_pos_without_cf = df.query("batch_id == -1 and Sentiment == 'Positive'")
