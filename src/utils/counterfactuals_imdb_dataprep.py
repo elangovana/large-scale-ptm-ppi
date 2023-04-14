@@ -202,8 +202,10 @@ class CounterfactualsImdbDataPrep:
                 self.dump_json(result_val_stats, os.path.join(output_dir, f"stats_{prefix_path}_val.json"))
                 self.dump_debug_stats(val_debug_stats, os.path.join(output_dir, f"debug_stats_{prefix_path}_val"))
 
-                df_train_prepared.reset_index().to_json(os.path.join(output_dir, prefix_path, "train.json"))
-                df_val_prepared.reset_index().to_json(os.path.join(output_dir, prefix_path, "val.json"))
+                out_dataset_dir = os.path.join(output_dir, prefix_path)
+                os.makedirs(out_dataset_dir, exist_ok=True)
+                df_train_prepared.reset_index().to_json(os.path.join(out_dataset_dir, "train.json"))
+                df_val_prepared.reset_index().to_json(os.path.join(out_dataset_dir, "val.json"))
 
     def dump_json(self, obj, output_file):
         os.makedirs(os.path.dirname(output_file), exist_ok=True)
@@ -214,8 +216,8 @@ class CounterfactualsImdbDataPrep:
     def dump_debug_stats(self, dict_of_df, output_prefix):
         os.makedirs(os.path.dirname(output_prefix), exist_ok=True)
 
-        for k, df in dict_of_df:
-            df.reset_index.to_json(f"{output_prefix}_{k}.json")
+        for k, df in dict_of_df.items():
+            df.reset_index().to_json(f"{output_prefix}_{k}.json")
 
 
 def parse_args():
