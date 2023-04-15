@@ -110,7 +110,7 @@ class CounterfactualsImdbDataPrep:
         target_non_adv_neg_samples = target_neg_samples - target_adv_neg_samples
 
         self._logger.info(
-            f"Target Total size:{target_total_size},  target_neg_samples:{target_neg_samples} target_pos_samples{target_pos_samples}")
+            f"Target Total size:{target_total_size},  target_neg_samples:{target_neg_samples} target_pos_samples: {target_pos_samples}")
         self._logger.info(f"DF value counts {df['Sentiment'].value_counts()}, Total: {len(df)},")
         self._logger.info(
             f"target_non_adv_neg_samples: {target_non_adv_neg_samples} target_adv_neg_samples: {target_adv_neg_samples}")
@@ -166,7 +166,7 @@ class CounterfactualsImdbDataPrep:
         self._logger.info(f"Counter factual val: {df_counterfacts_val.shape}")
 
         df_train = df_train_orig.pipe(self._add_col_batch_id, df_counterfacts_train)
-        df_val = df_val_orig.pipe(self._add_col_batch_id, df_counterfacts_val)
+        df_val = df_val_orig.pipe(self._add_col_batch_id, df_counterfacts_train)
 
         self._logger.info(f"Original train, val: {df_train.shape, df_val.shape}")
 
@@ -176,8 +176,8 @@ class CounterfactualsImdbDataPrep:
 
         adv_ranges = [0, 0.10, 0.20, .30, 0.90]
 
-        for adv_rate in adv_ranges:
-            for i in range(5):
+        for i in range(5):
+            for adv_rate in adv_ranges:
                 df_train_prepared = self.prep_counterfactual(df_train, adv_rate_pos=adv_rate,
                                                              target_total_size=TOTAL_SIZE)
 
