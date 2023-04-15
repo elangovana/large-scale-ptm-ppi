@@ -174,38 +174,47 @@ class CounterfactualsImdbDataPrep:
         self.dump_json(counterfact_train_stats, os.path.join(output_dir, "counterfact_train_stats.json"))
         self.dump_json(counterfact_train_stats, os.path.join(output_dir, "counterfact_train_stats_debug.json"))
 
-        adv_ranges = [0, 0.10, 0.20, .30, 0.90]
+        adv_ranges = [0, 0.10, 0.20, .30]
 
         for i in range(5):
             for adv_rate in adv_ranges:
                 df_train_prepared = self.prep_counterfactual(df_train, adv_rate_pos=adv_rate,
                                                              target_total_size=TOTAL_SIZE)
 
-                result_train_stats, train_debug_stats = self.get_stats(df_train_prepared, threshold_adv=ADV_THRESHOLD,
-                                                                       threshold_aff=AFF_THRESHOLD)
-                self._logger.info(json.dumps(result_train_stats))
-                prefix_path = "{:02d}_{:02d}_{:02d}_{:02d}".format(int(result_train_stats["AdvRatePN"] * 100),
-                                                                   int(result_train_stats["AffRateP"] * 100),
-                                                                   int(result_train_stats["AffRateN"] * 100),
-                                                                   i + 1
-                                                                   )
-
-                self.dump_json(result_train_stats, os.path.join(output_dir, f"stats_{prefix_path}_train.json"))
-                self.dump_debug_stats(train_debug_stats, os.path.join(output_dir, f"debug_stats_{prefix_path}_val"))
-
                 df_val_prepared = self.prep_counterfactual(df_val, adv_rate_pos=adv_rate,
                                                            target_total_size=int(TOTAL_SIZE * 0.2))
-                result_val_stats, val_debug_stats = self.get_stats(
-                    df_val_prepared, threshold_adv=ADV_THRESHOLD, threshold_aff=AFF_THRESHOLD)
-                self._logger.info(json.dumps(result_val_stats))
 
-                self.dump_json(result_val_stats, os.path.join(output_dir, f"stats_{prefix_path}_val.json"))
-                self.dump_debug_stats(val_debug_stats, os.path.join(output_dir, f"debug_stats_{prefix_path}_val"))
+                prefix_path = self._dump(df_train_prepared, output_dir, "train", prefix_index=i)
+                self._dump(df_val_prepared, output_dir, "val", prefix_path=prefix_path)
 
-                out_dataset_dir = os.path.join(output_dir, prefix_path)
-                os.makedirs(out_dataset_dir, exist_ok=True)
-                df_train_prepared.reset_index().to_json(os.path.join(out_dataset_dir, "train.json"))
-                df_val_prepared.reset_index().to_json(os.path.join(out_dataset_dir, "val.json"))
+        # Original
+        for i in range(5):
+            prefix_path = self._dump(df_counterfacts_val, output_dir, "train", prefix_index=i)
+
+            # Val
+            self._dump(df_counterfacts_val, output_dir, "val", prefix_path=prefix_path)
+
+    def _dump(self, df, output_dir, file_suffix, prefix_index=0, prefix_path=None):
+
+        result_stats, debug_stats = self.get_stats(df, threshold_adv=ADV_THRESHOLD,
+                                                   threshold_aff=AFF_THRESHOLD)
+
+        prefix_path = prefix_path or "{:02d}_{:02d}_{:02d}_{:02d}".format(int(result_stats["AdvRatePN"] * 100),
+                                                                          int(result_stats["AffRateP"] * 100),
+                                                                          int(result_stats["AffRateN"] * 100),
+                                                                          prefix_index + 1
+                                                                          )
+
+        out_dataset_dir = os.path.join(output_dir, prefix_path)
+        os.makedirs(out_dataset_dir, exist_ok=True)
+        df.reset_index().to_json(os.path.join(out_dataset_dir, f"{file_suffix}.json"))
+
+        self._logger.info(json.dumps(result_stats))
+
+        self.dump_json(result_stats, os.path.join(output_dir, f"stats_{prefix_path}_{file_suffix}.json"))
+        self.dump_debug_stats(debug_stats, os.path.join(output_dir, f"debug_stats_{prefix_path}_{file_suffix}"))
+
+        return prefix_path
 
     def dump_json(self, obj, output_file):
         os.makedirs(os.path.dirname(output_file), exist_ok=True)
