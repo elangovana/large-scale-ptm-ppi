@@ -189,7 +189,7 @@ class CounterfactualsImdbDataPrep:
 
         # Original
         for i in range(5):
-            prefix_path = self._dump(df_counterfacts_val, output_dir, "train", prefix_index=i)
+            prefix_path = self._dump(df_counterfacts_train, output_dir, "train", prefix_index=i)
 
             # Val
             self._dump(df_counterfacts_val, output_dir, "val", prefix_path=prefix_path)
