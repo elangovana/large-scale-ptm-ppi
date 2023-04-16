@@ -5,6 +5,9 @@ import pandas as pd
 
 
 class AmazonReviewSentimentPolarityReader:
+    """
+       https://huggingface.co/datasets/amazon_polarity
+    """
 
     @property
     def _logger(self):
