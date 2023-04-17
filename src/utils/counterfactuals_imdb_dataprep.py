@@ -11,7 +11,7 @@ from sklearn.model_selection import train_test_split
 
 from utils.diff_sentences import DiffSentences
 
-TOTAL_SIZE = 3400
+TOTAL_SIZE = 2000
 
 POS_RATE = 0.5
 ADV_THRESHOLD = 0.25
