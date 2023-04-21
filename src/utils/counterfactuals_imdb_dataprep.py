@@ -3,6 +3,7 @@ import argparse
 import json
 import logging
 import os.path
+import random
 import sys
 
 import numpy as np
@@ -189,10 +190,18 @@ class CounterfactualsImdbDataPrep:
 
         # Original
         for i in range(5):
-            prefix_path = self._dump(df_counterfacts_train, output_dir, "train", prefix_index=i)
+            df_counterfacts_train_sub = self._sample_counterfacts(df_counterfacts_train, TOTAL_SIZE)
+            prefix_path = self._dump(df_counterfacts_train_sub, output_dir, "train", prefix_index=i)
 
             # Val
-            self._dump(df_counterfacts_val, output_dir, "val", prefix_path=prefix_path)
+            df_counterfacts_val_sub = self._sample_counterfacts(df_counterfacts_val, int(TOTAL_SIZE * .15))
+            self._dump(df_counterfacts_val_sub, output_dir, "val", prefix_path=prefix_path)
+
+    def _sample_counterfacts(self, df_counterfacts, size):
+        train_batch_ids = random.choices(df_counterfacts["batch_id"].tolist(), k=size)
+        df_counterfacts_sub = df_counterfacts[
+            df_counterfacts["batch_id"].isin(train_batch_ids)]
+        return df_counterfacts_sub
 
     def _dump(self, df, output_dir, file_suffix, prefix_index=0, prefix_path=None):
 
