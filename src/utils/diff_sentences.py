@@ -1,3 +1,6 @@
+import os
+from multiprocessing import Pool
+
 import nltk
 import numpy as np
 from Levenshtein import editops, distance
@@ -31,8 +34,19 @@ class DiffSentences:
         l_sentences2 = [self._tokenize(s) for s in sentences2]
 
         result = np.empty(shape=(len(l_sentences1), len(l_sentences2)))
-        for s1i, s1 in enumerate(sentences1):
-            for s2i, s2 in enumerate(sentences2):
-                result[s1i, s2i] = distance(s1, s2) / len(s1)
+
+        parallel_params = []
+        for s1i, s1 in enumerate(l_sentences1):
+            for s2i, s2 in enumerate(l_sentences2):
+                parallel_params.append((s1i, s2i, s1, s2))
+
+        with Pool(os.cpu_count() - 1) as p:
+            parallel_results = p.map(self._compute_edit_distance_ratio, parallel_params)
+
+        for ((s1i, s2i, _, _), r) in zip(parallel_params, parallel_results):
+            result[s1i, s2i] = r
 
         return result
+
+    def _compute_edit_distance_ratio(self, parallel_tuple_args):
+        return distance(parallel_tuple_args[2], parallel_tuple_args[3]) / len(parallel_tuple_args[2])
