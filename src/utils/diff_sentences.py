@@ -1,3 +1,4 @@
+import logging
 import os
 from multiprocessing import Pool
 
@@ -28,10 +29,17 @@ class DiffSentences:
     def _tokenize(self, s):
         return word_tokenize(s.lower())
 
+    @property
+    def _logger(self):
+        return logging.getLogger(__name__)
+
     def pairwise_edit_distance_ratio(self, sentences1, sentences2, score_cutoff=0.5):
+        self._logger.info(
+            f"Running pairwise_edit_distance_ratio for 2 lists of size {len(sentences1)} and  {len(sentences2)}")
         nltk.download('punkt')
         l_sentences1 = [self._tokenize(s) for s in sentences1]
         l_sentences2 = [self._tokenize(s) for s in sentences2]
+        self._logger.info(f"Completed tokenization")
 
         result = np.empty(shape=(len(l_sentences1), len(l_sentences2)))
 
@@ -45,6 +53,7 @@ class DiffSentences:
 
         for ((s1i, s2i, _, _), r) in zip(parallel_params, parallel_results):
             result[s1i, s2i] = r
+        self._logger.info(f"Completed distance computation")
 
         return result
 
