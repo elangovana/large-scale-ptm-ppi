@@ -175,6 +175,15 @@ class CounterfactualsImdbDataPrep:
         self.dump_json(counterfact_train_stats, os.path.join(output_dir, "counterfact_train_stats.json"))
         self.dump_json(counterfact_train_stats, os.path.join(output_dir, "counterfact_train_stats_debug.json"))
 
+        # Original
+        for i in range(5):
+            df_counterfacts_train_sub = self._sample_counterfacts(df_counterfacts_train, TOTAL_SIZE)
+            prefix_path = self._dump(df_counterfacts_train_sub, output_dir, "train", prefix_index=i)
+
+            # Val
+            df_counterfacts_val_sub = self._sample_counterfacts(df_counterfacts_val, int(TOTAL_SIZE * .15))
+            self._dump(df_counterfacts_val_sub, output_dir, "val", prefix_path=prefix_path)
+
         adv_ranges = [0, 0.10, 0.20, .30]
 
         for i in range(5):
@@ -188,17 +197,9 @@ class CounterfactualsImdbDataPrep:
                 prefix_path = self._dump(df_train_prepared, output_dir, "train", prefix_index=i)
                 self._dump(df_val_prepared, output_dir, "val", prefix_path=prefix_path)
 
-        # Original
-        for i in range(5):
-            df_counterfacts_train_sub = self._sample_counterfacts(df_counterfacts_train, TOTAL_SIZE)
-            prefix_path = self._dump(df_counterfacts_train_sub, output_dir, "train", prefix_index=i)
-
-            # Val
-            df_counterfacts_val_sub = self._sample_counterfacts(df_counterfacts_val, int(TOTAL_SIZE * .15))
-            self._dump(df_counterfacts_val_sub, output_dir, "val", prefix_path=prefix_path)
-
     def _sample_counterfacts(self, df_counterfacts, size):
-        train_batch_ids = random.sample(df_counterfacts["batch_id"].tolist(), k=size)
+        train_batch_ids = random.sample(df_counterfacts["batch_id"].unique().tolist(), k=int(size / 2))
+        self._logger.info(f"Obtained counterfact : {len(train_batch_ids)} unique")
         df_counterfacts_sub = df_counterfacts[
             df_counterfacts["batch_id"].isin(train_batch_ids)]
         return df_counterfacts_sub
