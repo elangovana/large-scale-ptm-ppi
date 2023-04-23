@@ -198,7 +198,7 @@ class CounterfactualsImdbDataPrep:
             self._dump(df_counterfacts_val_sub, output_dir, "val", prefix_path=prefix_path)
 
     def _sample_counterfacts(self, df_counterfacts, size):
-        train_batch_ids = random.choices(df_counterfacts["batch_id"].tolist(), k=size)
+        train_batch_ids = random.sample(df_counterfacts["batch_id"].tolist(), k=size)
         df_counterfacts_sub = df_counterfacts[
             df_counterfacts["batch_id"].isin(train_batch_ids)]
         return df_counterfacts_sub
