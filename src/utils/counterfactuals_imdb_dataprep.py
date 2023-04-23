@@ -192,7 +192,7 @@ class CounterfactualsImdbDataPrep:
                                                              target_total_size=TOTAL_SIZE)
 
                 df_val_prepared = self.prep_counterfactual(df_val, adv_rate_pos=adv_rate,
-                                                           target_total_size=int(TOTAL_SIZE * 0.2))
+                                                           target_total_size=int(TOTAL_SIZE * 0.15))
 
                 prefix_path = self._dump(df_train_prepared, output_dir, "train", prefix_index=i)
                 self._dump(df_val_prepared, output_dir, "val", prefix_path=prefix_path)
