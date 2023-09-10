@@ -1,9 +1,8 @@
 import logging
 import os
 
-from transformers import RobertaModel
-
 from models.base_checkpoint_manager import BaseCheckpointManager
+from models.roberta_model import RobertaModel
 
 
 class RobertaCheckpointManager(BaseCheckpointManager):
@@ -14,6 +13,7 @@ class RobertaCheckpointManager(BaseCheckpointManager):
 
     def read(self, checkpoint_dir, **kwargs):
         model = None
+        self._logger.info("Attempting to load checkpoint from {}".format(checkpoint_dir))
 
         # Make sure there are contents in the checkpoint dir
         has_checkpoint = bool(checkpoint_dir) and len(os.listdir(checkpoint_dir)) > 0
