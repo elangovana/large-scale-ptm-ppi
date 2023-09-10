@@ -269,7 +269,6 @@ class TestSitTrain(TestCase):
         tempdir_model = tempfile.mkdtemp()
         tempfile_output = os.path.join(tempfile.mkdtemp(), "out.json")
 
-
         conf_scores = self._run_train(train_data_dir, additional_args, tempdir_model=tempdir_model)[-1]["result"][
             "conf"]
 
@@ -287,6 +286,38 @@ class TestSitTrain(TestCase):
 
         # Assert
         np.testing.assert_array_almost_equal(conf_scores, confidence_scores)
+
+    def test_train_with_no_exception_counterfact_roberta(self):
+        # Arrange
+        train_data_file = os.path.join(os.path.dirname(__file__), "sample_data", "sample_counterfact_imdb.json")
+        dataset_factory = "datasets.counterfact_imbd_dataset_factory.CounterfactImdbDatasetFactory"
+        model_factory = "models.roberta_model_factory.RobertaModelFactory"
+
+        batch = 3
+
+        # Bert Config
+        vocab_size = 50264
+        sequence_len = 20
+        num_classes = 2
+
+        bert_config = {"vocab_size": vocab_size, "hidden_size": 10, "num_hidden_layers": 1,
+                       "tokenisor_max_seq_len": sequence_len, "num_labels": num_classes,
+                       "num_attention_heads": 1}
+        bert_config_file = self._write_bert_config_file(bert_config)
+
+        # Additional args
+        tokenisor_data_dir = os.path.join(os.path.dirname(__file__), "sample_data", "tokenisor_roberta_data")
+        additional_args = {"model_config": bert_config_file,
+                           "tokenisor_data_dir": tokenisor_data_dir,
+                           "datasetfactory": dataset_factory,
+                           "modelfactory": model_factory,
+                           "batch": batch,
+                           "numworkers": 1,
+                           "epochs": 2,
+                           "earlystoppingpatience": 1
+                           }
+
+        self._run_train(train_data_file, additional_args)
 
     def _run_train(self, train_data_file, additional_args, tempdir_model=None, tempdir_checkpoint=None):
         tempdir_model = tempdir_model or tempfile.mkdtemp()
