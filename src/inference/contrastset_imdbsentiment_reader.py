@@ -6,8 +6,8 @@ import pandas as pd
 
 class ContrastsetImdbSentimentReader:
     """
-    https://alt.qcri.org/semeval2017/task4/?id=download-the-full-training-data-for-semeval-2017-task-4
-    TASK B - Polarity
+    https://aclanthology.org/2020.findings-emnlp.117.pdf
+
     """
 
     @property
