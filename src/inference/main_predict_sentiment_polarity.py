@@ -11,6 +11,7 @@ import pandas as pd
 
 from dataset_builder import DatasetBuilder
 from inference.amazon_review_sentiment_polarity_reader import AmazonReviewSentimentPolarityReader
+from inference.contrastset_imdbsentiment_reader import ContrastsetImdbSentimentReader
 from inference.ensemble_predictor import EnsemblePredictor
 from inference.semevalb_sentiment_polarity_reader import SemevalbSentimentPolarityReader
 from locator import Locator
@@ -156,7 +157,8 @@ def parse_args_run():
     dataset_types = {
         "yelp": YelpInference(),
         "amazon": AmazonReviewSentimentPolarityReader(),
-        "semeval": SemevalbSentimentPolarityReader()
+        "semeval": SemevalbSentimentPolarityReader(),
+        "contrastimdb": ContrastsetImdbSentimentReader()
     }
     parser = argparse.ArgumentParser()
     parser.add_argument("datajson",
